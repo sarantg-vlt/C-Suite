@@ -7,7 +7,7 @@ import { isStrongPassword, isValidEmail } from "../../utils/validityCheck";
 import { googlePopup } from "../../firebase/auth_google_popup";
 import { signinMicrosoft } from "../../firebase/auth_microsoft_execute";
 // import { handleLinkedIn } from "../../firebase/auth_linkedIn_execute";
-import { signinLinkedIn, handleLinkedInCallback } from "../../firebase/auth_linkedIn_execute";
+// import { signinLinkedIn, handleLinkedInCallback } from "../../firebase/auth_linkedIn_execute";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { check, loginCheck } from "../../../api/baseapi";
