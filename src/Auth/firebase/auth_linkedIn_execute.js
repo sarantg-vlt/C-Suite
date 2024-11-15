@@ -4,8 +4,8 @@
 //const scope = "profile openid email";
 
 //export const handleLinkedIn = () => {
-//  const authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&state=${state}&scope=${scope}`;
-//  window.location.href = authUrl;
+//const authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&state=${state}&scope=${scope}`;
+//window.location.href = authUrl;
 //};
 
 import axios from 'axios';
@@ -14,6 +14,10 @@ import { toast } from 'react-toastify';
 const CLIENT_ID = '86mel6vthcai4p';
 const REDIRECT_URI = 'https://c-suit.vercel.app/linkedin/callback';
 
+export const handleLinkedIn = () => {
+const authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&state=${state}&scope=${scope}`;
+window.location.href = authUrl;
+};
 export const signinLinkedIn = async () => {
   const state = 'someRandomStringToPreventCSRF'; 
   
