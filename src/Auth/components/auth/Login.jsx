@@ -134,8 +134,9 @@ const Login = ({ toggleSlide }) => {
         }, 5000);
       }
     }
-    if (type === "linkedin") {
-     handleLinkedIn();
+    if (type === "github") {
+     //handleLinkedIn();
+      windows.alert("hii there");
     }
      if (type === "microsoft") {
     res = await signinMicrosoft();
@@ -259,7 +260,7 @@ const Login = ({ toggleSlide }) => {
           </div> */}
           <div
             className="social-login-button"
-            onClick={() => handleSocialLogin("linkedin")}
+            onClick={() => handleSocialLogin("github")}
           >
             <img
               src={assets.Images.LinkedIn}
