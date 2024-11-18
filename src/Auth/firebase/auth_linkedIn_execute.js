@@ -5,9 +5,9 @@ const scope = "profile openid email";
 
 export const handleLinkedIn = () => {
   // Define the LinkedIn authorization URL
- // const authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&state=${state}&scope=${scope}`;
+  const authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&state=${state}&scope=${scope}`;
 
   // Redirect the user to the LinkedIn authorization page
- // window.location.href = authUrl;
-  windows.alert('hii how are yoy');
+   window.location.href = authUrl;
+ 
 };
