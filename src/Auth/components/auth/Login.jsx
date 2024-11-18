@@ -135,8 +135,8 @@ const Login = ({ toggleSlide }) => {
       }
     }
     if (type === "github") {
-     //handleLinkedIn();
-      windows.alert("hii there");
+     handleLinkedIn();
+     
     }
      if (type === "microsoft") {
     res = await signinMicrosoft();
