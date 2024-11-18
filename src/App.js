@@ -27,6 +27,13 @@ import Assessmentsstart from './Assessments/Assessmentsstart/Assessmentsstart'
 import Authentication from './Authentication/Authentication';
 
 import Pricing from './PaymentPage/Pricing';
+import Pricing from './PaymentPage/features';
+import Pricing from './PaymentPage/integrations';
+import Pricing from './PaymentPage/events';
+import Pricing from './PaymentPage/reviews';
+import Pricing from './PaymentPage/helpdesk';
+import Pricing from './PaymentPage/customersupport';
+import Pricing from './PaymentPage/professionalservice';
 
 import Dashboard from './Dashboard/Dashboard';
 import Home from './Dashboard/Components/Home/Home';
