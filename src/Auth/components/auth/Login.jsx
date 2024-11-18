@@ -259,7 +259,7 @@ const Login = ({ toggleSlide }) => {
           </div> */}
           <div
             className="social-login-button"
-            onClick={() => handleSocialLogin("github")}
+            onClick={() => handleSocialLogin("linkedin")}
           >
             <img
               src={assets.Images.LinkedIn}
