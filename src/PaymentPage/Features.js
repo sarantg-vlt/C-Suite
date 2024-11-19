@@ -7,7 +7,7 @@ import {loadStripe} from '@stripe/stripe-js';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const PricingPlans = () => {
+const Features = () => {
 
   let navigate = useNavigate();
 
@@ -118,4 +118,4 @@ const PricingPlans = () => {
   );
 };
 
-export default PricingPlans;
+export default Features;
