@@ -27,13 +27,13 @@ import Assessmentsstart from './Assessments/Assessmentsstart/Assessmentsstart'
 import Authentication from './Authentication/Authentication';
 
 import Pricing from './PaymentPage/Pricing';
-import Feautures from './FooterPage/Features';
-import Integrations from './FooterPage/Integrations';
-import Events from './FooterPage/Events';
-import Reviews from './FooterPage/Reviews';
-import Helpdesk from './FooterPage/Helpdesk';
-import Customersupport from './FooterPage/Customersupport';
-import Professionalservice from './FooterPage/Professionalservice';
+import Feautures from './PaymentPage/Features';
+import Integrations from './PaymentPage/Integrations';
+import Events from './PaymentPage/Events';
+import Reviews from './PaymentPage/Reviews';
+import Helpdesk from './PaymentPage/Helpdesk';
+import Customersupport from './PaymentPage/Customersupport';
+import Professionalservice from './PaymentPage/Professionalservice';
 
 import Dashboard from './Dashboard/Dashboard';
 import Home from './Dashboard/Components/Home/Home';
