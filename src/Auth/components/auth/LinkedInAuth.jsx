@@ -18,7 +18,7 @@ const LinkedInAuth = () => {
       });
       if (res) {
         toast.success("Authentication Successfull ✅");
-        navigate("/");
+        navigate.push("/");
       }
     }
   };
