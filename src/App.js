@@ -26,7 +26,7 @@ import Closelevel from './Assessments/Closelevel/Closelevel';
 import Assessmentsstart from './Assessments/Assessmentsstart/Assessmentsstart'
 import Authentication from './Authentication/Authentication';
 
-import Pricing from './FooterPage/Pricing';
+import Pricing from './PaymentPage/Pricing';
 import Feautures from './FooterPage/Features';
 import Integrations from './FooterPage/Integrations';
 import Events from './FooterPage/Events';
