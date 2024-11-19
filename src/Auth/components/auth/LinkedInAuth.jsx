@@ -75,7 +75,7 @@ const LinkedInAuth = () => {
     fetchData();
   }, [location, navigate]);
 
-  return (
+  return (navigate('/home')):(
     <div
       className="screen-container"
       style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100vh" }}
