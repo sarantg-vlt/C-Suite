@@ -3,8 +3,12 @@ import { useNavigate } from "react-router-dom";
 
 const CourseCard = ({ data }) => {
   const navigate = useNavigate();
-  const resloveImagePath = (relativePath) => {
-    return require(`../Assets/Images/imagenotxt.png`);
+  const resolveImagePath = (relativePath) => {
+    try {
+      return relativePath ? relativePath : require("../Assets/Images/imagenotxt.png");
+    } catch (error) {
+      return require("../Assets/Images/imagenotxt.png");
+    }
   };
   return (
     <div
@@ -12,8 +16,8 @@ const CourseCard = ({ data }) => {
       onClick={() => navigate("Course/edit", { state: data })}
     >
       <img
-        src={resloveImagePath(data?.image)}
-        alt={data?.image}
+        src={resolveImagePath(data?.image)}
+        alt={data?.title || "Course image"}
         className="course-img"
       />
       <h4 className="course-card-title">{data?.title}</h4>
