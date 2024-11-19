@@ -27,7 +27,7 @@ import Assessmentsstart from './Assessments/Assessmentsstart/Assessmentsstart'
 import Authentication from './Authentication/Authentication';
 
 import Pricing from './PaymentPage/Pricing';
-import Feautures from './PaymentPage/Features';
+import Features from './PaymentPage/Features';
 import Integrations from './PaymentPage/Integrations';
 import Events from './PaymentPage/Events';
 import Reviews from './PaymentPage/Reviews';
