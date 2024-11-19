@@ -59,7 +59,7 @@ const LinkedInAuth = () => {
 
           if (res?.status === 200) {
             toast.success("Authentication Successful ✅");
-            navigate("/");
+            navigate("/home");
           } else {
             throw new Error("Unexpected response");
           }
