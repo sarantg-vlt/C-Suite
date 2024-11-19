@@ -27,13 +27,7 @@ import Assessmentsstart from './Assessments/Assessmentsstart/Assessmentsstart'
 import Authentication from './Authentication/Authentication';
 
 import Pricing from './PaymentPage/Pricing';
-import Features from './PaymentPage/Features';
-import Integrations from './PaymentPage/Integrations';
-import Events from './PaymentPage/Events';
-import Reviews from './PaymentPage/Reviews';
-import Helpdesk from './PaymentPage/Helpdesk';
-import Customersupport from './PaymentPage/Customersupport';
-import Professionalservice from './PaymentPage/Professionalservice';
+
 
 import Dashboard from './Dashboard/Dashboard';
 import Home from './Dashboard/Components/Home/Home';
