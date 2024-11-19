@@ -77,7 +77,7 @@ function Footer() {
         <section data-aos="fade-up" className="section2">
           <h5>About LMS</h5>
           <a onClick={() => navigate('/Payment')}>Pricing</a>
-          <a>Features</a>
+          <a onClick={() => navigate('/Features')}>Features</a>
           <a>Integrations</a>
           <a>Events</a>
           <a>Reviews</a>
