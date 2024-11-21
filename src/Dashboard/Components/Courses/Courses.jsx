@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Courses.css";
 import { useNavigate } from "react-router-dom";
-import imgd from "../Assets/Images/imagenotxt2.png";
+import DefaultImg from "../Assets/Images/imagenotxt2.png";
 import LoadingPage from "../LoadingPage/LoadingPage";
 import ErrorDataFetchOverlay from "../Error/ErrorDataFetchOverlay";
 
@@ -31,7 +31,7 @@ const Courses = () => {
             (course) => course.courseId
           );
           // Optionally, mark purchased courses, add them as a property if needed
-          allCourses.forEach(course => {
+          allCourses.forEach((course) => {
             course.isPurchased = purchasedCourseIds.includes(course._id);
           });
           setCoursesData(allCourses); // Store all courses (purchased + not purchased)
@@ -52,19 +52,46 @@ const Courses = () => {
   }, []);
 
   const resolveImagePath = (imagePath) => {
-    if (
-      imagePath &&
-      (imagePath.startsWith("http://") || imagePath.startsWith("https://"))
-    ) {
+    // if (
+    //   imagePath &&
+    //   (imagePath.startsWith("http://") || imagePath.startsWith("https://"))
+    // ) {
+    //   return imagePath;
+    // } else if (imagePath && imagePath.startsWith("base64")) {
+    //   return imgd;
+    // } else {
+    //   try {
+    //     return require(`../Assets/Images/${imagePath}`);
+    //   } catch (error) {
+    //     return imgd;
+    //   }
+    // }
+
+    if (imagePath.startsWith("http://") || imagePath.startsWith("https://")) {
       return imagePath;
-    } else if (imagePath && imagePath.startsWith("base64")) {
-      return imgd;
-    } else {
-      try {
-        return require(`../Assets/Images/${imagePath}`);
-      } catch (error) {
-        return imgd;
+    }
+
+    // Check for proper base64-encoded images
+    if (imagePath.startsWith("data:image/")) {
+      const base64Content = imagePath.split(",")[1]; // Get the content after `data:image/...;base64,`
+      if (base64Content && base64Content.length > 0) {
+        return imagePath; // Valid base64 string
+      } else {
+        console.warn("Invalid base64 image content. Using fallback image.");
+        return DefaultImg;
       }
+    }
+
+    // Attempt to resolve local images
+    try {
+      const resolvedImage = require(`../Assets/Images/${imagePath}`);
+      return resolvedImage;
+    } catch (error) {
+      console.error(
+        `Failed to resolve image path: ${imagePath}. Using fallback image.`,
+        error
+      );
+      return DefaultImg;
     }
   };
 
@@ -169,12 +196,9 @@ const Courses = () => {
       <div className="main-content">
         <div className="cardContainer3">
           <h2>Courses</h2>
-          <button
-        className="back-btn"
-        onClick={() => navigate(-1)}  
-      >
-        Back
-      </button>
+          <button className="back-btn" onClick={() => navigate(-1)}>
+            Back
+          </button>
           {/* <div className="filterChips">
             {allLessons.map((lesson, index) => (
               <div
@@ -197,7 +221,11 @@ const Courses = () => {
                 <div className="courseOverlay3">
                   <div className="courseImageBox3">
                     <img
-                      src={course.image ? resolveImagePath(course.image) : imgd}
+                      src={
+                        course.image
+                          ? resolveImagePath(course.image)
+                          : DefaultImg
+                      }
                       alt={course.title}
                       className="courseImage3"
                     />
@@ -214,18 +242,23 @@ const Courses = () => {
                     {getLessonList(course.lessons).map((lesson, index) => (
                       <li key={index}>{lesson.title}</li>
                     ))}
-                    {course.lessons.length > getLessonList(course.lessons).length && (
+                    {course.lessons.length >
+                      getLessonList(course.lessons).length && (
                       <li>...and more</li>
                     )}
                   </ul>
                   <button
-                    onClick={() => navigate(`/home/courseDetails/${course._id}`)}
+                    onClick={() =>
+                      navigate(`/home/courseDetails/${course._id}`)
+                    }
                     className="lessonDetailBtn3"
                   >
                     View Course
                   </button>
                   {/* Optionally, display if purchased */}
-                  {course.isPurchased && <span className="purchasedLabel">Purchased</span>}
+                  {course.isPurchased && (
+                    <span className="purchasedLabel">Purchased</span>
+                  )}
                 </div>
               </div>
             ))}

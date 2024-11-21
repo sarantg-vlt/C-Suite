@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../Courses/Courses.css";
 import { useNavigate } from "react-router-dom";
-import imgd from "../Assets/Images/imagenotxt2.png";
+import DefaultImg from "../Assets/Images/imagenotxt2.png";
 import LoadingPage from "../LoadingPage/LoadingPage";
 import ErrorDataFetchOverlay from "../Error/ErrorDataFetchOverlay";
 
@@ -88,19 +88,31 @@ const Enrolled = () => {
   }, [coursesData]);
 
   const resolveImagePath = (imagePath) => {
-    if (
-      imagePath &&
-      (imagePath.startsWith("http://") || imagePath.startsWith("https://"))
-    ) {
+    if (imagePath.startsWith("http://") || imagePath.startsWith("https://")) {
       return imagePath;
-    } else if (imagePath && imagePath.startsWith("base64")) {
-      return imgd;
-    } else {
-      try {
-        return require(`../Assets/Images/${imagePath}`);
-      } catch (error) {
-        return imgd;
+    }
+
+    // Check for proper base64-encoded images
+    if (imagePath.startsWith("data:image/")) {
+      const base64Content = imagePath.split(",")[1]; // Get the content after `data:image/...;base64,`
+      if (base64Content && base64Content.length > 0) {
+        return imagePath; // Valid base64 string
+      } else {
+        console.warn("Invalid base64 image content. Using fallback image.");
+        return DefaultImg;
       }
+    }
+
+    // Attempt to resolve local images
+    try {
+      const resolvedImage = require(`../Assets/Images/${imagePath}`);
+      return resolvedImage;
+    } catch (error) {
+      console.error(
+        `Failed to resolve image path: ${imagePath}. Using fallback image.`,
+        error
+      );
+      return DefaultImg;
     }
   };
 
@@ -154,12 +166,9 @@ const Enrolled = () => {
     <>
       <div className="main-content">
         <div className="cardContainer3">
-          <button
-        className="back-btn"
-        onClick={() => navigate(-1)}  
-      >
-        Back
-      </button>
+          <button className="back-btn" onClick={() => navigate(-1)}>
+            Back
+          </button>
           <h2>Enrolled Courses</h2>
           {!hasPurchasedCourses && (
             <h3>No courses have been purchased. Please purchase a course.</h3>
@@ -190,7 +199,11 @@ const Enrolled = () => {
                   <div className="courseImageBox3">
                     <img
                       // src={imgd}
-                      src={course.image ? resolveImagePath(course.image) : imgd}
+                      src={
+                        course.image
+                          ? resolveImagePath(course.image)
+                          : DefaultImg
+                      }
                       alt={course.title}
                       className="courseImage3"
                     />

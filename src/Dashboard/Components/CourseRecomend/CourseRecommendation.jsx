@@ -1,24 +1,25 @@
 import "./CourseRecommendation.css";
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import js from "../Assets/Images/imagenotxt.png";
+import DefaultImg from "../Assets/Images/imagenotxt.png";
 
 const CourseRecommendation = ({ title, courseId, imgName }) => {
   useEffect(() => {}, [courseId]);
 
   const resolveImagePath = (imagePath) => {
-    if (
-      imagePath &&
-      (imagePath.startsWith("http://") || imagePath.startsWith("https://"))
-    ) {
+    if (imagePath.startsWith("http://") || imagePath.startsWith("https://")) {
       return imagePath;
-    } else if (imagePath && imagePath.startsWith("base64")) {
-      return js;
-    } else {
-      try {
-        return require(`../Assets/Images/${imagePath}`);
-      } catch (error) {
-        return js;
+    }
+
+    // Check for proper base64-encoded images
+    if (imagePath.startsWith("data:image/")) {
+      const base64Content = imagePath.split(",")[1]; // Get the content after `data:image/...;base64,`
+      if (base64Content && base64Content.length > 0) {
+        return imagePath; // Valid base64 string
+      } else {
+        console.warn("Invalid base64 image content. Using fallback image.");
+        return DefaultImg;
+        // return
       }
     }
   };
@@ -27,7 +28,7 @@ const CourseRecommendation = ({ title, courseId, imgName }) => {
     <div className="cr-card">
       <div className="cr-image-container">
         <img
-          src={imgName ? resolveImagePath(imgName) : js}
+          src={imgName ? resolveImagePath(imgName) : DefaultImg}
           className="cr-image"
           alt="thumbnail"
         />
