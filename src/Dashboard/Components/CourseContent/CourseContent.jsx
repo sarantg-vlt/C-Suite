@@ -148,6 +148,61 @@ const CourseContent = () => {
     fetchCompletedVideos();
   }, [userId, courseId]);
 
+
+  // posting progress data start
+  const progress_data = async (lessonIndex, chapterIndex) => {
+    // Calculate total exercises and progress percentage
+    const totalExercises = courseData.lessons?.reduce(
+      (total, lesson) => total + lesson.chapter?.length,
+      0
+    );
+
+    const progress_percentage =
+      totalExercises > 0 ? (completedExercises.size / totalExercises) * 100 : 0;
+
+    const watchedPercentage = progress_percentage;
+
+    // Ensure required data is available
+    if (!userId || !courseId || watchedPercentage == null) {
+      console.error("Missing required data for API request.");
+      return;
+    }
+
+    try {
+      // Endpoint URL
+      const endpoint = `https://csuite-ui0f.onrender.com/api/user/progress/update`;
+
+      // API request payload
+      const payload = {
+        userId,
+        courseId,
+        watchedPercentage,
+        lessonIndex,
+        chapterIndex,
+      };
+
+      // API request
+      const response = await axios.post(endpoint, payload);
+
+      console.log("Progress updated successfully:", response.data);
+    } catch (err) {
+      console.error(
+        "Error updating progress:",
+        err.message,
+        err.response?.data || {}
+      );
+    }
+  };
+
+  const handleLessonComplete = (lessonIndex, chapterIndex) => {
+    progress_data(lessonIndex, chapterIndex);
+  };
+
+  // Example: Call this function after a user completes a chapter
+  handleLessonComplete(currentLessonIndex, currentVideoIndex);
+  // console.log(handleLessonComplete);
+  // posting progress data end
+
   const handleLessonClick = (index) => {
     setActiveLesson(index === activeLesson ? null : index);
     setActiveAccordion(index === activeLesson ? null : index);
@@ -339,7 +394,10 @@ const CourseContent = () => {
     );
     const progress =
       totalExercises > 0 ? (completedExercises.size / totalExercises) * 100 : 0;
+    
+    localStorage.setItem(`courseProgress-${courseId}`, progress);
 
+    
     return progress;
   };
 
