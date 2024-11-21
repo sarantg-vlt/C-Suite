@@ -66,7 +66,7 @@ import Features from './LandingPage/Footer/AboutLMS/Features/Features';
 import Pricing from './LandingPage/Footer/AboutLMS/Pricing/Pricing';
 import Integrations from './LandingPage/Footer/AboutLMS/Integrations/Integrations';
 import Reviews from './LandingPage/Footer/AboutLMS/Reviews/Reviews';
-import Events from './LandingPage/Footer/AboutLMS/Reviews/Events';
+import Events from './LandingPage/Footer/AboutLMS/Events/Events';
 // about LMS end
 
 // Supports start
