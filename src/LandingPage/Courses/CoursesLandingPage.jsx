@@ -43,22 +43,57 @@ const CoursesLandingPage = () => {
     fetchData();
   }, []);
 
-  const resolveImagePath = (imagePath) => {
-    if (
-      imagePath &&
-      (imagePath.startsWith("http://") || imagePath.startsWith("https://"))
-    ) {
-      return imagePath;
-    } else if (imagePath && imagePath.startsWith("base64")) {
-      return imgd;
-    } else {
-      try {
-        return require(`../Assets/Images/${imagePath}`);
-      } catch (error) {
-        return imgd;
-      }
-    }
-  };
+  // const resolveImagePath = (imagePath) => {
+  //   if (
+  //     imagePath &&
+  //     (imagePath.startsWith("http://") || imagePath.startsWith("https://"))
+  //   ) {
+  //     return imagePath;
+  //   } else if (imagePath && imagePath.startsWith("base64")) {
+  //     return imgd;
+  //   } else {
+  //     try {
+  //       return require(`../Assets/Images/${imagePath}`);
+  //     } catch (error) {
+  //       return imgd;
+  //     }
+  //   }
+  // };
+  
+   const resolveImagePath = (imagePath, fallbackImage = imgd) => {
+     if (typeof imagePath !== "string" || !imagePath.trim()) {
+       console.warn("Invalid image path provided. Using fallback image.");
+       return fallbackImage;
+     }
+
+     // Check for valid URLs
+     if (imagePath.startsWith("http://") || imagePath.startsWith("https://")) {
+       return imagePath;
+     }
+
+     // Check for proper base64-encoded images
+     if (imagePath.startsWith("data:image/")) {
+       const base64Content = imagePath.split(",")[1]; // Get the content after `data:image/...;base64,`
+       if (base64Content && base64Content.length > 0) {
+         return imagePath; // Valid base64 string
+       } else {
+         console.warn("Invalid base64 image content. Using fallback image.");
+         return fallbackImage;
+       }
+     }
+
+     // Attempt to resolve local images
+     try {
+       const resolvedImage = require(`../Assets/Images/${imagePath}`);
+       return resolvedImage;
+     } catch (error) {
+       console.error(
+         `Failed to resolve image path: ${imagePath}. Using fallback image.`,
+         error
+       );
+       return fallbackImage;
+     }
+   };
 
   useEffect(() => {
     const getAllLessons = () => {

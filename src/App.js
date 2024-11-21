@@ -26,7 +26,6 @@ import Closelevel from './Assessments/Closelevel/Closelevel';
 import Assessmentsstart from './Assessments/Assessmentsstart/Assessmentsstart'
 import Authentication from './Authentication/Authentication';
 
-import Pricing from './PaymentPage/Pricing';
 
 
 import Dashboard from './Dashboard/Dashboard';
@@ -58,6 +57,28 @@ import LinkedInAuth from './Auth/components/auth/LinkedInAuth';
 import AuthContainer from './Auth';
 import MoreDetails from './LandingPage/Managements/MoreDetails';
 import CoursePreview from './LandingPage/Courses/CoursePreview';
+
+
+//footer start
+
+// about LMS  start
+import Features from './LandingPage/Footer/AboutLMS/Features/Features';
+import Pricing from './LandingPage/Footer/AboutLMS/Pricing/Pricing';
+import Integrations from './LandingPage/Footer/AboutLMS/Integrations/Integrations';
+import Reviews from './LandingPage/Footer/AboutLMS/Reviews/Reviews';
+import Events from './LandingPage/Footer/AboutLMS/Reviews/Events';
+// about LMS end
+
+// Supports start
+import CustomerSupport from './LandingPage/Footer/Support/CustomerSupport/CustomerSupport'
+import HelpDesk from './LandingPage/Footer/Support/HelpDesk/HelpDesk'
+import ProfessionalServices from './LandingPage/Footer/Support/ProfessionalServices/ProfessionalServices'
+// Supports end
+
+//footer end
+
+
+
 
 function App() {
   return (
@@ -92,7 +113,17 @@ function App() {
           <Route path="/assessment-page" element={<Assessmentsstart />} />
           <Route path="/finish-assessment" element={<Closelevel />} />
 
-          <Route path='/payment' element={<Pricing></Pricing>}></Route>
+          {/* footer start */}
+          <Route path='/payment' element={<Pricing />}></Route>
+          <Route path='/features' element={<Features/>}></Route>
+          <Route path='/integrations' element={<Integrations/>}></Route>
+          <Route path='/events' element={<Events />}></Route>
+          <Route path='/reviews' element={<Reviews />}></Route>
+
+          <Route path='/customersupport' element={<CustomerSupport /> } />
+          <Route path='/helpdesk' element={ <HelpDesk />} />
+          <Route path='/profressionalservices' element={<ProfessionalServices /> } />
+          {/* footer end */}
 
           <Route path='/home' element={<Dashboard />}>
             <Route path='' index element={<Home />}></Route>

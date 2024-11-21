@@ -59,16 +59,32 @@ function Footer() {
           <p>Practical-based learning platform to enhance skills</p>
           <h6>Follow Us on</h6>
           <div className="sociallinks">
-            <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.linkedin.com/in/your-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon icon={faLinkedin} />
             </a>
-            <a href="https://www.facebook.com/profile.php?id=61568457662306&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.facebook.com/profile.php?id=61568457662306&mibextid=ZbWKwL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon icon={faFacebookF} />
             </a>
-            <a href="https://www.instagram.com/c_suiteacademy?igsh=MWY3dHEwMHd1eHUzbQ==" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.instagram.com/c_suiteacademy?igsh=MWY3dHEwMHd1eHUzbQ=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon icon={faSquareInstagram} />
             </a>
-            <a href="https://x.com/CSuite_Academy?t=gl--2-4UQmp6Ceio61GxXA&s=09" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://x.com/CSuite_Academy?t=gl--2-4UQmp6Ceio61GxXA&s=09"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon icon={faXTwitter} />
             </a>
           </div>
@@ -76,11 +92,11 @@ function Footer() {
 
         <section data-aos="fade-up" className="section2">
           <h5>About LMS</h5>
-          <a onClick={() => navigate('/Payment')}>Pricing</a>
-          <a>Features</a>
-          <a>Integrations</a>
-          <a>Events</a>
-          <a>Reviews</a>
+          <a onClick={() => navigate("/Payment")}>Pricing</a>
+          <a onClick={() => navigate("/features")}>Features</a>
+          <a onClick={() => navigate("/integrations")}>Integrations</a>
+          <a onClick={() => navigate("/events")}>Events</a>
+          <a onClick={() => navigate("/reviews")}>Reviews</a>
         </section>
 
         <section data-aos="fade-up" className="section3">
@@ -88,16 +104,26 @@ function Footer() {
           <a
             onClick={(e) => {
               e.preventDefault();
-              const contactSection = document.getElementById('contact');
-              if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
+              const contactSection = document.getElementById("contact");
+              if (contactSection)
+                contactSection.scrollIntoView({ behavior: "smooth" });
             }}
           >
             Contact Us
           </a>
-          <a>Help Desk</a>
-          <a>Customer Support</a>
-          <a>Professional Services</a>
-          <a onClick={(e) => { e.preventDefault(); navigate('/admin/login'); }}>Administrative service</a>
+          <a onClick={() => navigate("/helpdesk")}>Help Desk</a>
+          <a onClick={() => navigate("/customersupport")}>Customer Support</a>
+          <a onClick={() => navigate("/profressionalservices")}>
+            Professional Services
+          </a>
+          <a
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/admin/login");
+            }}
+          >
+            Administrative service
+          </a>
         </section>
 
         <section data-aos="fade-up" className="section4">
@@ -115,7 +141,11 @@ function Footer() {
             <input className="registernow" type="submit" value="Register Now" />
           </form>
           {message && (
-            <span className={`submission-message ${isSuccess ? 'success' : 'error'}`}>
+            <span
+              className={`submission-message ${
+                isSuccess ? "success" : "error"
+              }`}
+            >
               {message}
             </span>
           )}
