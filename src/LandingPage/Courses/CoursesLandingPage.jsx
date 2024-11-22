@@ -26,7 +26,9 @@ const CoursesLandingPage = () => {
     const fetchData = async () => {
       try {
         const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
-        const response = await axios.get(`https://csuite-ui0f.onrender.com`);
+        const response = await axios.get(
+          `https://csuite-ui0f.onrender.com/api/courseDetail/`
+        );
         const allCourses = response.data;
 
         // filtering purchased course
@@ -43,57 +45,57 @@ const CoursesLandingPage = () => {
     fetchData();
   }, []);
 
-  const resolveImagePath = (imagePath) => {
-    if (
-      imagePath &&
-      (imagePath.startsWith("http://") || imagePath.startsWith("https://"))
-    ) {
-      return imagePath;
-    } else if (imagePath && imagePath.startsWith("base64")) {
-      return imgd;
-    } else {
-      try {
-        return require(`../Assets/Images/${imagePath}`);
-      } catch (error) {
-        return imgd;
-      }
-    }
-  };
+  // const resolveImagePath = (imagePath) => {
+  //   if (
+  //     imagePath &&
+  //     (imagePath.startsWith("http://") || imagePath.startsWith("https://"))
+  //   ) {
+  //     return imagePath;
+  //   } else if (imagePath && imagePath.startsWith("base64")) {
+  //     return imgd;
+  //   } else {
+  //     try {
+  //       return require(`../Assets/Images/${imagePath}`);
+  //     } catch (error) {
+  //       return imgd;
+  //     }
+  //   }
+  // };
   
-  //  const resolveImagePath = (imagePath, fallbackImage = imgd) => {
-  //    if (typeof imagePath !== "string" || !imagePath.trim()) {
-  //      console.warn("Invalid image path provided. Using fallback image.");
-  //      return fallbackImage;
-  //    }
+   const resolveImagePath = (imagePath, fallbackImage = imgd) => {
+     if (typeof imagePath !== "string" || !imagePath.trim()) {
+       console.warn("Invalid image path provided. Using fallback image.");
+       return fallbackImage;
+     }
 
-  //    // Check for valid URLs
-  //    if (imagePath.startsWith("http://") || imagePath.startsWith("https://")) {
-  //      return imagePath;
-  //    }
+     // Check for valid URLs
+     if (imagePath.startsWith("http://") || imagePath.startsWith("https://")) {
+       return imagePath;
+     }
 
-  //    // Check for proper base64-encoded images
-  //    if (imagePath.startsWith("data:image/")) {
-  //      const base64Content = imagePath.split(",")[1]; // Get the content after `data:image/...;base64,`
-  //      if (base64Content && base64Content.length > 0) {
-  //        return imagePath; // Valid base64 string
-  //      } else {
-  //        console.warn("Invalid base64 image content. Using fallback image.");
-  //        return fallbackImage;
-  //      }
-  //    }
+     // Check for proper base64-encoded images
+     if (imagePath.startsWith("data:image/")) {
+       const base64Content = imagePath.split(",")[1]; // Get the content after `data:image/...;base64,`
+       if (base64Content && base64Content.length > 0) {
+         return imagePath; // Valid base64 string
+       } else {
+         console.warn("Invalid base64 image content. Using fallback image.");
+         return fallbackImage;
+       }
+     }
 
-  //    // Attempt to resolve local images
-  //    try {
-  //      const resolvedImage = require(`../Assets/Images/${imagePath}`);
-  //      return resolvedImage;
-  //    } catch (error) {
-  //      console.error(
-  //        `Failed to resolve image path: ${imagePath}. Using fallback image.`,
-  //        error
-  //      );
-  //      return fallbackImage;
-  //    }
-  //  };
+     // Attempt to resolve local images
+     try {
+       const resolvedImage = require(`../Assets/Images/${imagePath}`);
+       return resolvedImage;
+     } catch (error) {
+       console.error(
+         `Failed to resolve image path: ${imagePath}. Using fallback image.`,
+         error
+       );
+       return fallbackImage;
+     }
+   };
 
   useEffect(() => {
     const getAllLessons = () => {
@@ -176,7 +178,9 @@ const CoursesLandingPage = () => {
   }
 
   return (
-    <div id="courses" className="main-content"> {/* ID for scrolling */}
+    <div id="courses" className="main-content">
+      {" "}
+      {/* ID for scrolling */}
       <div className="cardContainer3">
         {/* <div className="filterChips">
           {allLessons.map((lesson, index) => (
@@ -196,10 +200,15 @@ const CoursesLandingPage = () => {
             </button>
           )}
         </div> */}
-        <div className='engage-head' style={{ margin: "0px", padding: "0px" }}>
-          <h2 style={{ fontSize: "28px", paddingBottom: "3rem" }} data-aos="fade-up">Our Courses</h2>
+        <div className="engage-head" style={{ margin: "0px", padding: "0px" }}>
+          <h2
+            style={{ fontSize: "28px", paddingBottom: "3rem" }}
+            data-aos="fade-up"
+          >
+            Our Courses
+          </h2>
           <div data-aos="fade-up" className="courseContainer3">
-            {LandingCourses?.courses?.map((course, index) => index < 4 && (
+            {/* {LandingCourses?.courses?.map((course, index) => index < 4 && (
               <div className="courseCard3" key={index}>
                 <div className="courseOverlay3">
                   <div className="courseImageBox3">
@@ -226,6 +235,44 @@ const CoursesLandingPage = () => {
                   <button
                     onClick={() =>
                       navigate(`/course-preview`, { state: { course } })
+                    }
+                    className="lessonDetailBtn3"
+                  >
+                    View Course
+                  </button>
+                </div>
+              </div>
+            ))} */}
+            {coursesData.map((course) => (
+              <div className="courseCard3" key={course._id}>
+                <div className="courseOverlay3">
+                  <div className="courseImageBox3">
+                    <img
+                      src={
+                        course.image ? resolveImagePath(course?.image) : imgd
+                      }
+                      alt={course.title}
+                      className="courseImage3"
+                    />
+                    <div className="courseImageTxt3">{course?.title}</div>
+                  </div>
+                  <div className="courseDetails3">
+                    <p>{truncateDescription(course?.description)}...</p>
+                    <button className="courseDetailBtn3">View Details</button>
+                  </div>
+                </div>
+                <div className="courseLessonBox3">
+                  <h5>Lessons</h5>
+                  <ul>
+                    {course?.lessons.map((lesson) => (
+                      <li key={lesson.title}>{lesson.title}</li>
+                    ))}
+                    {course?.lessons.length > 5 && <li>...and more</li>}
+                  </ul>
+                  <button
+                    onClick={
+                      () => navigate(`/course-preview`, { state: { course } })
+                      // navigate(`/course-preview`)
                     }
                     className="lessonDetailBtn3"
                   >
