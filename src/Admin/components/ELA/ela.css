@@ -7,10 +7,10 @@
 }
 
 .back-btn {
-  position: absolute;
+  /* position: absolute;
   top: 1.7rem;
-  right: 1rem;
-  background-color: #e10d0d;
+  right: 1rem; */
+  /* background-color: #e10d0d; */
   color: white;
   padding: 0.5rem 1rem;
   border: none;
@@ -22,7 +22,9 @@
 }
 
 .back-btn:hover {
-  background-color: #7028f3;
+  background-color: #e10d0d;
+  color: white;
+  /* background-color: #7028f3; */
 }
 
 .ela-title {

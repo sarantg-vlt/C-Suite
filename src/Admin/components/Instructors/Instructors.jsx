@@ -10,6 +10,7 @@ const Instructors = ({ openEditInstructor, openAddInstructor }) => {
   return (
     <div className="user-page">
       {/* Back Button */}
+     
       <button
         className="back-btn"
         onClick={() => navigate(-1)}  

@@ -26,14 +26,13 @@ const CoursePreview = () => {
             src={`https://player.vimeo.com/video/${courseData?.videoUrl
               ?.split("/")
               ?.pop()}`}
-            allow="autoplay;"
+            allow="autoplay; fullscreen;"
             title="video"
             sandbox="allow-scripts allow-presentation allow-same-origin"
             // referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
             className="lessons-video-cnt"
-                >
-          </iframe>
+          ></iframe>
           <div className="course-about-cnt">
             <h2 className="preview-header">About This Course</h2>
             <p>{courseData.description}</p>

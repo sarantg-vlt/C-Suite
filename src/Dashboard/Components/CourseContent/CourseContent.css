@@ -581,3 +581,7 @@ COMPLETED LESSON CSS DA ETHU REMOVE PANATHA LATER USE AAGUM
   background-size: 1.25rem;
   transition: transform 0.2s ease-in-out;
 }
+
+.punch-viewer-navbar-logo{
+  display: none;
+}

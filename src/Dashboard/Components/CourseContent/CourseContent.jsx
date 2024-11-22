@@ -328,7 +328,7 @@ const CourseContent = () => {
       return <p>Error: Invalid link format</p>;
     }
 
-    const googleEmbedUrl = `https://docs.google.com/presentation/d/${fileId}/embed`;
+    const googleEmbedUrl = `https://docs.google.com/presentation/d/${fileId}/embed?rm=minimal`;
     const officeEmbedUrl = `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(
       link
     )}`;
@@ -340,6 +340,7 @@ const CourseContent = () => {
           src={googleEmbedUrl}
           style={{ width: "100%", height: "100%", border: "none" }}
           allow="autoplay; encrypted-media"
+          
           onError={(e) => {
             e.target.src = officeEmbedUrl;
           }}
