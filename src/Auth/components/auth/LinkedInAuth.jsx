@@ -53,7 +53,7 @@ const LinkedInAuth = () => {
         const Code = params.get("code");
         if (Code) {
           const res = await axios.post(`${apiBaseUrl}/user`, {
-        methord: "linkedin",
+        method: "linkedin",
         Code,
       });
 
@@ -67,7 +67,7 @@ const LinkedInAuth = () => {
           toast.error("Authorization code is missing");
         }
       } catch (error) {
-        console.error(error);
+        // console.error(error);
         toast.error("Authentication failed ❌");
       }
     };
