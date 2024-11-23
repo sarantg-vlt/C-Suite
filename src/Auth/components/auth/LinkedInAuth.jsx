@@ -55,7 +55,7 @@ const LinkedInAuth = () => {
           const res = await axios.post(`${apiBaseUrl}/user`, {
         method: "linkedIn",
         Code,
-      }
+      })
 
           if (res?.status === 200) {
             toast.success("Authentication Successful ✅");
