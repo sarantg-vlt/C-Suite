@@ -45,20 +45,17 @@ import { toast } from "react-toastify";
 const LinkedInAuth = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const api = process.env.REACT_APP_API_BASE_URL;
+  const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
   useEffect(() => {
     const fetchData = async () => {
       try {
         const params = new URLSearchParams(location.search);
         const code = params.get("code");
         if (code) {
-          const res = await axios.post(
-            api,
-            {
-              method: "linkedin",
-              code, // Fixed case
-            }
-          );
+          const res = await axios.post(`${apiBaseUrl}/user`, {
+        methord: "linkedin",
+        Code,
+      });
 
           if (res?.status === 200) {
             toast.success("Authentication Successful ✅");
