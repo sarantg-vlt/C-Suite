@@ -30,6 +30,7 @@ const CourseDetails = () => {
   const userDataString = localStorage.getItem("userDataUpdated");
   const userData = JSON.parse(userDataString);
 
+  const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
   useEffect(() => {
     // Commented out the strip
     // setPaymentSuccess(status === "success" ? true : false || false);
@@ -39,7 +40,7 @@ const CourseDetails = () => {
         const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
         const response = await axios.get(
-          `https://csuite-ui0f.onrender.com/api/courseDetail/${courseId}`
+          `${apiBaseUrl}/courseDetail/${courseId}`
         );
         setCourseContentDetailsData(response.data);
         // console.log(response.data.price);
@@ -99,7 +100,7 @@ const CourseDetails = () => {
     if (localStorage.getItem("isloggedin") === "true") {
       try {
         const response = await axios.put(
-          `https://csuite-ui0f.onrender.com/api/user/updatecourse/${userId}`,
+          `${apiBaseUrl}/user/updatecourse/${userId}`,
           { courseId, courseName }
         );
 

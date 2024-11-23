@@ -45,7 +45,7 @@ const TestPage = () => {
         const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
         const response = await axios.get(
-          `https://csuite-ui0f.onrender.com/api/tests/${testId}/user/${userId}`
+          `${apiBaseUrl}/tests/${testId}/user/${userId}`
         );
 
         setLessonData(response.data.testData);
@@ -144,7 +144,7 @@ const TestPage = () => {
         const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
         const response = await axios.post(
-          `https://csuite-ui0f.onrender.com/api/tests/submittest`,
+          `${apiBaseUrl}/tests/submittest`,
           submissionData
         );
         if (response.data.success) {

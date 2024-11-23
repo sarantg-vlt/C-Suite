@@ -7,7 +7,7 @@ import footerlogo from '../Header/Asset/brand-footer.png';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useNavigate } from 'react-router';
-
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 function Footer() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -30,9 +30,9 @@ function Footer() {
     }
 
     try {
-      const response = await fetch('https://csuite-ui0f.onrender.com/api/instructor/save-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch(`${apiBaseUrl}/instructor/save-email`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
 

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
+const api = process.env.REACT_APP_API_BASE_URL;
 
 export const googlePopup = async () => {
   var loc = "";
@@ -32,7 +33,7 @@ export const googlePopup = async () => {
 async function adduser(name, email) {
   try {
     const response = await axios.get(
-      "https://csuite-ui0f.onrender.com/api/user/check",
+      api,
       {
         params: {
           email: email,
@@ -43,7 +44,7 @@ async function adduser(name, email) {
       let data = { name: name, email: email, linkedin: null, password: null };
       try {
         const response = await axios.post(
-          "https://csuite-ui0f.onrender.com/api/user/signup",
+          "https://c-suite-xpmf.onrender.com/api/user/signup",
           data,
           {
             headers: { "Content-Type": "application/json" }, // Set Content-Type header

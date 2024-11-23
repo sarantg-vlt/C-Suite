@@ -8,6 +8,7 @@ import Accordion from "react-bootstrap/Accordion";
 import ErrorDataFetchOverlay from "../Error/ErrorDataFetchOverlay";
 import ProgressBar from "../ProgressBar/ProgressBar";
 
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 const CourseContent = () => {
   const navigate = useNavigate();
   const { courseId } = useParams();
@@ -36,7 +37,7 @@ const CourseContent = () => {
       try {
         const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
         const response = await axios.get(
-          `https://csuite-ui0f.onrender.com/api/courseDetail/${courseId}`
+          `${apiBaseUrl}/courseDetail/${courseId}`
         );
         setCourseData(response.data);
         // console.log(response.data.course);
@@ -69,7 +70,7 @@ const CourseContent = () => {
         const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
         const response = await axios.get(
-          `https://csuite-ui0f.onrender.com/api/completevideo/${userId}/${courseId}`
+          `${apiBaseUrl}/completevideo/${userId}/${courseId}`
         );
 
         const data = response.data.completedUserData;
@@ -118,7 +119,7 @@ const CourseContent = () => {
               const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
               await axios.post(
-                `https://csuite-ui0f.onrender.com/api/completevideo/`,
+                `${apiBaseUrl}/completevideo/`,
                 {
                   userId,
                   courseId,
@@ -170,7 +171,7 @@ const CourseContent = () => {
 
     try {
       // Endpoint URL
-      const endpoint = `https://csuite-ui0f.onrender.com/api/user/progress/update`;
+      const endpoint = `${apiBaseUrl}/user/progress/update`;
 
       // API request payload
       const payload = {
@@ -280,7 +281,7 @@ const CourseContent = () => {
 
         // Video already completed, update if necessary
         await axios.put(
-          `https://csuite-ui0f.onrender.com/api/completevideo/${fetchedID}/updatelesson`,
+          `${apiBaseUrl}/completevideo/${fetchedID}/updatelesson`,
           { lesson: data.title }
         );
       }

@@ -23,7 +23,7 @@ function ContactUs() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [responseMessage, setResponseMessage] = useState("");
-
+  const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -34,7 +34,7 @@ function ContactUs() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://csuite-ui0f.onrender.com/api/contact", {
+      const response = await fetch(`${apiBaseUrl}/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
