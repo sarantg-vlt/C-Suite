@@ -12,7 +12,9 @@ import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 //react-router
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { Elacompleted } from "../../api/baseapi";
+import { Elacompleted, elaTestScore } from "../../api/baseapi";
+
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
 const Assessmentsstart = () => {
   const navigate = useNavigate();
@@ -264,6 +266,9 @@ const Assessmentsstart = () => {
       console.log(res);
       if (res) {
         setFinalScore(sum);
+        await axios.put(`${apiBaseUrl}/user/updateElaScore/${Id}`, {
+          elaTestScore:sum
+        })
         localStorage.setItem("finalScore", sum);
         navigate("/finish-assessment");
       }
