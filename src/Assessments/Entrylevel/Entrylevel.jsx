@@ -22,6 +22,7 @@ import logoela from "../asset/brand-footer.png";
 //react-router- quick assessments
 import { Link } from "react-router-dom";
 import axios from "axios";
+const apiBaseurl = process.env.REACT_APP_API_BASE_URL;
 
 const Entrylevel = () => {
   const [time, settime] = useState(0);
@@ -39,7 +40,7 @@ const Entrylevel = () => {
       //     console.log(res.data[0])
       // })
 
-      const response = await axios.get(`/question`);
+      const response = await axios.get(`${apiBaseurl}/question`);
       console.log("response.data", response?.data[0]);
       // var data = questionData;
       var data = response?.data[0];
