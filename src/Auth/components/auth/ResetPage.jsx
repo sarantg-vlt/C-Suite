@@ -54,7 +54,7 @@ const ResetPage = () => {
   
       // Step 2: Call reset password API
       const resetResponse = await axios.put(
-        https://c-suite-xpmf.onrender.com/api/user/${userId}/resetpass,
+        "https://c-suite-xpmf.onrender.com/api/user/${userId}/resetpass",
         { newPassword: form.newPassword }
       );
   
