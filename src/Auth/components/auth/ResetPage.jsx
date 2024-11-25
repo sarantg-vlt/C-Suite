@@ -53,7 +53,7 @@ const ResetPage = () => {
       console.log("Retrieved userId:", userId);
   
       // Step 2: Log the final API URL
-      const apiUrl = https://c-suite-xpmf.onrender.com/api/user/${userId}/resetpass;
+      const apiUrl = `https://c-suite-xpmf.onrender.com/api/user/${userId}/resetpass`;
       console.log("Final API URL:", apiUrl);
       console.log("Payload:", { newPassword: form.newPassword });
   
