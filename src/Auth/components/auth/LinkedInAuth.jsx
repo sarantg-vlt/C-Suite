@@ -47,17 +47,27 @@ import { toast } from "react-toastify";
 const LinkedInAuth = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const api = process.env.REACT_APP_API_BASE_URL;
+  const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
   useEffect(() => {
     const fetchData = async () => {
       try {
         const params = new URLSearchParams(location.search);
+<<<<<<< HEAD
         const code = params.get("code");
         if (code) {
           const res = await axios.post(api, {
             method: "linkedin",
             code, // Fixed case
           });
+=======
+        const Code = params.get("code");
+        console.log(Code);
+        if (Code) {
+          const res = await axios.post(`${apiBaseUrl}/user`, {
+        method: "linkedin",
+        Code,
+      })
+>>>>>>> 20346933421ff520ad7af785599f8278a2efc134
 
           if (res?.status === 200) {
             toast.success("Authentication Successful ✅");
@@ -69,7 +79,7 @@ const LinkedInAuth = () => {
           toast.error("Authorization code is missing");
         }
       } catch (error) {
-        console.error(error);
+        // console.error(error);
         toast.error("Authentication failed ❌");
       }
     };
