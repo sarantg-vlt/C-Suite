@@ -51,6 +51,7 @@ const LinkedInAuth = () => {
       try {
         const params = new URLSearchParams(location.search);
         const Code = params.get("code");
+        console.log(Code);
         if (Code) {
           const res = await axios.post(`${apiBaseUrl}/user`, {
         method: "linkedin",
