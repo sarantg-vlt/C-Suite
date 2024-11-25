@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import axios from "axios";
 import assets from "../assets/assets";
-import { auth } from "../../firebase/firebaseConfig";
 import { toast } from "react-toastify";
 import { useLocation } from "react-router-dom";
-import { confirmPasswordReset } from "@firebase/auth";
+import { auth } from "../../firebase/firebaseConfig";
+import { signInWithEmailAndPassword } from "@firebase/auth";
 
 function useQuery() {
   const location = useLocation();
@@ -17,6 +18,7 @@ const ResetPage = () => {
   });
 
   const [showPassword, setShowPassword] = useState(false);
+
   const query = useQuery();
 
   const handleValueChange = (type, value) => {
@@ -24,38 +26,48 @@ const ResetPage = () => {
   };
 
   const handleChangePassword = async () => {
-    const { newPassword, confirmPassword } = form;
-    const oobCode = query.get("oobCode");
-
-    if (!oobCode) {
-      toast.error("Invalid or expired reset link. Please try again.");
+    const token = query.get("oobCode"); // Get the reset token from URL
+    if (!token) {
+      toast.error("Invalid reset link!");
       return;
     }
-
-    if (!newPassword || !confirmPassword) {
-      toast.error("Please fill in all fields.");
-      return;
-    }
-
-    if (newPassword !== confirmPassword) {
+  
+    if (form.newPassword !== form.confirmPassword) {
       toast.warning("Passwords do not match!");
       return;
     }
-
-    if (newPassword.length < 6) {
-      toast.error("Password must be at least 6 characters long.");
-      return;
-    }
-
+  
     try {
-      await confirmPasswordReset(auth, oobCode, newPassword);
-      toast.success("Password updated successfully!");
+      // Step 1: Verify reset link to get userId
+      const verifyResponse = await axios.post(
+        "https://c-suite-xpmf.onrender.com/api/user/verify-reset-link",
+        { oobCode: token }
+      );
+  
+      if (!verifyResponse.data.success) {
+        toast.error(verifyResponse.data.message || "Invalid reset link");
+        return;
+      }
+  
+      const userId = verifyResponse.data.userId;
+      console.log("Retrieved userId:", userId);
+  
+      // Step 2: Call reset password API
+      const resetResponse = await axios.put(
+        https://c-suite-xpmf.onrender.com/api/user/${userId}/resetpass,
+        { newPassword: form.newPassword }
+      );
+  
+      if (resetResponse.data.success) {
+        toast.success("Password updated successfully!");
+      } else {
+        toast.error(resetResponse.data.message || "Failed to update password");
+      }
     } catch (err) {
-      console.error(err);
-      toast.error(`Error: ${err.message}`);
+      console.error("Error in password reset flow:", err);
+      toast.error(err.response?.data?.message || "An error occurred");
     }
   };
-
   return (
     <div className="forgot-password-container">
       <div className="forgot-password-top">
@@ -70,20 +82,21 @@ const ResetPage = () => {
           />
           <h1 className="forgot-password-title">Change Password</h1>
           <p className="forgot-password-subtitle">
-            Update your password with a new one
+            Update your password with a new one.
           </p>
-          <form className="forgot-password-form" onSubmit={(e) => e.preventDefault()}>
+          <form className="forgot-password-form">
             <div className="input-container">
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="New Password"
-                value={form.newPassword}
-                onChange={(e) => handleValueChange("newPassword", e.target.value)}
+                onChange={(e) =>
+                  handleValueChange("newPassword", e.target.value)
+                }
                 className="input"
               />
               <img
                 src={assets.Images.Lock_Vector}
-                alt="toggle visibility"
+                alt="mail-icon"
                 className="input-icon"
                 onClick={() => setShowPassword(!showPassword)}
               />
@@ -92,24 +105,24 @@ const ResetPage = () => {
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Confirm Password"
-                value={form.confirmPassword}
-                onChange={(e) => handleValueChange("confirmPassword", e.target.value)}
+                onChange={(e) =>
+                  handleValueChange("confirmPassword", e.target.value)
+                }
                 className="input"
               />
               <img
                 src={assets.Images.Lock_Vector}
-                alt="toggle visibility"
+                alt="mail-icon"
                 className="input-icon"
                 onClick={() => setShowPassword(!showPassword)}
               />
             </div>
-            <button
-              type="button"
+            <div
               onClick={handleChangePassword}
               className="update-password-button"
             >
               <p>Update Password</p>
-            </button>
+            </div>
           </form>
         </div>
       </div>
@@ -118,4 +131,3 @@ const ResetPage = () => {
 };
 
 export default ResetPage;
-
