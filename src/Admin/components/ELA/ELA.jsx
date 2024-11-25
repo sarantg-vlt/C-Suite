@@ -115,7 +115,7 @@ const ELA = () => {
       setCurrentTest(data[0]);
       setTime(secondsToUtc(data[0]?.time))
     };
-    fetchEla("https://csuite-ui0f.onrender.com");
+    fetchEla("https://c-suite-xpmf.onrender.com");
   }, []);
 
   useEffect(() => {

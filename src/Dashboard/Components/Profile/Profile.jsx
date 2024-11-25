@@ -298,228 +298,274 @@ const Profile = () => {
   };
   return (
     <>
-        <div className="profile-back-arrow-container" onClick={handleBackClick}>
+      <div className="profile-back-arrow-container" onClick={handleBackClick}>
         <IoMdArrowRoundBack className="profile-back-arrow" />
-    </div>
-    <div className="profileContainer">
-      {saveError && (
-        <div className="error-message">
-          {saveError}
-        </div>
-      )}
-      {saveSuccess && (
-        <div className="success-message">
-          Profile updated successfully!
-        </div>
-      )}
-      <div className="profileBannerBox">
-        <div className="profileBGBox">
-          <img
-            src={profileData?.profileBanner || defaultBannerSVG}
-            alt="Banner"
-            onError={(e) => {
-              e.target.src = defaultBannerSVG;
-            }}
-          />
-          {isEditing && (
-            <label className="custom-file-upload imageBanner">
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleProfileBannerChange}
-                className="imageBannerUpload"
-              />
-              Choose File for Profile Banner
-            </label>
-          )}
-        </div>
-        <div className="profileHeader">
-          <div className="profileImage">
+      </div>
+      <div className="profileContainer">
+        {saveError && <div className="error-message">{saveError}</div>}
+        {saveSuccess && (
+          <div className="success-message">Profile updated successfully!</div>
+        )}
+        <div className="profileBannerBox">
+          <div className="profileBGBox">
             <img
-              src={profileData?.profilePic || defaultPorfileSVG}
-              alt="Profile"
-              className="defaultImage"
+              src={profileData?.profileBanner || defaultBannerSVG}
+              alt="Banner"
               onError={(e) => {
-                e.target.src = defaultPorfileSVG;
+                e.target.src = defaultBannerSVG;
               }}
             />
             {isEditing && (
-              <label className="custom-file-upload">
+              <label className="custom-file-upload imageBanner">
                 <input
                   type="file"
                   accept="image/*"
-                  onChange={handleProfileImageChange}
-                  className="imageUpload"
+                  onChange={handleProfileBannerChange}
+                  className="imageBannerUpload"
                 />
-                Choose File
+                Choose File for Profile Banner
               </label>
             )}
           </div>
-          <div className="profileHeaderInfo">
-            <h2 className="profileName">{profileData?.name}</h2>
-            <p className="profileEmail">{profileData?.email}</p>
-          </div>
-          <div className="profileEditBtn">
-            <button onClick={isEditing ? handleSaveClick : handleEditClick}>
-              {isEditing ? "Save" : "Edit"}
-            </button>
-          </div>
-        </div>
-      </div>
-      <div className="profileContent">
-        <div className="profileSection">
-          <h5>General Information</h5>
-          <div className={`${inputClassName(profileData?.name)} profileDetails`}>
-            <label>Name</label>
-            <input
-              type="text"
-              name="name"
-              value={profileData.name || ''}
-              onChange={handleChange}
-              disabled={!isEditing}
-            />
-          </div>
-          <div className={`${inputClassName(profileData.gender)} profileDetails`}>
-            <label>Gender</label>
-            <input
-              type="text"
-              name="gender"
-              value={profileData?.gender || ''}
-              onChange={handleChange}
-              disabled={!isEditing}
-            />
-          </div>
-          <div className={`${inputClassName(profileData.idCard)} profileDetails`}>
-            <label>ID Card</label>
-            <input
-              type="text"
-              name="idCard"
-              value={profileData?.idCard || ''}
-              onChange={handleChange}
-              disabled={!isEditing}
-            />
-          </div>
-          <div className={`${inputClassName(profileData.address)} profileDetails`}>
-            <label>Address</label>
-            <textarea
-              name="address"
-              value={profileData?.address || ''}
-              onChange={handleChange}
-              disabled={!isEditing}
-            />
-          </div>
-          <div className={`${inputClassName(profileData?.testScore)} profileDetails`}>
-          <label>Test Score</label>
-          <input
-          type="number"
-          name="testScore"
-          value={profileData?.testScore || ''}
-          onChange={handleChange}  // Allow changes when editing
-          disabled={!isEditing}    // Disable input when not editing
-          />
-          </div>
-          <div className="profileSeperator"></div>
-          <h5>Contact Details</h5>
-          <div className={`${inputClassName(profileData.email)} profileDetails profileSPLBox`}>
-            <img src={mailSVG} alt="mailSVG" />
-            <label>Email</label>
-            <input
-              type="email"
-              name="email"
-              value={profileData?.email || ''}
-              readOnly
-            />
-          </div>
-          <div className={`${inputClassName(profileData.phoneNumber)} profileDetails profileSPLBox`}>
-            <img src={phoneSVG} alt="phoneNumberSVG" />
-            <label>Phone Number</label>
-            <input
-              type="number"
-              name="phoneNumber"
-              value={profileData?.phoneNumber || ''}
-              onChange={handleChange}
-              disabled={!isEditing}
-            />
+          <div className="profileHeader">
+            <div className="profileImage">
+              <img
+                src={profileData?.profilePic || defaultPorfileSVG}
+                alt="Profile"
+                className="defaultImage"
+                onError={(e) => {
+                  e.target.src = defaultPorfileSVG;
+                }}
+              />
+              {isEditing && (
+                <label className="custom-file-upload">
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleProfileImageChange}
+                    className="imageUpload"
+                  />
+                  Choose File
+                </label>
+              )}
+            </div>
+            <div className="profileHeaderInfo">
+              <h2 className="profileName">{profileData?.name}</h2>
+              <p className="profileEmail">{profileData?.email}</p>
+            </div>
+            <div className="profileEditBtn">
+              <button onClick={isEditing ? handleSaveClick : handleEditClick}>
+                {isEditing ? "Save" : "Edit"}
+              </button>
+            </div>
           </div>
         </div>
-        <div className="profileSection">
-          <h5>Professional Details</h5>
-          <div className={`${inputClassName(profileData.companyname)} profileDetails`}>
-            <label>Company Name</label>
-            <input
-              type="text"
-              name="companyname"
-              value={profileData?.companyname || ''}
-              onChange={handleChange}
-              disabled={!isEditing}
-            />
-          </div>
-          <div className={`${inputClassName(profileData.position)} profileDetails`}>
-            <label>Position</label>
-            <input
-              type="text"
-              name="position"
-              value={profileData?.position || ''}
-              onChange={handleChange}
-              disabled={!isEditing}
-            />
-          </div>
-          <div className={`${inputClassName(profileData.linkedIn)} profileDetails`}>
-            <label>LinkedIn</label>
-            <input
-              type="url"
-              name="linkedIn"
-              value={profileData?.linkedIn || ''}
-              onChange={handleChange}
-              disabled={!isEditing}
+        <div className="profileContent">
+          <div className="profileSection">
+            <h5>General Information</h5>
+            <div
+              className={`${inputClassName(profileData?.name)} profileDetails`}
+            >
+              <label>Name</label>
+              <input
+                type="text"
+                name="name"
+                value={profileData.name || ""}
+                onChange={handleChange}
+                disabled={!isEditing}
               />
             </div>
-            <div className={`${inputClassName(profileData.bio)} profileDetails`}>
+            <div
+              className={`${inputClassName(profileData.gender)} profileDetails`}
+            >
+              <label>Gender</label>
+              <input
+                type="text"
+                name="gender"
+                value={profileData?.gender || ""}
+                onChange={handleChange}
+                disabled={!isEditing}
+              />
+            </div>
+            <div
+              className={`${inputClassName(profileData.idCard)} profileDetails`}
+            >
+              <label>ID Card</label>
+              <input
+                type="text"
+                name="idCard"
+                value={profileData?.idCard || ""}
+                onChange={handleChange}
+                disabled={!isEditing}
+              />
+            </div>
+            <div
+              className={`${inputClassName(
+                profileData.address
+              )} profileDetails`}
+            >
+              <label>Address</label>
+              <textarea
+                name="address"
+                value={profileData?.address || ""}
+                onChange={handleChange}
+                disabled={!isEditing}
+              />
+            </div>
+            <div
+              className={`${inputClassName(
+                profileData?.elaTestScore
+              )} profileDetails`}
+            >
+              <label>Test Score</label>
+              <input
+                type="number"
+                name="testScore"
+                value={profileData?.elaTestScore || ""}
+                onChange={handleChange} // Allow changes when editing
+                disabled={!isEditing} // Disable input when not editing
+              />
+            </div>
+            <div className="profileSeperator"></div>
+            <h5>Contact Details</h5>
+            <div
+              className={`${inputClassName(
+                profileData.email
+              )} profileDetails profileSPLBox`}
+            >
+              <img src={mailSVG} alt="mailSVG" />
+              <label>Email</label>
+              <input
+                type="email"
+                name="email"
+                value={profileData?.email || ""}
+                readOnly
+              />
+            </div>
+            <div
+              className={`${inputClassName(
+                profileData.phoneNumber
+              )} profileDetails profileSPLBox`}
+            >
+              <img src={phoneSVG} alt="phoneNumberSVG" />
+              <label>Phone Number</label>
+              <input
+                type="number"
+                name="phoneNumber"
+                value={profileData?.phoneNumber || ""}
+                onChange={handleChange}
+                disabled={!isEditing}
+              />
+            </div>
+          </div>
+          <div className="profileSection">
+            <h5>Professional Details</h5>
+            <div
+              className={`${inputClassName(
+                profileData.companyname
+              )} profileDetails`}
+            >
+              <label>Company Name</label>
+              <input
+                type="text"
+                name="companyname"
+                value={profileData?.companyname || ""}
+                onChange={handleChange}
+                disabled={!isEditing}
+              />
+            </div>
+            <div
+              className={`${inputClassName(
+                profileData.position
+              )} profileDetails`}
+            >
+              <label>Position</label>
+              <input
+                type="text"
+                name="position"
+                value={profileData?.position || ""}
+                onChange={handleChange}
+                disabled={!isEditing}
+              />
+            </div>
+            <div
+              className={`${inputClassName(
+                profileData.linkedIn
+              )} profileDetails`}
+            >
+              <label>LinkedIn</label>
+              <input
+                type="url"
+                name="linkedIn"
+                value={profileData?.linkedIn || ""}
+                onChange={handleChange}
+                disabled={!isEditing}
+              />
+            </div>
+            <div
+              className={`${inputClassName(profileData.bio)} profileDetails`}
+            >
               <label>Bio</label>
               <textarea
                 name="bio"
-                value={profileData?.bio || ''}
+                value={profileData?.bio || ""}
                 onChange={handleChange}
                 disabled={!isEditing}
               />
             </div>
             <div className="profileSeperator"></div>
             <h5>Emergency Contact</h5>
-            <div className={`${inputClassName(profileData.emergencyContact?.name)} profileDetails`}>
+            <div
+              className={`${inputClassName(
+                profileData.emergencyContact?.name
+              )} profileDetails`}
+            >
               <label>Emergency Contact Name</label>
               <input
                 type="text"
                 name="emergencyContact.name"
-                value={profileData.emergencyContact?.name || ''}
+                value={profileData.emergencyContact?.name || ""}
                 onChange={handleChange}
                 disabled={!isEditing}
               />
             </div>
-            <div className={`${inputClassName(profileData.emergencyContact?.relationship)} profileDetails`}>
+            <div
+              className={`${inputClassName(
+                profileData.emergencyContact?.relationship
+              )} profileDetails`}
+            >
               <label>Relationship</label>
               <input
                 type="text"
                 name="emergencyContact.relationship"
-                value={profileData.emergencyContact?.relationship || ''}
+                value={profileData.emergencyContact?.relationship || ""}
                 onChange={handleChange}
                 disabled={!isEditing}
               />
             </div>
-            <div className={`${inputClassName(profileData.emergencyContact?.phone)} profileDetails`}>
+            <div
+              className={`${inputClassName(
+                profileData.emergencyContact?.phone
+              )} profileDetails`}
+            >
               <label>Emergency Contact Phone</label>
               <input
                 type="text"
                 name="emergencyContact.phone"
-                value={profileData.emergencyContact?.phone || ''}
+                value={profileData.emergencyContact?.phone || ""}
                 onChange={handleChange}
                 disabled={!isEditing}
               />
             </div>
-            <div className={`${inputClassName(profileData.emergencyContact?.address)} profileDetails`}>
+            <div
+              className={`${inputClassName(
+                profileData.emergencyContact?.address
+              )} profileDetails`}
+            >
               <label>Emergency Contact Address</label>
               <textarea
                 name="emergencyContact.address"
-                value={profileData.emergencyContact?.address || ''}
+                value={profileData.emergencyContact?.address || ""}
                 onChange={handleChange}
                 disabled={!isEditing}
               />
@@ -527,8 +573,8 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      </>
-    );
+    </>
+  );
   };
   
   export default Profile;
