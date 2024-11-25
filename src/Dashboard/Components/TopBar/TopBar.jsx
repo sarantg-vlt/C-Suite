@@ -8,6 +8,7 @@ import defaultProfileSVG from "../Assets/SVG/defaultPorfileSVG.svg";
 const TopBar = ({ onSearch }) => {
   const [userName, setUserName] = useState("User");
   const [userProfilePic, setUserProfilePic] = useState(defaultProfileSVG);
+  const [openNotification, setOpenNotification] = useState(false)
 
   useEffect(() => {
     const getUserData = async () => {
@@ -68,9 +69,12 @@ const TopBar = ({ onSearch }) => {
           <span className="welcome-text">Welcome back</span>
           <span className="user-name">{userName}</span>
         </div>
-        <div className="notification-icon">
-          <FontAwesomeIcon icon={faBell} />
+        <div className={`notification-icon ${openNotification ? 'notification-active' : 'notification-deactive'}`}>
+          <FontAwesomeIcon icon={faBell} onClick={()=>setOpenNotification(openNotification=>!openNotification)} />
           <span className="notification-dot"></span>
+        </div>
+        <div className={`notification-container ${openNotification ? 'notification-show' : 'notification-hidden'}`}>
+          <p>no notification message</p>
         </div>
       </div>
     </div>
