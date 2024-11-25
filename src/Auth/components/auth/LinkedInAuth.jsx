@@ -53,7 +53,7 @@ const LinkedInAuth = () => {
         const Code = params.get("code");
         if (Code) {
           const res = await axios.post(`${apiBaseUrl}/user`, {
-        method: "linkedIn",
+        method: "linkedin",
         Code,
       })
 
