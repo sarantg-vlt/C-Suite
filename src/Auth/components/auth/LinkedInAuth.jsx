@@ -52,23 +52,13 @@ const LinkedInAuth = () => {
     const fetchData = async () => {
       try {
         const params = new URLSearchParams(location.search);
-<<<<<<< HEAD
-        const code = params.get("code");
-        if (code) {
-          const res = await axios.post(api, {
-            method: "linkedin",
-            code, // Fixed case
-          });
-=======
+
         const Code = params.get("code");
-        console.log(Code);
         if (Code) {
           const res = await axios.post(`${apiBaseUrl}/user`, {
-        method: "linkedin",
-        Code,
-      })
->>>>>>> 20346933421ff520ad7af785599f8278a2efc134
-
+            method: "linkedin",
+            Code
+        }) // Fixed case
           if (res?.status === 200) {
             toast.success("Authentication Successful ✅");
             navigate("/home");
