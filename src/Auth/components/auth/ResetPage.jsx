@@ -52,11 +52,13 @@ const ResetPage = () => {
       const userId = verifyResponse.data.userId;
       console.log("Retrieved userId:", userId);
   
-      // Step 2: Call reset password API
-      const resetResponse = await axios.put(
-        "https://c-suite-xpmf.onrender.com/api/user/${userId}/resetpass",
-        { newPassword: form.newPassword }
-      );
+      // Step 2: Log the final API URL
+      const apiUrl = https://c-suite-xpmf.onrender.com/api/user/${userId}/resetpass;
+      console.log("Final API URL:", apiUrl);
+      console.log("Payload:", { newPassword: form.newPassword });
+  
+      // Step 3: Call reset password API
+      const resetResponse = await axios.put(apiUrl, { newPassword: form.newPassword });
   
       if (resetResponse.data.success) {
         toast.success("Password updated successfully!");
@@ -68,6 +70,7 @@ const ResetPage = () => {
       toast.error(err.response?.data?.message || "An error occurred");
     }
   };
+  
   return (
     <div className="forgot-password-container">
       <div className="forgot-password-top">
