@@ -38,6 +38,7 @@ const ELA = () => {
   const [currentSection, setCurrentSection] = useState(0);
   const [TestId, setTestId] = useState(null);
   const [time, setTime] = useState({ hour: 0, minute: 0 });
+  const apiBaseurl = process.env.REACT_APP_API_BASE_URL;
 
   const handleChoiceSelect = (index) => {
     setDropDown(false);
@@ -115,7 +116,7 @@ const ELA = () => {
       setCurrentTest(data[0]);
       setTime(secondsToUtc(data[0]?.time))
     };
-    fetchEla("https://c-suite-xpmf.onrender.com");
+    fetchEla(`${apiBaseurl}`);
   }, []);
 
   useEffect(() => {

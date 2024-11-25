@@ -365,28 +365,30 @@ const Assessmentsstart = () => {
                   >
                     Previous
                   </button>
-                  {!(isCurrentSectionCompleted &&
-                  currentSectionIndex < sections.length - 1) && (
-                  <button
-                    className="button-next"
-                    onClick={() => handleNavigation("next")}
-                    disabled={
-                      currentQuestionIndex ===
-                      currentSectionQuestions.length - 1
-                    }
-                  >
-                    Next
-                  </button>
+                  {!(
+                    isCurrentSectionCompleted &&
+                    currentSectionIndex < sections.length - 1
+                  ) && (
+                    <button
+                      className="button-next"
+                      onClick={() => handleNavigation("next")}
+                      disabled={
+                        currentQuestionIndex ===
+                        currentSectionQuestions.length - 1
+                      }
+                    >
+                      Next
+                    </button>
                   )}
                   {isCurrentSectionCompleted &&
-                  currentSectionIndex < sections.length - 1 && (
+                    currentSectionIndex < sections.length - 1 && (
                       <button
                         className="button-next"
                         onClick={handleNextSection}
                       >
                         Next Section
                       </button>
-                  )}
+                    )}
                   <button
                     className="button-bookmark"
                     onClick={handleBookmark}
@@ -398,8 +400,6 @@ const Assessmentsstart = () => {
                       : "Bookmark"
                   }`}</button>
                 </div>
-
-                
               </main>
             </div>
             <div className="w-25 h-100 right-side">
