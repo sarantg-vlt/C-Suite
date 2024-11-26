@@ -73,6 +73,7 @@ import Events from './LandingPage/Footer/AboutLMS/Events/Events';
 import CustomerSupport from './LandingPage/Footer/Support/CustomerSupport/CustomerSupport'
 import HelpDesk from './LandingPage/Footer/Support/HelpDesk/HelpDesk'
 import ProfessionalServices from './LandingPage/Footer/Support/ProfessionalServices/ProfessionalServices'
+import ContactManagement from './Admin/components/Contact/ContactManagement';
 // Supports end
 
 //footer end
@@ -157,6 +158,7 @@ function App() {
           <Route path="/admin/purchases" element={<PurchasesPage />} />
           <Route path="admin/instructors" element={<AllInstructors />} />
           <Route path="admin/ela" element={<ELApage />} />
+          <Route path="admin/contactus" element={<ContactManagement />} />
         </Routes>
       </Router>
     </div>
