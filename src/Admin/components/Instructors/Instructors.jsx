@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";  // For navigation
 import searchIcon from "../Assets/Images/search.png";
 import addIcon from "../Assets/Images/plus.png";
 import InstructorsList from "./InstructorsList";
+import axios from "axios";
+const apiBaseUri = process.env.REACT_APP_API_BASE_URL;
 
 const Instructors = ({ openEditInstructor, openAddInstructor }) => {
-  const navigate = useNavigate();  
+  const navigate = useNavigate();
+  const [instuctors, setInstuctors] = useState([])  
+  useEffect(() => {
+    const fetchinstractors = async () => {
+      try {
+        const res = await axios.get(`${apiBaseUri}/instructor/emails`);
+        setInstuctors(res.data); // Assuming the API response is structured as { data: [...] }
+        // console.log(res.data);
+      } catch (error) {
+        console.error("Error fetching contacts:", error);
+      }
+    };
+
+    fetchinstractors();
+  }, [apiBaseUri]);
 
   return (
     <div className="user-page">
@@ -25,7 +41,7 @@ const Instructors = ({ openEditInstructor, openAddInstructor }) => {
       <div className="users-list-header">
         <h2>
           All Instrcutors
-          <span> 44</span>
+          <span> {instuctors.length}</span>
         </h2>
         <div className="users-header-actions-cnt">
           <div className="search-user-cnt">
@@ -42,7 +58,7 @@ const Instructors = ({ openEditInstructor, openAddInstructor }) => {
           </div>
         </div>
       </div>
-      <InstructorsList editAction={openEditInstructor} />
+      <InstructorsList editAction={openEditInstructor} instructors={instuctors} />
     </div>
   );
 };
