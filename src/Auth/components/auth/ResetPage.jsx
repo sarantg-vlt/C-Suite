@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { useLocation } from "react-router-dom";
 import { auth } from "../../firebase/firebaseConfig";
 import { signInWithEmailAndPassword } from "@firebase/auth";
-import './auth.css'
+import './Reset-password.css'
 function useQuery() {
   const location = useLocation();
   return new URLSearchParams(location.search);
@@ -74,77 +74,65 @@ const ResetPage = ({ toggleSlide }) => {
   };
 
   return (
-    // <div className="login-container">
-    //   <div className="forgot-password-top">
-    //     <div className="logo-container">
-    //       <img src={assets.Images.CSuiteLogo} alt="logo" className="logo-img" />
-    //     </div>
-    //     <div className="forgot-password-content">
-    //       <img
-    //         src={assets.Images.Lock}
-    //         alt="forgot-password"
-    //         className="forgot-password-img"
-    //       />
-    //       <h1 className="forgot-password-title">Change Password</h1>
-    //       <p className="forgot-password-subtitle">
-    //         Update your password with a new one.
-    //       </p>
-    //       <form className="forgot-password-form">
-    //         <div className="input-container">
-    //           <input
-    //             type={showPassword ? "text" : "password"}
-    //             placeholder="New Password"
-    //             onChange={(e) =>
-    //               handleValueChange("newPassword", e.target.value)
-    //             }
-    //             className="input"
-    //           />
-    //           <img
-    //             src={assets.Images.Lock_Vector}
-    //             alt="mail-icon"
-    //             className="input-icon"
-    //             onClick={() => setShowPassword(!showPassword)}
-    //           />
-    //         </div>
-    //         <div className="input-container">
-    //           <input
-    //             type={showPassword ? "text" : "password"}
-    //             placeholder="Confirm Password"
-    //             onChange={(e) =>
-    //               handleValueChange("confirmPassword", e.target.value)
-    //             }
-    //             className="input"
-    //           />
-    //           <img
-    //             src={assets.Images.Lock_Vector}
-    //             alt="mail-icon"
-    //             className="input-icon"
-    //             onClick={() => setShowPassword(!showPassword)}
-    //           />
-    //         </div>
-    //         <div
-    //           onClick={handleChangePassword}
-    //           className="update-password-button"
-    //         >
-    //           <p>Update Password</p>
-    //         </div>
-    //       </form>
-    //     </div>
-    //   </div>
-    //  </div>
-    <>
-      <div className="login-container">
-        <div className="reset-page-container">
-          <h2>Reset Your Password</h2>
-          <form>
-            <input type="password" placeholder="Enter new password" />
-            <input type="password" placeholder="Confirm new password" />
-            <button type="submit">Reset Password</button>
+    <div className="screen-container">
+
+      <div className="forgot-password-container" style={{width:400,padding:50,height:"90%",borderRadius:'1em'}}>
+        <div className="logo-container">
+          <img src='/image.png' alt="logo" className="logo-img" />
+        </div>
+        <div className="forgot-password-content">
+          <img
+            src={assets.Images.Lock}
+            alt="forgot-password"
+            className="forgot-password-img"
+          />
+          <h1 className="forgot-password-title">Change Password</h1>
+          <p className="forgot-password-subtitle">
+            Update your password with a new one.
+          </p>
+          <form className="forgot-password-form">
+            <div className="input-container">
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="New Password"
+                onChange={(e) =>
+                  handleValueChange("newPassword", e.target.value)
+                }
+                className="input"
+              />
+              <img
+                src={assets.Images.Lock_Vector}
+                alt="mail-icon"
+                className="input-icon"
+                onClick={() => setShowPassword(!showPassword)}
+              />
+            </div>
+            <div className="input-container">
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Confirm Password"
+                onChange={(e) =>
+                  handleValueChange("confirmPassword", e.target.value)
+                }
+                className="input"
+              />
+              <img
+                src={assets.Images.Lock_Vector}
+                alt="mail-icon"
+                className="input-icon"
+                onClick={() => setShowPassword(!showPassword)}
+              />
+            </div>
+            <div
+              onClick={handleChangePassword}
+              className="update-password-button"
+            >
+              <p>Update Password</p>
+            </div>
           </form>
-          <button onClick={() => toggleSlide("login")}>Back to Login</button>
         </div>
       </div>
-    </>
+     </div>
   );
 };
 

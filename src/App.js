@@ -107,7 +107,7 @@ function App() {
           <Route path="/admin/login" element={<AdminLoginPage />} /> 
           <Route path='/course-preview' element={<CoursePreview />} />
           {/* <Route path="/reset-password" element={<ResetPage />} /> */}
-          <Route path="/reset-password" element={<Auth />} />
+          <Route path="/reset-password" element={<ResetPage />} />
           <Route path="auth-linkedin-bridge" element={<LinkedInAuth />} />
 
           {/* <Route path="/authentication" element={<Authentication></Authentication>}></Route> */}
