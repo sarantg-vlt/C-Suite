@@ -172,6 +172,7 @@ import gsap from "gsap";
 import ForgotPassword from "./ForgotPassword";
 import Login from "./Login";
 import SignUp from "./SignUp";
+import ResetPage from "./ResetPage";
 
 const Auth = () => {
   const [searchParams] = useSearchParams();
@@ -181,7 +182,11 @@ const Auth = () => {
     initialForm === "login" ? "login" : null
   );
   const [currentLeftSlide, setCurrentLeftSlide] = useState(
-    initialForm === "signup" ? "signup" : "forgot-password"
+    initialForm === "signup"
+      ? "signup"
+      : initialForm === "reset-password"
+      ? "reset-password"
+      : "forgot-password"
   );
   const [forgotPasswordEmail, setForgotPasswordEmail] = useState(null);
 
@@ -280,29 +285,36 @@ const Auth = () => {
   };
 
   // Handle slide changes between forms
-  const handleSlideChange = (slide) => {
-    if (slide === "login" || slide === "email-response") {
-      toggleAnimationBack();
-      setCurrentRightSlide(slide);
-    }
-    if (slide === "signup" || slide === "forgot-password") {
-      toggleAnimation();
-      setCurrentLeftSlide(slide);
-    }
-  };
+ const handleSlideChange = (slide) => {
+   if (slide === "login" || slide === "email-response") {
+     toggleAnimationBack();
+     setCurrentRightSlide(slide);
+   }
+   if (
+     slide === "signup" ||
+     slide === "forgot-password" ||
+     slide === "reset-password"
+   ) {
+     toggleAnimation();
+     setCurrentLeftSlide(slide);
+   }
+ };
 
   // Render left panel content (Signup or Forgot Password)
-  const renderLeftSlide = () => {
-    if (currentLeftSlide === "forgot-password")
-      return (
-        <ForgotPassword
-          toggleSlide={(slide) => handleSlideChange(slide)}
-          updateEmail={(email) => setForgotPasswordEmail(email)}
-        />
-      );
-    if (currentLeftSlide === "signup")
-      return <SignUp toggleSlide={(slide) => handleSlideChange(slide)} />;
-  };
+ const renderLeftSlide = () => {
+   if (currentLeftSlide === "forgot-password")
+     return (
+       <ForgotPassword
+         toggleSlide={(slide) => handleSlideChange(slide)}
+         updateEmail={(email) => setForgotPasswordEmail(email)}
+       />
+     );
+   if (currentLeftSlide === "signup")
+     return <SignUp toggleSlide={(slide) => handleSlideChange(slide)} />;
+   if (currentLeftSlide === "reset-password")
+     return <ResetPage toggleSlide={(slide) => handleSlideChange(slide)} />;
+ };
+
 
   // Render right panel content (Login or Email Response)
   const renderRightSlide = () => {

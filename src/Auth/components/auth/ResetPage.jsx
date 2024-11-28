@@ -5,13 +5,13 @@ import { toast } from "react-toastify";
 import { useLocation } from "react-router-dom";
 import { auth } from "../../firebase/firebaseConfig";
 import { signInWithEmailAndPassword } from "@firebase/auth";
-
+import './auth.css'
 function useQuery() {
   const location = useLocation();
   return new URLSearchParams(location.search);
 }
 
-const ResetPage = () => {
+const ResetPage = ({ toggleSlide }) => {
   const [form, setForm] = useState({
     newPassword: "",
     confirmPassword: "",
@@ -31,35 +31,37 @@ const ResetPage = () => {
       toast.error("Invalid reset link!");
       return;
     }
-  
+
     if (form.newPassword !== form.confirmPassword) {
       toast.warning("Passwords do not match!");
       return;
     }
-  
+
     try {
       // Step 1: Verify reset link to get userId
       const verifyResponse = await axios.post(
         "https://c-suite-xpmf.onrender.com/api/user/verify-reset-link",
         { oobCode: token }
       );
-  
+
       if (!verifyResponse.data.success) {
         toast.error(verifyResponse.data.message || "Invalid reset link");
         return;
       }
-  
+
       const userId = verifyResponse.data.userId;
       console.log("Retrieved userId:", userId);
-  
+
       // Step 2: Log the final API URL
       const apiUrl = `https://c-suite-xpmf.onrender.com/api/user/${userId}/resetpass`;
       console.log("Final API URL:", apiUrl);
       console.log("Payload:", { newPassword: form.newPassword });
-  
+
       // Step 3: Call reset password API
-      const resetResponse = await axios.put(apiUrl, { newPassword: form.newPassword });
-  
+      const resetResponse = await axios.put(apiUrl, {
+        newPassword: form.newPassword,
+      });
+
       if (resetResponse.data.success) {
         toast.success("Password updated successfully!");
       } else {
@@ -70,66 +72,79 @@ const ResetPage = () => {
       toast.error(err.response?.data?.message || "An error occurred");
     }
   };
-  
+
   return (
-    <div className="forgot-password-container">
-      <div className="forgot-password-top">
-        <div className="logo-container">
-          <img src={assets.Images.CSuiteLogo} alt="logo" className="logo-img" />
-        </div>
-        <div className="forgot-password-content">
-          <img
-            src={assets.Images.Lock}
-            alt="forgot-password"
-            className="forgot-password-img"
-          />
-          <h1 className="forgot-password-title">Change Password</h1>
-          <p className="forgot-password-subtitle">
-            Update your password with a new one.
-          </p>
-          <form className="forgot-password-form">
-            <div className="input-container">
-              <input
-                type={showPassword ? "text" : "password"}
-                placeholder="New Password"
-                onChange={(e) =>
-                  handleValueChange("newPassword", e.target.value)
-                }
-                className="input"
-              />
-              <img
-                src={assets.Images.Lock_Vector}
-                alt="mail-icon"
-                className="input-icon"
-                onClick={() => setShowPassword(!showPassword)}
-              />
-            </div>
-            <div className="input-container">
-              <input
-                type={showPassword ? "text" : "password"}
-                placeholder="Confirm Password"
-                onChange={(e) =>
-                  handleValueChange("confirmPassword", e.target.value)
-                }
-                className="input"
-              />
-              <img
-                src={assets.Images.Lock_Vector}
-                alt="mail-icon"
-                className="input-icon"
-                onClick={() => setShowPassword(!showPassword)}
-              />
-            </div>
-            <div
-              onClick={handleChangePassword}
-              className="update-password-button"
-            >
-              <p>Update Password</p>
-            </div>
+    // <div className="login-container">
+    //   <div className="forgot-password-top">
+    //     <div className="logo-container">
+    //       <img src={assets.Images.CSuiteLogo} alt="logo" className="logo-img" />
+    //     </div>
+    //     <div className="forgot-password-content">
+    //       <img
+    //         src={assets.Images.Lock}
+    //         alt="forgot-password"
+    //         className="forgot-password-img"
+    //       />
+    //       <h1 className="forgot-password-title">Change Password</h1>
+    //       <p className="forgot-password-subtitle">
+    //         Update your password with a new one.
+    //       </p>
+    //       <form className="forgot-password-form">
+    //         <div className="input-container">
+    //           <input
+    //             type={showPassword ? "text" : "password"}
+    //             placeholder="New Password"
+    //             onChange={(e) =>
+    //               handleValueChange("newPassword", e.target.value)
+    //             }
+    //             className="input"
+    //           />
+    //           <img
+    //             src={assets.Images.Lock_Vector}
+    //             alt="mail-icon"
+    //             className="input-icon"
+    //             onClick={() => setShowPassword(!showPassword)}
+    //           />
+    //         </div>
+    //         <div className="input-container">
+    //           <input
+    //             type={showPassword ? "text" : "password"}
+    //             placeholder="Confirm Password"
+    //             onChange={(e) =>
+    //               handleValueChange("confirmPassword", e.target.value)
+    //             }
+    //             className="input"
+    //           />
+    //           <img
+    //             src={assets.Images.Lock_Vector}
+    //             alt="mail-icon"
+    //             className="input-icon"
+    //             onClick={() => setShowPassword(!showPassword)}
+    //           />
+    //         </div>
+    //         <div
+    //           onClick={handleChangePassword}
+    //           className="update-password-button"
+    //         >
+    //           <p>Update Password</p>
+    //         </div>
+    //       </form>
+    //     </div>
+    //   </div>
+    //  </div>
+    <>
+      <div className="login-container">
+        <div className="reset-page-container">
+          <h2>Reset Your Password</h2>
+          <form>
+            <input type="password" placeholder="Enter new password" />
+            <input type="password" placeholder="Confirm new password" />
+            <button type="submit">Reset Password</button>
           </form>
+          <button onClick={() => toggleSlide("login")}>Back to Login</button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
