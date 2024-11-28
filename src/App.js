@@ -76,6 +76,12 @@ import ProfessionalServices from './LandingPage/Footer/Support/ProfessionalServi
 import ContactManagement from './Admin/components/Contact/ContactManagement';
 // Supports end
 
+
+//bottom footer start
+import RefoundPolicy from './LandingPage/Footer/BottomFooter/RefoundPolicy/RefoundPolicy';
+import PrivacyPolicy from './LandingPage/Footer/BottomFooter/PrivacyPolicy/PrivacyPolicy';
+import TermsAndConditions from './LandingPage/Footer/BottomFooter/TermsAndConditions/TermsAndConditions';
+//bottom footer end
 //footer end
 
 
@@ -124,7 +130,12 @@ function App() {
 
           <Route path='/customersupport' element={<CustomerSupport /> } />
           <Route path='/helpdesk' element={ <HelpDesk />} />
-          <Route path='/profressionalservices' element={<ProfessionalServices /> } />
+          <Route path='/profressionalservices' element={<ProfessionalServices />} />
+          
+
+          <Route path='/terms' element={<TermsAndConditions/>} />
+          <Route path='/privacy' element={<PrivacyPolicy/>} />
+          <Route path='/refund' element={<RefoundPolicy/>} />
           {/* footer end */}
 
           <Route path='/home' element={<Dashboard />}>
