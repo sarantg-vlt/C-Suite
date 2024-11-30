@@ -118,14 +118,11 @@ const CourseContent = () => {
             try {
               const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
-              await axios.post(
-                `${apiBaseUrl}/completevideo/`,
-                {
-                  userId,
-                  courseId,
-                  completedVideos: [],
-                }
-              );
+              await axios.post(`${apiBaseUrl}/completevideo/`, {
+                userId,
+                courseId,
+                completedVideos: [],
+              });
               // alert("posting in effect");
               // console.log("New entry created with empty completed videos.");
             } catch (postErr) {
@@ -148,7 +145,6 @@ const CourseContent = () => {
 
     fetchCompletedVideos();
   }, [userId, courseId]);
-
 
   // posting progress data start
   const progress_data = async (lessonIndex, chapterIndex) => {
@@ -341,7 +337,6 @@ const CourseContent = () => {
           src={googleEmbedUrl}
           style={{ width: "100%", height: "100%", border: "none" }}
           allow="autoplay; encrypted-media"
-          
           onError={(e) => {
             e.target.src = officeEmbedUrl;
           }}
@@ -396,10 +391,9 @@ const CourseContent = () => {
     );
     const progress =
       totalExercises > 0 ? (completedExercises.size / totalExercises) * 100 : 0;
-    
+
     localStorage.setItem(`courseProgress-${courseId}`, progress);
 
-    
     return progress;
   };
 

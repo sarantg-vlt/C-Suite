@@ -125,6 +125,7 @@ import React, { useState, useEffect } from "react";
 import Chart from "./Chart";
 import axios from "axios";
 import "./Statistics.css";
+import Events from "./Events";
 
 const Statistics = () => {
   const [enrolledCourses, setEnrolledCourses] = useState([]);
@@ -211,9 +212,9 @@ const Statistics = () => {
   return (
     <div className="statistics">
       <div className="time-spent">
-        <h3>Time Spent</h3>
+        <h3>Event</h3>
         <div className="chart-container">
-          <div className="chart-title">Weekly Time Distribution</div>
+          {/* <div className="chart-title">Weekly Time Distribution</div>
           <Chart data={timeSpentData} isTimeSpent={true} />
           <div className="chart-legend">
             {Object.keys(timeSpentData).map((day) => (
@@ -222,7 +223,8 @@ const Statistics = () => {
                 {day}
               </div>
             ))}
-          </div>
+          </div> */}
+          <Events/>
         </div>
       </div>
 
