@@ -154,14 +154,14 @@ function Footer() {
 
       <div className="copyright-section">
         <div className="copyright-text">
-          © {new Date().getFullYear()} LMS. All Rights Reserved.
+          © {new Date().getFullYear()} C-SUIT ACADAMY. All Rights Reserved.
         </div>
         <div className="copyright-links">
-          <a href="/disclaimer">Disclaimer</a>
+          {/* <a href="/disclaimer">Disclaimer</a> */}
           <a href="/terms">Terms and Conditions</a>
           <a href="/privacy">Privacy Policy</a>
           <a href="/refund">Refund Policy</a>
-          <a href="/sitemap">Sitemap</a>
+          {/* <a href="/sitemap">Sitemap</a> */}
         </div>
       </div>
     </>

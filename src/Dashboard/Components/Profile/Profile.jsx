@@ -23,7 +23,7 @@ const Profile = () => {
     email: "",
     phoneNumber: "",
     elaTestScore: "",
-    idCard: "",
+    // idCard: "",
     gender: "",
     profilePic: profileImage,
     profileBanner: profileBanner,
@@ -387,7 +387,7 @@ const Profile = () => {
                 disabled={!isEditing}
               />
             </div>
-            <div
+            {/* <div
               className={`${inputClassName(profileData.idCard)} profileDetails`}
             >
               <label>ID Card</label>
@@ -398,7 +398,7 @@ const Profile = () => {
                 onChange={handleChange}
                 disabled={!isEditing}
               />
-            </div>
+            </div> */}
             <div
               className={`${inputClassName(
                 profileData.address

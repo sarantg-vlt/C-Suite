@@ -35,7 +35,8 @@
   line-height: 1.2em;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
-  background-color: rgba(63, 0, 179, 0.65);
+  /* background-color: rgba(63, 0, 179, 0.65); */
+  background-color: rgba(34, 34, 34, 0.65);
 }
 
 .cr-content {

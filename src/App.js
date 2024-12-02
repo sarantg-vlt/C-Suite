@@ -168,7 +168,7 @@ function App() {
           <Route path="/admin/Course/edit" element={<EditCourse />} />
           <Route path="/admin/users" element={<Allusers />} />
           <Route path="/admin/purchases" element={<PurchasesPage />} />
-          <Route path="admin/instructors" element={<AllInstructors />} />
+          {/* <Route path="admin/instructors" element={<AllInstructors />} /> */}
           <Route path="admin/ela" element={<ELApage />} />
           <Route path="admin/contactus" element={<ContactManagement />} />
         </Routes>

@@ -364,7 +364,7 @@ import React, { useState } from "react";
 import assets from "../assets/assets";
 import { useNavigate, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
-import { googlePopup } from "../../firebase/auth_google_popup";
+import  googlePopup  from "../../firebase/auth_google_popup";
 import { signinMicrosoft } from "../../firebase/auth_microsoft_execute";
 import { handleLinkedIn } from "../../firebase/auth_linkedIn_execute";
 import { check, signupCheck } from "../../../api/baseapi";

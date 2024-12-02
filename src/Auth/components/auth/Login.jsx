@@ -4,7 +4,7 @@ import { auth } from "../../firebase/firebaseConfig";
 import { signInWithEmailAndPassword } from "@firebase/auth";
 import { toast } from "react-toastify";
 import { isStrongPassword, isValidEmail } from "../../utils/validityCheck";
-import { googlePopup } from "../../firebase/auth_google_popup";
+import  googlePopup  from "../../firebase/auth_google_popup";
 import { signinMicrosoft } from "../../firebase/auth_microsoft_execute";
 import { handleLinkedIn } from "../../firebase/auth_linkedIn_execute";
 // import { signinLinkedIn, handleLinkedInCallback } from "../../firebase/auth_linkedIn_execute";

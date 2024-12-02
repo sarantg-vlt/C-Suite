@@ -21,7 +21,7 @@
 
 .header1 {
   flex: 1;
-  background-image: url("../Assets/Images/welcomebg.jpg");
+  background-image: url("../Assets/Images/welcomebg4.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -38,6 +38,7 @@
 
 .welcome-message p {
   color: #000000;
+  /* color: #fff; */
   width: 65%;
   margin: 16px 0px;
 }
