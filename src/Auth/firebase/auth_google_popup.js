@@ -119,18 +119,21 @@
 //
 
 
-import axios from "axios";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { toast } from "react-toastify";
 import { check, signupCheck } from "../../api/baseapi.js"; // Adjust the import path as needed
-import { useNavigate } from "react-router-dom";
 
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
 
+// Force account selection
+provider.setCustomParameters({
+  prompt: "select_account", // Ensures the Google account chooser is always shown
+});
+
 const googlePopup = async (navigate, Courseid) => {
   try {
-    // Sign in with Google
+    // Trigger Google sign-in popup
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
 
@@ -142,18 +145,18 @@ const googlePopup = async (navigate, Courseid) => {
       return; // Stop further execution
     }
 
-    // Handle user check and registration
+    // Check if the user is registered or needs to be registered
     const loc = await handleUserCheck(user);
 
-    // Navigate based on login response
+    // Navigate to the appropriate location based on user status
     handleNavigation(navigate, loc, Courseid);
   } catch (error) {
-    console.error("Authentication error:", error);
-    toast.error("Authentication failed. Please try again.");
+    console.error("Google login error:", error);
+    toast.error("Google login failed. Please try again.");
   }
 };
 
-// Check if the user exists and handle accordingly
+// Helper to check user registration
 const handleUserCheck = async (user) => {
   try {
     const checkResponse = await check({ email: user.email });
@@ -166,14 +169,14 @@ const handleUserCheck = async (user) => {
       toast.info("User not found. Registering...");
       return await handleUserRegistration(user);
     } else {
-      console.error("Check error:", error);
+      console.error("Error during user check:", error);
       toast.error("Error verifying user. Please try again later.");
       throw error;
     }
   }
 };
 
-// Register a new user
+// Helper to register a new user
 const handleUserRegistration = async (user) => {
   const data = {
     name: user.displayName,
@@ -195,10 +198,8 @@ const handleUserRegistration = async (user) => {
   }
 };
 
-// Store user data and determine redirection path
+// Helper to log in the user
 const login = (data) => {
-  const userData = data.user ? data.user : data;
-
   toast.success("Login successful!");
   localStorage.setItem("userDataUpdated", JSON.stringify(data));
   localStorage.setItem("isloggedin", true);
@@ -208,10 +209,10 @@ const login = (data) => {
   localStorage.setItem("linkedin", data.linkedin);
   localStorage.setItem("elacomplete", data.elaComplete);
 
-  return userData.elaComplete ? "home" : "quick-assessment";
+  return data.elaComplete ? "home" : "quick-assessment";
 };
 
-// Handle navigation based on login result
+// Helper to navigate based on user status
 const handleNavigation = (navigate, loc, Courseid) => {
   if (loc === "home") {
     navigate(Courseid ? `../home/courseDetails/${Courseid}` : "../home");
