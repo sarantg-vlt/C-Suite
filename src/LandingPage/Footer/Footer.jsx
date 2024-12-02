@@ -126,30 +126,7 @@ function Footer() {
           </a>
         </section>
 
-        <section data-aos="fade-up" className="section4">
-          <h4>Become an Instructor</h4>
-          <p>We only work with the best companies around the globe</p>
-          <form className="instructoremail" onSubmit={handleEmailSubmit}>
-            <input
-              className="emailinput"
-              type=""
-              placeholder="Enter Your Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <input className="registernow" type="submit" value="Register Now" />
-          </form>
-          {message && (
-            <span
-              className={`submission-message ${
-                isSuccess ? "success" : "error"
-              }`}
-            >
-              {message}
-            </span>
-          )}
-        </section>
+        
       </div>
 
       <div className="copyright-section">
