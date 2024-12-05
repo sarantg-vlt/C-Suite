@@ -107,8 +107,8 @@ const handleFileInput = (e) => {
     courseData.price
   ) {
     try {
-      const formData = convertToCourseFormData(courseData);
-      console.log('FormData prepared:', formData); // Debugging
+    const formData = convertToCourseFormData(courseData);
+    formData.forEach((value, key) => console.log(key, value)); 
 
       const { data } = await updateCourse(courseData);
       console.log('Update response:', data);
