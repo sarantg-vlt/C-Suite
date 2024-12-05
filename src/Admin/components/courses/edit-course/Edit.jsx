@@ -92,7 +92,13 @@ const handleFileInput = (e) => {
     setPopupOpen({ open: false });
   };
 
-  const uploadCourse = async () => {
+ const uploadCourse = async () => {
+  if (!courseData._id) {
+    console.error('Missing course ID');
+    window.alert('Course ID is missing. Please refresh and try again.');
+    return;
+  }
+
   if (
     courseData.title &&
     courseData.description &&
@@ -100,26 +106,20 @@ const handleFileInput = (e) => {
     courseData.price
   ) {
     try {
-      const formData = new FormData();
-      formData.append("title", courseData.title);
-      formData.append("description", courseData.description);
-      formData.append("price", courseData.price);
-      formData.append("image", courseData.image); 
-      formData.append(
-        "overviewPoints",
-        JSON.stringify(courseData.overviewPoints)
-      );
-      formData.append("lessons", JSON.stringify(courseData.lessons));
+      const formData = convertToCourseFormData(courseData);
+      console.log('FormData prepared:', formData); // Debugging
 
-      const { data } = await updateCourse(formData, courseDetails._id);
-      console.log(data);
-      navigate("/admin");
+      const { data } = await updateCourse(courseData);
+      console.log('Update response:', data);
+
+      navigate('/admin');
     } catch (error) {
-      console.log(error);
+      console.error('Error updating course:', error);
+      window.alert('Failed to update course. Please try again.');
     }
   } else {
     window.alert(
-      "This course is not valid add at least one lesson and fill other details"
+      'This course is not valid. Add at least one lesson and fill other details.'
     );
   }
 };
