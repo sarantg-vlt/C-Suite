@@ -31,8 +31,16 @@ export const uploadDocument = (formdata) =>
   API.post("/uploadtodrive", formdata, {
     headers: { "Content-Type": "multipart/form-data" },
   });
-export const updateCourse = (updatedData) =>
-  API.put(`/courseDetail/edit/${updatedData?._id}`, updatedData);
+
+export const updateCourse = (courseData) => {
+  const formData = convertToCourseFormData(courseData);
+  return API.put(`/courseDetail/edit/${courseData?._id}`, formData, {
+    headers: {
+      "Content-Type": "multipart/form-data", 
+    },
+  });
+};
+
 export const deleteCourse = (courseId) =>
   API.delete(`/courseDetail/delete/${courseId}`);
 
@@ -59,26 +67,25 @@ export const addSectionToTest = (questionId, section) =>
 // hooks/newCourseFunctions.js
 export const convertToCourseFormData = (courseData) => {
   const formData = new FormData();
-  
+
   // Add basic course details
   formData.append("title", courseData.title);
   formData.append("description", courseData.description);
   formData.append("price", courseData.price);
-  
-  // Add thumbnail if exists
-  if (courseData.thumbnail) {
-    formData.append("thumbnail", courseData.thumbnail);
+
+  // Add image if exists
+  if (courseData.image) {
+    formData.append("image", courseData.image); 
   }
-  
-  // Add overview points as JSON string
   if (courseData.overviewPoints && courseData.overviewPoints.length > 0) {
     formData.append("overviewPoints", JSON.stringify(courseData.overviewPoints));
   }
-  
+
   // Add lessons as JSON string
   if (courseData.lessons && courseData.lessons.length > 0) {
     formData.append("lessons", JSON.stringify(courseData.lessons));
   }
-  
+
   return formData;
 };
+
