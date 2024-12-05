@@ -6,7 +6,8 @@ import EditImg from "../../Assets/Images/edit.png";
 import Nolesson from "../../Assets/Images/no-lesson-illustration.svg";
 import BackIcon from "../../Assets/Images/left-arrow.png";
 import { useNavigate } from "react-router-dom";
-import { deleteCourse, updateCourse } from "../../../api/baseApi";
+import { deleteCourse, updateCourse ,convertToCourseFormData} from "../../../api/baseApi";
+
 import NewLesson from "../new-course/NewLesson";
 
 const Edit = ({ courseDetails }) => {
