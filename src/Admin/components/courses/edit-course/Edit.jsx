@@ -23,7 +23,7 @@ const Edit = ({ courseDetails }) => {
     title: "",
     description: "",
     price: null,
-    thumbnail: null,
+    image: null,
     overviewPoints: [],
     lessons: [],
   });
@@ -67,6 +67,14 @@ const Edit = ({ courseDetails }) => {
       });
     }
   };
+  
+const handleFileInput = (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    setCourseData({ ...courseData, image: file });
+  }
+};
+
 
   const addLessontoCourse = (lesson) => {
     console.log("lesson", lesson);
@@ -85,25 +93,36 @@ const Edit = ({ courseDetails }) => {
   };
 
   const uploadCourse = async () => {
-    if (
-      courseData.title &&
-      courseData.description &&
-      courseData.lessons.length > 0 &&
-      courseData.price
-    ) {
-      try {
-        const { data } = await updateCourse(courseData);
-        console.log(data);
-        navigate("/admin");
-      } catch (error) {
-        console.log(error);
-      }
-    } else {
-      window.alert(
-        "This course is not valid add at least on lesson and fill other details"
+  if (
+    courseData.title &&
+    courseData.description &&
+    courseData.lessons.length > 0 &&
+    courseData.price
+  ) {
+    try {
+      const formData = new FormData();
+      formData.append("title", courseData.title);
+      formData.append("description", courseData.description);
+      formData.append("price", courseData.price);
+      formData.append("image", courseData.image); 
+      formData.append(
+        "overviewPoints",
+        JSON.stringify(courseData.overviewPoints)
       );
+      formData.append("lessons", JSON.stringify(courseData.lessons));
+
+      const { data } = await updateCourse(formData, courseDetails._id);
+      console.log(data);
+      navigate("/admin");
+    } catch (error) {
+      console.log(error);
     }
-  };
+  } else {
+    window.alert(
+      "This course is not valid add at least one lesson and fill other details"
+    );
+  }
+};
 
   const deleteThisCourse = async () => {
     const confirm = window.confirm(
@@ -244,13 +263,11 @@ const Edit = ({ courseDetails }) => {
               />
             </div>
             <div className="course-name-cnt">
-              <p>Upload course thumnale</p>
+              <p>Upload course image</p>
               <input
                 type="file"
-                name=""
-                id=""
                 className="styled-input"
-                placeholder=""
+                onChange={(e) => handleFileInput(e)}
               />
             </div>
           </div>
