@@ -33,10 +33,15 @@ export const uploadDocument = (formdata) =>
   });
 
 export const updateCourse = (courseData) => {
+  if (!courseData._id) {
+    throw new Error('Course ID is missing');
+  }
+
   const formData = convertToCourseFormData(courseData);
-  return API.put(`/courseDetail/edit/${courseData?._id}`, formData, {
+
+  return API.put(`/courseDetail/edit/${courseData._id}`, formData, {
     headers: {
-      "Content-Type": "multipart/form-data", 
+      'Content-Type': 'multipart/form-data',
     },
   });
 };
