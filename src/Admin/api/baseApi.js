@@ -1,12 +1,10 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL:
-    // "https://https://c-suite-xpmf.onrender.com/apicsuite-ui0f.onrender.com/api",
-    process.env.REACT_APP_API_BASE_URL,
+  baseURL: "https://csuite-ui0f.onrender.com/api",
   headers: {
-    "Content-Type": "multipart/form-data",
-  },
+    "Content-Type": "multipart/form-data"
+  }
 });
 
 // User endpoints
@@ -31,21 +29,8 @@ export const uploadDocument = (formdata) =>
   API.post("/uploadtodrive", formdata, {
     headers: { "Content-Type": "multipart/form-data" },
   });
-
-export const updateCourse = (courseData) => {
-  if (!courseData._id) {
-    throw new Error('Course ID is missing');
-  }
-
-  const formData = convertToCourseFormData(courseData);
-
-  return API.put(`/courseDetail/edit/${courseData._id}`, formData, {
-    headers: {
-      'Content-Type': 'multipart/form-data',
-    },
-  });
-};
-
+export const updateCourse = (updatedData) =>
+  API.put(`/courseDetail/edit/${updatedData?._id}`, updatedData);
 export const deleteCourse = (courseId) =>
   API.delete(`/courseDetail/delete/${courseId}`);
 
@@ -72,25 +57,26 @@ export const addSectionToTest = (questionId, section) =>
 // hooks/newCourseFunctions.js
 export const convertToCourseFormData = (courseData) => {
   const formData = new FormData();
-
+  
   // Add basic course details
   formData.append("title", courseData.title);
   formData.append("description", courseData.description);
   formData.append("price", courseData.price);
-
-  // Add image if exists
-  if (courseData.image) {
-    formData.append("image", courseData.image); 
+  
+  // Add thumbnail if exists
+  if (courseData.thumbnail) {
+    formData.append("thumbnail", courseData.thumbnail);
   }
+  
+  // Add overview points as JSON string
   if (courseData.overviewPoints && courseData.overviewPoints.length > 0) {
     formData.append("overviewPoints", JSON.stringify(courseData.overviewPoints));
   }
-
+  
   // Add lessons as JSON string
   if (courseData.lessons && courseData.lessons.length > 0) {
     formData.append("lessons", JSON.stringify(courseData.lessons));
   }
-
+  
   return formData;
 };
-
