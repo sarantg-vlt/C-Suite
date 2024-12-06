@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://csuite-ui0f.onrender.com/api",
+   baseURL:
+    // "https://https://c-suite-xpmf.onrender.com/apicsuite-ui0f.onrender.com/api",
+    process.env.REACT_APP_API_BASE_URL,
   headers: {
     "Content-Type": "multipart/form-data"
   }
