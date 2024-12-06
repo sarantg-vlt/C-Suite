@@ -6,8 +6,7 @@ import EditImg from "../../Assets/Images/edit.png";
 import Nolesson from "../../Assets/Images/no-lesson-illustration.svg";
 import BackIcon from "../../Assets/Images/left-arrow.png";
 import { useNavigate } from "react-router-dom";
-import { deleteCourse, updateCourse ,convertToCourseFormData} from "../../../api/baseApi";
-
+import { deleteCourse, updateCourse } from "../../../api/baseApi";
 import NewLesson from "../new-course/NewLesson";
 
 const Edit = ({ courseDetails }) => {
@@ -24,7 +23,7 @@ const Edit = ({ courseDetails }) => {
     title: "",
     description: "",
     price: null,
-    image: null,
+    thumbnail: null,
     overviewPoints: [],
     lessons: [],
   });
@@ -68,14 +67,6 @@ const Edit = ({ courseDetails }) => {
       });
     }
   };
-  
-const handleFileInput = (e) => {
-  const file = e.target.files[0];
-  if (file) {
-    setCourseData({ ...courseData, image: file });
-  }
-};
-
 
   const addLessontoCourse = (lesson) => {
     console.log("lesson", lesson);
@@ -93,37 +84,26 @@ const handleFileInput = (e) => {
     setPopupOpen({ open: false });
   };
 
- const uploadCourse = async () => {
-  if (!courseData._id) {
-    console.error('Missing course ID');
-    window.alert('Course ID is missing. Please refresh and try again.');
-    return;
-  }
-
-  if (
-    courseData.title &&
-    courseData.description &&
-    courseData.lessons.length > 0 &&
-    courseData.price
-  ) {
-    try {
-    const formData = convertToCourseFormData(courseData);
-    formData.forEach((value, key) => console.log(key, value)); 
-
-      const { data } = await updateCourse(courseData);
-      console.log('Update response:', data);
-
-      navigate('/admin');
-    } catch (error) {
-      console.error('Error updating course:', error);
-      window.alert('Failed to update course. Please try again.');
+  const uploadCourse = async () => {
+    if (
+      courseData.title &&
+      courseData.description &&
+      courseData.lessons.length > 0 &&
+      courseData.price
+    ) {
+      try {
+        const { data } = await updateCourse(courseData);
+        console.log(data);
+        navigate("/admin");
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      window.alert(
+        "This course is not valid add at least on lesson and fill other details"
+      );
     }
-  } else {
-    window.alert(
-      'This course is not valid. Add at least one lesson and fill other details.'
-    );
-  }
-};
+  };
 
   const deleteThisCourse = async () => {
     const confirm = window.confirm(
@@ -264,11 +244,13 @@ const handleFileInput = (e) => {
               />
             </div>
             <div className="course-name-cnt">
-              <p>Upload course image</p>
+              <p>Upload course thumnale</p>
               <input
                 type="file"
+                name=""
+                id=""
                 className="styled-input"
-                onChange={(e) => handleFileInput(e)}
+                placeholder=""
               />
             </div>
           </div>
