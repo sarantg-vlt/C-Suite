@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import DefaultImg from "../Assets/Images/imagenotxt2.png";
 import LoadingPage from "../LoadingPage/LoadingPage";
 import ErrorDataFetchOverlay from "../Error/ErrorDataFetchOverlay";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 const Courses = () => {
   const navigate = useNavigate();
@@ -195,7 +196,7 @@ const Courses = () => {
         <div className="cardContainer3">
           <h2>Courses</h2>
           <button className="back-btn" onClick={() => navigate(-1)}>
-            Back
+            <IoMdArrowRoundBack className="profile-back-arrow" />
           </button>
           {/* <div className="filterChips">
             {allLessons.map((lesson, index) => (

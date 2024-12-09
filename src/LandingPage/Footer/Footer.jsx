@@ -126,7 +126,7 @@ function Footer() {
           </a>
         </section>
 
-        <section data-aos="fade-up" className="section4">
+        {/* <section data-aos="fade-up" className="section4">
           <h4>Become an Instructor</h4>
           <p>We only work with the best companies around the globe</p>
           <form className="instructoremail" onSubmit={handleEmailSubmit}>
@@ -149,12 +149,12 @@ function Footer() {
               {message}
             </span>
           )}
-        </section>
+        </section> */}
       </div>
 
       <div className="copyright-section">
         <div className="copyright-text">
-          © {new Date().getFullYear()} C-SUIT ACADAMY. All Rights Reserved.
+          © {new Date().getFullYear()} C-SUITE ACADEMY. All Rights Reserved.
         </div>
         <div className="copyright-links">
           {/* <a href="/disclaimer">Disclaimer</a> */}

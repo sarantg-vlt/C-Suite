@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import DefaultImg from "../Assets/Images/imagenotxt2.png";
 import LoadingPage from "../LoadingPage/LoadingPage";
 import ErrorDataFetchOverlay from "../Error/ErrorDataFetchOverlay";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 const Enrolled = () => {
   const navigate = useNavigate();
@@ -167,7 +168,7 @@ const Enrolled = () => {
       <div className="main-content">
         <div className="cardContainer3">
           <button className="back-btn" onClick={() => navigate(-1)}>
-            Back
+            <IoMdArrowRoundBack className="profile-back-arrow" />
           </button>
           <h2>Enrolled Courses</h2>
           {!hasPurchasedCourses && (

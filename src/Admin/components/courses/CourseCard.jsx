@@ -36,7 +36,7 @@ const CourseCard = ({ data }) => {
   return (
     <div
       className="course-card"
-      onClick={() => navigate("Course/edit", { state: data })}
+      onClick={() => navigate(`Course/edit/${data?._id}`, { state: data })}
     >
       <img
         src={resloveImagePath(data?.image)}

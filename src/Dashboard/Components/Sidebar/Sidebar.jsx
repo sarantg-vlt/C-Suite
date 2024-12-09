@@ -158,7 +158,7 @@ const Sidebar = () => {
                   opacity: expanded ? 1 : 0,
                 }}
               >
-                {"Hide"}
+                {/* {"Hide"} */}
               </span>
             </button>
             <SidebarItem

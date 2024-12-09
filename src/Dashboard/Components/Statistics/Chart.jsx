@@ -52,12 +52,14 @@ const Chart = ({ data, isTimeSpent }) => {
             data={pieData}
             cx="50%"
             cy="50%"
-            outerRadius={110}
+            innerRadius={40}
+            outerRadius={80}
             dataKey="value"
-            label={({ name, value }) => `${name}: ${value.toFixed(1)}%`}
+            label={({ value }) => `${value.toFixed(1)}%`}
           >
-            <Cell fill="#82ca9d" /> {/* Completed */}
-            <Cell fill="#FFBB28" /> {/* Remaining */}
+            {/* <Cell fill="#82ca9d" /> */}
+            <Cell fill="#16C024" />
+            <Cell fill="red" />
           </Pie>
           <Tooltip formatter={(value) => `${value.toFixed(1)}%`} />
           <Legend />

@@ -30,7 +30,7 @@
 //           );
 //           setRecommendedCourses(filteredCourses);
 //           console.log(recommendedCourses);
-          
+
 //         } else {
 //           setFetchError(true);
 //           alert("User not logged in, Go to Profile page");
@@ -101,8 +101,6 @@
 
 // export default Home;
 
-
-
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 import axios from "axios";
@@ -113,12 +111,51 @@ import Statistics from "../Statistics/Statistics";
 import LoadingPage from "../LoadingPage/LoadingPage";
 import CourseRecommendation from "../CourseRecomend/CourseRecommendation";
 import ErrorDataFetchOverlay from "../Error/ErrorDataFetchOverlay";
+import BigCalendar from "../Calendar/Big-Calendar/BigCalendar";
 
 function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [fetchError, setFetchError] = useState(false);
   const [recommendedCourses, setRecommendedCourses] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+  //       const response = await axios.get(`${apiBaseUrl}/courseDetail`);
+  //       const courses = response.data;
+
+  //       const userInfo = JSON.parse(localStorage.getItem("userDataUpdated"));
+  //       if (userInfo) {
+  //         // const { coursePurchased } = userInfo;
+  //         const purchasedCourses = userInfo.purchasedCourses || [];
+  //           const purchasedCourseIds = purchasedCourses.map(
+  //             (item) => item.courseId
+  //           );
+  //         const filteredCourses = courses.filter(
+  //           (course) => !purchasedCourseIds.includes(course._id)
+  //         );
+  //         console.log(filteredCourses);
+
+  //         setRecommendedCourses(filteredCourses);
+  //         console.log(recommendedCourses);
+
+  //       } else {
+  //         setFetchError(true);
+  //         alert("User not logged in, Go to Profile page");
+  //         console.log("No user info found in localStorage");
+  //       }
+  //       setIsLoading(false);
+  //     } catch (err) {
+  //       console.error("Error fetching course details:", err);
+  //       setFetchError(true);
+  //       setIsLoading(false);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -129,13 +166,20 @@ function Home() {
 
         const userInfo = JSON.parse(localStorage.getItem("userDataUpdated"));
         if (userInfo) {
-          const { coursePurchased } = userInfo;
-          const filteredCourses = courses.filter(
-            (course) => !coursePurchased.includes(course._id)
+          const purchasedCourses = userInfo.coursePurchased || [];
+
+          // Extract the courseId from each purchased course
+          const purchasedCourseIds = purchasedCourses.map(
+            (item) => item.courseId
           );
+
+          // Filter to show only courses that have not been purchased
+          const filteredCourses = courses.filter(
+            (course) => !purchasedCourseIds.includes(course._id)
+          );
+
           setRecommendedCourses(filteredCourses);
-          console.log(recommendedCourses);
-          
+          console.log(filteredCourses); // Ensure correct filtering
         } else {
           setFetchError(true);
           alert("User not logged in, Go to Profile page");
@@ -160,17 +204,16 @@ function Home() {
   //   course.title.toLowerCase().includes(searchTerm.toLowerCase())
   // );
 
-  const filteredCourses =
-      recommendedCourses.filter((course) => {
-        const matchesCourseTitle = course.title
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase());
-        const matchesLesson = course.lessons?.some((lesson) =>
-          lesson.title.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-        return matchesCourseTitle || matchesLesson;
-      })
-    // [recommendedCourses, searchTerm]
+  const filteredCourses = recommendedCourses.filter((course) => {
+    const matchesCourseTitle = course.title
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+    const matchesLesson = course.lessons?.some((lesson) =>
+      lesson.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    return matchesCourseTitle || matchesLesson;
+  });
+  // [recommendedCourses, searchTerm]
 
   if (isLoading) {
     return <LoadingPage />;
@@ -189,9 +232,15 @@ function Home() {
         <>
           <div className="headerPart">
             <Header />
-            <CustomCalendar />
           </div>
-          <Statistics />
+          <div className="center-Part">
+            <div className="center-1">
+              <Statistics />
+            </div>
+            {/* <div className="center-2">
+              <BigCalendar />
+            </div> */}
+          </div>
         </>
       )}
 
@@ -216,7 +265,8 @@ function Home() {
               );
             })
           ) : (
-            <p>No courses or lessons found for "{searchTerm}"</p>
+            // <p>No courses or lessons found for "{searchTerm}"</p>
+            <p>You have purchased all the Courses 😊</p>
           )}
         </div>
       </div>

@@ -1,5 +1,5 @@
-/* src/components/Calendar.css */
-.custom-calendar {
+  src/components/Calendar.css
+ .custom-calendar {
   background-color: #fff;
   padding: 0px 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -37,7 +37,7 @@
   border-radius: 5px;
 }
 
-/*  */
+
 @media (max-width: 1125px) {
   .custom-calendar {
     margin: 0 auto;
@@ -72,3 +72,4 @@
     padding: 8px;
   }
 }
+

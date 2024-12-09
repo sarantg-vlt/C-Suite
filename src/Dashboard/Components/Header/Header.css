@@ -37,8 +37,8 @@
 }
 
 .welcome-message p {
-  color: #000000;
-  /* color: #fff; */
+  /* color: #000000; */
+  color: #fff;
   width: 65%;
   margin: 16px 0px;
 }

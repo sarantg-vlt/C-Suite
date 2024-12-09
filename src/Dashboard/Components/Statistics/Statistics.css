@@ -1,12 +1,14 @@
 .statistics {
   display: flex;
+  /* flex-direction: column-reverse ; */
   gap: 20px;
   width: 100%;
+  
 }
 
 .time-spent,
 .completion {
-  width: 50%;
+  width: 100%;
   padding: 10px 20px;
   border-radius: 8px;
   background-color: #fff;
@@ -84,6 +86,16 @@
   display: inline-block;
   margin-right: 5px;
   border-radius: 50%;
+}
+
+
+.course-select{
+  font-size: 12px;
+  width: 200px;
+}
+
+.time-spent,.completion{
+  display: block;
 }
 
 .legend-sunday {

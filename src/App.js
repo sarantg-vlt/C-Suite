@@ -165,7 +165,7 @@ function App() {
 
           <Route path='/admin' element={<AllCourses />} />
           <Route path="/admin/Courses/new" element={<AddnewCourse />} />
-          <Route path="/admin/Course/edit" element={<EditCourse />} />
+          <Route path="/admin/Course/edit/:id" element={<EditCourse />} />
           <Route path="/admin/users" element={<Allusers />} />
           <Route path="/admin/purchases" element={<PurchasesPage />} />
           {/* <Route path="admin/instructors" element={<AllInstructors />} /> */}

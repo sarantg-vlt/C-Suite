@@ -29,10 +29,19 @@
 .home-course {
   display: flex;
   gap: 50px;
-  max-width: 89.5vw;
+  /* max-width: 89.5vw; */
   margin-top: 10px;
   overflow-x: scroll;
   place-items: center;
+}
+
+.center-Part{
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+.center-1{
+  width: 100%;
 }
 
 @media (max-width: 1125px) {
@@ -60,10 +69,15 @@
 
   .home-course {
     gap: 20px;
-    max-width: 69vw;
+    /* max-width: 69vw; */
   }
 
   .home-courseBox h3 {
     font-size: 1em;
   }
+
+  .center-Part{
+    flex-direction: column;
+  }
 }
+
