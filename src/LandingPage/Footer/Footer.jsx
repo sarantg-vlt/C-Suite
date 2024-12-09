@@ -126,6 +126,7 @@ function Footer() {
           </a>
         </section>
 
+        
         {/* <section data-aos="fade-up" className="section4">
           <h4>Become an Instructor</h4>
           <p>We only work with the best companies around the globe</p>
