@@ -72,9 +72,14 @@
   position: absolute;
   top: -5px;
   right: -5px;
-  width: 8px;
-  height: 8px;
+  width: 50%;
+  height: 50%;
   border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
 }
 
 .notification-active{

@@ -81,6 +81,8 @@ import ContactManagement from './Admin/components/Contact/ContactManagement';
 import RefoundPolicy from './LandingPage/Footer/BottomFooter/RefoundPolicy/RefoundPolicy';
 import PrivacyPolicy from './LandingPage/Footer/BottomFooter/PrivacyPolicy/PrivacyPolicy';
 import TermsAndConditions from './LandingPage/Footer/BottomFooter/TermsAndConditions/TermsAndConditions';
+import EventPage from './Admin/components/Events/EventPage';
+import EditEvent from './Admin/components/Events/EditEvent';
 //bottom footer end
 //footer end
 
@@ -167,6 +169,8 @@ function App() {
           <Route path="/admin/Courses/new" element={<AddnewCourse />} />
           <Route path="/admin/Course/edit/:id" element={<EditCourse />} />
           <Route path="/admin/users" element={<Allusers />} />
+          <Route path='/admin/events' element={<EventPage/>} />
+          <Route path='/admin/events/:id' element={<EditEvent/>} />
           <Route path="/admin/purchases" element={<PurchasesPage />} />
           {/* <Route path="admin/instructors" element={<AllInstructors />} /> */}
           <Route path="admin/ela" element={<ELApage />} />

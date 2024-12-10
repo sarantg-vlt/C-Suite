@@ -71,7 +71,7 @@ const TopBar = ({ onSearch }) => {
         </div>
         <div className={`notification-icon ${openNotification ? 'notification-active' : 'notification-deactive'}`}>
           <FontAwesomeIcon icon={faBell} onClick={()=>setOpenNotification(openNotification=>!openNotification)} />
-          <span className="notification-dot"></span>
+          <span className="notification-dot">1</span>
         </div>
         <div className={`notification-container ${openNotification ? 'notification-show' : 'notification-hidden'}`}>
           <p>no notification message</p>
