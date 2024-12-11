@@ -19,9 +19,7 @@ const BigCalendar = () => {
   useEffect(() => {
     const getEvents = async () => {
       try {
-        const res = await axios.get(
-          `${apiBaseurl}/event/${userid}`
-        );
+        const res = await axios.get(`${apiBaseurl}/event/${userid}`);
         const fetchedEvents = res.data.events || [];
         const formattedEvents = fetchedEvents.map((event) => ({
           title: event.title,
@@ -59,10 +57,7 @@ const BigCalendar = () => {
     };
 
     try {
-      const res = await axios.post(
-        `${apiBaseurl}/event/`,
-        newEventWithUser
-      );
+      const res = await axios.post(`${apiBaseurl}/event/`, newEventWithUser);
       console.log(res.data);
 
       // Add the new event to the calendar
@@ -84,17 +79,20 @@ const BigCalendar = () => {
 
   return (
     <div className="react-Big-calendar">
-      <div style={{ height: "500px", margin: "20px" }}>
-        <Button variant="primary" onClick={() => setShowModal(true)}>
-          Add Event
-        </Button>
+      <div className="completion main-calendar">
+        <div className="Dash_calender">
+          <h5>Calendar</h5>
+          <Button variant="primary" onClick={() => setShowModal(true)}>
+            Add Event
+          </Button>
+        </div>
 
         <Calendar
           localizer={localizer}
           events={events} // Pass fetched events here
           startAccessor="start"
           endAccessor="end"
-          style={{ height: 500, width: "100%" }}
+          style={{ height: "100%", width: "100%" }}
         />
         {/* Modal for adding events */}
         <Modal show={showModal} onHide={() => setShowModal(false)}>
@@ -153,4 +151,3 @@ const BigCalendar = () => {
 };
 
 export default BigCalendar;
-

@@ -18,6 +18,7 @@ const AddEvent = () => {
       endDate: endDate,
     });
     console.log(resEvent);
+     window.location.reload();
   };
 
   return (
