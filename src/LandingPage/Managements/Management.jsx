@@ -88,8 +88,8 @@ const Management = () => {
     return (
       <div className="container-fluid">
         {content.title !== "Learning" ?
-          <div className="row">
-            <div className={content.title === "Team | Faculty" || content.title === "Expert" ? "col-md-12" : "col-md-8"}>
+          <div className="row ">
+            <div className={content.title === "Team | Faculty" || content.title === "Expert" ? "col-md-12" : "col-lg-8"}>
               <div data-aos="fade-right" className="changes-head">
                 <h1 className="content-title">{content.title}</h1>
                 <div className="total-content">

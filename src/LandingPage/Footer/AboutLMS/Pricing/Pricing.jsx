@@ -1,254 +1,51 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import './PricingPlans.css';
-import { LuSparkle } from "react-icons/lu";
-import { GoRocket } from "react-icons/go";
-
-import {loadStripe} from '@stripe/stripe-js';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const PricingPlans = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [fetchError, setFetchError] = useState(false);
+  const [coursesData, setCoursesData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+        const response = await axios.get(`${apiBaseUrl}/courseDetail/`);
+        const allCourses = response.data;
 
-  let navigate = useNavigate();
+        // filtering purchased course
+        const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+        setCoursesData(allCourses);
 
-  const makepayment = async (name, price) => {
-    if(localStorage.getItem("isloggedin")==="true")
-    {
-      const stripe = await loadStripe("pk_test_51PUVZZRrG0ZkGYrr3y8s7r35TsoywTtRefCFB64KvnZNuuU2kotNOBp8AOZMPfyejU5Ah1DG4vXjwyig9AZXFmNv00Etljhki6");
-      let data = {name:name, price:price}
-
-      const response = await axios.post("https://sunshine-1.onrender.com/create-checkout-session",data, {
-        headers: { 'Content-Type': 'application/json' }, // Set Content-Type header
-      })
-
-      console.log(response);
-      
-      const result = stripe.redirectToCheckout({
-        sessionId:response.data.id
-      });
-    
-      if (result.error) {
-        console.log(result.error);
+        setIsLoading(false);
+      } catch (err) {
+        console.log(err);
+        setIsLoading(false);
+        setFetchError(true);
       }
-    }
-    else{
-      navigate("../Authentication");
-    }
-  }
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className="background">
       <div className="container my-5 py-5">
         <div className="d-flex justify-content-between align-items-start">
           <div className="text-left">
-            <h2 className="font-weight-bold  plan-title">Choose your plan</h2>
-            <p className="mb-0   description-1">
-              <GoRocket
-                style={{
-                  color: "rgba(109, 109, 230, 1)",
-                  marginRight: "5px",
-                  fontSize: "20px",
-                }}
-              />
-              14 days free trial
-            </p>
-            <p className="mb-0  text-muted description-2">
-              Get the right plan for your business Plans can be upgraded in the
-              future.
-            </p>
-          </div>
-          <div className="d-flex align-items-center">
-            <span className="mr-2">(Save 20%)</span>
-            <button type="button" className="yearly-button">
-              Yearly
-            </button>
+            <h2 className="font-weight-bold  plan-title">Choose your Course</h2>
           </div>
         </div>
-        <div className="d-flex flex-wrap justify-content-center g-4 ">
-          <div className="col-md-4 first-card">
-            <div className=" custom-card">
-              <div className="card-body ">
-                <h5
-                  className="card-title "
-                  style={{ color: "#1C2C83", fontSize: "0.90rem" }}
-                >
-                  <i className="fas fa-circle mb-0 icon-glow1"></i> Basic Plan
-                </h5>
-                <h6 className="card-price  font-weight-bold">
-                  <span>&#8377;</span> 499
-                  <span className="period">/ quarter year</span>
-                </h6>
-                <ul className="fa-ul mt-3">
-                  <li>
-                    <span className="fa-li">
-                      <LuSparkle
-                        style={{
-                          fill: "rgba(239, 151, 19, 1)",
-                          color: "rgba(239, 151, 19, 1)",
-                        }}
-                      />{" "}
-                      2TB additional storage
-                    </span>
-                  </li>
-                  <li>
-                    <span className="fa-li">
-                      <LuSparkle
-                        style={{
-                          fill: "rgba(239, 151, 19, 1)",
-                          color: "rgba(239, 151, 19, 1)",
-                        }}
-                      />{" "}
-                      Up to 1GB file size
-                    </span>
-                  </li>
-                  <li>
-                    <span className="fa-li">
-                      <LuSparkle
-                        style={{
-                          fill: "rgba(239, 151, 19, 1)",
-                          color: "rgba(239, 151, 19, 1)",
-                        }}
-                      />{" "}
-                      Up to 5 projects
-                    </span>
-                  </li>
-                </ul>
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    makepayment("Basic", "499");
-                  }}
-                  className="plan-button mt-auto"
-                >
-                  Get Plan
-                </button>
+        <div className="cousres-price-container">
+            {coursesData.map((course) => (
+              <div className="two-custom-card" key={course._id}>
+                <h4>{course.title}</h4>
+                <p>Price : <span className="span-price">₹  {course.price}</span></p>
+                <Link to='/authentication'>
+                 <button>Buy Course</button>
+                </Link>
               </div>
-            </div>
-          </div>
-          <div className="col-md-4 second-card">
-            <div className="  custom-card">
-              <div className="card-body">
-                <h5
-                  className="card-title "
-                  style={{ color: "#4271BA", fontSize: "0.90rem" }}
-                >
-                  <i className="fas fa-circle mb-0 icon-glow2"></i> Standard
-                  Plan
-                </h5>
-                <h6 className="card-price ">
-                  <span>&#8377;</span> 999{" "}
-                  <span className="period">/ half year</span>
-                </h6>
-                <ul className="fa-ul mt-3">
-                  <li>
-                    <span className="fa-li">
-                      <LuSparkle
-                        style={{
-                          fill: "rgba(239, 151, 19, 1)",
-                          color: "rgba(239, 151, 19, 1)",
-                        }}
-                      />{" "}
-                      2TB additional storage
-                    </span>
-                  </li>
-                  <li>
-                    <span className="fa-li">
-                      <LuSparkle
-                        style={{
-                          fill: "rgba(239, 151, 19, 1)",
-                          color: "rgba(239, 151, 19, 1)",
-                        }}
-                      />{" "}
-                      Up to 1GB file size
-                    </span>
-                  </li>
-                  <li>
-                    <span className="fa-li">
-                      <LuSparkle
-                        style={{
-                          fill: "rgba(239, 151, 19, 1)",
-                          color: "rgba(239, 151, 19, 1)",
-                        }}
-                      />{" "}
-                      Up to 5 projects
-                    </span>
-                  </li>
-                </ul>
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    makepayment("Standard", "999");
-                  }}
-                  className="plan-button mt-auto"
-                >
-                  Get Plan
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4 third-card">
-            <div className=" custom-card">
-              <div className="card-body ">
-                <h5
-                  className="card-title "
-                  style={{ color: "#4A00C2", fontSize: "0.90rem" }}
-                >
-                  <i className="fas fa-circle mb-0 icon-glow3"></i> Premium Plan
-                </h5>
-                <h6 className="card-price">
-                  <span>&#8377;</span> 1999{" "}
-                  <span className="period">/ one year</span>
-                </h6>
-                <ul className="fa-ul mt-3">
-                  <li>
-                    <span className="fa-li">
-                      <LuSparkle
-                        style={{
-                          fill: "rgba(239, 151, 19, 1)",
-                          color: "rgba(239, 151, 19, 1)",
-                        }}
-                      />{" "}
-                      2TB additional storage
-                    </span>
-                  </li>
-                  <li>
-                    <span className="fa-li">
-                      <LuSparkle
-                        style={{
-                          fill: "rgba(239, 151, 19, 1)",
-                          color: "rgba(239, 151, 19, 1)",
-                        }}
-                      />{" "}
-                      Up to 1GB file size
-                    </span>
-                  </li>
-                  <li>
-                    <span className="fa-li">
-                      <LuSparkle
-                        style={{
-                          fill: "rgba(239, 151, 19, 1)",
-                          color: "rgba(239, 151, 19, 1)",
-                        }}
-                      />{" "}
-                      Up to 5 projects
-                    </span>
-                  </li>
-                </ul>
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    makepayment("Premium", "1999");
-                  }}
-                  className="plan-button mt-auto"
-                >
-                  Get Plan
-                </button>
-              </div>
-            </div>
-          </div>
+            ))}
         </div>
       </div>
     </div>

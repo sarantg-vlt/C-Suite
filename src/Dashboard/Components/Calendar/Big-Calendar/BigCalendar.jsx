@@ -754,7 +754,7 @@ const BigCalendar = () => {
         <div className="Dash_calender">
           <h5>Calendar</h5>
           <Button variant="primary" onClick={() => setShowModal(true)}>
-            Add Event
+            Add Remainder
           </Button>
         </div>
 
@@ -771,12 +771,12 @@ const BigCalendar = () => {
         {/* Modal for adding events */}
         <Modal show={showModal} onHide={() => setShowModal(false)}>
           <Modal.Header closeButton>
-            <Modal.Title>Add Event</Modal.Title>
+            <Modal.Title>Add Remainder</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form>
               <Form.Group>
-                <Form.Label>Event Title</Form.Label>
+                <Form.Label>Remainder Title</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Enter event title"
@@ -815,7 +815,7 @@ const BigCalendar = () => {
               Close
             </Button>
             <Button variant="primary" onClick={handleAddEvent}>
-              Save Event
+              Save Remainder
             </Button>
           </Modal.Footer>
         </Modal>
@@ -826,10 +826,10 @@ const BigCalendar = () => {
           onHide={() => setShowDeleteConfirmation(false)}
         >
           <Modal.Header closeButton>
-            <Modal.Title>Delete Event</Modal.Title>
+            <Modal.Title>Delete Remainder</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>Are you sure you want to delete this event?</p>
+            <p>Are you sure you want to delete this Remainder?</p>
           </Modal.Body>
           <Modal.Footer>
             <Button

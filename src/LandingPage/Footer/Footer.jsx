@@ -91,12 +91,12 @@ function Footer() {
         </section>
 
         <section data-aos="fade-up" className="section2">
-          <h5>About LMS</h5>
+          <h5>About C-Suite</h5>
           <a onClick={() => navigate("/Payment")}>Pricing</a>
           <a onClick={() => navigate("/features")}>Features</a>
           <a onClick={() => navigate("/integrations")}>Integrations</a>
           <a onClick={() => navigate("/events")}>Events</a>
-          <a onClick={() => navigate("/reviews")}>Reviews</a>
+          {/* <a onClick={() => navigate("/reviews")}>Reviews</a> */}
         </section>
 
         <section data-aos="fade-up" className="section3">
@@ -112,10 +112,10 @@ function Footer() {
             Contact Us
           </a>
           <a onClick={() => navigate("/helpdesk")}>Help Desk</a>
-          <a onClick={() => navigate("/customersupport")}>Customer Support</a>
-          <a onClick={() => navigate("/profressionalservices")}>
+          {/* <a onClick={() => navigate("/customersupport")}>Customer Support</a> */}
+          {/* <a onClick={() => navigate("/profressionalservices")}>
             Professional Services
-          </a>
+          </a> */}
           <a
             onClick={(e) => {
               e.preventDefault();

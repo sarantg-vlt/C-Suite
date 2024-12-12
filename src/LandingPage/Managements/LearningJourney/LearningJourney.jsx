@@ -44,7 +44,7 @@ const LearningJourney = () => {
                     </div>
                     <div className='element-cnt device-lg' data-aos="fade-right" >
                         <img src={Payment} alt="icon" className='element-icon' />
-                        <p className='text-value'>Post qualifying pay fess</p>
+                        <p className='text-value'>Post qualifying</p>
                     </div>
                 </div>
                 <div className='element-flex-cnt'>
@@ -78,7 +78,7 @@ const LearningJourney = () => {
                     </div>
                     <div className='element-cnt' data-aos="fade-down" >
                         <img src={Payment} alt="icon" className='element-icon' />
-                        <p className='text-value'>Post qualifying pay fess</p>
+                        <p className='text-value'>Post qualifying</p>
                     </div>
                     <div className='element-cnt' data-aos="fade-down" >
                         <img src={Lecture} alt="icon" className='element-icon' />
