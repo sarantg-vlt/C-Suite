@@ -13,8 +13,6 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-
-
 const Profile = () => {
   const navigate = useNavigate();
   const [isEditing, setIsEditing] = useState(false);
@@ -50,7 +48,7 @@ const Profile = () => {
     try {
       const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
       const id = localStorage.getItem("userid");
-      
+
       if (!id) {
         throw new Error("User ID not found in localStorage");
       }
@@ -68,7 +66,7 @@ const Profile = () => {
       // Update user info for course access
       const csuiteUserInfo = {
         userID: data._id,
-        coursePurchased: data.coursePurchased?.length ? 
+        coursePurchased: data.coursePurchased?.length ?
           data.coursePurchased.map((x) => x.courseId) : [],
       };
       localStorage.setItem("userInfo", JSON.stringify(csuiteUserInfo));
@@ -76,13 +74,13 @@ const Profile = () => {
       // Handle profile pictures with proper base64 checking and default fallback
       const processedData = {
         ...data,
-        profilePic: data.profilePic ? 
-          (data.profilePic.startsWith("data:image/") ? 
-            data.profilePic : `data:image/jpeg;base64,${data.profilePic}`) : 
+        profilePic: data.profilePic ?
+          (data.profilePic.startsWith("data:image/") ?
+            data.profilePic : `data:image/jpeg;base64,${data.profilePic}`) :
           defaultPorfileSVG,
-        profileBanner: data.profileBanner ? 
-          (data.profileBanner.startsWith("data:image/") ? 
-            data.profileBanner : `data:image/jpeg;base64,${data.profileBanner}`) : 
+        profileBanner: data.profileBanner ?
+          (data.profileBanner.startsWith("data:image/") ?
+            data.profileBanner : `data:image/jpeg;base64,${data.profileBanner}`) :
           defaultBannerSVG,
       };
 
@@ -95,6 +93,33 @@ const Profile = () => {
     }
   };
 
+    const validateForm = () => {
+      const { name, phoneNumber, email } = profileData;
+
+      // Validate Name (only alphabets)
+      const namePattern = /^[A-Za-z\s]+$/;
+      if (!name || !namePattern.test(name)) {
+        alert("Name must only contain alphabets.");
+        return false;
+      }
+
+      // Validate Phone Number (exactly 10 digits)
+      const phonePattern = /^[0-9]{10}$/;
+      if (!phoneNumber || !phonePattern.test(phoneNumber)) {
+        alert("Phone number must be exactly 10 digits.");
+        return false;
+      }
+
+      // Validate Email (basic email format)
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!email || !emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+
+      return true;
+  };
+  
   useEffect(() => {
     fetchProfileData();
   }, []);
@@ -204,7 +229,7 @@ const Profile = () => {
       }
     } catch (error) {
       console.error("Error saving profile:", error);
-      
+
       if (error.response) {
         console.error("Server Error Data:", error.response.data);
         console.error("Server Error Status:", error.response.status);
@@ -222,7 +247,7 @@ const Profile = () => {
   const handleProfileImageChange = (e) => {
     if (e.target.files?.[0]) {
       const file = e.target.files[0];
-      
+
       // Validate file size (e.g., max 5MB)
       if (file.size > 5 * 1024 * 1024) {
         setSaveError("Profile image must be less than 5MB");
@@ -236,7 +261,7 @@ const Profile = () => {
       }
 
       setSelectedProfileImage(file);
-      
+
       const reader = new FileReader();
       reader.onload = (e) => {
         setProfileData((prev) => ({
@@ -251,7 +276,7 @@ const Profile = () => {
   const handleProfileBannerChange = (e) => {
     if (e.target.files?.[0]) {
       const file = e.target.files[0];
-      
+
       // Validate file size (e.g., max 5MB)
       if (file.size > 5 * 1024 * 1024) {
         setSaveError("Banner image must be less than 5MB");
@@ -265,7 +290,7 @@ const Profile = () => {
       }
 
       setSelectedProfileBanner(file);
-      
+
       const reader = new FileReader();
       reader.onload = (e) => {
         setProfileData((prev) => ({
@@ -576,5 +601,5 @@ const Profile = () => {
     </>
   );
   };
-  
+
   export default Profile;

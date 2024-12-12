@@ -92,7 +92,7 @@ const BigCalendar = () => {
           events={events} // Pass fetched events here
           startAccessor="start"
           endAccessor="end"
-          style={{ height: "100%", width: "100%" }}
+          style={{ height: "470px", width: "100%" }}
         />
         {/* Modal for adding events */}
         <Modal show={showModal} onHide={() => setShowModal(false)}>

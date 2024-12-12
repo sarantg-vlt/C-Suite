@@ -8,9 +8,9 @@
   height: 550px;
 }
 .rbc-toolbar {
-  /* display: flex; */
-  /* flex-direction: column; */
-  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  font-size: 10px !important;
   /* display: none !important; */
 }
 /* .eventFunction {
@@ -20,12 +20,14 @@
 } */
 .rbc-toolbar-label {
   color: var(--primary-color);
+  font: 16px !important;
 }
 .rbc-header > span {
   color: var(--primary-color);
 }
 .rbc-row-bg > .rbc-today {
-  background-color: var(--primary-light) !important;
+  background-color: #a86aff30 !important;
+  /* background-color: var(--primary-light) !important; */
   /* background-color: #a86aff; */
   color: white;
 }
@@ -42,6 +44,10 @@
         background-color: #a86aff30 !important;
 }
 
+.rbc-event,.rbc-event-allday{
+  background-color: var(--primary-color) !important;
+
+}
 .Dash_calender{
   display: flex;
   justify-content: space-between;
@@ -49,6 +55,6 @@
   margin-bottom: 20px;
 }
 
-@media (max-width: 835px) {
+/* @media (max-width: 835px) {
 
-}
+} */
