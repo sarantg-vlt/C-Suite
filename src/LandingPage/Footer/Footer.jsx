@@ -116,14 +116,14 @@ function Footer() {
           {/* <a onClick={() => navigate("/profressionalservices")}>
             Professional Services
           </a> */}
-          <a
+          {/* <a
             onClick={(e) => {
               e.preventDefault();
               navigate("/admin/login");
             }}
           >
             Administrative service
-          </a>
+          </a> */}
         </section>
 
         

@@ -49,7 +49,9 @@ const Login = ({ toggleSlide }) => {
 
   const handleLogin = async () => {
     const newError = {};
-    if (!isValidEmail(form.email)) {
+    const isEmail = isValidEmail(form.email);
+  
+    if (!isEmail && !form.email) {
       newError.email = true;
     }
     if (!isStrongPassword(form.password)) {
@@ -95,6 +97,12 @@ const Login = ({ toggleSlide }) => {
                 }
               }, 5000);
             }
+          } else if (res.data.user.type === "admin") {
+            toast.success("Welcome Admin!");
+            localStorage.setItem("isloggedin", true);
+            localStorage.setItem("adminid", res.data.user._id);
+            localStorage.setItem("email", res.data.user.email);
+            navigate("../admin"); // Navigate to admin dashboard
           } else {
             toast.success("not a user?");
           }
@@ -163,19 +171,20 @@ const Login = ({ toggleSlide }) => {
         </p>
         <form className="login-form">
           <div className="input-container">
-            <input
-              type="text"
-              placeholder="Email or username"
-              style={{ borderColor: error.email ? "red" : "#C7C7C7" }}
-              onChange={(e) =>
-                handleValueChange(
-                  "email",
-                  e.target.value,
-                  isValidEmail(e.target.value)
-                )
-              }
-              className="input"
-            />
+          <input
+  type="text"
+  placeholder="Email or Username"
+  style={{ borderColor: error.email ? "red" : "#C7C7C7" }}
+  onChange={(e) =>
+    handleValueChange(
+      "email",
+      e.target.value,
+      isValidEmail(e.target.value) || e.target.value.length > 0
+    )
+  }
+  className="input"
+/>
+
             {error.email && <p className="input-error">Enter valid Email</p>}
             <img
               src={assets.Images.mail_icon}

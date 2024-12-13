@@ -82,48 +82,60 @@ function Authentication() {
       const [confPassword, setConfPassword] = useState('');
       const [linkedin, setLinkedin] = useState('');
 
-      async function handlesignin(){
+      async function handlesignin() {
         try {
           const response = await axios.get('https://c-suite-academy-2.onrender.com/check', {
             params: {
-              email: loginemail,
-            },});
-          if(response.data=="null"){
+              email: loginemail, // Can be email or username
+            },
+          });
+      
+          if (response.data === "null") {
             toast.error("Account not found!");
+            return;
           }
-          else{
-            if(JSON.parse(response.data).password==loginpassword){
-              toast.success("Login Successfull!");
-              if(JSON.parse(response.data).type=="user"){
-                localStorage.setItem("isloggedin", true);
-                localStorage.setItem("userid", JSON.parse(response.data)._id);
-                localStorage.setItem("name", JSON.parse(response.data).name);
-                localStorage.setItem("email", JSON.parse(response.data).email);
-                localStorage.setItem("linkedin", JSON.parse(response.data).linkedin);
-                localStorage.setItem("elacomplete", JSON.parse(response.data).elacomplete);
-                if(JSON.parse(response.data).elacomplete==false){
-                  setTimeout(() => {
-                    navigate("../quick-assessment");
-                  }, 5000);
-                }
-                else{
-                  setTimeout(() => {
-                    navigate("../home");
-                  }, 5000);
-                }
+      
+          const user = JSON.parse(response.data);
+      
+          if (user.password === loginpassword) {
+            toast.success("Login Successful!");
+      
+            // Check user type and handle navigation
+            if (user.type === "user") {
+              localStorage.setItem("isloggedin", true);
+              localStorage.setItem("userid", user._id);
+              localStorage.setItem("name", user.name);
+              localStorage.setItem("email", user.email);
+              localStorage.setItem("linkedin", user.linkedin);
+              localStorage.setItem("elacomplete", user.elacomplete);
+      
+              if (!user.elacomplete) {
+                setTimeout(() => {
+                  navigate("../quick-assessment");
+                }, 5000);
+              } else {
+                setTimeout(() => {
+                  navigate("../home");
+                }, 5000);
               }
-              else{
-                toast.success("not a user?");
-              }
+            } else if (user.type === "admin") {
+              toast.success("Welcome Admin!");
+              localStorage.setItem("isloggedin", true);
+              localStorage.setItem("adminid", user._id);
+              localStorage.setItem("email", user.email);
+              navigate("../admin"); // Navigate to admin dashboard
+            } else {
+              toast.error("Invalid user type!");
             }
-            else{
-              toast.error("Check Your Password!");
-            }
+          } else {
+            toast.error("Incorrect password!");
           }
         } catch (error) {
-          console.error(error); // Handle errors
+          console.error(error);
+          toast.error("An error occurred while signing in!");
         }
-      };
+      }
+      
 
       async function handlesignup(){
         if(password==confPassword){

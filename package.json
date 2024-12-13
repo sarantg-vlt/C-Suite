@@ -10,6 +10,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@stripe/react-stripe-js": "^2.7.1",
+    "@stripe/stripe-js": "^5.3.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -20,6 +21,7 @@
     "firebase": "^10.12.2",
     "gsap": "^3.12.5",
     "html2canvas": "^1.4.1",
+    "jquery": "^3.7.1",
     "js-confetti": "^0.12.0",
     "jspdf": "^2.5.1",
     "lmsproject": "file:",
@@ -71,5 +73,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/jquery": "^3.5.32"
   }
 }
