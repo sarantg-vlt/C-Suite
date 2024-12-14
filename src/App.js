@@ -91,42 +91,42 @@ import { useEffect } from 'react';
 
 
 function App() {
-  useEffect(() => {
-    // Block right-click functionality
-    const handleRightClick = (e) => {
-      e.preventDefault(); // Prevent the context menu
-    };
-    document.addEventListener("contextmenu", handleRightClick);
+  // useEffect(() => {
+  //   // Block right-click functionality
+  //   const handleRightClick = (e) => {
+  //     e.preventDefault(); // Prevent the context menu
+  //   };
+  //   document.addEventListener("contextmenu", handleRightClick);
 
-    // Block common DevTools shortcuts
-    const handleKeyDown = (e) => {
-      // Disable F12, Ctrl+Shift+I, and Ctrl+Shift+J
-      if (
-        (e.key === 'F12') ||
-        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J'))
-      ) {
-        e.preventDefault();
-      }
-    };
-    document.addEventListener("keydown", handleKeyDown);
+  //   // Block common DevTools shortcuts
+  //   const handleKeyDown = (e) => {
+  //     // Disable F12, Ctrl+Shift+I, and Ctrl+Shift+J
+  //     if (
+  //       (e.key === 'F12') ||
+  //       (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J'))
+  //     ) {
+  //       e.preventDefault();
+  //     }
+  //   };
+  //   document.addEventListener("keydown", handleKeyDown);
 
-    // Detect if DevTools is open and take actions (e.g., block access)
-    const detectDevTools = () => {
-      const widthThreshold = 160;  // Width when DevTools is opened
-      const devToolsOpened = window.outerWidth - window.innerWidth > widthThreshold;
-      if (devToolsOpened) {
-        alert("Developer Tools are disabled on this site.");
-        // You can redirect or take other actions here, like logging the user out
-      }
-    };
+  //   // Detect if DevTools is open and take actions (e.g., block access)
+  //   const detectDevTools = () => {
+  //     const widthThreshold = 160;  // Width when DevTools is opened
+  //     const devToolsOpened = window.outerWidth - window.innerWidth > widthThreshold;
+  //     if (devToolsOpened) {
+  //       alert("Developer Tools are disabled on this site.");
+  //       // You can redirect or take other actions here, like logging the user out
+  //     }
+  //   };
 
-    setInterval(detectDevTools, 1000); // Check every second
+  //   setInterval(detectDevTools, 1000); // Check every second
 
-    return () => {
-      document.removeEventListener("contextmenu", handleRightClick);
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
+  //   return () => {
+  //     document.removeEventListener("contextmenu", handleRightClick);
+  //     document.removeEventListener("keydown", handleKeyDown);
+  //   };
+  // }, []);
   return (
     <div style={{ width: "100vw", overflow: "hidden" }}>
       <Router>

@@ -8,6 +8,8 @@ import Accordion from "react-bootstrap/Accordion";
 import ErrorDataFetchOverlay from "../Error/ErrorDataFetchOverlay";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import ReactPlayer from "react-player";
+import { Button, Modal } from "react-bootstrap";
+import CourseReview from "./CourseReview";
 
 const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 const CourseContent = () => {
@@ -21,6 +23,12 @@ const CourseContent = () => {
   const [fetchError, setFetchError] = useState(false);
   const [activeLesson, setActiveLesson] = useState(null);
   const [currentCourseData, setCurrentCourseData] = useState({});
+  const [showReviewModal, setShowReviewModal] = useState(false);
+
+  const handleShowModal = () => setShowReviewModal(true);
+  const handleCloseModal = () => setShowReviewModal(false);
+
+
 
   // nxt btn
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
@@ -1035,43 +1043,48 @@ const renderEmbeddedPPT = (link, data, lessonIndex, exerciseIndex) => {
         </div>{" "}
       </div>
       <div className="row secondRow">
-        <div className="col-md-8 pdy">
-          <div className="videoBox">
-            <div className="embed-responsive embed-responsive-16by9">
-              {courseData?.lessons.length > 0 &&
-                renderContent(
-                  !currentCourseData.link
-                    ? courseData.videoUrl
-                    : currentCourseData.link,
-                  !currentCourseData.link ? "video" : currentCourseData.type
-                )}
-            </div>
-            <div>
-              <div className="infoBox">
-                <h1>{courseData.title}</h1>
-                {courseData.lessons && courseData.lessons.length > 0 && (
-                  <div className="lessonDescriptionBox">
-                    <h3 className="lessonDescriptionBoxTitle">
-                      {!currentCourseData.title
-                        ? ""
-                        : `${currentCourseData.lessonNo}.${currentCourseData.excerciseNo}`}{" "}
-                      {!currentCourseData.title
-                        ? courseData.lessons[0].title
-                        : currentCourseData.title}
-                      {/* {courseData.lessons[0].title} */}
-                    </h3>
-                    <p className="lessonDescriptionBoxDescription">
-                      {!currentCourseData.notes
-                        ? courseData.lessons[0].description
-                        : currentCourseData.notes}
-                      {/* {courseData.lessons[0].description} */}
-                    </p>
-                  </div>
-                )}
+      {/* <div className="col-md-8 pdy">
+      <div className="videoBox">
+        <div className="embed-responsive embed-responsive-16by9">
+          {courseData?.lessons.length > 0 &&
+            renderContent(
+              !currentCourseData.link
+                ? courseData.videoUrl
+                : currentCourseData.link,
+              !currentCourseData.link ? "video" : currentCourseData.type
+            )}
+        </div>
+        <div>
+          <div className="infoBox">
+            <h1>{courseData.title}</h1>
+            {courseData.lessons && courseData.lessons.length > 0 && (
+              <div className="lessonDescriptionBox">
+                <h3 className="lessonDescriptionBoxTitle">
+                  {!currentCourseData.title
+                    ? ""
+                    : `${currentCourseData.lessonNo}.${currentCourseData.excerciseNo}`}{" "}
+                  {!currentCourseData.title
+                    ? courseData.lessons[0].title
+                    : currentCourseData.title}
+                </h3>
+                <p className="lessonDescriptionBoxDescription">
+                  {!currentCourseData.notes
+                    ? courseData.lessons[0].description
+                    : currentCourseData.notes}
+                </p>
               </div>
-            </div>
+            )}
           </div>
         </div>
+      </div>
+      <div>
+        <button className="btn btn-primary" onClick={handleShowModal}>
+          Review
+        </button>
+      </div>
+    </div> */}
+      <CourseReview courseData={courseData} currentCourseData={currentCourseData} renderContent={renderContent} />
+
         <div className="col-md-4 CCaccordianBox">
           <Accordion activeKey={activeAccordion} onSelect={handleLessonClick}>
             {courseData?.lessons &&
