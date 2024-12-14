@@ -74,6 +74,7 @@ import CustomerSupport from './LandingPage/Footer/Support/CustomerSupport/Custom
 import HelpDesk from './LandingPage/Footer/Support/HelpDesk/HelpDesk'
 import ProfessionalServices from './LandingPage/Footer/Support/ProfessionalServices/ProfessionalServices'
 import ContactManagement from './Admin/components/Contact/ContactManagement';
+import ReviewManagement from './Admin/components/Review/ReviewManagement';
 // Supports end
 
 
@@ -210,6 +211,7 @@ function App() {
           {/* <Route path='/admin/events/:id' element={<EditEvent/>} /> */}
           <Route path="/admin/purchases" element={<PurchasesPage />} />
           {/* <Route path="admin/instructors" element={<AllInstructors />} /> */}
+          <Route path="admin/Review" element={<ReviewManagement />} />
           <Route path="admin/ela" element={<ELApage />} />
           <Route path="admin/contactus" element={<ContactManagement />} />
         </Routes>
