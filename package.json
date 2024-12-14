@@ -45,7 +45,6 @@
     "react-player": "^2.16.0",
     "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
-    "react-star-rating-component": "^1.4.1",
     "react-toastify": "^10.0.5",
     "recharts": "^2.12.7",
     "three.js": "^0.77.1",
@@ -54,7 +53,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts --max_old_space_size=4096 build",
+    "build": "npm install --legacy-peer-deps && react-scripts --max_old_space_size=4096 build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
