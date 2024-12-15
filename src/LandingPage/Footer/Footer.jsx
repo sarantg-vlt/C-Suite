@@ -60,7 +60,7 @@ function Footer() {
           <h6>Follow Us on</h6>
           <div className="sociallinks">
             <a
-              href="https://www.linkedin.com/in/your-profile"
+              href="https://www.linkedin.com/in/"
               target="_blank"
               rel="noopener noreferrer"
             >
