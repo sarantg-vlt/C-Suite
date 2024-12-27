@@ -323,6 +323,60 @@
   margin-top: 1rem;
 }
 
+.courseCard{
+  display: flex;
+  flex-direction: column;
+  padding: .5em;
+  border: .1em solid hsl(0, 0%, 91%);
+  border-radius: 1em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  transition: all .3s ease-in-out;
+  &:hover{
+    transform: scale(102%);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  }
+}
+
+.courseCardImage{
+  aspect-ratio: 16/9;
+  max-width: 100%;
+  border-radius: 1em;
+  /* border: .01em solid black; */
+}
+.courseCardContent{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1em 1em 1em 1em;
+  justify-content: space-between;
+  gap: 1em;
+  height: 100%;
+}
+.courseCardTitle{
+  text-align: start;
+  font-size: medium;
+  font-weight: 500;
+}
+.courseCardDescription{
+  text-align: start;
+  font-size: small;
+}
+.courseCardBtn{
+  all: unset;
+  font-size: small;
+  text-transform: uppercase;
+  /* background: hsl(0, 98%, 46%); */
+  background-color: #6f00ff;
+/* background-color:  hsl(264.97,100%,70.78%); */
+  color: white;
+  padding: .5em 1em;
+  border-radius: .5em;
+  font-weight: 500;
+  &:hover{
+    background: hsl(0, 100%, 47%);
+  }
+}
+
 @media (max-width: 1125px) {
   .main-content {
     padding: 0px 5px 5px 5px;
@@ -442,4 +496,14 @@
     padding: 1rem;
     border: none;
   }
+
+  .courseCardTitle{
+  text-align: start;
+  font-size: small;
+  font-weight: 500;
+}
+.courseCardDescription{
+  text-align: start;
+  font-size: x-small;
+}
 }

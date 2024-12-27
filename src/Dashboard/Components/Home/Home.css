@@ -35,12 +35,12 @@
   place-items: center;
 }
 
-.center-Part{
+.center-Part {
   display: flex;
   gap: 20px;
   width: 100%;
 }
-.center-1{
+.center-1 {
   width: 100%;
 }
 
@@ -76,8 +76,40 @@
     font-size: 1em;
   }
 
-  .center-Part{
+  .center-Part {
     flex-direction: column;
   }
 }
 
+.Dashboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+  gap: 1em;
+}
+.box {
+  border: 1px solid black;
+  border-radius: 1em;
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.box1 {
+  grid-column: span 2;
+}
+.box2 {
+  height: 200px;
+  padding: 1em;
+  overflow: hidden;
+  p{
+    font-weight: 500;
+  }
+}
+.box3 {
+  /* grid-column: span 2; */
+  grid-row: span 2;
+}
+.box4 {
+  grid-column: span 1;
+}
+.box5{
+  grid-column: span 3;
+}

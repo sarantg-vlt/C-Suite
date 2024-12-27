@@ -1,102 +1,35 @@
-.header1 {
+.header {
+  padding: 1em;
+  width: 100%;
   display: flex;
-  width: 60%;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: start;
+  height: 100%;
+  background-color: hsl(266, 100%, 50%);
+  color: hsl(264, 100%, 97%) ;
+  border-radius: 1em;
 }
-
-.welcome-message h1 {
-  margin: 0;
-  color: #fff;
-  font-weight: bolder;
+.headerTitle {
+  font-size: 1.5em;
+  font-weight: 500;
 }
+.headerDescription {
+  font-size: 1em;
+  width: 60ch;
 
-.welcome-message p {
-  color: #636e72;
 }
-
-.calendar {
-  width: 300px;
-}
-
-.header1 {
-  flex: 1;
-  background-image: url("../Assets/Images/welcomebg4.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.welcome-message h1 {
-  margin: 0;
-  color: #fff;
-  font-size: 2rem;
-}
-
-.welcome-message p {
-  /* color: #000000; */
-  color: #fff;
-  width: 65%;
-  margin: 16px 0px;
-}
-
-.welcome-message button {
-  padding: 10px 20px;
-  background-color: transparent;
-  border: 2px solid #fcfcfc;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 7px;
-  margin-top: 10px;
-  font-size: 16px;
-  transition: all 0.25s ease-in-out;
-}
-
-.welcome-message button:hover {
-  border: 2px solid transparent;
-  background: #8949ff;
-}
-
-@media (max-width: 1125px) {
-  .welcome-message h1 {
-    font-size: 1.6rem;
-  }
-
-  .welcome-message p {
-    margin: 8px 0px;
-    font-size: 0.8rem;
-  }
-
-  .welcome-message button {
-    padding: 10px 15px;
-    border-radius: 7px;
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 835px) {
-  .header {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .welcome-message h1 {
-    font-size: 0.85rem;
-  }
-
-  .welcome-message p {
-    width: 80%;
-    margin: 8px 0px;
-    font-size: 0.6rem;
-  }
-
-  .welcome-message button {
-    padding: 5px 10px;
-    border-radius: 7px;
-    margin-top: 3px;
-    font-size: 0.6rem;
+.headerbtn {
+  font-size: 0.8em;
+  all: unset;
+  padding: 0.5em 2em;
+  color: hsl(266, 100%, 50%);
+  background-color: hsl(264, 100%, 97%);
+  border-radius: 0.5em;
+  letter-spacing: 1px;
+  border: 0.1em solid hsl(266, 100%, 50%);
+  &:hover {
+    background-color: hsl(266, 100%, 50%);
+    color: hsl(264, 100%, 97%);
   }
 }

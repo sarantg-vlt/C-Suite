@@ -60,7 +60,7 @@
 
 .element-cnt {
     width: 100%;
-    max-width: 20rem;
+    max-width: 15rem;
     height: 5rem;
     border-radius: 10rem;
     /* background: white; */
@@ -70,12 +70,12 @@
     gap: 1rem;
     /* justify-content: space-between; */
     align-items: center;
-    padding: 1rem;
+    padding: .5rem;
 }
 
 .element-icon {
-    width: 4rem;
-    height: 3rem;
+    width: 3rem;
+    height: 2rem;
     object-fit: contain;
     /* border-radius: 50%; */
 }
@@ -83,7 +83,7 @@
 .text-value {
     max-width: 14rem;
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 500;
     text-align: center;
     padding-right: 0.25rem;
     color: rgb(94, 94, 94);
@@ -320,5 +320,9 @@
     .bold-text span{
         font-size: 1.5rem;
         font-weight: 600;
+    }
+
+    .element-cnt{
+        text-wrap: nowrap;
     }
 }

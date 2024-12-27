@@ -6,6 +6,7 @@ import DefaultImg from "../Assets/Images/imagenotxt2.png";
 import LoadingPage from "../LoadingPage/LoadingPage";
 import ErrorDataFetchOverlay from "../Error/ErrorDataFetchOverlay";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import { MoveUpRight } from "lucide-react";
 
 const Courses = () => {
   const navigate = useNavigate();
@@ -174,7 +175,7 @@ const Courses = () => {
 
   const truncateDescription = (description) => {
     const words = description.split(" ");
-    const truncated = words.slice(0, 15).join(" ");
+    const truncated = words.slice(0, 10).join(" ");
     return truncated;
   };
 
@@ -216,48 +217,71 @@ const Courses = () => {
           </div> */}
           <div className="courseContainer3">
             {filterCourses(selectedFilters).map((course) => (
-              <div className="courseCard3" key={course._id}>
-                <div className="courseOverlay3">
-                  <div className="courseImageBox3">
-                    <img
-                      src={
-                        course.image
-                          ? resolveImagePath(course.image)
-                          : DefaultImg
-                      }
-                      alt={course.title}
-                      className="courseImage3"
-                    />
-                    <div className="courseImageTxt3">{course.title}</div>
-                  </div>
-                  <div className="courseDetails3">
-                    <p>{truncateDescription(course.description)}...</p>
-                    <button className="courseDetailBtn3">View Details</button>
-                  </div>
-                </div>
-                <div className="courseLessonBox3">
-                  <h5>Lessons</h5>
-                  <ul>
-                    {getLessonList(course.lessons).map((lesson, index) => (
-                      <li key={index}>{lesson.title}</li>
-                    ))}
-                    {course.lessons.length >
-                      getLessonList(course.lessons).length && (
-                      <li>...and more</li>
-                    )}
-                  </ul>
+              // <div className="courseCard3" key={course._id}>
+              //   <div className="courseOverlay3">
+              //     <div className="courseImageBox3">
+              //       <img
+              //         src={
+              //           course.image
+              //             ? resolveImagePath(course.image)
+              //             : DefaultImg
+              //         }
+              //         alt={course.title}
+              //         className="courseImage3"
+              //       />
+              //       <div className="courseImageTxt3">{course.title}</div>
+              //     </div>
+              //     <div className="courseDetails3">
+              //       <p>{truncateDescription(course.description)}...</p>
+              //       <button className="courseDetailBtn3">View Details</button>
+              //     </div>
+              //   </div>
+              //   <div className="courseLessonBox3">
+              //     <h5>Lessons</h5>
+              //     <ul>
+              //       {getLessonList(course.lessons).map((lesson, index) => (
+              //         <li key={index}>{lesson.title}</li>
+              //       ))}
+              //       {course.lessons.length >
+              //         getLessonList(course.lessons).length && (
+              //         <li>...and more</li>
+              //       )}
+              //     </ul>
+              //     <button
+              //       onClick={() =>
+              //         navigate(`/home/courseDetails/${course._id}`)
+              //       }
+              //       className="lessonDetailBtn3"
+              //     >
+              //       View Course
+              //     </button>
+              //     {/* Optionally, display if purchased */}
+              //     {course.isPurchased && (
+              //       <span className="purchasedLabel">Purchased</span>
+              //     )}
+              //   </div>
+              // </div>
+              <div className="courseCard" key={course._id}>
+                <img
+                  src={
+                    course.image ? resolveImagePath(course?.image) : DefaultImg
+                  }
+                  alt={course.title}
+                  className="courseCardImage"
+                />
+                <div className="courseCardContent">
+                  <p className="courseCardTitle">{course.title}</p>
+                  <p className="courseCardDescription">
+                    {truncateDescription(course.description)}...
+                  </p>
                   <button
+                    className="courseCardBtn"
                     onClick={() =>
                       navigate(`/home/courseDetails/${course._id}`)
-                    }
-                    className="lessonDetailBtn3"
-                  >
-                    View Course
+                    }>
+                    {course.isPurchased ? "Purchased" : "Enroll course"}
+                    <MoveUpRight height={15} />
                   </button>
-                  {/* Optionally, display if purchased */}
-                  {course.isPurchased && (
-                    <span className="purchasedLabel">Purchased</span>
-                  )}
                 </div>
               </div>
             ))}

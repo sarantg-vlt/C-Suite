@@ -24,7 +24,7 @@ const LearningJourney = () => {
                     </div>
                     <div className='element-cnt device-lg' data-aos="fade-right" >
                         <img src={Manager} alt="icon" className='element-icon' />
-                        <p className='text-value'>Choose CTO or CISO</p>
+                        <p className='text-value'>Choose course</p>
                     </div>
                 </div>
                 <div className='element-flex-cnt'>
@@ -34,7 +34,7 @@ const LearningJourney = () => {
                     </div>
                     <div className='element-cnt device-lg' data-aos="fade-right" >
                         <img src={Online} alt="icon" className='element-icon' />
-                        <p className='text-value'>Take online qualifying Assessment</p>
+                        <p className='text-value'>Take Assessment</p>
                     </div>
                 </div>
                 <div className='element-flex-cnt'>
@@ -70,11 +70,11 @@ const LearningJourney = () => {
                 <div className='nav-element-cnt'>
                     <div className='element-cnt' data-aos="fade-down" >
                         <img src={Manager} alt="icon" className='element-icon' />
-                        <p className='text-value'>Choose CTO or CISO</p>
+                        <p className='text-value'>Choose course</p>
                     </div>
                     <div className='element-cnt' data-aos="fade-down" >
                         <img src={Online} alt="icon" className='element-icon' />
-                        <p className='text-value'>Take online qualifying Assessment</p>
+                        <p className='text-value'>Take Assessment</p>
                     </div>
                     <div className='element-cnt' data-aos="fade-down" >
                         <img src={Payment} alt="icon" className='element-icon' />

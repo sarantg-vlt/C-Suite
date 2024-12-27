@@ -9,6 +9,7 @@ import { FaArrowDown, FaArrowRight } from "react-icons/fa6";
 import LandingCourses from '../Assets/Data/LandingCourses.json';
 import Aos from "aos";
 import 'aos/dist/aos.css';
+import { MoveUpRight } from "lucide-react";
 
 const CoursesLandingPage = () => {
   const navigate = useNavigate();
@@ -154,7 +155,7 @@ const CoursesLandingPage = () => {
 
   const truncateDescription = (description) => {
     const words = description.split(" ");
-    const truncated = words.slice(0, 15).join(" ");
+    const truncated = words.slice(0, 10).join(" ");
     return truncated;
   };
 
@@ -242,39 +243,53 @@ const CoursesLandingPage = () => {
               </div>
             ))} */}
             {coursesData.map((course) => (
-              <div className="courseCard3" key={course._id}>
-                <div className="courseOverlay3">
-                  <div className="courseImageBox3">
-                    <img
-                      src={
+              // <div className="courseCard3" key={course._id}>
+              //   <div className="courseOverlay3">
+              //     <div className="courseImageBox3">
+              //       <img
+              //         src={
+              //           course.image ? resolveImagePath(course?.image) : imgd
+              //         }
+              //         alt={course.title}
+              //         className="courseImage3"
+              //       />
+              //       <div className="courseImageTxt3">{course?.title}</div>
+              //     </div>
+              //     <div className="courseDetails3">
+              //       <p>{truncateDescription(course?.description)}...</p>
+              //       <button className="courseDetailBtn3">View Details</button>
+              //     </div>
+              //   </div>
+              //   <div className="courseLessonBox3">
+              //     <h5>Lessons</h5>
+              //     <ul>
+              //       {course?.lessons.map((lesson) => (
+              //         <li key={lesson.title}>{lesson.title}</li>
+              //       ))}
+              //       {course?.lessons.length > 5 && <li>...and more</li>}
+              //     </ul>
+              //     <button
+              //       onClick={
+              //         () => navigate(`/course-preview`, { state: { course } })
+              //         // navigate(`/course-preview`)
+              //       }
+              //       className="lessonDetailBtn3"
+              //     >
+              //       View Course
+              //     </button>
+              //   </div>
+              // </div>
+
+              <div className="courseCard" key={course._id}>
+                <img src={
                         course.image ? resolveImagePath(course?.image) : imgd
-                      }
-                      alt={course.title}
-                      className="courseImage3"
-                    />
-                    <div className="courseImageTxt3">{course?.title}</div>
-                  </div>
-                  <div className="courseDetails3">
-                    <p>{truncateDescription(course?.description)}...</p>
-                    <button className="courseDetailBtn3">View Details</button>
-                  </div>
-                </div>
-                <div className="courseLessonBox3">
-                  <h5>Lessons</h5>
-                  <ul>
-                    {course?.lessons.map((lesson) => (
-                      <li key={lesson.title}>{lesson.title}</li>
-                    ))}
-                    {course?.lessons.length > 5 && <li>...and more</li>}
-                  </ul>
-                  <button
-                    onClick={
-                      () => navigate(`/course-preview`, { state: { course } })
-                      // navigate(`/course-preview`)
-                    }
-                    className="lessonDetailBtn3"
-                  >
-                    View Course
+                      } alt={course.title} className="courseCardImage" />
+                <div className="courseCardContent">
+                  <p className="courseCardTitle">{course.title}</p>
+                  <p className="courseCardDescription">{truncateDescription(course.description)}...</p>
+                  <button className="courseCardBtn" onClick={() => navigate(`/course-preview`, { state: { course } })}>
+                    View course
+                    <MoveUpRight height={15}/>
                   </button>
                 </div>
               </div>

@@ -92,19 +92,10 @@ const Statistics = () => {
       <div className="time-spent d-block">
         <h3>Event</h3>
         <div className="chart-container">
-          {/* <div className="chart-title">Weekly Time Distribution</div>
-          <Chart data={timeSpentData} isTimeSpent={true} />
-          <div className="chart-legend">
-            {Object.keys(timeSpentData).map((day) => (
-              <div key={day}>
-                <span className={`legend-${day.toLowerCase()}`}></span>
-                {day}
-              </div>
-            ))}
-          </div> */}
           <Events/>
+         
         </div>
-      </div>
+      </div> 
 
       <div className="completion">
         <h3>Course Completion</h3>
