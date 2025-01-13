@@ -89,21 +89,21 @@ const Edit = ({ courseDetails }) => {
   };
 
   const uploadCourse = async () => {
-    if (
-  // //     // courseData.title &&
-  // //     // courseData.description &&
-  // //     // courseData.lessons.length > 0 &&
-  // //     // courseData.price &&
-  // //     // courseData.thumbnail
-      courseData.title &&
-  courseData.description &&
-  courseData.lessons.length > 0 &&
-  // courseData.price !== null && 
-  courseData.price &&
-  // (courseData.price !== null && !isNaN(courseData.price)) &&
-  courseData.thumbnail
-    ) {
-      try {
+  //   if (
+  // // //     // courseData.title &&
+  // // //     // courseData.description &&
+  // // //     // courseData.lessons.length > 0 &&
+  // // //     // courseData.price &&
+  // // //     // courseData.thumbnail
+  //     courseData.title &&
+  // courseData.description &&
+  // courseData.lessons.length > 0 &&
+  // // courseData.price !== null && 
+  // courseData.price &&
+  // // (courseData.price !== null && !isNaN(courseData.price)) &&
+  // courseData.thumbnail
+  //   ) {
+  //     try {
         const courseFormData = convertToCourseFormData(courseData);
         // const data = await updateCourse(id, { courseFormData });
         // const {data} = await axios()
@@ -116,11 +116,11 @@ const Edit = ({ courseDetails }) => {
       } catch (error) {
         console.log(error);
       }
-    } else {
-      window.alert(
-        "This course is not valid add at least on lesson and fill other details"
-      );
-    }
+    // } else {
+    //   window.alert(
+    //     "This course is not valid add at least on lesson and fill other details"
+    //   );
+    // }
   };
 
   const deleteThisCourse = async () => {
