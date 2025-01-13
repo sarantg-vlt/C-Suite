@@ -13,6 +13,7 @@ import axios from "axios";
 
 const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 const Edit = ({ courseDetails }) => {
+  const navigate = useNavigate();
   const { id } = useParams()
   const [popupOpen, setPopupOpen] = useState({ open: false, data: null });
   const [editCourse, setEditCourse] = useState(false);
@@ -22,7 +23,6 @@ const Edit = ({ courseDetails }) => {
     updateIndex: null,
   });
 
-  const navigate = useNavigate();
   const [courseData, setCourseData] = useState({
     title: "",
     description: "",
@@ -41,9 +41,14 @@ const Edit = ({ courseDetails }) => {
   }, [courseDetails]);
 
   const handledirectInput = (type, value) => {
-    setCourseData({ ...courseData, [type]: value });
+    if (type === "price") {
+      // Ensure price is stored as a number
+      const numericValue = parseFloat(value);
+      setCourseData({ ...courseData, [type]: isNaN(numericValue) ? "" : numericValue });
+    } else {
+      setCourseData({ ...courseData, [type]: value });
+    }
   };
-
   const handleOverviewInput = (type, value) => {
     setCurrentOverview({ ...currentOverview, [type]: value });
   };
@@ -89,7 +94,7 @@ const Edit = ({ courseDetails }) => {
   };
 
   const uploadCourse = async () => {
-  //   if (
+    // if (
   // // //     // courseData.title &&
   // // //     // courseData.description &&
   // // //     // courseData.lessons.length > 0 &&
@@ -122,6 +127,9 @@ const Edit = ({ courseDetails }) => {
     //   );
     // }
   };
+
+  console.log(courseData);
+  
 
   const deleteThisCourse = async () => {
     const confirm = window.confirm(
@@ -260,7 +268,7 @@ const Edit = ({ courseDetails }) => {
                 value={courseData.price || ""}
                 className="name-input price-input"
                 placeholder="₹"
-                onChange={(e) => handledirectInput("price", isNaN(e.target.value))}
+                onChange={(e) => handledirectInput("price", e.target.value)}
               />
             </div>
             <div className="course-name-cnt">
