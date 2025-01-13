@@ -89,13 +89,20 @@ const Edit = ({ courseDetails }) => {
   };
 
   const uploadCourse = async () => {
-    if (
-      courseData.title &&
-      courseData.description &&
-      courseData.lessons.length > 0 &&
-      courseData.price &&
-      courseData.thumbnail
-    ) {
+  //   if (
+  // //     // courseData.title &&
+  // //     // courseData.description &&
+  // //     // courseData.lessons.length > 0 &&
+  // //     // courseData.price &&
+  // //     // courseData.thumbnail
+  //     courseData.title &&
+  // courseData.description &&
+  // courseData.lessons.length > 0 &&
+  // // courseData.price !== null && 
+  // courseData.price &&
+  // // (courseData.price !== null && !isNaN(courseData.price)) &&
+  // courseData.thumbnail
+  //   ) {
       try {
         const courseFormData = convertToCourseFormData(courseData);
         // const data = await updateCourse(id, { courseFormData });
@@ -109,11 +116,11 @@ const Edit = ({ courseDetails }) => {
       } catch (error) {
         console.log(error);
       }
-    } else {
-      window.alert(
-        "This course is not valid add at least on lesson and fill other details"
-      );
-    }
+    // } else {
+    //   window.alert(
+    //     "This course is not valid add at least on lesson and fill other details"
+    //   );
+    // }
   };
 
   const deleteThisCourse = async () => {
@@ -248,10 +255,12 @@ const Edit = ({ courseDetails }) => {
                 name=""
                 id=""
                 readOnly={editCourse ? false : true}
-                value={courseData.price !== null ? courseData.price : ""}
+                value={courseData.price !== null && !isNaN(courseData.price) ? courseData.price : ""}
+                // value={courseData.price !== null ? courseData.price : ""}
+                // value={courseData.price || ""}
                 className="name-input price-input"
                 placeholder="₹"
-                onChange={(e) => handledirectInput("price", e.target.value)}
+                onChange={(e) => handledirectInput("price", isNaN(e.target.value))}
               />
             </div>
             <div className="course-name-cnt">
