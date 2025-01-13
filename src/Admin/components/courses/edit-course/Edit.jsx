@@ -103,7 +103,7 @@ const Edit = ({ courseDetails }) => {
   // // (courseData.price !== null && !isNaN(courseData.price)) &&
   // courseData.thumbnail
   //   ) {
-  //     try {
+      try {
         const courseFormData = convertToCourseFormData(courseData);
         // const data = await updateCourse(id, { courseFormData });
         // const {data} = await axios()
