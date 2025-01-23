@@ -51,6 +51,10 @@ const CourseContent = () => {
   // api data
   const [completedUserData, setCompletedUserData] = useState([]);
 
+
+  console.log(courseData);
+  
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -847,10 +851,13 @@ const renderEmbeddedPPT = (link, data, lessonIndex, exerciseIndex) => {
 
   // const [currentSlide, setCurrentSlide] = useState(1); // State to track the current slide
   
+  // const googleEmbedUrl = `https://docs.google.com/presentation/d/${fileId}/embed?rm=minimal&start=false&loop=false&slide=${currentSlide}`;
+  // const officeEmbedUrl = `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(
+  //   link
+  // )}`;
+
   const googleEmbedUrl = `https://docs.google.com/presentation/d/${fileId}/embed?rm=minimal&start=false&loop=false&slide=${currentSlide}`;
-  const officeEmbedUrl = `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(
-    link
-  )}`;
+  const officeEmbedUrl = `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(link)}`;
 
   // const fetchSlideCount = async () => {
   //   try {

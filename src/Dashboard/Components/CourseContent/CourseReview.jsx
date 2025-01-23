@@ -1,12 +1,17 @@
-import React, { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Modal, Button, Accordion, Card } from "react-bootstrap";
 import { FaStar } from "react-icons/fa";
 import axios from "axios";
+import { Star, StarIcon } from "lucide-react";
 
 const CourseReview = ({ courseData, currentCourseData, renderContent }) => {
   const [showReviewModal, setShowReviewModal] = useState(false);
   const [rating, setRating] = useState(0);
   const [reviewText, setReviewText] = useState("");
+  const [View, setView] = useState([]);
+  const [overAllReview, setOverAllReview] = useState("");
+  const [showAllReviews, setShowAllReviews] = useState(false);
+
 
   const handleShowModal = () => setShowReviewModal(true);
   const handleCloseModal = () => {
@@ -41,10 +46,43 @@ const CourseReview = ({ courseData, currentCourseData, renderContent }) => {
       alert(response.data.message || "Review submitted successfully!");
       handleCloseModal();
     } catch (error) {
-      console.error("Error submitting review:", error.response?.data || error.message);
-      alert(error.response?.data?.message || "Failed to submit review. Please try again.");
+      console.error(
+        "Error submitting review:",
+        error.response?.data || error.message
+      );
+      alert(
+        error.response?.data?.message ||
+          "Failed to submit review. Please try again."
+      );
     }
   };
+
+  useEffect(() => {
+
+    const fetchReview = async () => {
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_API_BASE_URL}/review/${courseData?.title}/rating`
+      );
+      // const data = await res.data
+      console.log(data);
+
+      setView(data);
+    };
+    const fetchOverAllReview = async () => {
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_API_BASE_URL}/review/${courseData?.title}`
+      );
+      setOverAllReview(data);
+    };
+    fetchOverAllReview();
+    fetchReview();
+  }, []);
+
+
+  const handleShowAllReviews = () => {
+    setShowAllReviews(!showAllReviews);
+  };
+
 
   return (
     <div className="col-md-8 pdy">
@@ -81,11 +119,63 @@ const CourseReview = ({ courseData, currentCourseData, renderContent }) => {
           </div>
         </div>
       </div>
-      <div>
-        <button className="btn review-btn" onClick={handleShowModal}>
+
+      {/* Review Summary */}
+      <div className="d-flex align-items-center mr-3">
+        <button
+          className="btn review-btn d-flex gap-2"
+          onClick={handleShowModal}
+        >
           Review
         </button>
+        <span className="d-flex align-items-center justify-content-center">
+          {[...Array(5)].map((_, index) => (
+            <span
+              key={index}
+              className={`star ${ overAllReview?.course?.averageRating>0 &&
+                overAllReview?.course?.averageRating > index ? "filled" : ""
+              }`}
+            >
+              <FaStar />
+            </span>
+          ))}
+          {View.length}+ <span onClick={handleShowAllReviews}>Reviews</span>
+        </span>
       </div>
+
+        {/* Accordion for Reviews */}
+        {showAllReviews && (
+         <div className="d-flex flex-column">
+        {View.length>0 && View.map((v) => (
+          <div
+            className=" bg-white d-flex justify-content-between mt-3 p-3 rounded-lg"
+            key={v._id}
+          >
+            <div className="">
+              <p className="text-primary h5">{v.username}</p>
+              <p className="text-body">{v.description}</p>
+            </div>
+            <div className="d-flex flex-column align-items-end justify-content-between">
+              <p className="">
+                {/* <FaStar /> */}
+                {[...Array(5)].map((_, index) => (
+            <span
+              key={index}
+              className={`star ${
+                v.rating > index ? "filled" : ""
+              }`}
+            >
+              <FaStar />
+            </span>
+          ))}
+                {v.rating}
+              </p>
+              <p>{v.createdAt}</p>
+            </div>
+          </div>
+        ))}
+      </div> 
+      )}
 
       <Modal show={showReviewModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
