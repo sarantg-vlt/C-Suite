@@ -61,6 +61,10 @@ function ContactUs() {
     }
   };
 
+  // const handleSubmit = () => {
+    // alert ("Sucessfully ")
+  // }
+
   return (
     <div className="contactUs" id="contact">
       <section className="leftcontainer">
@@ -131,6 +135,8 @@ function ContactUs() {
                   type="text"
                   name="firstname"
                   placeholder=" "
+                  pattern="[A-Za-z\s]+"
+                  title="Accept only text format "
                   id="firstname"
                   value={formData.firstname}
                   onChange={handleChange}
@@ -143,6 +149,8 @@ function ContactUs() {
                   type="text"
                   name="lastname"
                   placeholder=" "
+                  pattern="[A-Za-z\s]+"
+                  title="Accept only text format "
                   id="lastname"
                   value={formData.lastname}
                   onChange={handleChange}
@@ -188,10 +196,16 @@ function ContactUs() {
               <label htmlFor="message">Have any message / Queries?</label>
             </div>
             <div className="submit">
-              <input type="submit" value={isSubmitting ? "Sending..." : "Submit"} disabled={isSubmitting} />
+              <input 
+                type="submit"
+                value={isSubmitting ? "Sending..." : "Submit"}
+                disabled={isSubmitting}
+              />
             </div>
           </form>
-          {responseMessage && <p className="responseMessage">{responseMessage}</p>}
+          {responseMessage && (
+            <p className="responseMessage">{responseMessage}</p>
+          )}
         </div>
       </section>
     </div>

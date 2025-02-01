@@ -12,6 +12,7 @@ import defaultBannerSVG from "../Assets/SVG/defaultBannerSVG.svg";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import {isValidLinkedin} from "../../../Auth/utils/validityCheck";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -321,6 +322,16 @@ const Profile = () => {
   const handleBackClick = () => {
     navigate("/home");
   };
+
+
+
+  
+
+
+
+
+
+
   return (
     <>
       <div className="profile-back-arrow-container" onClick={handleBackClick}>
@@ -395,8 +406,12 @@ const Profile = () => {
               <input
                 type="text"
                 name="name"
+                pattern="[A-Za-z\s]+"
                 value={profileData.name || ""}
-                onChange={handleChange}
+                onChange={(e) => {
+                  const value = e.target.value.replace(/[^a-zA-Z\s]/g, ""); // Remove numbers and special characters
+                  handleChange({ target: { name: "name", value } });
+                }}
                 disabled={!isEditing}
               />
             </div>
@@ -407,8 +422,12 @@ const Profile = () => {
               <input
                 type="text"
                 name="gender"
+                pattern="[A-Za-z\s]+" // Ensures validation on form submission
                 value={profileData?.gender || ""}
-                onChange={handleChange}
+                onChange={(e) => {
+                  const value = e.target.value.replace(/[^A-Za-z\s]/g, ""); // Removes numbers and special characters
+                  handleChange({ target: { name: "gender", value } });
+                }}
                 disabled={!isEditing}
               />
             </div>
@@ -494,6 +513,7 @@ const Profile = () => {
               <input
                 type="text"
                 name="companyname"
+                required
                 value={profileData?.companyname || ""}
                 onChange={handleChange}
                 disabled={!isEditing}
@@ -508,8 +528,14 @@ const Profile = () => {
               <input
                 type="text"
                 name="position"
+                required
+                pattern="[A-Za-z\s]+" // Ensures only alphabets and spaces during form submission
+                title="Accept only text format"
                 value={profileData?.position || ""}
-                onChange={handleChange}
+                onChange={(e) => {
+                  const value = e.target.value.replace(/[^A-Za-z\s]/g, ""); // Removes numbers and special characters
+                  handleChange({ target: { name: "position", value } });
+                }}
                 disabled={!isEditing}
               />
             </div>
@@ -519,11 +545,30 @@ const Profile = () => {
               )} profileDetails`}
             >
               <label>LinkedIn</label>
+              {/* <input
+                type="url"
+                name="linkedIn"
+                required
+                pattern="url"
+                value={profileData?.linkedIn || ""}
+                onChange={handleChange}
+                disabled={!isEditing}
+              /> */}
+              {/* import {isValidLinkedin} from "../../../Auth/utils/validityCheck"; */}
               <input
                 type="url"
                 name="linkedIn"
+                required
+                pattern="url"
                 value={profileData?.linkedIn || ""}
-                onChange={handleChange}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  handleChange(e); // Assuming handleChange updates the state
+                  if (value && !isValidLinkedin(value)) {
+                    // You can show an error message or handle invalid LinkedIn URL case here
+                    console.log("Invalid LinkedIn URL");
+                  }
+                }}
                 disabled={!isEditing}
               />
             </div>
@@ -533,6 +578,7 @@ const Profile = () => {
               <label>Bio</label>
               <textarea
                 name="bio"
+                required
                 value={profileData?.bio || ""}
                 onChange={handleChange}
                 disabled={!isEditing}
@@ -549,8 +595,15 @@ const Profile = () => {
               <input
                 type="text"
                 name="emergencyContact.name"
+                required
+                pattern="[A-Za-z\s]+" // Ensures validation on form submission
                 value={profileData.emergencyContact?.name || ""}
-                onChange={handleChange}
+                onChange={(e) => {
+                  const value = e.target.value.replace(/[^A-Za-z\s]/g, ""); // Removes numbers and special characters
+                  handleChange({
+                    target: { name: "emergencyContact.name", value },
+                  });
+                }}
                 disabled={!isEditing}
               />
             </div>
@@ -562,9 +615,16 @@ const Profile = () => {
               <label>Relationship</label>
               <input
                 type="text"
+                pattern="[A-Za-z\s]+" // Ensures only alphabets and spaces on form submission
+                required
                 name="emergencyContact.relationship"
                 value={profileData.emergencyContact?.relationship || ""}
-                onChange={handleChange}
+                onChange={(e) => {
+                  const value = e.target.value.replace(/[^A-Za-z\s]/g, ""); // Removes numbers and special characters
+                  handleChange({
+                    target: { name: "emergencyContact.relationship", value },
+                  });
+                }}
                 disabled={!isEditing}
               />
             </div>
@@ -575,7 +635,8 @@ const Profile = () => {
             >
               <label>Emergency Contact Phone</label>
               <input
-                type="text"
+                type="Number"
+                required
                 name="emergencyContact.phone"
                 value={profileData.emergencyContact?.phone || ""}
                 onChange={handleChange}
@@ -590,6 +651,7 @@ const Profile = () => {
               <label>Emergency Contact Address</label>
               <textarea
                 name="emergencyContact.address"
+                required
                 value={profileData.emergencyContact?.address || ""}
                 onChange={handleChange}
                 disabled={!isEditing}

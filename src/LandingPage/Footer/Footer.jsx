@@ -95,7 +95,7 @@ function Footer() {
           <a onClick={() => navigate("/Payment")}>Pricing</a>
           {/* <a onClick={() => navigate("/features")}>Features</a> */}
           {/* <a onClick={() => navigate("/integrations")}>Integrations</a> */}
-          <a onClick={() => navigate("/events")}>Events</a>
+          {/* <a onClick={() => navigate("/events")}>Events</a> */}
           {/* <a onClick={() => navigate("/reviews")}>Reviews</a> */}
         </section>
 

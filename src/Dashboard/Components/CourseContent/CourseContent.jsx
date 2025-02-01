@@ -248,35 +248,7 @@ const CourseContent = () => {
     return `${parseInt(minutes, 10)}m ${parseInt(seconds, 10)}s`;
   }
 
-  // const handleNext = async () => {
-  //   if (courseData.lessons) {
-  //     const currentLesson = courseData.lessons[currentLessonIndex];
-
-  //     if (currentLessonIndex === 0 && currentVideoIndex === -1) {
-  //       handleCurrentContent(currentLesson.chapter[0], currentLessonIndex, 0);
-  //     } else if (currentVideoIndex < currentLesson.chapter.length - 1) {
-  //       handleCurrentContent(
-  //         currentLesson.chapter[currentVideoIndex + 1],
-  //         currentLessonIndex,
-  //         currentVideoIndex + 1
-  //       );
-  //     } else if (currentLessonIndex < courseData.lessons.length - 1) {
-  //       const nextLesson = courseData.lessons[currentLessonIndex + 1];
-  //       handleCurrentContent(nextLesson.chapter[0], currentLessonIndex + 1, 0);
-  //     } else {
-  //       const totalExercises = courseData.lessons.reduce(
-  //         (total, lesson) => total + lesson.chapter.length,
-  //         0
-  //       );
-  //       if (completedExercises.size === totalExercises) {
-  //         alert("Congratulations! You have completed the course!");
-  //       } else {
-  //         alert("There are a few lessons you need to complete!");
-  //       }
-  //     }
-  //   }
-  // };
-
+  
   const handleNext = async () => {
     if (courseData.lessons) {
       const currentLesson = courseData.lessons[currentLessonIndex];
@@ -345,51 +317,6 @@ const CourseContent = () => {
     }
   };
 
-  // const handleMediaEnd = async (data, lessonIndex, exerciseIndex) => {
-  //   const exerciseKey = `${lessonIndex}-${exerciseIndex}`;
-
-  //   // const modifiedData = {
-  //   //   ...data,
-  //   //   // exerciseNo: exerciseIndex + 1,
-  //   //   lessonNo: lessonIndex + 1,
-  //   // };
-  //   // setCurrentCourseData(modifiedData)
-  //   // Update completed exercises
-  //   setCompletedExercises((prev) => {
-  //     const updatedSet = new Set(prev);
-  //     updatedSet.add(exerciseKey);
-  //     console.log("Updated completedExercises:", Array.from(updatedSet));
-  //     return updatedSet;
-  //   });
-
-  //   // Update watched video titles
-  //   setWatchedVideoTitles((prevTitles) => {
-  //     const updatedTitles = new Set(prevTitles);
-  //     updatedTitles.add(data?.title);
-  //     console.log("Updated watchedVideoTitles:", Array.from(updatedTitles));
-  //     return Array.from(updatedTitles);
-  //   });
-
-  //   console.log(`Media ended for: ${data?.title}, marked as completed.`);
-
-  //   // // Optional: Send progress update to the backend
-  //   // try {
-  //   //   const videoAlreadyCompleted = completedUserData.includes(data.title);
-
-  //   //   if (!videoAlreadyCompleted) {
-  //   //     const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
-
-  //   //     await axios.put(
-  //   //       `${apiBaseUrl}/completevideo/${fetchedID}/updatelesson`,
-  //   //       { lesson: data.title }
-  //   //     );
-  //   //     console.log("Media end progress updated on the server:", data.title);
-  //   //   }
-  //   // } catch (err) {
-  //   //   console.error("Error updating media end progress:", err);
-  //   // }
-  // };
-
   const handleMediaEnd = async () => {
     if (currentLessonIndex !== null && currentVideoIndex !== null) {
       const exerciseKey = `${currentLessonIndex}-${currentVideoIndex}`;
@@ -411,423 +338,7 @@ const CourseContent = () => {
     }
   };
 
-  // const renderEmbeddedPPT = (link,data,lessonIndex,exerciseIndex) => {
-  //   // console.log(link);
-
-  //   const fileIdMatch = link.match(/\/d\/([^/]+)/);
-  //   const fileId = fileIdMatch ? fileIdMatch[1] : null;
-
-  //   if (!fileId) {
-  //     return <p>Error: Invalid link format</p>;
-  //   }
-
-  //   const googleEmbedUrl = `https://docs.google.com/presentation/d/${fileId}/embed`;
-  //   const officeEmbedUrl = `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(
-  //     link
-  //   )}`;
-
-  //   return (
-  //     <>
-  //     <div>
-  //       <iframe
-  //         title="PPT Viewer"
-  //         src={googleEmbedUrl}
-  //         style={{ width: "100%", height: "100%", border: "none" }}
-  //         allow="autoplay; encrypted-media"
-  //         onError={(e) => {
-  //           e.target.src = officeEmbedUrl;
-  //         }}
-  //         // onLoad={handleMediaEnd}
-  //         />
-  //       <p>
-  //         If the viewer fails to load,{" "}
-  //         <a href={link} target="_blank" rel="noopener noreferrer">
-  //           download the PPT file
-  //         </a>
-  //         .
-  //       </p>
-  //     </div>
-  //       {/* Mark as Completed button */}
-  //       <button
-  //         className="markCompletedButton mt-10"
-  //         onClick={() =>
-  //           // handleMediaEnd({ title: "PPT Slide" }, lessonIndex, exerciseIndex)
-  //           handleMediaEnd({title:`${data?.title}`},lessonIndex, exerciseIndex)
-  //         }
-  //         >
-  //         Mark as Completed
-  //       </button>
-  //         </>
-  //   );
-  // };
-
-  // const renderEmbeddedPPT = (link, data, lessonIndex, exerciseIndex) => {
-  //   const fileIdMatch = link.match(/\/d\/([^/]+)/);
-  //   const fileId = fileIdMatch ? fileIdMatch[1] : null;
-
-  //   if (!fileId) {
-  //     return <p>Error: Invalid link format</p>;
-  //   }
-
-  //   const googleEmbedUrl = `https://docs.google.com/presentation/d/${fileId}/embed?start=false&loop=false&delayms=3000`;
-  //   const officeEmbedUrl = `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(
-  //     link
-  //   )}`;
-
-  //   let iframeRef = null; // Reference to iframe
-
-  //   const navigateSlides = (direction) => {
-  //     if (iframeRef && iframeRef.contentWindow) {
-  //       const message = direction === "next" ? "NEXT" : "PREV";
-  //       iframeRef.contentWindow.postMessage({ type: message }, "*");
-  //     }
-  //   };
-
-  //   return (
-  //     <>
-  //       <div>
-  //         <iframe
-  //           title="PPT Viewer"
-  //           ref={(ref) => (iframeRef = ref)}
-  //           src={googleEmbedUrl}
-  //           style={{ width: "100%", height: "500px", border: "none" }}
-  //           allow="autoplay; encrypted-media"
-  //           onError={(e) => {
-  //             e.target.src = officeEmbedUrl;
-  //           }}
-  //         />
-  //         <p>
-  //           If the viewer fails to load,{" "}
-  //           <a href={link} target="_blank" rel="noopener noreferrer">
-  //             download the PPT file
-  //           </a>
-  //           .
-  //         </p>
-  //       </div>
-  //       {/* Controls and Mark as Completed button */}
-  //       <div className="controls mt-10">
-  //         <button
-  //           className="controlButton"
-  //           onClick={() => navigateSlides("prev")}
-  //         >
-  //           Left
-  //         </button>
-  //         <button
-  //           className="controlButton"
-  //           onClick={() => navigateSlides("next")}
-  //         >
-  //           Right
-  //         </button>
-  //         <button
-  //           className="markCompletedButton"
-  //           onClick={() =>
-  //             handleMediaEnd(
-  //               { title: `${data?.title}` },
-  //               lessonIndex,
-  //               exerciseIndex
-  //             )
-  //           }
-  //         >
-  //           Mark as Completed
-  //         </button>
-  //       </div>
-  //     </>
-  //   );
-  // };
-
-  //  const renderEmbeddedPPT = (link, data, lessonIndex, exerciseIndex) => {
-  //    const fileIdMatch = link.match(/\/d\/([^/]+)/);
-  //    const fileId = fileIdMatch ? fileIdMatch[1] : null;
-
-  //    if (!fileId) {
-  //      return <p>Error: Invalid link format</p>;
-  //    }
-
-  //   //  const [currentSlide, setCurrentSlide] = useState(1);
-  //   //  const [totalSlides, setTotalSlides] = useState(null); // Dynamically calculate total slides
-  //   //  const iframeRef = useRef(null);
-
-  //    const googleEmbedUrl = `https://docs.google.com/presentation/d/${fileId}/embed?start=false&loop=false&slide=${currentSlide}`;
-
-  //    const navigateSlides = (direction) => {
-  //      // Update the slide count only when navigating forward
-  //      setCurrentSlide((prevSlide) => {
-  //        const newSlide = prevSlide + direction;
-
-  //        if (newSlide < 1) {
-  //          alert("This is the first slide!");
-  //          return 1;
-  //        }
-
-  //        if (totalSlides !== null && newSlide > totalSlides) {
-  //          alert("You have reached the end of the slides!");
-  //          return prevSlide;
-  //        }
-
-  //        // Calculate total slides dynamically when navigating beyond known slides
-  //        if (direction > 0 && totalSlides === null) {
-  //          calculateTotalSlides(newSlide);
-  //        }
-
-  //        return newSlide;
-  //      });
-  //    };
-
-  //    const calculateTotalSlides = (startSlide) => {
-  //      const iframe = iframeRef.current;
-  //      if (!iframe) return;
-
-  //     //  const interval = setInterval(() => {
-  //     //    const iframeSrc = iframe.src;
-  //     //    if (!iframeSrc.includes(`slide=${startSlide}`)) {
-  //     //      // Slide exists; increment slide count
-  //     //      startSlide++;
-  //     //      iframe.src = `https://docs.google.com/presentation/d/${fileId}/embed?start=false&loop=false&slide=${startSlide}`;
-  //     //    } else {
-  //     //      // No more slides; stop counting
-  //     //      clearInterval(interval);
-  //     //      setTotalSlides(startSlide - 1);
-  //     //    }
-  //     //  }, 10); // Adjust interval time if necessary
-  //    };
-
-  //    if (totalSlides === null && currentSlide === 1) {
-  //      calculateTotalSlides(currentSlide);
-  //    }
-
-  //    return (
-  //      <>
-  //        <div>
-  //          <iframe
-  //            ref={iframeRef}
-  //            title="PPT Viewer"
-  //            src={googleEmbedUrl}
-  //            style={{ width: "100%", height: "500px", border: "none" }}
-  //            allow="autoplay; encrypted-media"
-  //          />
-  //          <p>
-  //            If the viewer fails to load,{" "}
-  //            <a href={link} target="_blank" rel="noopener noreferrer">
-  //              download the PPT file
-  //            </a>
-  //            .
-  //          </p>
-  //        </div>
-  //        <div className="controls mt-10">
-  //          <button
-  //            className="controlButton"
-  //            onClick={() => navigateSlides(-1)}
-  //            disabled={currentSlide === 1}
-  //          >
-  //            Previous
-  //          </button>
-  //          <button className="controlButton" onClick={() => navigateSlides(1)}>
-  //            Next
-  //          </button>
-  //          <button
-  //            className="markCompletedButton"
-  //            onClick={() =>
-  //              handleMediaEnd(
-  //                { title: `${data?.title}` },
-  //                lessonIndex,
-  //                exerciseIndex
-  //              )
-  //            }
-  //          >
-  //            Mark as Completed
-  //          </button>
-  //          <p>
-  //            Slide {currentSlide} of {totalSlides || "Calculating..."}
-  //          </p>
-  //        </div>
-  //      </>
-  //    );
-  //  };
-
-  // const renderEmbeddedPPT = ({
-  //   link,
-  //   data,
-  //   lessonIndex,
-  //   exerciseIndex,
-  //   totalSlides = 10,
-  // }) => {
-  //   const fileIdMatch = link.match(/\/d\/([^/]+)/);
-  //   const fileId = fileIdMatch ? fileIdMatch[1] : null;
-
-  //   if (!fileId) {
-  //     return <p>Error: Invalid link format</p>;
-  //   }
-
-  //   // const [currentSlide, setCurrentSlide] = useState(1); // State to track the current slide
-  //     const googleEmbedUrl = `https://docs.google.com/presentation/d/${fileId}/embed`;
-
-  //   // const googleEmbedUrl = `https://docs.google.com/presentation/d/${fileId}/embed?start=false&loop=false&slide=${currentSlide}`;
-  //   const officeEmbedUrl = `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(
-  //     link
-  //   )}`;
-
-  //   const navigateSlides = (direction) => {
-  //     setCurrentSlide((prevSlide) => {
-  //       let newSlide = prevSlide + direction;
-  //       if (newSlide < 1) newSlide = 1; // Prevent going before the first slide
-  //       if (newSlide > totalSlides) newSlide = totalSlides; // Prevent exceeding total slides
-  //       return newSlide;
-  //     });
-  //   };
-
-  //   return (
-  //     <>
-  //       <div>
-  //         <iframe
-  //           title="PPT Viewer"
-  //           src={googleEmbedUrl}
-  //           style={{ width: "100%", height: "500px", border: "none" }}
-  //           allow="autoplay; encrypted-media"
-  //           onError={(e) => {
-  //             e.target.src = officeEmbedUrl;
-  //           }}
-  //         />
-  //         <p>
-  //           If the viewer fails to load,{" "}
-  //           <a href={link} target="_blank" rel="noopener noreferrer">
-  //             download the PPT file
-  //           </a>
-  //           .
-  //         </p>
-  //       </div>
-  //       {/* Controls and Mark as Completed button */}
-  //       <div className="controls mt-3 d-flex align-items-center justify-content-between">
-  //         <div>
-  //           <button
-  //             className="btn btn-secondary me-2"
-  //             onClick={() => navigateSlides(-1)}
-  //             disabled={currentSlide === 1}
-  //           >
-  //             Previous
-  //           </button>
-  //           <button
-  //             className="btn btn-secondary"
-  //             onClick={() => navigateSlides(1)}
-  //             disabled={currentSlide === totalSlides}
-  //           >
-  //             Next
-  //           </button>
-  //         </div>
-  //         {totalSlides && (
-  //           <span className="slide-count">
-  //             Slide {currentSlide} of {totalSlides}
-  //           </span>
-  //         )}
-  //         <button
-  //           className="btn btn-success"
-  //           onClick={() =>
-  //             handleMediaEnd(
-  //               { title: `${data?.title}` },
-  //               lessonIndex,
-  //               exerciseIndex
-  //             )
-  //           }
-  //         >
-  //           Mark as Completed
-  //         </button>
-  //       </div>
-  //     </>
-  //   );
-  // };
-
-  // const renderEmbeddedPPT = ({
-  //   link,
-  //   data,
-  //   lessonIndex,
-  //   exerciseIndex,
-  //   // totalSlides = 10,
-  // }) => {
-  //   if (typeof link !== "string" || !link.trim()) {
-  //     return <p>Error: Invalid or missing link</p>;
-  //   }
-
-  //   const fileIdMatch = link.match(/\/d\/([^/]+)/);
-  //   const fileId = fileIdMatch ? fileIdMatch[1] : null;
-
-  //   if (!fileId) {
-  //     return <p>Error: Unable to extract file ID from the link</p>;
-  //   }
-
-  //   const [currentSlide, setCurrentSlide] = useState(1); // State to track the current slide
-
-  //   const googleEmbedUrl = `https://docs.google.com/presentation/d/${fileId}/embed?start=false&loop=false&slide=${currentSlide}`;
-  //   const officeEmbedUrl = `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(
-  //     link
-  //   )}`;
-
-  //   const navigateSlides = (direction) => {
-  //     setCurrentSlide((prevSlide) => {
-  //       let newSlide = prevSlide + direction;
-  //       if (newSlide < 1) newSlide = 1; // Prevent going before the first slide
-  //       if (newSlide > totalSlides) newSlide = totalSlides; // Prevent exceeding total slides
-  //       return newSlide;
-  //     });
-  //   };
-
-  //   return (
-  //     <>
-  //       <div>
-  //         <iframe
-  //           title="PPT Viewer"
-  //           src={googleEmbedUrl}
-  //           style={{ width: "100%", height: "500px", border: "none" }}
-  //           allow="autoplay; encrypted-media"
-  //           onError={(e) => {
-  //             e.target.src = officeEmbedUrl;
-  //           }}
-  //         />
-  //         <p>
-  //           If the viewer fails to load,{" "}
-  //           <a href={link} target="_blank" rel="noopener noreferrer">
-  //             download the PPT file
-  //           </a>
-  //           .
-  //         </p>
-  //       </div>
-  //       {/* Controls and Mark as Completed button */}
-  //       <div className="controls mt-3 d-flex align-items-center justify-content-between">
-  //         <div>
-  //           <button
-  //             className="btn btn-secondary me-2"
-  //             onClick={() => navigateSlides(-1)}
-  //             disabled={currentSlide === 1}
-  //           >
-  //             Previous
-  //           </button>
-  //           <button
-  //             className="btn btn-secondary"
-  //             onClick={() => navigateSlides(1)}
-  //             disabled={currentSlide === totalSlides}
-  //           >
-  //             Next
-  //           </button>
-  //         </div>
-  //         {totalSlides && (
-  //           <span className="slide-count">
-  //             Slide {currentSlide} of {totalSlides}
-  //           </span>
-  //         )}
-  //         <button
-  //           className="btn btn-success"
-  //           onClick={() =>
-  //             handleMediaEnd(
-  //               { title: `${data?.title}` },
-  //               lessonIndex,
-  //               exerciseIndex
-  //             )
-  //           }
-  //         >
-  //           Mark as Completed
-  //         </button>
-  //       </div>
-  //     </>
-  //   );
-  // };
+  
 
   const renderEmbeddedPPT = (link, data, lessonIndex, exerciseIndex) => {
     const fileIdMatch = link.match(/\/d\/([^/]+)/);
@@ -849,25 +360,6 @@ const CourseContent = () => {
       link
     )}`;
 
-    // const fetchSlideCount = async () => {
-    //   try {
-    //     const response = await fetch(
-    //       `https://slides.googleapis.com/v1/presentations/${fileId}`,
-    //       {
-    //         headers: {
-    //           // Authorization: `Bearer YOUR_ACCESS_TOKEN`, // Replace with your access token
-    //           Authorization: `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`, // Replace with your access token
-    //         },
-    //       }
-    //     );
-    //     const data = await response.json();
-    //     console.log(data);
-
-    //     setTotalSlides(data.slides.length);
-    //   } catch (error) {
-    //     console.error("Error fetching slide count:", error);
-    //   }
-    // };
 
     // fetchSlideCount();
     const totalSlides = 10; // Replace with the actual total number of slides in your presentation
@@ -1053,16 +545,53 @@ const CourseContent = () => {
     return <ErrorDataFetchOverlay />;
   }
 
+
+  // new
+
+  const handlePrevious = () => {
+    if (courseData.lessons) {
+      if (currentVideoIndex > 0) {
+        // Go to previous video in current lesson
+        const newVideoIndex = currentVideoIndex - 1;
+        const currentLesson = courseData.lessons[currentLessonIndex];
+        handleCurrentContent(
+          currentLesson.chapter[newVideoIndex],
+          currentLessonIndex,
+          newVideoIndex
+        );
+        setCurrentVideoIndex(newVideoIndex);
+      } else if (currentLessonIndex > 0) {
+        // Go to last video of previous lesson
+        const newLessonIndex = currentLessonIndex - 1;
+        const prevLesson = courseData.lessons[newLessonIndex];
+        const newVideoIndex = prevLesson.chapter.length - 1;
+        handleCurrentContent(
+          prevLesson.chapter[newVideoIndex],
+          newLessonIndex,
+          newVideoIndex
+        );
+        setCurrentLessonIndex(newLessonIndex);
+        setCurrentVideoIndex(newVideoIndex);
+      }
+    }
+  };
+
+
+
+
   return (
     <div className="courseContentContainer">
       <div className="row firstRow g-0">
         <div className="courseContentHeader">
-          <button className="BackBtn" onClick={() => navigate(-1)}>
-            Back
+          <button className="BackBtn" onClick={() => handlePrevious ()}>
+            Previous
           </button>
           <div className="courseHeading">
             {truncateText(courseData.title, 45)}
           </div>
+          {/* <button className="PrevBtn" onClick={handlePrevious}>
+            Previous
+          </button> */}
           <button className="NextBtn" onClick={() => handleNext()}>
             Next
           </button>

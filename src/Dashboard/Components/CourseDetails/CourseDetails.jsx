@@ -438,7 +438,7 @@ const CourseDetails = () => {
                 </div>
                 <span>50%</span>
               </div>
-              <button className="CDCartBtn">Add to Cart</button>
+              {/* <button className="CDCartBtn">Add to Cart</button> */}
               <button
                 onClick={() =>
                   makepayment(

@@ -656,6 +656,8 @@ const BigCalendar = () => {
           id: event.id || event._id, // Ensure compatibility with backend ID
         }));
         setEvents(formattedEvents);
+      
+
       } catch (error) {
         console.error("Error fetching events:", error);
       }
@@ -698,6 +700,8 @@ const BigCalendar = () => {
         },
       ]);
       setShowModal(false);
+      window.location.reload();
+
     } catch (error) {
       console.error("Error adding event:", error);
       alert("Failed to add event. Please try again.");
@@ -726,6 +730,8 @@ const BigCalendar = () => {
       } else {
         alert("Failed to delete event. Please try again.");
       }
+      
+
     } catch (error) {
       console.error("Error deleting event:", error);
       alert("An error occurred while deleting the event.");

@@ -373,6 +373,7 @@ import {
   isValidEmail,
   isValidName,
   isValidLinkedin,
+  
 } from "../../utils/validityCheck";
 
 const SignUp = ({ toggleSlide }) => {
