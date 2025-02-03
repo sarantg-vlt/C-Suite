@@ -3,23 +3,57 @@ import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 const apiBaeApi = process.env.REACT_APP_API_BASE_URL;
 
+
 const AddEvent = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
+  const [newEventAdded, setNewEventAdded] = useState(false);
+  
+
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const resEvent = await axios.post(`${apiBaeApi}/admin-event`, {
+  //     title: title,
+  //     description: description,
+  //     startDate: startDate,
+  //     endDate: endDate,
+  //   });
+
+  //   console.log(resEvent);
+  //    window.location.reload();
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const resEvent = await axios.post(`${apiBaeApi}/admin-event`, {
-      title: title,
-      description: description,
-      startDate: startDate,
-      endDate: endDate,
-    });
-    console.log(resEvent);
-     window.location.reload();
+
+    // Post the new event
+    try {
+      const resEvent = await axios.post(`${apiBaeApi}/admin-event`, {
+        title: title,
+        description: description,
+        startDate: startDate,
+        endDate: endDate,
+      });
+
+      console.log(resEvent);
+
+      // Notify the parent component to refresh notifications
+      setNewEventAdded((prev) => !prev); // Toggling the state triggers the refresh
+
+      // Optionally, you can reset form fields if needed
+      setTitle("");
+      setDescription("");
+      setStartDate("");
+      setEndDate("");
+    } catch (error) {
+      console.error("Error submitting event:", error);
+      // Handle error here, e.g., display an error message to the user
+    }
   };
+
 
   return (
     <div className="Add-event">
@@ -67,3 +101,7 @@ const AddEvent = () => {
 };
 
 export default AddEvent;
+
+
+
+

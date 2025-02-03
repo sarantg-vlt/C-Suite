@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-// import Nolesson from "../../Assets/Images/no-lesson-illustration.svg";
+
 import Trash from "../../Assets/Images/trash.png";
 import EditImg from "../../Assets/Images/edit.png";
-// import TestData from "../../Assets/Data/courseContent.json";
+
 import Nolesson from "../../Assets/Images/no-lesson-illustration.svg";
 import BackIcon from "../../Assets/Images/left-arrow.png";
 import { useNavigate, useParams } from "react-router-dom";
@@ -94,24 +94,9 @@ const Edit = ({ courseDetails }) => {
   };
 
   const uploadCourse = async () => {
-    // if (
-  // // //     // courseData.title &&
-  // // //     // courseData.description &&
-  // // //     // courseData.lessons.length > 0 &&
-  // // //     // courseData.price &&
-  // // //     // courseData.thumbnail
-  //     courseData.title &&
-  // courseData.description &&
-  // courseData.lessons.length > 0 &&
-  // // courseData.price !== null && 
-  // courseData.price &&
-  // // (courseData.price !== null && !isNaN(courseData.price)) &&
-  // courseData.thumbnail
-  //   ) {
+   
       try {
         const courseFormData = convertToCourseFormData(courseData);
-        // const data = await updateCourse(id, { courseFormData });
-        // const {data} = await axios()
         const data = await axios.put(
           `${apiBaseUrl}/courseDetail/edit/${id}`,
           courseFormData
@@ -121,11 +106,7 @@ const Edit = ({ courseDetails }) => {
       } catch (error) {
         console.log(error);
       }
-    // } else {
-    //   window.alert(
-    //     "This course is not valid add at least on lesson and fill other details"
-    //   );
-    // }
+    
   };
 
   console.log(courseData);
@@ -139,7 +120,7 @@ const Edit = ({ courseDetails }) => {
       try {
         const res = await deleteCourse(courseDetails._id);
         if (res) {
-          // Navigate only after a successful deletion
+        
           navigate("/admin");
         }
       } catch (error) {
@@ -173,11 +154,20 @@ const Edit = ({ courseDetails }) => {
   };
 
   console.log(courseData);
+
+
+
+  
+
+
+
+
+
+
   return (
     <div
       className="course-list-cnt new-course"
       style={{
-        // height:  popupOpen ? "100vh" :"auto",
         overflow: popupOpen ? "hidden" : "scroll",
       }}
     >
@@ -219,14 +209,6 @@ const Edit = ({ courseDetails }) => {
           <h3 className="course-new-title">Course Details</h3>
           <p className="course-new-discription">Edit course and publish</p>
         </div>
-        {/* <div className="top-btn-cnt">
-          <div className=" course-delete-btn " onClick={() => navigate("/")}>
-            Cancel
-          </div>
-          <div className="add-new-lesson-btn" onClick={() => uploadCourse()}>
-            Save Course
-          </div>
-        </div> */}
       </div>
       <div className="input-split-cover">
         <form className="left-form">
@@ -263,8 +245,6 @@ const Edit = ({ courseDetails }) => {
                 name=""
                 id=""
                 readOnly={editCourse ? false : true}
-                // value={courseData.price !== null && !isNaN(courseData.price) ? courseData.price : ""}
-                // value={courseData.price !== null ? courseData.price : ""}
                 value={courseData.price || ""}
                 className="name-input price-input"
                 placeholder="₹"
@@ -299,6 +279,10 @@ const Edit = ({ courseDetails }) => {
                     handleOverviewInput("heading", e.target.value)
                   }
                 />
+
+                {/* new */}
+                {/* new  */}
+
                 <textarea
                   type="text"
                   name=""
@@ -409,6 +393,13 @@ const Edit = ({ courseDetails }) => {
 };
 
 export default Edit;
+
+
+
+
+
+
+
 
 
 

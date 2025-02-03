@@ -325,6 +325,11 @@ const Profile = () => {
 
 
 
+  // new
+
+  
+
+
   
 
 
@@ -493,12 +498,27 @@ const Profile = () => {
             >
               <img src={phoneSVG} alt="phoneNumberSVG" />
               <label>Phone Number</label>
+              {/*               
               <input
-                type="number"
+                type="Number"
+                required
                 name="phoneNumber"
-                value={profileData?.phoneNumber || ""}
+                maxLength={10}
+                value={profileData.phoneNumber || ""}
                 onChange={handleChange}
                 disabled={!isEditing}
+              /> */}
+
+              <input
+                type="text"
+                inputMode="numeric"
+                required
+                name="phoneNumber"
+                maxLength={10}
+                value={profileData.phoneNumber || ""}
+                onChange={handleChange}
+                disabled={!isEditing}
+                pattern="[0-9]{10}"
               />
             </div>
           </div>

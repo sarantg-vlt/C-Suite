@@ -205,6 +205,7 @@ const CourseDetails = () => {
         <div className="row CDHeader g-0">
           <div className="CDHeaderIntroVideo">
             <div className="embed-responsive-16by9">
+              
               <iframe
                 title={courseContentDetailsData.title || "Intro Video Title"}
                 className="embed-responsive-item"
@@ -388,13 +389,15 @@ const CourseDetails = () => {
                                         {/* <span className="CDlesson-duration">
                                           Duration: {video?.duration}
                                         </span> */}
-                                        {video?.type === "video" ? (
+
+
+                                         {video?.type === "video" ? (
                                           <span className="CDlesson-duration">
                                             Duration :{" "}
                                             {convertToReadableDuration(
                                               video.duration
                                             )}
-                                          </span>
+                                          </span> 
                                         ) : (
                                           <span className="CDlesson-duration">
                                             Type : {video?.type}
