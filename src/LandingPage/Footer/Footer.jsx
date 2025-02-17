@@ -56,7 +56,7 @@ function Footer() {
       <div className="footer" id="footer">
         <section data-aos="fade-up" className="section1">
           <img src={footerlogo} alt="Brand logo" width="120px" />
-          <p>Practical-based learning platform to enhance skills</p>
+          {/* <p>Practical-based learning platform to enhance skills</p> */}
           <h6>Follow Us on</h6>
           <div className="sociallinks">
             <a

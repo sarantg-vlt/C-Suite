@@ -11,6 +11,9 @@ import settingsSVG from "../Assets/SVG/settings.svg";
 import lightningSVG from "../Assets/SVG/lightning.svg";
 import tickIconSVG from "../Assets/SVG/tickIcon.svg";
 import { loadStripe } from "@stripe/stripe-js";
+import DefultImg from "../../Components/Assets/Images/profileBanner.jpg";
+
+
 
 const CourseDetails = () => {
   const { courseId } = useParams();
@@ -56,45 +59,58 @@ const CourseDetails = () => {
     fetchData();
   }, []);
 
+   useEffect(() => {
+    // Commented out the strip
+    // setPaymentSuccess(status === "success" ? true : false || false);
+
+    const fetchData = async () => {
+      try {
+        const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+
+        const response = await axios.get(
+          `${apiBaseUrl}/courseDetail/${courseId}`
+        );
+        setCourseContentDetailsData(response.data);
+        // console.log(response.data.price);
+        setIsLoading(false);
+        setFetchError(false);
+      } catch (err) {
+        console.error("Error fetching course details:", err);
+        setIsLoading(false);
+        setFetchError(true);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   useEffect(() => {
     const icons = [settingsSVG, lightningSVG];
     const randomIndex = Math.floor(Math.random() * icons.length);
     setSelectedIcon(icons[randomIndex]);
   }, []);
 
+  const resolveImagePath = (imagePath) => {
+    if (!imagePath) return DefultImg;
+
+    if (imagePath.startsWith("http://") || imagePath.startsWith("https://")) {
+      return imagePath;
+    }
+
+    if (imagePath.startsWith("data:image/")) {
+      return imagePath; // Handle base64 images
+    }
+
+    try {
+      return require(`../Assets/Images/${imagePath}`);
+    } catch (error) {
+      console.error(`Failed to load image: ${imagePath}, using fallback.`, error);
+      return DefultImg;
+    }
+  };
+
   let navigate = useNavigate();
 
-  // commentedout the stripe
-  // const makepayment = async (name, id, price) => {
-  //   if (localStorage.getItem("isloggedin") === "true") {
-  //     const stripe = await loadStripe(
-  //       "pk_test_51PUVZZRrG0ZkGYrr3y8s7r35TsoywTtRefCFB64KvnZNuuU2kotNOBp8AOZMPfyejU5Ah1DG4vXjwyig9AZXFmNv00Etljhki6"
-  //     );
-  //     let data = { name: name, id: id, price: price };
-
-  //     const response = await axios.post(
-  //       "https://csuite-production.up.railway.app/api/payment/create-checkout-session",
-  //       data,
-  //       {
-  //         headers: { "Content-Type": "application/json" }, // Set Content-Type header
-  //       }
-  //     );
-
-  //     // console.log(response)
-
-  //     const result = stripe.redirectToCheckout({
-  //       sessionId: response.data.id,
-  //     });
-
-  //     if (result.error) {
-  //       console.log(result.error);
-  //     }
-  //     setPaymentSuccess(true);
-
-  //   } else {
-  //     navigate("../Authentication");
-  //   }
-  // };
 
   const makepayment = async (courseName, courseId, userId) => {
     if (localStorage.getItem("isloggedin") === "true") {
@@ -163,15 +179,6 @@ const CourseDetails = () => {
     return `${parseInt(minutes, 10)}m ${parseInt(seconds, 10)}s`;
   }
 
-  // const resolveSVGPath = (relativePath) => {
-  //  return require(`../Assets/SVG/${relativePath}`);
-  // };
-
-  // const resolveSVGPath = () => {
-  //   const icons = [lightningSVG, settingsSVG];
-  //   const randomIndex = Math.floor(Math.random() * icons.length);
-  //   return icons[randomIndex];
-  // };
 
   const toggleDescription = () => {
     setIsExpanded(!isExpanded);
@@ -204,48 +211,22 @@ const CourseDetails = () => {
       <div className="courseDetailsBox">
         <div className="row CDHeader g-0">
           <div className="CDHeaderIntroVideo">
-            <div className="embed-responsive-16by9">
-              
-              <iframe
-                title={courseContentDetailsData.title || "Intro Video Title"}
-                className="embed-responsive-item"
-                // src={courseContentDetailsData?.videoUrl}
-                src={`https://player.vimeo.com/video/${courseContentDetailsData?.videoUrl
-                  .split("/")
-                  .pop()}`}
-                // src={
-                //   courseContentDetailsData?.videoUrl === "http://yourvideo.url"
-                //     ? // ? "https://www.youtube.com/embed/9DccPRe6-I8?autoplay=1&start=15"
-                //       "https://player.vimeo.com/video/988747921?title=0&byline=0&portrait=0&sidedock=0"
-                //     : courseContentDetailsData?.videoUrl
-                // }
-                allow="autoplay"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              ></iframe>
+            <div className="embed-responsive-16by9 text-center">
+
+            <img
+  src={resolveImagePath(courseContentDetailsData?.image)}
+  alt={courseContentDetailsData?.title || "Course image"}
+  className="embed-responsive-item" width="500" height="328" />
+
+
+
+            
             </div>
           </div>
         </div>
         <div className="row CDBody g-0">
           <div className="CDLHS">
-            <div className="CDvideoBox">
-              <div className="embed-responsive embed-responsive-16by9">
-                <iframe
-                  title="intro video title 2"
-                  className="embed-responsive-item"
-                  // src={
-                  //   courseContentDetailsData?.videoUrl ||
-                  //   "https://www.youtube.com/embed/9DccPRe6-I8?autoplay=1&start=15"
-                  // }
-                  src={`https://player.vimeo.com/video/${courseContentDetailsData?.videoUrl
-                    .split("/")
-                    .pop()}`}
-                  allow="autoplay"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
+            
             <div className="CDWhoIsThisFor">
               <h5>Who is this course for</h5>
               <div className="CDLightningBox">

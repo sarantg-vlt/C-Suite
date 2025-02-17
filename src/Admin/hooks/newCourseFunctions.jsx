@@ -17,16 +17,34 @@ export const convertToUTC = (timeLimit) => {
   return { hours: hours, minutes: minutes };
 };
 
-export const convertToCourseFormData = (courseData)=>{
-  const formData = new FormData()
-  formData.append('image',courseData?.thumbnail)
-  formData.append('title',courseData?.title)
-  formData.append('description',courseData?.description)
-  formData.append('price',JSON.stringify(courseData?.price))
-  formData.append('overviewPoints',JSON.stringify(courseData?.overviewPoints))
-  formData.append('lessons',JSON.stringify(courseData?.lessons))
-  return formData
-}
+// export const convertToCourseFormData = (courseData)=>{
+//   const formData = new FormData()
+//   formData.append('image',courseData?.thumbnail)
+//   formData.append('title',courseData?.title)
+//   formData.append('description',courseData?.description)
+//   formData.append('price',JSON.stringify(courseData?.price))
+//   formData.append('overviewPoints',JSON.stringify(courseData?.overviewPoints))
+//   formData.append('lessons',JSON.stringify(courseData?.lessons))
+//   return formData
+// }
+
+
+export const convertToCourseFormData = (courseData) => {
+  const formData = new FormData();
+  formData.append("image", courseData?.thumbnail);
+  formData.append("title", courseData?.title);
+  formData.append("description", courseData?.description);
+  formData.append("price", JSON.stringify(courseData?.price));
+  formData.append("overviewPoints", JSON.stringify(courseData?.overviewPoints));
+  formData.append("whatYouGet", JSON.stringify(courseData?.whatYouGet));
+  formData.append("whoIsThisFor", JSON.stringify(courseData?.whoIsThisFor));
+  formData.append("lessons", JSON.stringify(courseData?.lessons));
+  return formData;
+};
+
+
+
+
 
 export const hasNullField = (obj) => {
   for (const key in obj) {

@@ -29,7 +29,7 @@ const contentData = {
         text: "• For your training and grooming C-Suite Academy has assembled a team of CXOs who have not only made it to the boardroom early in their careers, but have also made pioneering contributions to their industry.",
       },
       {
-        text: "• C-Suite Academy is a Govt of India DIPP-recognized startup",
+        // text: "• C-Suite Academy is a Govt of India DIPP-recognized startup",
       }
     ],
     imageClass: "card-image"
@@ -138,8 +138,8 @@ const Management = () => {
           <div className="heading-lms" data-aos="fade-up">
             <div>Why C-suite Academy?</div>
             <div>
-              So, you aced your performance review again. Yet, you do
-              <br /> not see a clear career progression to the C-suite.
+              So, you aced your performance review again. <br /> Yet, you do
+               not see a clear career progression to the C-suite.
             </div>
             <div>
               There is only one quality that paves your way to upper management, Irreplaceable Dependence
@@ -158,7 +158,7 @@ const Management = () => {
           </button>
           <button data-aos="fade-right" className="txt-access" onClick={() => handleButtonClick("Subscribe")}>
             <MdOutlineUnsubscribe className="text-primary-color mr-2" size="1.5rem" />
-            <span>TEAM/FACULTY</span>
+            <span>MANAGEMENT</span>
           </button>
           <button data-aos="fade-left" className="txt-access" onClick={() => handleButtonClick("Dashboard")}>
             <MdDashboard className="text-primary-color mr-2" size="1.5rem" />

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import Nolesson from "../../Assets/Images/no-lesson-illustration.svg";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+
 import Trash from "../../Assets/Images/trash.png";
 import EditImg from "../../Assets/Images/edit.png";
 import NewLesson from "./NewLesson";
@@ -8,6 +10,67 @@ import { addnewCourse } from "../../../api/baseApi";
 import { convertToCourseFormData } from "../../../hooks/newCourseFunctions";
 
 const NewCourse = () => {
+
+  const [currentWhatYouGet, setCurrentWhatYouGet] = useState({ title: "", description: "", updateIndex: null });
+  const [currentWhoIsThisFor, setCurrentWhoIsThisFor] = useState({ text: "", updateIndex: null });
+  // console.log(currentWhatYouGet,currentWhoIsThisFor);
+  
+
+
+
+const handleInputChange = (section, type, value) => {
+    setError(null);
+    if (section === "whatYouGet") {
+        setCurrentWhatYouGet({ ...currentWhatYouGet, [type]: value });
+    } else if (section === "whoIsThisFor") {
+        setCurrentWhoIsThisFor({ ...currentWhoIsThisFor, text: value });
+    }
+};
+
+const addNewItem = (section) => {
+    if (section === "whatYouGet" && currentWhatYouGet.title && currentWhatYouGet.description) {
+        const newItems = [...courseData.whatYouGet];
+        if (currentWhatYouGet.updateIndex === null) {
+            newItems.push({ ...currentWhatYouGet, updateIndex: newItems.length });
+        } else {
+            newItems[currentWhatYouGet.updateIndex] = { ...currentWhatYouGet };
+        }
+        setCourseData({ ...courseData, whatYouGet: newItems });
+        setCurrentWhatYouGet({ title: "", description: "", updateIndex: null });
+    } else if (section === "whoIsThisFor" && currentWhoIsThisFor.text) {
+        const newItems = [...courseData.whoIsThisFor];
+        if (currentWhoIsThisFor.updateIndex === null) {
+            newItems.push({ ...currentWhoIsThisFor, updateIndex: newItems.length });
+        } else {
+            newItems[currentWhoIsThisFor.updateIndex] = { ...currentWhoIsThisFor };
+        }
+        setCourseData({ ...courseData, whoIsThisFor: newItems });
+        setCurrentWhoIsThisFor({ text: "", updateIndex: null });
+    }
+};
+
+const removeItem = (section, index) => {
+    const newItems = [...courseData[section]];
+    newItems.splice(index, 1);
+    const updatedItems = newItems.map((item, idx) => ({ ...item, updateIndex: idx }));
+    setCourseData({ ...courseData, [section]: updatedItems });
+};
+
+const setEditValues1 = (section, item, index) => {
+    if (section === "whatYouGet") {
+        setCurrentWhatYouGet({ ...item, updateIndex: index });
+    } else if (section === "whoIsThisFor") {
+        setCurrentWhoIsThisFor({ ...item, updateIndex: index });
+    }
+};
+
+
+    const { courseId } = useParams();
+  const [courseContentDetailsData, setCourseContentDetailsData] = useState({});
+    const [selectedIcon, setSelectedIcon] = useState(null);
+    const [fetchError, setFetchError] = useState(false);
+
+  
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -26,11 +89,43 @@ const NewCourse = () => {
     thumbnail: null,
     overviewPoints: [],
     lessons: [],
+    whatYouGet: [],
+    whoIsThisFor: [],
   });
+
+
+  console.log(courseData);
+  
 
   useEffect(() => {
     if (popupOpen.open) window.scrollTo(0, 0);
   }, [popupOpen]);
+
+  
+ 
+  useEffect(() => {
+
+
+    const fetchData = async () => {
+      try {
+        const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+
+        const response = await axios.get(
+          `${apiBaseUrl}/courseDetail/${courseId}`
+        );
+        setCourseContentDetailsData(response.data);
+        // console.log(response.data.price);
+        setIsLoading(false);
+        setFetchError(false);
+      } catch (err) {
+        console.error("Error fetching course details:", err);
+        setIsLoading(false);
+        setFetchError(true);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const validateCourse = () => {
     if (!courseData.title.trim()) return "Course title is required";
@@ -126,6 +221,8 @@ const NewCourse = () => {
   };
 
   const uploadCourse = async () => {
+
+
     try {
       setError(null);
       setIsLoading(true);
@@ -135,9 +232,13 @@ const NewCourse = () => {
         setError(validationError);
         return;
       }
+
+
   
       const courseFormData = convertToCourseFormData(courseData);
       const response = await addnewCourse(courseFormData);
+
+      
   
       console.log(response); // Log the full response object
       console.log(response.data); // Log just the data part
@@ -159,7 +260,8 @@ const NewCourse = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }; 
+  
   
 
   return (
@@ -286,6 +388,70 @@ const NewCourse = () => {
               </div>
             ))}
           </div>
+
+  
+
+
+    <div className="course-description-cnt">
+        <p>What You Get</p>
+        <div className="overview-input-cnt">
+            <input
+                type="text"
+                className="name-input"
+                value={currentWhatYouGet.title}
+                placeholder="Title"
+                onChange={(e) => handleInputChange("whatYouGet", "title", e.target.value)}
+            />
+            <textarea
+                className="overview-input name-input"
+                placeholder="Description"
+                value={currentWhatYouGet.description}
+                onChange={(e) => handleInputChange("whatYouGet", "description", e.target.value)}
+            />
+            <div className="overview-add-btn" onClick={() => addNewItem("whatYouGet")}>
+                <p>Add</p>
+            </div>
+        </div>
+        {courseData.whatYouGet.map((item, index) => (
+            <div className="overviewPoint-cnt" key={index}>
+                <div className="overview-head-cnt">
+                    <p className="overviewPoint-heading">{item.title}</p>
+                    <div className="action-btn-cnt-overview">
+                        <img src={Trash} alt="delete" className="action-img-overview" onClick={() => removeItem("whatYouGet", index)} />
+                        <img src={EditImg} alt="edit" className="action-img-overview" onClick={() => setEditValues1("whatYouGet", item, index)} />
+                    </div>
+                </div>
+                <p className="overviewPoint-content">{item.description}</p>
+            </div>
+        ))}
+
+        <p>Who Is This For</p>
+        <div className="overview-input-cnt">
+            <input
+                type="text"
+                className="name-input"
+                value={currentWhoIsThisFor.text}
+                placeholder="Content"
+                onChange={(e) => handleInputChange("whoIsThisFor", "text", e.target.value)}
+            />
+            <div className="overview-add-btn" onClick={() => addNewItem("whoIsThisFor")}>
+                <p>Add</p>
+            </div>
+        </div>
+        {courseData.whoIsThisFor.map((item, index) => (
+            <div className="overviewPoint-cnt" key={index}>
+                <div className="overview-head-cnt">
+                    <p className="overviewPoint-heading">{item.text}</p>
+                    <div className="action-btn-cnt-overview">
+                        <img src={Trash} alt="delete" className="action-img-overview" onClick={() => removeItem("whoIsThisFor", index)} />
+                        <img src={EditImg} alt="edit" className="action-img-overview" onClick={() => setEditValues1("whoIsThisFor", item, index)} />
+                    </div>
+                </div>
+            </div>
+        ))}
+    </div>
+       
+         
         </form>
 
         <form className="form-right">

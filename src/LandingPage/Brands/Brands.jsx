@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import './brands.css';
 
 // Import your logos with brandone
-import ADP from './Assets/adp-logo.svg';
+// import ADP from './Assets/adp-logo.svg';
 import Ataccama from './Assets/ataccama-logo.svg';
 import Bastion from './Assets/bastion-zero-logo.png';
 import Cariad from './Assets/cariad-logo.svg';
@@ -13,19 +13,36 @@ import Confluent from './Assets/confluent-logo.svg';
 import Expedia from './Assets/expedia-logo.svg';
 import Infosys from './Assets/infosys-logo.svg';
 import Ing from './Assets/ing-logo.svg';
-import Spotify from './Assets/spotify-logo.png';
+// import Spotify from './Assets/spotify-logo.png';
 
 // Import your logos with brandtwo
-import pinterest from './Assets/pinterest-badge.svg';
-import rakuten from './Assets/rakuten-logo.svg';
-import salt from './Assets/salt-security-logo.svg';
-import warehouse from './Assets/the-warehouse-group-logo.svg';
-import trade from './Assets/trade-republic-logo.svg';
-import zeiss from './Assets/zeiss-logo.svg';
-import onemain from './Assets/onemain-vertical.svg';
-import nytimes from './Assets/nytimes-rectangle-logo.svg';
-import player from './Assets/jw-player-logo.svg';
-import tabcorp from './Assets/tabcorp-logo.svg';
+// import pinterest from './Assets/pinterest-badge.svg';
+// import rakuten from './Assets/rakuten-logo.svg';
+// import salt from './Assets/salt-security-logo.svg';
+// import warehouse from './Assets/the-warehouse-group-logo.svg';
+// import trade from './Assets/trade-republic-logo.svg';
+// import zeiss from './Assets/zeiss-logo.svg';
+// import onemain from './Assets/onemain-vertical.svg';
+// import nytimes from './Assets/nytimes-rectangle-logo.svg';
+// import player from './Assets/jw-player-logo.svg';
+// import tabcorp from './Assets/tabcorp-logo.svg';
+
+
+// new import
+import bevywise from "./Assets/bevy.png";
+import yes from "./Assets/yes.png";
+import msubbu from "./Assets/msubbu.png";
+import kriscon from "./Assets/kriscon.jpg";
+import procrama from "./Assets/procrama.jpg";
+import planpoint from "./Assets/planpoint.png";
+import vlt from "./Assets/vlt.jpg";
+import parisu from "./Assets/parisu.jpg";
+import trilliom from "./Assets/trillom.png";
+// new import
+
+
+
+
 
 
 //Aos animations
@@ -35,33 +52,33 @@ import 'aos/dist/aos.css'
 
 const data = {
   brandone: [
-    { name: 'ADP', src: ADP },
-    { name: 'Ataccama', src: Ataccama },
-    { name: 'Cariad', src: Cariad },
-    { name: 'Confluent', src: Confluent },
-    { name: 'Cox Automotive', src: CoxAutomotive },
-    { name: 'Expedia', src: Expedia },
-    { name: 'Infosys', src: Infosys },
-    { name: 'ING', src: Ing },
-    { name: 'Bastion Zero', src: Bastion },
-    { name: 'Spotify', src: Spotify },
-    { name: 'Pinterest', src: pinterest },
-    { name: 'Rakuten', src: rakuten },
-    { name: 'Salt Security', src: salt },
-    { name: 'Trade Republic', src: trade },
-    { name: 'The Warehouse Group', src: warehouse },
-    { name: 'Zeiss', src: zeiss },
-    { name: 'JW Player', src: player },
-    { name: 'New York Times', src: nytimes },
-    { name: 'Tabcorp', src: tabcorp },
-    { name: 'OneMain', src: onemain },
+    { name: "beywise", src: bevywise },
+    { name: "yes", src: yes },
+    { name: "msubbu", src: msubbu },
+    { name: "procrama", src: procrama },
+    { name: "planpoint", src: planpoint },
+    { name: "vlt", src: vlt },
+    { name: "kriscon", src: kriscon },
 
+    { name: "parisu", src: parisu },
+    { name: "trilliom", src: trilliom },
+    // { name: "Spotify", src: Spotify },
+    // { name: "Pinterest", src: pinterest },
+    // { name: "Rakuten", src: rakuten },
+    // { name: "Salt Security", src: salt },
+    // { name: "Trade Republic", src: trade },
+    // { name: "The Warehouse Group", src: warehouse },
+    // { name: "Zeiss", src: zeiss },
+    // { name: "JW Player", src: player },
+    // { name: "New York Times", src: nytimes },
+    // { name: "Tabcorp", src: tabcorp },
+    // { name: "OneMain", src: onemain },
   ],
 
   stats: {
-    users: '15',
-    instructors: '10',
-    courses: '20',
+    users: "15",
+    instructors: "10",
+    courses: "20",
   },
 };
 
@@ -150,7 +167,7 @@ const Brands = () => {
           </div> */}
         </div>
 
-        <div className='col-md-6'>
+        <div className='col-md-5'>
           <div className="logos-container">
             <div className="logos-wrapper">
               <div className="logos-content">
