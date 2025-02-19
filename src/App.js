@@ -319,6 +319,11 @@ import { useEffect } from "react";
 //bottom footer end
 //footer end
 
+import Request from "./Dashboard/Components/Request/Request";
+
+import Appointments from "./Admin/components/Appointments/Appointments";
+
+
 function App() {
   // useEffect(() => {
   //   // Block right-click functionality
@@ -417,6 +422,7 @@ function App() {
             <Route path="courses" index element={<Courses />}></Route>
             <Route path="profile" index element={<Profile />}></Route>
             <Route path="enrolled" index element={<Enrolled />}></Route>
+            <Route path="request" index element={<Request />}></Route>
             {/* <Route path="test/:lessonId" index element={<TestPage />} /> */}
             <Route
               path="tests/:testId/user/:userId"
@@ -449,6 +455,7 @@ function App() {
           <Route path="admin/ela" element={<ELApage />} />
           <Route path="admin/contactus" element={<ContactManagement />} />
           <Route path="admin/Notification" element={<Notification />} />
+          <Route path="admin/Appointents" element={<Appointments />} />
         </Routes>
       </Router>
     </div>

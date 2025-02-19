@@ -1,0 +1,291 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fc;
+    color: #333;
+  }
+  
+  .admin-container {
+    padding: 20px;
+    margin-left: 250px;
+    transition: margin-left 0.3s;
+  }
+  
+  .admin-title {
+    text-align: center;
+    color: #222;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Buttons */
+ 
+  .schedule-btn,
+  .cancel-btn,
+  .delete-btn,
+  .edit-btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+  
+  .schedule-meeting-btn {
+    background-color: #007bff;
+    color: white;
+  }
+  .schedule-meeting-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .schedule-btn {
+    background-color: #28a745;
+    color: white;
+  }
+  .schedule-btn:hover {
+    background-color: #1e7e34;
+  }
+  
+  .cancel-btn {
+    background-color: #dc3545;
+    color: white;
+  }
+  .cancel-btn:hover {
+    background-color: #b21f2d;
+  }
+  
+  .delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+  }
+  .delete-btn:hover {
+    background-color: #cc0000;
+  }
+  
+  .edit-btn {
+    background-color: #ffc107;
+    color: black;
+  }
+  .edit-btn:hover {
+    background-color: #d39e00;
+  }
+  
+  /* Table Styling */
+  .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-table th, .admin-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  .admin-table th {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+  }
+  
+  .no-requests {
+    text-align: center;
+    font-style: italic;
+    font-size: 16px;
+    padding: 15px;
+  }
+  
+  .status {
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+  }
+  
+  .status.booked {
+    color: #28a745;
+    background: #e6f9ec;
+  }
+  
+  .status.canceled {
+    color: #dc3545;
+    background: #fdecea;
+  }
+  
+  /* Schedule Form Popup */
+  .schedule-form-popup {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 450px;
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 1024px) {
+    .admin-container {
+      margin-left: 0;
+      padding: 15px;
+    }
+  
+    .admin-title {
+      font-size: 24px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .admin-container {
+      margin-left: 0;
+      padding: 10px;
+    }
+  
+    .admin-table th, .admin-table td {
+      font-size: 12px;
+      padding: 10px;
+    }
+  
+    .schedule-form-popup {
+      width: 95%;
+    }
+  
+    .schedule-meeting-btn,
+    .schedule-btn,
+    .cancel-btn,
+    .delete-btn,
+    .edit-btn {
+      font-size: 14px;
+      padding: 8px 12px;
+    }
+  }
+  
+  
+
+
+.schedule-meeting-btn  {
+  background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 4rem;
+  padding: 0 1.6rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all .5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-36:hover {
+  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+  transition-duration: .1s;
+}
+
+@media (min-width: 768px) {
+  .button-36 {
+    padding: 0 2.6rem;
+  }
+}
+
+.edit-form-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  width: 400px;
+  max-width: 90%;
+}
+
+.edit-form-popup h3 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.edit-form-popup .input-field {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.edit-form-popup .buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.edit-form-popup .update-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1;
+  margin-right: 5px;
+}
+
+.edit-form-popup .cancel-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1;
+  margin-left: 5px;
+}
+
+.edit-form-popup .update-btn:hover {
+  background-color: #218838;
+}
+
+.edit-form-popup .cancel-btn:hover {
+  background-color: #c82333;
+}
+
+/* Overlay to blur the background when the form is open */
+.edit-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}

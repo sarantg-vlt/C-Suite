@@ -15,6 +15,7 @@ import {
   faSignOutAlt,
   faBars,
   faChevronLeft,
+  faHand,
 } from "@fortawesome/free-solid-svg-icons";
 
 function SidebarItem({
@@ -185,6 +186,12 @@ const Sidebar = () => {
               icon={faBook}
               path={"./Courses"}
               text={"Courses"}
+              expanded={expanded}
+            />
+            <SidebarItem
+              icon={faHand}
+              path={"./Request"}
+              text={"Request"}
               expanded={expanded}
             />
           </div>

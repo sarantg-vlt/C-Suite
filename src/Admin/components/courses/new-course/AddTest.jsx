@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { addnewTest, getLessonTest, updateTest } from "../../../api/baseApi";
+// import { addnewTest, getLessonTest, updateTest } from "../../../api/baseApi";
 import { convertToUTC } from "../../../hooks/newCourseFunctions";
 
 const AddTest = ({ testId, closeTest, addTest }) => {
@@ -22,15 +22,18 @@ const AddTest = ({ testId, closeTest, addTest }) => {
   const [duration, setDuration] = useState({ hours: 0, minutes: 0 });
 
   useEffect(() => {
-    const getTest = async () => {
-      if (testId?.length > 1) {
-        const { data } = await getLessonTest(testId);
-        setCurrentTest(data?.test);
-        const time = convertToUTC(data?.test?.timeLimit);
-        setDuration(time);
-      }
-    };
-    getTest();
+    // const getTest = async () => {
+    //   if (testId?.length > 1) {
+    //     const { data } = await getLessonTest(testId);
+    //     setCurrentTest(data?.test);
+    //     const time = convertToUTC(data?.test?.timeLimit);
+    //     setDuration(time);
+    //   }
+    // };
+    // getTest();
+    if (testId) {
+      setCurrentTest(testId);
+    }
   }, [testId]);
 
   const handleChoiceSelect = (index, value) => {
@@ -91,16 +94,18 @@ const AddTest = ({ testId, closeTest, addTest }) => {
   const handleAddTest = async () => {
     if (testId?.length > 5) {
       try {
-        const { data } = await updateTest(currentTest);
-        addTest(data?.test?._id);
+        // const { data } = await updateTest(currentTest);
+        // addTest(data?.test?._id);
+        addTest(currentTest);
         closeTest();
       } catch (error) {
         console.log(error);
       }
     } else {
       try {
-        const { data } = await addnewTest(currentTest);
-        addTest(data?.test?._id);
+        // const { data } = await addnewTest(currentTest);
+        // addTest(data?.test?._id);
+        addTest(currentTest);
         closeTest();
       } catch (error) {
         console.log(error);

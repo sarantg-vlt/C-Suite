@@ -1,0 +1,218 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fc;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.title {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Request Button */
+.request-button {
+  display: block;
+  width: 200px;
+  margin: 0 auto 20px;
+  padding: 10px;
+  font-size: 16px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.request-button:hover {
+  background: #0056b3;
+}
+
+/* Form Styles */
+.form-container {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+textarea.input {
+  resize: none;
+  height: 80px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancel-button,
+.submit-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cancel-button {
+  background: #dc3545;
+  color: #fff;
+}
+
+.cancel-button:hover {
+  background: #b02a37;
+}
+
+.submit-button {
+  background: #28a745;
+  color: #fff;
+}
+
+.submit-button:hover {
+  background: #1e7e34;
+}
+
+/* Table Styles */
+.table-container {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 14px;
+}
+
+.table th {
+  background: #007bff;
+  color: white;
+}
+
+.table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.table tr:hover {
+  background: #f1f1f1;
+}
+
+/* Status Colors */
+.status {
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.status.pending {
+  background: #ffc107;
+  color: #333;
+}
+
+.status.approved {
+  background: #28a745;
+  color: white;
+}
+
+.status.rejected {
+  background: #dc3545;
+  color: white;
+}
+
+/* Meeting Link */
+.meeting-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.meeting-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .table th,
+  .table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .request-button {
+    width: 100%;
+  }
+
+  .form-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .table th,
+  .table td {
+    font-size: 10px;
+    padding: 6px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cancel-button,
+  .submit-button {
+    width: 100%;
+  }
+}

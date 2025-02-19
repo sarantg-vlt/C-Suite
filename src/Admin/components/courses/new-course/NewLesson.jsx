@@ -16,7 +16,7 @@ const NewLesson = ({ addLesson, cancel, editData, removeThisLesson }) => {
   const [currentLesson, setCurrentLesson] = useState({
     title: null,
     chapter: [],
-    testId: null,
+    test: null,
     updateIndex: null,
     description: "test-description",
   });
@@ -39,26 +39,25 @@ const NewLesson = ({ addLesson, cancel, editData, removeThisLesson }) => {
     const filetype = findFileType(file);
     setSublessonFile(file);
     setCurrentSublesson({ ...currentSublesson, type: filetype });
-    setErrors(prev => ({ ...prev, file: null }));
+    setErrors((prev) => ({ ...prev, file: null }));
   };
 
   const handleSubLessonsInput = (type, value) => {
     setCurrentSublesson({ ...currentSublesson, [type]: value });
-    setErrors(prev => ({ ...prev, [type]: null }));
+    setErrors((prev) => ({ ...prev, [type]: null }));
   };
 
   const uploadFile = async (file, type) => {
     try {
       const formData = new FormData();
-      formData.append(type === 'video' ? 'video' : 'document', file);
-      
-      const { data, error } = await (type === 'video' ? 
-        uploadVideo(formData) : 
-        uploadDocument(formData)
-      );
-      
+      formData.append(type === "video" ? "video" : "document", file);
+
+      const { data, error } = await (type === "video"
+        ? uploadVideo(formData)
+        : uploadDocument(formData));
+
       if (error) throw new Error(error);
-      
+
       return data.url || data.videoUrl;
     } catch (error) {
       throw new Error(`Failed to upload ${type}: ${error.message}`);
@@ -72,24 +71,24 @@ const NewLesson = ({ addLesson, cancel, editData, removeThisLesson }) => {
 
       // Validate inputs
       if (!currentSublesson.title) {
-        setErrors(prev => ({ ...prev, title: "Title is required" }));
+        setErrors((prev) => ({ ...prev, title: "Title is required" }));
         return;
       }
       if (!currentSublesson.duration) {
-        setErrors(prev => ({ ...prev, duration: "Duration is required" }));
+        setErrors((prev) => ({ ...prev, duration: "Duration is required" }));
         return;
       }
       if (!sublessonFile && currentSublesson.link === "#") {
-        setErrors(prev => ({ ...prev, file: "File is required" }));
+        setErrors((prev) => ({ ...prev, file: "File is required" }));
         return;
       }
 
       const newLessons = [...currentLesson.chapter];
-      
+
       if (sublessonFile) {
         const Link = await uploadFile(
-          sublessonFile, 
-          currentSublesson.type === 'video' ? 'video' : 'document'
+          sublessonFile,
+          currentSublesson.type === "video" ? "video" : "document"
         );
 
         if (currentSublesson.updateIndex === null) {
@@ -113,9 +112,8 @@ const NewLesson = ({ addLesson, cancel, editData, removeThisLesson }) => {
         updateIndex: null,
         type: null,
       });
-
     } catch (error) {
-      setErrors(prev => ({ ...prev, submit: error.message }));
+      setErrors((prev) => ({ ...prev, submit: error.message }));
     } finally {
       setUploadingFile(false);
     }
@@ -159,9 +157,9 @@ const NewLesson = ({ addLesson, cancel, editData, removeThisLesson }) => {
       <div className="lesson-new-cnt">
         {openTest.open && (
           <AddTest
-            testId={currentLesson?.testId}
+            testId={currentLesson?.test}
             addTest={(data) => {
-              setCurrentLesson({ ...currentLesson, testId: data });
+              setCurrentLesson({ ...currentLesson, test: data });
             }}
             closeTest={() => setOpenTest({ open: false })}
           />
@@ -183,7 +181,7 @@ const NewLesson = ({ addLesson, cancel, editData, removeThisLesson }) => {
               className="add-new-lesson-btn"
               onClick={() => validateAndUpdateLesson()}
             >
-              {editData?.updateIndex ? 'Add to Course' : ' Update Course'}
+              {editData?.updateIndex ? "Add to Course" : " Update Course"}
             </div>
           </div>
         </div>
@@ -206,20 +204,20 @@ const NewLesson = ({ addLesson, cancel, editData, removeThisLesson }) => {
                 })
               }
             />
-              <div
-                className="lesson-test-overview-cnt"
-                onClick={() =>
-                  setOpenTest({ open: true, data: currentLesson.testId })
-                }
-              >
-                <img src={Test} alt="test" className="test" />
-                <p>
-                  {!currentLesson?.testId?.length > 3
-                    ? "No Tests has been created for this lesson"
-                    : `Test click to update`}
-                </p>
-                <div className="lesson-test-overview-btn"></div>
-              </div>
+            <div
+              className="lesson-test-overview-cnt"
+              onClick={() =>
+                setOpenTest({ open: true, data: currentLesson.testId })
+              }
+            >
+              <img src={Test} alt="test" className="test" />
+              <p>
+                {!currentLesson?.testId?.length > 3
+                  ? "No Tests has been created for this lesson"
+                  : `Test click to update`}
+              </p>
+              <div className="lesson-test-overview-btn"></div>
+            </div>
           </div>
           <div className="lesson-content-input-cnt">
             <div className="sublesson-name-cnt">
@@ -249,7 +247,7 @@ const NewLesson = ({ addLesson, cancel, editData, removeThisLesson }) => {
               </div>
               <div className="input-cnt add-sublesson-btn">
                 <div className="sublesson-title-input center-media">
-                  <p>{sublessonFile?.name || 'upload-media'}</p>
+                  <p>{sublessonFile?.name || "upload-media"}</p>
                   <input
                     type="file"
                     name="video-upload"
@@ -265,7 +263,7 @@ const NewLesson = ({ addLesson, cancel, editData, removeThisLesson }) => {
                 className="add-new-lesson-btn add-sublesson-btn"
                 onClick={() => addSublessons()}
               >
-                {uploadingFile ? "uploading.." : ' Add'}
+                {uploadingFile ? "uploading.." : " Add"}
               </div>
             </div>
           </div>
@@ -311,7 +309,7 @@ const NewLesson = ({ addLesson, cancel, editData, removeThisLesson }) => {
                 </div>
                 <div
                   className="add-new-lesson-btn add-sublesson-btn edit-sublesson-btn"
-                //   onClick={() => setPopupOpen(false)}
+                  //   onClick={() => setPopupOpen(false)}
                 >
                   <div className="delete-btn">
                     <img
