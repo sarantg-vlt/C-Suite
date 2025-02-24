@@ -745,7 +745,7 @@ const CourseContent = () => {
                             </li>
                           ))}
                         </ul>
-                        {lesson.testId && (
+                        {lesson.test && (
                           <div className="testButtonBox">
                             <div className="testButtonInr">
                               <div className="testButtonTxt">
@@ -756,7 +756,16 @@ const CourseContent = () => {
                                 className="testButton"
                                 onClick={() =>
                                   navigate(
-                                    `/home/tests/${lesson.testId}/user/${userId}`
+                                    `/home/courseContent/${courseId}/test`,
+                                    {
+                                      state: {
+                                        test: lesson.test,
+                                        courseId: courseId,
+                                        courseTitle: courseData.title,
+                                        userId: userId,
+                                        lessonTitle: lesson.title,
+                                      },
+                                    }
                                   )
                                 }
                               >

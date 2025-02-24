@@ -322,6 +322,7 @@ import { useEffect } from "react";
 import Request from "./Dashboard/Components/Request/Request";
 
 import Appointments from "./Admin/components/Appointments/Appointments";
+import TestCourseContent from "./Dashboard/Components/CourseContent/TestCourseContent/TestCourseContent";
 
 
 function App() {
@@ -441,6 +442,10 @@ function App() {
             ></Route> */}
             <Route path="courseContent/:courseId" element={<CourseContent />} />
             <Route path="courseDetails/:courseId" element={<CourseDetails />} />
+            <Route
+              path="courseContent/:courseId/test"
+              element={<TestCourseContent />}
+            />
           </Route>
 
           <Route path="/admin" element={<AllCourses />} />
