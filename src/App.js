@@ -271,6 +271,7 @@ import CourseContent from "./Dashboard/Components/CourseContent/CourseContent";
 import CourseDetails from "./Dashboard/Components/CourseDetails/CourseDetails";
 import Enrolled from "./Dashboard/Components/Enrolled/Enrolled";
 import TestPage from "./Dashboard/Components/TestPage/TestPage";
+import Marks from "./Dashboard/Components/Marks/Marks";
 
 import AllCourses from "./Admin/components/courses/AllCourses";
 import AddnewCourse from "./Admin/components/courses/new-course/AddnewCourse";
@@ -423,6 +424,8 @@ function App() {
             <Route path="courses" index element={<Courses />}></Route>
             <Route path="profile" index element={<Profile />}></Route>
             <Route path="enrolled" index element={<Enrolled />}></Route>
+            <Route path="marks" index element={<Marks />}></Route>
+
             <Route path="request" index element={<Request />}></Route>
             {/* <Route path="test/:lessonId" index element={<TestPage />} /> */}
             <Route

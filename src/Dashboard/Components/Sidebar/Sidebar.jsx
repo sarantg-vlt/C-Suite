@@ -6,6 +6,8 @@ import "./Sidebar.css";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserGraduate } from "@fortawesome/free-solid-svg-icons";//////
+
 import {
   faHome,
   faUser,
@@ -186,6 +188,12 @@ const Sidebar = () => {
               icon={faBook}
               path={"./Courses"}
               text={"Courses"}
+              expanded={expanded}
+            />
+            <SidebarItem
+              icon={faUserGraduate} // Changed icon for Marks
+              path={"./marks"}
+              text={"Marks"}
               expanded={expanded}
             />
             <SidebarItem

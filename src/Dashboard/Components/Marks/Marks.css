@@ -1,0 +1,483 @@
+.main-content {
+  cursor: default;
+  padding: 0px 20px 20px 20px;
+}
+
+.filterChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.filterChip {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filterChip:hover {
+  opacity: 0.9;
+  scale: 1.03;
+}
+
+.filterChip.active {
+  background-color: #6366f1;
+  color: white;
+}
+
+.clearFilters {
+  margin-left: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  background-color: #ec2424;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.clearFilters:hover {
+  background-color: #d1d1d1;
+}
+
+/* Design 3 */
+.cardContainer3 {
+  padding: 20px;
+}
+
+.cardContainer3 h2 {
+  padding: 10px;
+  color: #8949ff;
+  margin-bottom: 20px;
+}
+
+.cardContainer3 h3 {
+  padding: 10px 20px;
+  color: #8949ff;
+  width: max-content;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  background-color: rgba(220, 220, 220, 0.707);
+}
+
+.courseContainer4 {
+  display: block !important;
+  padding: 0 25px;
+}
+
+.courseLessonBox3 h5 {
+  color: white;
+  border-radius: 10px;
+  padding: 5px 10px;
+  width: max-content;
+  background-color: #8949ff;
+}
+
+.courseCard3 {
+  height: 100%;
+  display: flex;
+  padding: 12px;
+  cursor: default;
+  overflow: hidden;
+  position: relative;
+  border-radius: 11px;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: rgba(198, 197, 197, 0.59);
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s ease-in-out;
+}
+
+.courseCard3:hover {
+  background-color: rgb(189, 189, 189);
+}
+
+.courseOverlay3 {
+  z-index: 1;
+  height: 100%;
+  position: relative;
+  transform: translateY(0%);
+  transition: all 0.4s ease-in-out;
+}
+
+.courseCard3:hover .courseOverlay3 {
+  opacity: 0.4;
+  transform: scale(0.93) translateY(1%);
+}
+
+.courseImageBox3 {
+  position: relative;
+}
+
+.courseImage3 {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.courseImageTxt3 {
+  position: absolute;
+  top: 55%;
+  left: 10%;
+  right: 0%;
+  z-index: 2;
+  color: white;
+  font-size: medium;
+  padding: 1% 3%;
+  font-weight: 500;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  transition: opacity 0.4s ease-in-out;
+  /* background-color: rgba(63, 0, 179, 0.65); */
+  background-color: rgba(0, 0, 0, 0.85) !important;
+}
+
+.courseDetails3 {
+  z-index: 2;
+  display: flex;
+  padding: 10px 0;
+  min-height: 45%;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.courseDetails3 p {
+  font-size: 0.9em;
+  font-weight: 500;
+  margin: 3px 0 12px 3px;
+}
+
+.courseDetailBtn3,
+.lessonDetailBtn3 {
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 9px 15px;
+  font-size: 0.85em;
+  border-radius: 6px;
+  background-color: rgba(76, 3, 210, 1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.courseDetailBtn3:hover,
+.lessonDetailBtn3:hover {
+  background-color: rgba(63, 0, 179, 0.85);
+}
+
+.courseLessonBox3 {
+  position: absolute;
+  color: white;
+  top: 12%;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  height: 88%;
+  padding: 20px;
+  display: flex;
+  z-index: 3;
+  opacity: 0;
+  flex-direction: column;
+  transform: translateY(100%);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.85);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.courseLessonBox3 ul {
+  padding: 0% 10px;
+  font-size: 0.85em;
+}
+
+.courseCard3:hover .courseLessonBox3 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1125px) {
+  .main-content {
+    padding: 0px 10px 10px 10px;
+  }
+
+  .courseContainer4 {
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 835px) {
+  .cardContainer3 {
+    padding: 8px 2px;
+  }
+
+  .courseCard3 {
+    padding: 6px;
+  }
+
+  .cardContainer3 h2 {
+    padding: 5px;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+
+  .courseLessonBox3 {
+    padding: 15px;
+  }
+
+  .courseLessonBox3 h5 {
+    font-size: 0.6em;
+    font-weight: 400;
+    padding: 4px 6px;
+    border-radius: 5px;
+  }
+
+  .courseLessonBox3 ul {
+    font-size: 0.5em;
+    padding: 0px 1px 0px 5px;
+  }
+
+  .courseContainer4 {
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .courseImage3 {
+    height: 110px;
+  }
+
+  .courseImageTxt3 {
+    padding: 2% 4%;
+    font-size: 0.55em;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .courseDetails3 {
+    padding: 5px 0;
+    /* min-height: 55%; */
+  }
+
+  .courseDetails3 p {
+    padding: 0%;
+    font-size: 0.5em;
+    margin: 3px 0 8px 3px;
+  }
+
+  .courseDetailBtn3,
+  .lessonDetailBtn3 {
+    padding: 6px 8px;
+    font-size: 0.5em;
+  }
+
+  .filterChip,
+  .clearFilters {
+    font-size: 8px;
+    padding: 4px 6px;
+  }
+
+  .filterChips {
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+}
+/* Table container */
+.courseContainer4 {
+  overflow-x: auto; /* Allows horizontal scrolling on smaller screens */
+  margin-top: 20px;
+}
+
+/* Table styling */
+.marks-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* Table Header styling */
+.marks-table th {
+  background-color: #8949ff;
+  color: #ffffff;
+  padding: 15px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Table Cell styling */
+.marks-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 14px;
+}
+
+/* Hover Effect on Rows */
+.marks-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Zebra Stripes for the table rows */
+.marks-table tr:nth-child(odd) {
+  background-color: #fafafa;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .marks-table th,
+  .marks-table td {
+    padding: 10px;
+    font-size: 12px;
+  }
+  .marks-table {
+    font-size: 14px;
+  }
+}
+
+.marks-table th {
+  text-align: center; /* Make sure all th and td are centered by default */
+}
+
+/* Optional: Table Footer */
+.marks-table tfoot td {
+  background-color: #8949ff;
+  color: #ffffff;
+  font-weight: bold;
+}
+.marks-table td:nth-child(1),
+.marks-table td:nth-child(2), /* Target second column */
+.marks-table td:nth-child(3), /* Target third column */
+.marks-table td:nth-child(4) {
+  /* Target fourth column */
+  text-align: center; /* Explicitly center align */
+}
+
+/* View Button Styles */
+.marks-table button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.marks-table button:hover {
+  background-color: #45a049;
+  transform: scale(1.05); /* Slightly increase the size on hover */
+}
+
+.marks-table button:focus {
+  outline: none;
+}
+
+/* Modal Close Button Styles */
+.modal-content button {
+  padding: 10px 20px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #d33a3a;
+  transform: scale(1.05);
+}
+
+.modal-content button:focus {
+  outline: none;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Darker background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out; /* Modal fade-in animation */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+  transform: scale(0.9); /* Start with a smaller scale */
+  animation: scaleUp 0.3s ease-out; /* Smooth scale-up animation */
+}
+
+.modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.modal-table th,
+.modal-table td {
+  padding: 12px 20px;
+  text-align: left;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.modal-table th {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.modal-table td {
+  background-color: #f9f9f9;
+}
+
+.modal-content h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Modal Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Modal Scale-up Animation */
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
