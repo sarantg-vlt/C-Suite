@@ -6,7 +6,7 @@ import "./Sidebar.css";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserGraduate } from "@fortawesome/free-solid-svg-icons";//////
+// import { faUserGraduate } from "@fortawesome/free-solid-svg-icons";
 
 import {
   faHome,
@@ -18,6 +18,7 @@ import {
   faBars,
   faChevronLeft,
   faHand,
+  faUserGraduate,
 } from "@fortawesome/free-solid-svg-icons";
 
 function SidebarItem({
