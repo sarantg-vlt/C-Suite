@@ -1,0 +1,89 @@
+.Partners{
+   /* background:#43AA28; */
+   background: #00084d;
+}
+.parent{
+    background: white;
+}
+.curve{
+    background: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height:30vh;
+    -webkit-clip-path: ellipse(85% 59% at 50% 40%);
+    clip-path: ellipse(55% 59% at 50% 0%);
+ }
+.subparent{
+    background-repeat: no-repeat;
+    /* background:#43AA28; */
+    background: #00084d;
+    background-size: cover;
+    background-position: center;
+    height:70vh;
+    -webkit-clip-path: ellipse(85% 59% at 50% 40%);
+    clip-path:ellipse(85% 59% at 50% 40%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+ }
+ .subparent h2{
+    width: 60%;
+    text-align: center;
+    color: rgba(255, 255, 255,0.703);
+ }
+ .subparent p{
+    width: 55%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.703);
+ }
+ .subparent h4{
+    text-align: center;
+    color: orange;
+    font-weight:600;
+    transition: all .3s ease;
+    cursor: pointer;
+ }
+ .subparent h4:hover{
+   transform: scale(1.125);
+    transition: all .3s ease; 
+}
+
+ .subparent .partnerscontainer{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+ }
+ .subparent .partnerscontainer .partneritems{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 25%;
+ }
+ .subparent .partnerscontainer .partneritems .img{
+    display: flex;
+    height: 80px;
+    width: 80px;
+    background:white;
+    border-radius:50%;
+ }
+ .subparent .partnerscontainer .partneritems p{
+    width: 100%;
+ }
+
+ @media (max-width: 775px) {
+   .subparent{
+      height: max-content;
+      padding-bottom: 10vh;
+   }
+   .subparent .partnerscontainer{
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+   }
+   .subparent .partnerscontainer .partneritems{
+      width: 80%;
+   }
+ }

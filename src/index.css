@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.punch-viewer-body > .punch-viewer-navbar > .punch-viewer-navbar-logo{
+  display: none;
+}
+
+a .Link_module_link__13523a65 .VimeoLogoLink_module_vimeoLogo__08f2cc17 .shared_module_focusable__fd03e359{
+  display: none;
+}

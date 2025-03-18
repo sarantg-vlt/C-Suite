@@ -1,0 +1,25 @@
+.dashboard {
+  display: flex;
+  color: #333;
+  /* height: 100vh; */
+}
+
+.sidebarBox {
+  width: 75px;
+}
+
+.outletBox {
+  flex: 1;
+}
+
+@media (max-width: 1125px) {
+  .sidebarBox {
+    width: 65px;
+  }
+}
+
+@media (max-width: 835px) {
+  .sidebarBox {
+    width: 55px;
+  }
+}

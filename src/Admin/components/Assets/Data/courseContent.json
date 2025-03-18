@@ -1,0 +1,241 @@
+{
+    "title": "Strategic Leadership and Management",
+    "overviewPoints": [
+      {
+        "title": "Strategic Focus",
+        "description": "Develop essential skills for effective strategic leadership and management."
+      },
+      {
+        "title": "Comprehensive Coverage",
+        "description": "Covers a wide spectrum from strategic planning to organizational transformation."
+      },
+      {
+        "title": "Dynamic Environments",
+        "description": "Learn strategies to navigate and thrive in today's rapidly evolving business landscapes."
+      },
+      {
+        "title": "Innovative Leadership",
+        "description": "Foster innovation and creativity to drive continuous improvement."
+      },
+      {
+        "title": "Data-Driven Decisions",
+        "description": "Gain insights into leveraging data for informed decision-making and initiatives."
+      },
+      {
+        "title": "Organizational Transformation",
+        "description": "Understand methodologies for leading successful organizational change."
+      },
+      {
+        "title": "Global Perspective",
+        "description": "Gain insights into leadership challenges and opportunities in diverse markets."
+      },
+      {
+        "title": "Ethical Leadership",
+        "description": "Explore the importance of ethical leadership in building sustainable business practices."
+      },
+      {
+        "title": "Team Empowerment",
+        "description": "Learn techniques to empower and motivate teams for high performance."
+      },
+      {
+        "title": "Strategic Vision",
+        "description": "Develop a strategic vision that aligns organizational goals with stakeholder expectations."
+      }
+    ],
+    "description": "This comprehensive course is designed to equip you with the critical skills needed for effective strategic leadership and management in today's dynamic business environment. It covers a wide range of topics from strategic planning to organizational transformation, delving deep into the complexities of modern leadership challenges. By exploring key concepts and practical applications, this course empowers you to lead with confidence, navigate through uncertainty, and adapt strategies to evolving market conditions.\nThroughout the course, you will gain insights into strategic decision-making processes, learn how to leverage data-driven insights for informed choices, and cultivate the ability to inspire and motivate teams toward common goals. Emphasizing innovation and adaptive leadership, you will explore methodologies for fostering creativity, managing change, and driving sustainable success in your organization.\n\nBy the end of this course, you will emerge not only with enhanced leadership capabilities but also with a strategic mindset ready to tackle complex business challenges and seize opportunities for growth in the global marketplace.",
+    "lessons": [
+      {
+        "title": "Introduction to Strategic Planning",
+        "test":[],
+        "description": "Explore the fundamentals of strategic planning and its importance in achieving organizational goals.",
+        "sublessons": [
+          {
+            "title": "Strategic Planning Overview",
+            "link": "#",
+            "duration": "14:20"
+          },
+          {
+            "title": "Strategic Visioning",
+            "link": "#",
+            "duration": "12:45"
+          }
+        ]
+      },
+      {
+        "title": "Leadership Strategies for Change",
+        "test":[],
+        "description": "Learn effective leadership strategies to navigate and lead organizational change initiatives.",
+        "sublessons": [
+          {
+            "title": "Change Management Essentials",
+            "link": "#",
+            "duration": "18:30"
+          },
+          {
+            "title": "Leading Through Crisis",
+            "link": "#",
+            "duration": "16:15"
+          }
+        ]
+      },
+      {
+        "title": "Innovation and Entrepreneurship",
+        "test":[],
+        "description": "Explore the role of innovation and entrepreneurship in driving organizational growth and competitiveness.",
+        "sublessons": [
+          {
+            "title": "Innovation Frameworks",
+            "link": "#",
+            "duration": "20:10"
+          },
+          {
+            "title": "Entrepreneurial Mindset",
+            "link": "#",
+            "duration": "14:55"
+          }
+        ]
+      },
+      {
+        "title": "Strategic Decision Making",
+        "test":[],
+        "description": "Develop essential skills in strategic decision-making processes and frameworks.",
+        "sublessons": [
+          {
+            "title": "Decision Analysis",
+            "link": "#",
+            "duration": "17:40"
+          },
+          {
+            "title": "Risk Management Strategies",
+            "link": "#",
+            "duration": "15:25"
+          }
+        ]
+      },
+      {
+        "title": "Leading High-Performance Teams",
+        "test":[],
+        "description": "Learn strategies to build and lead high-performance teams for achieving strategic objectives.",
+        "sublessons": [
+          {
+            "title": "Team Dynamics",
+            "link": "#",
+            "duration": "19:05"
+          },
+          {
+            "title": "Motivation and Engagement",
+            "link": "#",
+            "duration": "13:50"
+          }
+        ]
+      },
+      {
+        "title": "Strategic Marketing and Brand Management",
+        "test":[],
+        "description": "Understand the importance of strategic marketing and brand management in driving customer value and loyalty.",
+        "sublessons": [
+          {
+            "title": "Brand Strategy",
+            "link": "#",
+            "duration": "16:55"
+          },
+          {
+            "title": "Digital Marketing Trends",
+            "link": "#",
+            "duration": "14:30"
+          }
+        ]
+      },
+      {
+        "title": "Financial Strategies for Leaders",
+        "test":[],
+        "test":[],
+        "description": "Gain insights into financial strategies and tools essential for strategic decision-making.",
+        "sublessons": [
+          {
+            "title": "Financial Analysis",
+            "link": "#",
+            "duration": "18:20"
+          },
+          {
+            "title": "Budgeting and Forecasting",
+            "link": "#",
+            "duration": "12:40"
+          }
+        ]
+      },
+      {
+        "title": "Ethics and Corporate Governance",
+        "test":[],
+        "description": "Explore ethical considerations and best practices in corporate governance.",
+        "sublessons": [
+          {
+            "title": "Corporate Ethics",
+            "link": "#",
+            "duration": "15:30"
+          },
+          {
+            "title": "Governance Structures",
+            "link": "#",
+            "duration": "13:15"
+          }
+        ]
+      }
+    ],
+    "header": "Analog and Digital Modulation",
+    "videoUrl": "https://www.youtube.com/embed/Zj6x_7i1jYY",
+    "whoIsThisFor": [
+      {
+        "text": "Electrical Engineering 3rd Semester",
+        "icon": "lightning.svg"
+      },
+      {
+        "text": "Electrical Engineering 5th Semester",
+        "icon": "lightning.svg"
+      },
+      {
+        "text": "Mechanical Engineering 5th Semester",
+        "icon": "settings.svg"
+      }
+    ],
+    "whatYouGet": [
+      {
+        "icon": "tickIcon.svg",
+        "title": "Master Core Concepts",
+        "description": "Understand engineering fundamentals for a strong academic foundation."
+      },
+      {
+        "icon": "tickIcon.svg",
+        "title": "Collaborative Environment",
+        "description": "Join a dynamic community, forging professional relationships."
+      }
+    ],
+    "syllabus": "Syllabus",
+    "price": 3500,
+    "courseDetails": [
+      {
+        "icon": "📘",
+        "text": "Beginner Level"
+      },
+      {
+        "icon": "👥",
+        "text": "10 Total Enrolled"
+      },
+      {
+        "icon": "⏰",
+        "text": "3 hours Duration"
+      },
+      {
+        "icon": "🎓",
+        "text": "Certificate of Completion"
+      },
+      {
+        "icon": "🌐",
+        "text": "Private community of peers"
+      },
+      {
+        "icon": "🔑",
+        "text": "Lifetime access to materials"
+      }
+    ]
+  }

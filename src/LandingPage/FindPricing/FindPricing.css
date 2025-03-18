@@ -1,0 +1,119 @@
+/* Main container styling */
+.FindPricing {
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+/* .FindPricing .container {
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    height: 60%;
+    background: #0972ff;
+    border-radius: 20px;
+}
+.FindPricing .container:hover {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+} */
+.FindPricing .container{
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    height: 60%;
+    color: #000;
+    border-radius: 10px;
+    border: 2px solid black;
+    background: 
+      linear-gradient(90deg,#0972ff 50%,#fff 0) 
+      var(--_p,100%)/200% no-repeat;
+    /* -webkit-background-clip: text;
+            background-clip: text; */
+    transition: .4s;
+  }
+  .FindPricing .container:hover {
+    --_p: 0%;
+    color: white;
+    border: none;
+  }
+
+.FindPricing .container:hover  .rightcontainer button {
+    background: white;
+    color: black;
+}
+
+.FindPricing .container .leftcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    height: 100%;
+}
+
+.FindPricing .container .leftcontainer h1 {
+    font-size: 35px;
+}
+
+.FindPricing .container .rightcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.FindPricing .container .rightcontainer button {
+    position: relative;
+    overflow: hidden; /* Required for ripple effect */
+    background: #0972ff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px 20px; /* Adjusted padding */
+    color: white; /* Initial text color */
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.FindPricing .container .rightcontainer button:hover {
+    transform: scale(1.1);
+}
+
+
+@media (max-width: 775px) {
+    .FindPricing {
+        height: max-content;
+        padding: 30px;
+    }
+
+    .FindPricing .container {
+        padding: 30px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .FindPricing .container .leftcontainer {
+        gap: 10px;
+    }
+
+    .FindPricing .container .leftcontainer h1,
+    .FindPricing .container .leftcontainer p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 775px) {
+    .FindPricing .container .leftcontainer h1 {
+        font-size: 20px;
+    }
+
+    .FindPricing .container .leftcontainer p {
+        font-size: 15px;
+    }
+}

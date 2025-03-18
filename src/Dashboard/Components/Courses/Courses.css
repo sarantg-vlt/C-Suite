@@ -1,0 +1,287 @@
+.main-content {
+  cursor: default;
+  padding: 0px 20px 20px 20px;
+}
+
+.filterChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.filterChip {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filterChip:hover {
+  opacity: 0.9;
+  scale: 1.03;
+}
+
+.filterChip.active {
+  background-color: #6366f1;
+  color: white;
+}
+
+.clearFilters {
+  margin-left: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  background-color: #ec2424;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.clearFilters:hover {
+  background-color: #d1d1d1;
+}
+
+/* Design 3 */
+.cardContainer3 {
+  padding: 20px;
+}
+
+.cardContainer3 h2 {
+  padding: 10px;
+  color: #8949ff;
+  margin-bottom: 20px;
+}
+
+.cardContainer3 h3 {
+  padding: 10px 20px;
+  color: #8949ff;
+  width: max-content;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  background-color: rgba(220, 220, 220, 0.707);
+}
+
+.courseContainer3 {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.courseLessonBox3 h5 {
+  color: white;
+  border-radius: 10px;
+  padding: 5px 10px;
+  width: max-content;
+  background-color: #8949ff;
+}
+
+.courseCard3 {
+  height: 100%;
+  display: flex;
+  padding: 12px;
+  cursor: default;
+  overflow: hidden;
+  position: relative;
+  border-radius: 11px;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: rgba(198, 197, 197, 0.59);
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s ease-in-out;
+}
+
+.courseCard3:hover {
+  background-color: rgb(189, 189, 189);
+}
+
+.courseOverlay3 {
+  z-index: 1;
+  height: 100%;
+  position: relative;
+  transform: translateY(0%);
+  transition: all 0.4s ease-in-out;
+}
+
+.courseCard3:hover .courseOverlay3 {
+  opacity: 0.4;
+  transform: scale(0.93) translateY(1%);
+}
+
+.courseImageBox3 {
+  position: relative;
+}
+
+.courseImage3 {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.courseImageTxt3 {
+  position: absolute;
+  top: 55%;
+  left: 10%;
+  right: 0%;
+  z-index: 2;
+  color: white;
+  font-size: medium;
+  padding: 1% 3%;
+  font-weight: 500;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  transition: opacity 0.4s ease-in-out;
+  /* background-color: rgba(63, 0, 179, 0.65); */
+    background-color: rgba(0, 0, 0, 0.85) !important;
+}
+
+.courseDetails3 {
+  z-index: 2;
+  display: flex;
+  padding: 10px 0;
+  min-height: 45%;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.courseDetails3 p {
+  font-size: 0.9em;
+  font-weight: 500;
+  margin: 3px 0 12px 3px;
+}
+
+.courseDetailBtn3,
+.lessonDetailBtn3 {
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 9px 15px;
+  font-size: 0.85em;
+  border-radius: 6px;
+  background-color: rgba(76, 3, 210, 1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.courseDetailBtn3:hover,
+.lessonDetailBtn3:hover {
+  background-color: rgba(63, 0, 179, 0.85);
+}
+
+.courseLessonBox3 {
+  position: absolute;
+  color: white;
+  top: 12%;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  height: 88%;
+  padding: 20px;
+  display: flex;
+  z-index: 3;
+  opacity: 0;
+  flex-direction: column;
+  transform: translateY(100%);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.85);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.courseLessonBox3 ul {
+  padding: 0% 10px;
+  font-size: 0.85em;
+}
+
+.courseCard3:hover .courseLessonBox3 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1125px) {
+  .main-content {
+    padding: 0px 10px 10px 10px;
+  }
+
+  .courseContainer3 {
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 835px) {
+  .cardContainer3 {
+    padding: 8px 2px;
+  }
+
+  .courseCard3 {
+    padding: 6px;
+  }
+
+  .cardContainer3 h2 {
+    padding: 5px;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+
+  .courseLessonBox3 {
+    padding: 15px;
+  }
+
+  .courseLessonBox3 h5 {
+    font-size: 0.6em;
+    font-weight: 400;
+    padding: 4px 6px;
+    border-radius: 5px;
+  }
+
+  .courseLessonBox3 ul {
+    font-size: 0.5em;
+    padding: 0px 1px 0px 5px;
+  }
+
+  .courseContainer3 {
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .courseImage3 {
+    height: 110px;
+  }
+
+  .courseImageTxt3 {
+    padding: 2% 4%;
+    font-size: 0.55em;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .courseDetails3 {
+    padding: 5px 0;
+    /* min-height: 55%; */
+  }
+
+  .courseDetails3 p {
+    padding: 0%;
+    font-size: 0.5em;
+    margin: 3px 0 8px 3px;
+  }
+
+  .courseDetailBtn3,
+  .lessonDetailBtn3 {
+    padding: 6px 8px;
+    font-size: 0.5em;
+  }
+
+  .filterChip,
+  .clearFilters {
+    font-size: 8px;
+    padding: 4px 6px;
+  }
+
+  .filterChips {
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,265 @@
+{
+  "description":"description",
+  "difficulty":"medium",
+  "tags":"",
+  "time": 1800,
+  "sections": [
+    {
+      "section": 1,
+      "questions": [
+        {
+          "question": "I was born on December 28, 1937; I am a bachelor; My company manufactures the world's cheapest car. Who am I?",
+          "options": ["Ratan Tata", "Kumar Mangalam Birla", "Rahul Bajaj", "Satya Nadella"],
+          "answer": "Ratan Tata"
+        },
+        {
+          "question": "Question 1 in Section 1",
+          "options": ["Option 1", "Option 2", "Option 3", "Option 4"],
+          "answer": "Option 1"
+        },
+        {
+          "question": "I am the CEO of Google. Who am I?",
+          "options": ["Sundar Pichai", "Satya Nadella", "Tim Cook", "Jeff Bezos"],
+          "answer": "Sundar Pichai"
+        },
+        {
+          "question": "What is the capital of France?",
+          "options": ["Paris", "London", "Berlin", "Madrid"],
+          "answer": "Paris"
+        },
+        {
+          "question": "Which planet is known as the Red Planet?",
+          "options": ["Earth", "Mars", "Jupiter", "Saturn"],
+          "answer": "Mars"
+        },
+        {
+          "question": "What is the largest ocean on Earth?",
+          "options": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+          "answer": "Pacific Ocean"
+        },
+        {
+          "question": "Who wrote 'To Kill a Mockingbird'?",
+          "options": ["Harper Lee", "Mark Twain", "Ernest Hemingway", "F. Scott Fitzgerald"],
+          "answer": "Harper Lee"
+        },
+        {
+          "question": "What is the smallest prime number?",
+          "options": ["1", "2", "3", "5"],
+          "answer": "2"
+        },
+        {
+          "question": "What is the boiling point of water in Celsius?",
+          "options": ["90°C", "100°C", "110°C", "120°C"],
+          "answer": "100°C"
+        },
+        {
+          "question": "Who painted the Mona Lisa?",
+          "options": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"],
+          "answer": "Leonardo da Vinci"
+        },
+        {
+          "question": "What is the hardest natural substance on Earth?",
+          "options": ["Gold", "Iron", "Diamond", "Platinum"],
+          "answer": "Diamond"
+        },
+        {
+          "question": "Who developed the theory of relativity?",
+          "options": ["Isaac Newton", "Galileo Galilei", "Nikola Tesla", "Albert Einstein"],
+          "answer": "Albert Einstein"
+        },
+        {
+          "question": "What is the largest mammal in the world?",
+          "options": ["Elephant", "Blue Whale", "Giraffe", "Rhino"],
+          "answer": "Blue Whale"
+        },
+        {
+          "question": "What is the main ingredient in sushi?",
+          "options": ["Bread", "Rice", "Pasta", "Potato"],
+          "answer": "Rice"
+        },
+        {
+          "question": "What is the boiling point of water in Celsius?",
+          "options": ["90°C", "100°C", "110°C", "120°C"],
+          "answer": "100°C"
+        },
+        {
+          "question": "Who painted the Mona Lisa?",
+          "options": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"],
+          "answer": "Leonardo da Vinci"
+        },
+        {
+          "question": "What is the hardest natural substance on Earth?",
+          "options": ["Gold", "Iron", "Diamond", "Platinum"],
+          "answer": "Diamond"
+        },
+        {
+          "question": "Who developed the theory of relativity?",
+          "options": ["Isaac Newton", "Galileo Galilei", "Nikola Tesla", "Albert Einstein"],
+          "answer": "Albert Einstein"
+        },
+        {
+          "question": "What is the largest mammal in the world?",
+          "options": ["Elephant", "Blue Whale", "Giraffe", "Rhino"],
+          "answer": "Blue Whale"
+        },
+        {
+          "question": "What is the main ingredient in sushi?",
+          "options": ["Bread", "Rice", "Pasta", "Potato"],
+          "answer": "Rice"
+        }
+      ]
+    },
+    {
+      "section": 2,
+      "questions": [
+        {
+          "question": "ramkumar whic year born",
+          "options": ["Option 1", "Option 2", "Option 3", "Option 4"],
+          "answer": "Option 1"
+        },
+        {
+          "question": "I was born on December 28, 1937; I am a bachelor; My company manufactures the world's cheapest car. Who am I?",
+          "options": ["Ratan Tata", "Kumar Mangalam Birla", "Rahul Bajaj", "Satya Nadella"],
+          "answer": "Ratan Tata"
+        },
+        {
+          "question": "I am the CEO of Google. Who am I?",
+          "options": ["Sundar Pichai", "Satya Nadella", "Tim Cook", "Jeff Bezos"],
+          "answer": "Sundar Pichai"
+        },
+        {
+          "question": "What is the capital of France?",
+          "options": ["Paris", "London", "Berlin", "Madrid"],
+          "answer": "Paris"
+        },
+        {
+          "question": "Which planet is known as the Red Planet?",
+          "options": ["Earth", "Mars", "Jupiter", "Saturn"],
+          "answer": "Mars"
+        },
+        {
+          "question": "What is the largest ocean on Earth?",
+          "options": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+          "answer": "Pacific Ocean"
+        },
+        {
+          "question": "Who wrote 'To Kill a Mockingbird'?",
+          "options": ["Harper Lee", "Mark Twain", "Ernest Hemingway", "F. Scott Fitzgerald"],
+          "answer": "Harper Lee"
+        },
+        {
+          "question": "What is the smallest prime number?",
+          "options": ["1", "2", "3", "5"],
+          "answer": "2"
+        },
+        {
+          "question": "What is the boiling point of water in Celsius?",
+          "options": ["90°C", "100°C", "110°C", "120°C"],
+          "answer": "100°C"
+        },
+        {
+          "question": "Who painted the Mona Lisa?",
+          "options": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"],
+          "answer": "Leonardo da Vinci"
+        },
+        {
+          "question": "What is the hardest natural substance on Earth?",
+          "options": ["Gold", "Iron", "Diamond", "Platinum"],
+          "answer": "Diamond"
+        },
+        {
+          "question": "Who developed the theory of relativity?",
+          "options": ["Isaac Newton", "Galileo Galilei", "Nikola Tesla", "Albert Einstein"],
+          "answer": "Albert Einstein"
+        },
+        {
+          "question": "What is the largest mammal in the world?",
+          "options": ["Elephant", "Blue Whale", "Giraffe", "Rhino"],
+          "answer": "Blue Whale"
+        },
+        {
+          "question": "What is the main ingredient in sushi?",
+          "options": ["Bread", "Rice", "Pasta", "Potato"],
+          "answer": "Rice"
+        }
+        
+      ]
+    },
+    {
+      "section": 3,
+      "questions": [
+        {
+          "question": "Question 1 in Section 3",
+          "options": ["Option 1", "Option 2", "Option 3", "Option 4"],
+          "answer": "Option 1"
+        },
+        {
+          "question": "I was born on December 28, 1937; I am a bachelor; My company manufactures the world's cheapest car. Who am I?",
+          "options": ["Ratan Tata", "Kumar Mangalam Birla", "Rahul Bajaj", "Satya Nadella"],
+          "answer": "Ratan Tata"
+        },
+        {
+          "question": "I am the CEO of Google. Who am I?",
+          "options": ["Sundar Pichai", "Satya Nadella", "Tim Cook", "Jeff Bezos"],
+          "answer": "Sundar Pichai"
+        },
+        {
+          "question": "What is the capital of France?",
+          "options": ["Paris", "London", "Berlin", "Madrid"],
+          "answer": "Paris"
+        },
+        {
+          "question": "Which planet is known as the Red Planet?",
+          "options": ["Earth", "Mars", "Jupiter", "Saturn"],
+          "answer": "Mars"
+        },
+        {
+          "question": "What is the largest ocean on Earth?",
+          "options": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+          "answer": "Pacific Ocean"
+        },
+        {
+          "question": "Who wrote 'To Kill a Mockingbird'?",
+          "options": ["Harper Lee", "Mark Twain", "Ernest Hemingway", "F. Scott Fitzgerald"],
+          "answer": "Harper Lee"
+        },
+        {
+          "question": "What is the smallest prime number?",
+          "options": ["1", "2", "3", "5"],
+          "answer": "2"
+        },
+        {
+          "question": "What is the boiling point of water in Celsius?",
+          "options": ["90°C", "100°C", "110°C", "120°C"],
+          "answer": "100°C"
+        },
+        {
+          "question": "Who painted the Mona Lisa?",
+          "options": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"],
+          "answer": "Leonardo da Vinci"
+        },
+        {
+          "question": "What is the hardest natural substance on Earth?",
+          "options": ["Gold", "Iron", "Diamond", "Platinum"],
+          "answer": "Diamond"
+        },
+        {
+          "question": "Who developed the theory of relativity?",
+          "options": ["Isaac Newton", "Galileo Galilei", "Nikola Tesla", "Albert Einstein"],
+          "answer": "Albert Einstein"
+        },
+        {
+          "question": "What is the largest mammal in the world?",
+          "options": ["Elephant", "Blue Whale", "Giraffe", "Rhino"],
+          "answer": "Blue Whale"
+        },
+        {
+          "question": "What is the main ingredient in sushi?",
+          "options": ["Bread", "Rice", "Pasta", "Potato"],
+          "answer": "Rice"
+        }
+       
+      ]
+    }
+  ]
+}

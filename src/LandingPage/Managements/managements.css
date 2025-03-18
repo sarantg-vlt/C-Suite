@@ -1,0 +1,404 @@
+.heading-lms {
+  text-align: center; 
+  margin-top: 5rem;
+}
+
+.heading-lms div:nth-child(1) {
+  font-weight: bold; 
+  font-size: 1.5rem; 
+  margin-bottom:15px;  
+  /* background: linear-gradient(232deg, #02e1e1, #41d271, #c6d94b); */
+  background: linear-gradient(135deg, #bf00ff, #8949ff, blue);
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  background-clip: text;
+
+}
+
+.heading-lms div:nth-child(2) {
+  font-weight: bold; 
+  font-size: 2rem; 
+  margin-bottom:15px;   
+}
+
+
+.heading-lms div:nth-child(3) {
+  font-size: 1rem; 
+  margin-bottom: 45px;
+  font-weight: 500; 
+  margin-left: 1%; 
+}
+
+/*buttons -containers */
+
+.container-read{
+display: flex;
+justify-content: center; 
+align-items: center; 
+}
+
+.buttons-all{
+display: flex;
+flex-direction: center; 
+align-items: center;
+gap:30px;
+}
+
+.buttons-all .txt-access {
+  font-weight: 700;
+  padding: 10px 40px;
+  font-size: 18px;
+  background-color: white;
+  border: none;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+  border-radius:2rem;
+  transition: all .3s ease;
+}
+
+
+.buttons-all .txt-access:hover {
+  color: white;
+  /* background: linear-gradient(232deg, #02e1e1, #41d271, #c6d94b); */
+  background: linear-gradient(135deg, #bf00ff, #8949ff, blue);
+  transform: scale(1.125);
+  transition: all .3s ease;  
+  
+}
+
+.text-primary-color{
+  /* color: rgb(98, 189, 139); */
+  color: #8949ff;
+}
+.buttons-all .txt-access:hover .text-primary-color {
+  color: white; 
+}
+
+.moreDetailsPage {
+min-height: 100vh;
+}
+.details-cnt{
+width: 90%;
+display:flex;
+flex-direction: column;
+/* background: #969696; */
+margin-left: auto;
+margin-right: auto;
+
+}
+
+.management-details-cnt{
+width:100%;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-wrap: wrap;
+gap: 1rem;
+margin-top: 2rem;
+}
+
+.profile-details{
+width: 100%;
+}
+
+.gradientText{
+font-weight: bold;
+align-self: center;
+font-size: 1.5rem;
+/* background: linear-gradient(232deg, #02e1e1, #41d271, #c6d94b); */
+/* background: linear-gradient(135deg, #7ee452, #faa662, rgb(187, 187, 254)); */
+color: #fff;
+/* -webkit-text-fill-color: transparent; */
+display: inline-block;
+background-clip: text;
+margin-bottom: 2rem;
+}
+
+.gradientArea{
+/* background: linear-gradient(232deg, #02e1e1, #41d271, #c6d94b); */
+background: linear-gradient(135deg, #bf00ff, #8949ff, blue);
+color: white;
+}
+
+.details-profile-image{
+width: 18rem;
+height: 18rem;
+width: 10rem;
+height: 10rem;
+margin-bottom: 2rem;
+object-fit: cover;
+border-radius: 50%;
+}
+
+.management-info{
+margin-top: 2rem;
+}
+
+
+@media (max-width: 768px) {
+  .buttons-all {
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+  }
+
+  
+  .buttons-all .txt-access {
+    width: 45%; 
+    margin: 5px; 
+  }
+
+  .container-read{
+    padding: 2rem;
+  }
+
+  .buttons-all .txt-access {
+    width: 50%;
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 520px) {
+  .card-image-learning{
+    background-size:contain;
+    height:600px; 
+    margin-top: 2rem;
+    }
+
+  .buttons-all .txt-access {
+    width: 70%;
+  } 
+}
+
+@media (max-width: 400px) {
+  .card-image-learning{
+    background-size:contain;
+    height:300px; 
+    margin-top: 0rem;
+    }
+}
+
+
+/* stats change container */
+
+.changes-head{
+padding:5rem;
+}
+
+
+.total-content {
+display: flex;
+justify-content:space-between;
+align-items: center;
+max-width: 800px;
+width: 100%;
+flex-grow: 1; 
+text-align:justify;
+}
+
+.content-title{
+color: rgb(0, 0, 0);
+font-weight:600; 
+}
+
+.item-title{
+font-size: 18px;
+}
+
+
+.image-sytle{
+padding-top:8rem;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.card-image {
+background-image: url('./Asset/Assessment.jpg');
+background-size: 100% 100%;
+border-radius:5px;
+width:400px; 
+height:350px; 
+margin-right: 100px;
+margin-bottom: 100px;
+} 
+
+/* .card-image-subscribe{
+background-image: url('./Asset/subscribe-1.gif');
+background-size: 100% 100%;
+border-radius:5px;
+width:500px; 
+height:350px; 
+} */
+
+.card-image-dashboard{
+background-image: url('./Asset/Dashboard.gif');
+background-size: 100% 100%;
+border-radius:5px;
+width:300px; 
+height:300px; 
+}
+
+.card-image-learning{
+background-image: url('./Asset/learning.jpg');
+background-size:50%;
+background-repeat: no-repeat;
+background-position: center;
+border-radius:5px;
+width:100%; 
+height:1600px; 
+margin-top: -6rem;
+}
+
+
+
+
+@media (max-width: 768px) {
+
+  .card-image-learning{
+    background-size:contain;
+    height:1000px; 
+    margin-top: 4rem;
+    }
+
+.changes-head{
+  padding:2rem;
+  padding-top:5rem;  
+}
+
+.content-title{
+  color: rgb(0, 0, 0);
+  font-weight:600; 
+  text-align: center;
+}
+
+  .container-para{
+    padding-top: 2rem;
+    width: 100%;
+
+  }
+
+.image-sytle{
+  padding: 0rem;
+  margin-bottom: 10rem;
+}
+}
+
+.custom-cards-container {
+  display: flex;
+  /* justify-content: space-evenly; */
+  gap: 20px;
+  /* width: 100%; */
+}
+
+.custom-card {
+  width: 300px;
+  height: 400px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 8px #8949FF;
+}
+
+.custom-card-image {
+  width:320px;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.custom-card:hover .custom-card-image {
+  transform: scale(1.1);
+}
+
+/* Position the name at the bottom of the card */
+.custom-card-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  z-index: 2; /* Ensures the name stays on top of the image */
+}
+
+/* Slide Overlay */
+.custom-card-overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Transparent background (70% opacity black) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: top 0.4s ease; /* Slide up effect */
+  z-index: 3; /* Overlay stays above the name */
+  color: white; /* Ensure text is visible on the transparent background */
+}
+
+.custom-card:hover .custom-card-overlay {
+  top: 0; /* Slide the overlay up when hovered */
+}
+
+.custom-card-overlay .custom-card-text,
+.custom-card-overlay .custom-card-button {
+  display: block;
+}
+
+.custom-card-text {
+  font-size: 1rem;
+  margin: 10px 20px;
+  text-align: center;
+}
+
+.custom-card-button {
+  padding: 10px 20px;
+  background-color: #8949FF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.custom-card-button:hover {
+  background-color: #c02df1;
+}
+
+@media (max-width: 768px) {
+  .custom-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+@media (min-width: 1000px) {
+.details-cnt{
+  width: 60%;
+}
+.management-details-cnt{
+   align-items: flex-start;
+   justify-content: space-between;
+}
+.details-profile-image{
+  width: 18rem;
+  height: 18rem;
+}
+.profile-details{
+  width: 60%;
+}
+}

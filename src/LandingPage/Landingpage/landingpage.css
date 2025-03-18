@@ -1,0 +1,200 @@
+.landing-page{
+   /* background-image: url('../Assets/fe74a4d227873758d3f138e8ca2f9cbb.builld-cloud-header-glow.svg'); */
+   background-repeat: no-repeat;
+   /* background-color: #2ad8a1 ; */
+   /* background: linear-gradient(90deg, #303D96 0%, #56ABE3 100%); */
+   /* background: linear-gradient(90deg, #f14545 0%, #ebb73d 100%); */
+   /* background: linear-gradient(90deg, #3ee275 0%, #d5e868 100%); */
+   background-size: cover;
+   background-position: center;
+   height:90vh;
+   -webkit-clip-path: ellipse(100% 59% at 50% 40%);
+   clip-path:ellipse(100% 59% at 50% 40%);
+   overflow: auto;
+   /* background: linear-gradient(232deg, #0972ff, #02e1e1, #64e790, #e0eb98); */
+   background: linear-gradient(135deg, #8800a7, #c200bf, #004b7c, #008667, #897700);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 9s ease infinite;
+    -moz-animation: AnimationName 9s ease infinite;
+    animation: AnimationName 9s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 48%}
+    50%{background-position:100% 53%}
+    100%{background-position:0% 48%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 48%}
+    50%{background-position:100% 53%}
+    100%{background-position:0% 48%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 48%}
+    50%{background-position:100% 53%}
+    100%{background-position:0% 48%}
+}
+
+.hero-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 160px;
+}
+.tag-size{
+    color: #999;
+    background-color: #999; 
+    border: none; 
+}
+
+.button-logoin{
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+}
+
+
+.hero-section{
+    text-align: center;
+    color: white;
+    /* margin-top:5rem; */
+    padding-top: 3rem;
+    font-size:20px;
+    margin-top: 100px;
+}
+.text-learn{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size:30px;
+    font-weight:700;
+    /* margin-bottom: 1.5rem; */
+}
+.text-learn p{
+    margin: 0px;
+}
+.text-grow{
+    margin-top: 35px;
+    font-size:clamp(30px,4vw,64px);
+    font-weight:700; 
+}
+.text-build{
+    margin-top: -30px;
+    font-size:clamp(40px,8vw,72px);
+    font-weight:700;
+}
+
+.text-course-development{
+    font-size: 22px;
+    font-weight:700; 
+}
+.button-unlock{
+    color: black;
+    /* background: linear-gradient(232deg, #02e1e1, #41d271, #c6d94b); */
+    background: linear-gradient(-135deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    font-size:18px;
+    font-weight:700;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 25px;
+    margin: 2rem 0rem;   
+    transition: all .3s ease;
+}
+
+.button-unlock:hover{
+    transform: scale(1.150);
+    transition: all .3s ease; 
+}
+
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+    .landing-page {
+        -webkit-clip-path: ellipse(100% 59% at 50% 40%);
+        clip-path:ellipse(100% 59% at 50% 40%);
+        overflow: auto;
+    }
+
+    .hero-section {
+        margin-top: 5rem;
+        font-size: 16px;
+        padding: 0 1rem;
+    }
+
+    .text-learn {
+        font-size: 24px;
+    }
+
+    .text-grow {
+        margin-top: -15px;
+        font-size: 36px;
+    }
+
+    .text-build {
+        margin-top: -20px;
+        font-size: 40px;
+    }
+
+    .text-course-development {
+        margin-top: -5px;
+        font-size: 18px;
+    }
+
+    .button-unlock {
+        font-size: 16px;
+        padding: 8px 20px;
+        margin: 2rem 0;
+    }
+
+    .button-logoin {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* Adjustments for very small devices */
+@media (max-width: 480px) {
+    .landing-page {
+        -webkit-clip-path: ellipse(100% 59% at 50% 40%);
+        clip-path:ellipse(100% 59% at 50% 40%);
+        overflow: auto;
+       
+    }
+
+    .hero-section {
+        margin-top: 5rem;
+        font-size: 14px;
+    }
+
+    .text-learn {
+        font-size: 20px;
+    }
+
+    .text-grow {
+        margin-top: -10px;
+        font-size: 28px;
+    }
+
+    .text-build {
+        margin-top: -15px;
+        font-size: 32px;
+    }
+
+    .text-course-development {
+        margin-top: -5px;
+        font-size: 16px;
+    }
+
+    .button-unlock {
+        font-size: 14px;
+        padding: 6px 15px;
+        margin: 1.5rem 0;
+    }
+
+    .button-logoin {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}

@@ -1,0 +1,31 @@
+.bottom-footer-container{
+    padding:4em 1em;
+}
+.term-main-header {
+  font-weight: semi-bold;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  /* background: linear-gradient(232deg, #02e1e1, #41d271, #c6d94b); */
+  background: linear-gradient(135deg, #bf00ff, #8949ff, blue);
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  background-clip: text;
+  letter-spacing: -1px;
+}
+.term-content{
+    display: flex;
+    flex-direction: column;
+    margin: 2em 0;
+    gap: .5em;
+}
+.term-header {
+  text-transform: uppercase;
+}
+.term-para{
+    letter-spacing: .5px;
+    line-height: 160%;
+    list-style-type: none;
+    span{
+        font-weight: 500;
+    }
+}

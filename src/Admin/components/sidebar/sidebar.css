@@ -1,0 +1,82 @@
+/* src/components/Sidebar.css */
+.sidebar1 {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  justify-content: space-between;
+  width: 200px;
+  height: 100%;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Ensure it's above the main content */
+  background-color: #fff;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.logo {
+  height: 50px;
+  font-size: 4px;
+  font-weight: bold;
+}
+
+/* h2 {
+    color: #3F3C69;
+    font-size: 18px;
+    font-weight: bold;
+  } */
+
+.menu {
+  flex: 1;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  color: #0b0739;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-item.active,
+.menu-item:hover {
+  background-color: #8949ff;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu-item .icon {
+  margin-right: 10px;
+  color: #041729;
+}
+
+.menu-item span {
+  font-size: 14px;
+}
+
+.menu.bottom {
+  margin-top: auto;
+}
+
+.menu-item .icon {
+  font-size: 18px;
+  color: #8949ff;
+}
+
+.menu-item.active .icon,
+.menu-item:hover .icon {
+  color: #fff;
+}
+
+@media (min-width: 1000px) {
+  .sidebar1 {
+    display: flex;
+  }
+}

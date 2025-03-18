@@ -1,0 +1,60 @@
+.react-Big-calendar {
+  font-size: 12px;
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+.main-calendar{
+  height: 550px;
+}
+.rbc-toolbar {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px !important;
+  /* display: none !important; */
+}
+/* .eventFunction {
+  position: absolute;
+  right: 0;
+  top: 0;
+} */
+.rbc-toolbar-label {
+  color: var(--primary-color);
+  font: 16px !important;
+}
+.rbc-header > span {
+  color: var(--primary-color);
+}
+.rbc-row-bg > .rbc-today {
+  background-color: #a86aff30 !important;
+  /* background-color: var(--primary-light) !important; */
+  /* background-color: #a86aff; */
+  color: white;
+}
+.rbc-toolbar>.rbc-btn-group .rbc-active{
+    background-color: var(--primary-color) !important;
+    color: white;
+}
+
+/* .rbc-toolbar > .rbc-btn-group > button > .rbc-active {
+    background-color: var(--primary-color) !important;
+    } */
+    
+    .rbc-events-container{
+        background-color: #a86aff30 !important;
+}
+
+.rbc-event,.rbc-event-allday{
+  background-color: var(--primary-color) !important;
+
+}
+.Dash_calender{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* @media (max-width: 835px) {
+
+} */

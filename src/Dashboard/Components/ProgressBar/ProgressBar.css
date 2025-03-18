@@ -1,0 +1,46 @@
+.progressBarBoxOuter {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+}
+
+.progressBarBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #8949ff;
+  transition: width 0.3s ease-in-out;
+}
+
+.progressBarBoxInner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+}
+
+.progressBarBoxInner span {
+  text-align: center;
+  transition: color 0.3s ease-in-out;
+}
+
+@media (max-width: 835px) {
+  .progressBarBoxOuter {
+    height: 20px;
+    border-radius: 6px;
+  }
+  .progressBarBoxInner span {
+    font-weight: 500;
+    font-size: 0.6em;
+  }
+}

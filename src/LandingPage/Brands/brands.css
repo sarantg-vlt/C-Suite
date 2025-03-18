@@ -1,0 +1,141 @@
+.lms-info {
+  text-align: center;
+  margin-top: 3rem;
+}
+.lms-info .why-lms {
+  font-weight: bold; 
+  font-size: 2rem; 
+  margin-bottom:15px;  
+  /* background: linear-gradient(232deg, #02e1e1, #41d271, #c6d94b); */
+  background: linear-gradient(135deg, #bf00ff, #8949ff, blue);
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  background-clip: text;
+}
+
+.why-para-one{
+  font-size:1.5rem; 
+  font-weight:800;
+  padding-top: 10px;
+}
+
+.why-para-two {
+  padding: 2rem;
+  font-size: 17px;
+  font-weight: 500;
+  padding-top: 2px;
+}
+
+.why-para-two ul {
+  list-style-type: disc;  
+  padding-left: 1.5rem;   
+  margin: 0;              
+  padding-left: 40px;
+
+}
+
+.why-para-two li {
+  margin-left: 10px;         
+  line-height: 1.5;       
+  text-align: justify;
+  
+}
+
+/* stats container heres*/
+  
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap:5rem;
+  font-size:17px;
+  flex-wrap: wrap; 
+}
+
+.stat-item {
+  text-align: center;  
+}
+
+.stat-item strong {
+  display: block;
+  font-size:50px;
+  /* background: linear-gradient(232deg, #02e1e1, #41d271, #c6d94b); */
+  background: linear-gradient(135deg, #bf00ff, #8949ff, blue);
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  background-clip: text;
+}
+
+.para-tool {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Mobile view adjustments */
+
+@media (max-width: 768px) {
+  .stats-container {
+    gap: 2rem; 
+    flex-direction:center;
+    align-items: center; 
+  }
+
+  .stat-item {
+    margin: 1rem 0; 
+  }
+
+  .stat-item strong {
+    font-size: 40px; 
+  }
+
+  .para-tool {
+    font-size: 14px; 
+  }
+}
+
+
+.logos-container {
+  width: 100%;
+  height: 100%; 
+  overflow: hidden;
+}
+
+.logos-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.logos-content {
+  flex-wrap: wrap;
+  gap:10px;
+  animation: scroll 5s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  white-space: nowrap;
+}
+
+.logo-item {
+  border-radius: 16px;
+  background-color: #fff;
+  border: 1px solid rgba(225, 226, 230, .58);
+  padding: 10px;
+  width:100px;
+  text-align: center;
+}
+
+.logo-image {
+  max-width:90%;
+}
+
+/* @keyframes scroll {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+} */

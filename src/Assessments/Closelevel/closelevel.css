@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+.closelevel-head {
+    /* background-image: url('../asset/background-image-entrylevel.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background: 
+    linear-gradient(135.38deg, #E6E6FF 66.5%, transparent 50%),
+    linear-gradient(45.65deg,  #BF00FF 40.72%, #8949FF 128.96% , #0000FF 59.02%);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Be Vietnam Pro", sans-serif;
+}
+
+.closelevel-inside {
+    background-color:#E5EFFF;
+    border-radius:10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.7);
+    height: calc(100vh - 6rem);
+    width: calc(100% - 15rem);
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.closelevel-nav-content{
+    height: 10%;
+    background: #FFFFFF;
+    padding:0.5rem;
+    padding-left:60px;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    box-shadow: 0px 2px 10px 0px #00000026;
+}
+
+/* Ensure the parent container takes the full height of the viewport */
+.parent-container-two{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    height: 90%;
+}
+
+/* Style the card container */
+.closelevel-card-container {
+    background-color: rgb(255, 255, 255);
+    height:100%;
+    width:100%;
+}
+
+.ELA-close-heading{
+    background: linear-gradient(91.24deg, #7F00FF 0%, #9735FA 98.76%);
+    width: 100%;
+    height:20%;
+    text-align: center;
+}
+
+#ELA-close-title{
+    font-family: "Be Vietnam Pro", sans-serif;
+    color: #FFFFFF;
+    font-size: 38px;
+    font-weight: 600;
+    padding-top:2rem;
+}
+
+.total-finish{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 80%;
+    overflow: scroll;
+}
+
+.total-finish .icon-check-total-finish{
+    margin-top: 2rem;
+    background: #4A90E2;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.total-finish .icon-check-total-finish .icon-check{
+    color: #ffffff;
+    margin:1.5rem;
+    font-size:50px; 
+}
+
+.total-finish .complete-message{
+    font-family: "Be Vietnam Pro", sans-serif;
+    padding-top: 2rem;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 37.95px;
+    text-align: center;
+}
+
+.total-finish .blur-text{
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    color: #555555;
+}
+
+.total-finish button{
+    margin-top: 1rem;
+    font-family: "Be Vietnam Pro", sans-serif;
+    padding: 10px 50px;
+    font-weight: 600;   
+    font-size: 16px;
+    color: #ffffff;
+    background: #7F00FF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Media queries for responsiveness */
+
+
+@media (max-width: 992px) {
+    .closelevel-inside {
+        height: calc(100vh - 3rem);
+    }
+
+    .ELA-close-heading {
+        height:20%;
+    }
+
+    #ELA-close-title {
+        font-size: 34px;
+    }
+
+    .total-finish .complete-message,
+    .total-finish .blur-text {
+        font-size: 18px;
+    }
+
+    .total-finish button {
+        padding: 8px 40px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .closelevel-inside {
+        width: calc(100% - 2rem);
+    }
+
+    .closelevel-card-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .ELA-close-heading {
+        height:20%;
+    }
+
+    #ELA-close-title {
+        padding: 2rem;
+    }
+
+    .total-finish .icon-check-total-finish {
+        width: 80px;
+        height: 80px;
+    }
+
+    .total-finish .icon-check-total-finish .icon-check {
+        margin: 1rem;
+        font-size: 40px;
+    }
+
+    .total-finish .complete-message,
+    .total-finish .blur-text {
+        font-size: 16px;
+    }
+
+    .total-finish button {
+        margin: 3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .ELA-close-heading {
+        height: 20%;
+    }
+
+    #ELA-close-title {
+        font-size: 20px;
+    }
+
+    .total-finish .icon-check-total-finish {
+        width: 80px;
+        height: 80px;
+    }
+
+    .total-finish .icon-check-total-finish .icon-check {
+        margin: 1.5rem;
+        font-size: 30px;
+    }
+
+    .total-finish .complete-message,
+    .total-finish .blur-text {
+        font-size: 14px;
+    }
+
+    .total-finish button {
+        margin: 3rem;
+    }
+}

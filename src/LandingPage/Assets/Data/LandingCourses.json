@@ -1,0 +1,87 @@
+{
+    "courses": [
+        {
+            "Title": "CTO - Chief Technology Officer",
+            "Course_Duration": "45 hours",
+            "Eligibility": "Engineering/Science Graduate with 3 years of IT experience",
+            "Price":2000,
+            "Overview": [
+                "All Technology professionals at regular points in their careers must decide which tech route they want to upskill/gain expertise in.",
+                "Companies are no different. Strategizing the Tech adoption & implementation on a Company-wide scale is no easy task.0",
+                "Companies, even those at the tech forefront often choose the wrong Tech path.",
+                "Example, Google and AI. In 2014 it seemed certain that way forward for AI was the Deepmind route. Google acquired Deepmind after an intense bidding war with Facebook. In the few years that followed it seemed they had placed the right bets, with the release of Alpha GO, Which beat the best human players at GO, A feat thought impossible for decades by most AI Technologists & scientists",
+                "There was an alternate team at Google who was working on another route to AI - The Transformer architecture. The team published a paper “Attention is all You Need” in 2017. The team did their best to get Google to divert some AI development resources to the Transformer architecture to no avail",
+                "Most of the team resigned from Google and founded Open AI. The Transformer Architecture was the better Deep Learning architecture. Open AI’s offerings like Chat GPT took the lead in AI. Google has acknowledged this and diverted resources for Gemni based on Transformer Architecture.",
+                "CTO not only have to understand Tech but also its limits compared to alternatives, ease/cost of implementation and maintenance, and market adoption behaviour."
+            ],
+            "Learning_Outcomes": [
+                "Trains professionals to handle technical operations in an organization.",
+                "Plays an important role in the successful implementation of technology initiatives.",
+                " Facilitates development and execution strategies that align with the organization objectives by evaluating emerging technologies and identifying opportunities to support these advancements to enhance operational efficiency thereby gaining a competitive edge",
+                "Unique opportunity to lead and inspire a talented technology team, drive digital transformation and shape the technological future.",
+                "Strategize and devise plans that are cost-effective and secure and also oversee the cybersecurity protocols, troubleshooting systems issues, managing personnel involved with technology operations and providing technical guidance to other departments",
+                "To ensure the organization’s technology resources are effectively utilised to meet goals and deadlines"
+            ],
+            "Topics": [
+                "CTO - Who? When? Where?",
+                "Technology - A Deep Dive",
+                "Digital Transformation",
+                "Business and Technology Strategy",
+                "Leadership as a CTO"
+            ]
+        },
+        {
+            "Title": "CISO - Chief Information & Security Officer",
+            "Course_Duration": "45 hours",
+            "Price":1800,
+            "Eligibility": "Engineering/Science Graduate with 3 years of IT experience",
+            "Overview": [
+                "Majority of the cyberattacks and system compromises that have occurred/reported have been due to employee/customer protocol failure.",
+                "Criminals/Hackers today rely heavily on social engineering to gain access.",
+                "Many at times excellent systems with multiple-factor authentication have been compromised by stakeholders accidentally providing access to harmful actors",
+                "News is full of stories where banks have repeatedly called customers to prevent them from making suspicious transactions, The customers override the bank’s fail safes and transfer money to fraudsters",
+                "It is not just enough for a CISO to be technically strong in setting up cybersecurity infrastructure but have an understanding of mass psychology to ensure adherence by all stakeholders."
+            ],
+            "Learning_Outcomes": [
+                "Trains professionals for developing, implementing and enforcing security policies to protect critical data",
+                " Enriches professionals for protecting organization assets, applications, systems, and technology while enabling and advancing the outcomes",
+                "Helps in building and driving a cybersecurity strategy and framework, with initiatives to secure the organization’s cyber and technology assets",
+                " Aids too continuously evaluate and manage the cyber and technology risk posture of the organization",
+                "Guides to develop, justify and evaluate cybersecurity investments and also leads the cybersecurity operations and implements disaster recovery protocols and business continuity plans with business resilience in mind",
+                " Elevates the expertise on security complexities involved in accelerating digital transformation, moving to the cloud, security the supply chain and shifting to remote and hybrid work.",
+                "Assists in reporting of security and compliance measures to stakeholders and regulators"
+            ],
+            "Topics": [
+                "Information Technology Governance",
+                "Information Security Controls and Audit Management",
+                "Compliance and Legal Requirements",
+                "Information Systems Security Operations",
+                "Protection of Information Assets and Data Protection"
+            ]
+        },
+        {
+            "Title": "Personal Branding Course",
+            "Course_Duration": "12 hours",
+            "Price":2500,
+            "Overview": [
+                "CXO’s not only have to craft strategy and oversee the technical details of implementation",
+                "A huge part of successful implementation relies on the Brand and Charisma of the Leader. A CXO who can build faith/following in his strategy can with greater ease execute company-wide protocols",
+                "Cultivating a Personal Brand promise is needed for those aiming for upper management"
+            ],
+            "Learning_Outcomes": [
+                "Teaches the importance of building a personal brand.",
+                "Helps identify natural strengths and behavioral patterns.",
+                "Guides in crafting a personal brand promise.",
+                "Master professional style, dressing etiquette, and body language.",
+                "Develops emotional intelligence, key to leadership success."
+            ],
+            "Topics": [
+                "Discovering Natural Strengths and Behaviour Patterns",
+                "Crafting Personal Brand Promise",
+                "Professional Style Scale and Dressing Etiquette",
+                "Mastering Body Language",
+                "Emotional Intelligence in Leadership"
+            ]
+        }
+    ]
+}

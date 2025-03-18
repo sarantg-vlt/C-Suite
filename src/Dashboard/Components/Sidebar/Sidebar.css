@@ -1,0 +1,367 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 990;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sidebar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 991;
+  padding: 12px;
+  background-color: white;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  transition: width 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+.sidebar.expanded {
+  width: 220px;
+}
+
+.sidebar.expanded + .overlay {
+  display: block;
+}
+
+.sidebar.collapsed {
+  width: 75px;
+}
+
+.sidebar-nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  transition: justify-content 0.6s ease-in-out;
+}
+
+.logo-short {
+  width: 52px;
+  z-index: 200;
+  background-color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo-txt {
+  opacity: 1;
+  width: 105px;
+  z-index: 199;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.sidebar.collapsed .logo-short {
+  transform: translateX(100%);
+}
+
+.sidebar.expanded .logo-short {
+  transform: translateX(0%);
+}
+
+.sidebar.collapsed .logo-txt {
+  transform: translateX(-15%);
+  opacity: 0;
+}
+
+.sidebar.expanded .logo-txt {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.sidebar-menu {
+  flex: 1;
+  padding: 0;
+}
+
+.sidebar-item {
+  display: flex;
+  width: 100%;
+  margin: 15px 0;
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 6px;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+}
+
+.sidebar-item.active {
+  background-color: var(--primary-light);
+}
+
+.sidebar-item:hover {
+  text-decoration: none;
+  background-color: var(--primary-light);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+.sidebar-item:hover .icon {
+  color: white;
+}
+
+.sidebar-item:hover .item-text,
+.sidebar-item.active .item-text {
+  color: white;
+}
+
+.icon {
+  font-size: 20px;
+  color: var(--primary-light);
+  transition: color 0.3s ease-in-out;
+}
+
+.sidebar-item.active .icon {
+  color: white;
+}
+
+.item-text {
+  flex: 6;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--primary-light);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out,
+    margin-left 0.5s ease-in-out, color 0.3s ease-in-out;
+}
+
+.sidebar.collapsed .item-text {
+  visibility: hidden;
+}
+
+.sidebar.expanded .item-text {
+  visibility: visible;
+}
+
+.menu-bottom {
+  margin-top: auto;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 990;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 991;
+  padding: 12px;
+  background-color: white;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  transition: width 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+.sidebar.expanded {
+  width: 220px;
+}
+
+.sidebar.expanded + .overlay {
+  display: block;
+}
+
+.sidebar.collapsed {
+  width: 75px;
+}
+
+.sidebar-nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: center;
+  transition: justify-content 0.6s ease-in-out;
+}
+
+.logo-short {
+  width: 52px;
+  z-index: 200;
+  background-color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo-txt {
+  opacity: 1;
+  width: 105px;
+  z-index: 199;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.sidebar.collapsed .logo-short {
+  transform: translateX(100%);
+}
+
+.sidebar.expanded .logo-short {
+  transform: translateX(0%);
+}
+
+.sidebar.collapsed .logo-txt {
+  opacity: 0;
+  transform: translateX(-15%);
+}
+
+.sidebar.expanded .logo-txt {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.sidebar-menu {
+  flex: 1;
+  padding: 0;
+}
+
+.sidebar-item {
+  display: flex;
+  width: 100%;
+  margin: 15px 0;
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 6px;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+}
+
+.sidebar-item.active {
+  background-color: var(--primary-light);
+}
+
+.sidebar-item:hover {
+  text-decoration: none;
+  transform: translateY(-3px);
+  background-color: var(--primary-light);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-item:hover .icon {
+  color: white;
+}
+
+.sidebar-item:hover .item-text,
+.sidebar-item.active .item-text {
+  color: white;
+}
+
+.icon {
+  font-size: 20px;
+  color: var(--primary-light);
+  transition: color 0.3s ease-in-out;
+}
+
+.sidebar-item.active .icon {
+  color: white;
+}
+
+.item-text {
+  flex: 6;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--primary-light);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out,
+    margin-left 0.5s ease-in-out, color 0.3s ease-in-out;
+}
+
+.sidebar.collapsed .item-text {
+  visibility: hidden;
+}
+
+.sidebar.expanded .item-text {
+  visibility: visible;
+}
+
+.menu-bottom {
+  margin-top: auto;
+}
+
+@media (max-width: 1125px) {
+  .sidebar.collapsed {
+    width: 65px;
+  }
+  .sidebar {
+    padding: 9px;
+  }
+
+  .item-text {
+    font-size: 14px;
+  }
+
+  .logo-short {
+    width: 45px;
+    margin: 10px 0 0 0px;
+  }
+
+  .logo-txt {
+    width: 90px;
+    margin-top: 15px;
+    margin-left: 3px;
+  }
+}
+
+@media (max-width: 835px) {
+  .sidebar.expanded {
+    width: 170px;
+  }
+
+  .sidebar.collapsed {
+    width: 55px;
+  }
+  .sidebar {
+    padding: 9px;
+  }
+
+  .item-text {
+    font-size: 14px;
+  }
+
+  .logo-short {
+    width: 40px;
+    margin: 0 0 0 0px;
+  }
+
+  .logo-txt {
+    width: 90px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+
+  .icon {
+    font-size: 15px;
+  }
+
+  .sidebar-item {
+    padding: 3px 5px;
+    margin: 8px 0;
+  }
+}

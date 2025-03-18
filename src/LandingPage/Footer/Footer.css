@@ -1,0 +1,232 @@
+.footer{
+    height:max-content;
+    padding: 2%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* section 1 */
+
+.footer .section1{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer .section1 .logo{
+    background: #00084d;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    width: max-content;
+    padding:5px 10px;
+    border-radius: 5px;
+}
+.footer .section1 p{
+    color: grey;
+    font-weight: 600;
+    font-size: 17px;
+}
+.footer .section1 h6{
+    color: #00084d;
+    font-weight: 900;
+}
+.footer .section1 .sociallinks{
+    display: flex;
+    gap: 17px;
+}
+.footer .section1 .sociallinks a {
+    color: black; 
+}
+/* section 2 */
+
+.footer .section2{
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer .section2 a{
+    color: grey;
+    font-size: 17px;
+    width: max-content;
+    transition: border 400ms;
+}
+.footer .section2 a:after {
+    background-color: #00084d;
+    content: '';
+    display: block;
+    height: .1em;
+    margin-top: .2em;
+    transition: width .5s;
+    width: 0;
+}
+.footer .section2 a:hover{
+    cursor: pointer;
+    font-weight: 600;
+}
+.footer .section2 a:hover:after {
+    width: calc(100%);
+}
+.footer .section2 h5{
+    color: #00084d;
+}
+
+/* section 3 */
+
+.footer .section3{
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer .section3 a{
+    color: grey;
+    font-size: 17px;
+    width: max-content;
+    transition: border 400ms;
+}
+.footer .section3 a:after {
+    background-color: #00084d;
+    content: '';
+    display: block;
+    height: .1em;
+    margin-top: .2em;
+    transition: width .5s;
+    width: 0;
+}
+.footer .section3 a:hover{
+    cursor: pointer;
+    font-weight: 600;
+}
+.footer .section3 a:hover:after {
+    width: calc(100%);
+}
+.footer .section3 h5{
+    color: #00084d;
+}
+
+/* section 4 */
+
+.footer .section4{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer .section4 p{
+    color: grey;
+    font-size: 17px;
+}
+.footer .section4 h4{
+    color: #00084d;
+}
+.footer .section4 .instructoremail{
+    display: flex;
+    gap: 10px;
+}
+.footer .section4 .instructoremail{
+    display: flex;
+    gap: 10px;
+}
+.footer .section4 .instructoremail .emailinput{
+    border-radius: 5px;
+    border: none;
+    border:1px solid #00084d;
+    padding: 5px 10px;
+}
+.footer .section4 .instructoremail .registernow{
+    border-radius: 5px;
+    border: none;
+    background:#00084d;
+    padding: 5px 10px;
+    color: white;
+}
+/* Copyright Section */
+.copyright-section {
+    background-color: black;
+    color: white;
+    padding: 20px 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.copyright-text {
+    font-size: 14px;
+}
+
+.copyright-links {
+    display: flex;
+    gap: 20px;
+}
+
+.copyright-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.3s ease;
+}
+
+.copyright-links a:hover {
+    color: #ccc;
+}
+
+.submission-message {
+    font-size: 14px;
+  }
+  
+  .submission-message.success {
+    color: green;
+  }
+  
+  .submission-message.error {
+    color: red;
+  }
+  
+
+@media (max-width:1150px) {
+    .footer{
+        width: 100%;
+        height: max-content;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .footer .section1, .footer .section2, .footer .section3, .footer .section4{
+        width: 100%;
+    }
+}
+
+@media (max-width:1150px) {
+    .footer{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+    .footer .section1, .footer .section2, .footer .section3, .footer .section4{
+        width: 100%;
+        padding: 10px;
+    }
+    .footer .section4 .instructoremail{
+        flex-direction: column;
+    }
+    .copyright-section {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 15px 2%;
+    }
+
+    .copyright-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}

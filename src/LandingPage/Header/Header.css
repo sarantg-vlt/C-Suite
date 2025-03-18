@@ -1,0 +1,88 @@
+/* Header.css */
+
+header {
+  background-color: transparent; /* Semi-transparent */
+  position: fixed; 
+  top: 0; /* Ensure it sticks to the top */
+  width: 100%; 
+  z-index: 1000; 
+  height: 100px; /* Fixed height */
+}
+
+.tag-size {
+  display: none; /* Hides the <hr> element completely */
+}
+
+.navbar {
+  padding: 1rem 2rem; /* Add padding for spacing */
+  display: flex; /* Flexbox for alignment */
+  justify-content: space-between; /* Space between elements */
+  align-items: center; /* Center vertically */
+}
+
+.navbar-brand img {
+  transition: transform 0.3s;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.1); /* Slight scale on hover for the logo */
+}
+
+.nav-link {
+  color: #ffffff; /* White text color for nav links */
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #f8f9fa; /* Light color on hover */
+}
+
+.button-logoin {
+  background-color: transparent; /* Blue background for log in button */
+  border-color: #f8f9fa;
+  border: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.button-logoin:hover {
+  background-color: transparent; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.btn-light {
+  background-color: #ffffff; /* White background for get started button */
+  color: #343a40; /* Dark text color */
+  border: 1px solid #f8f9fa; /* Blue border */
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-light:hover {
+  background-color: #f8f9fa; /* Blue background on hover */
+  color: #121111; /* White text color on hover */
+  transform: translateY(-2px);
+}
+
+.tag-size {
+  border: 1px solid #f8f9fa; /* Blue border for the line */
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack items vertically on mobile */
+  }
+
+  .nav-item {
+    margin: 0.5rem 0; /* Space between items */
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand img {
+    height: 30px; /* Smaller logo on extra small screens */
+  }
+
+  .navbar {
+    height: auto; /* Adjust navbar height on small screens */
+  }
+}

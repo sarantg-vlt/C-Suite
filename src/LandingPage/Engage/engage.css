@@ -1,0 +1,49 @@
+.engage-head{
+    text-align: center;
+    margin-top: 5rem;
+    padding: 1rem;
+}
+
+.engage-head h2{
+    font-weight: bold; 
+    font-size: 1.5em; 
+    margin-bottom:15px;  
+    /* background: linear-gradient(232deg, #02e1e1, #41d271, #c6d94b); */
+    background: linear-gradient(135deg, #bf00ff, #8949ff, blue);
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    background-clip: text;
+}
+.engage-head h3{
+    font-size:30px;
+    font-weight:800;
+    padding-top: 10px;
+}
+
+.engage-head .engage-para{
+    padding-top: 10px;
+    font-size:25px;
+    font-weight: 500;
+}
+.engage-head .engage-para-two{
+    padding-top: 30px;
+    font-size:25px;
+    font-weight:bold;
+   
+}
+.engage-head h4{
+    font-size: 23px;
+    color: rgb(29, 99, 237);
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.engage-head h4:hover{
+    transform: scale(1.125);
+    transition: all .3s ease; 
+}
+.our-lms-supporet{
+    padding-top: 10px;
+    font-weight: 500;
+    color: rgb(128, 121, 121);
+}

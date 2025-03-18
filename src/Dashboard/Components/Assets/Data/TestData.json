@@ -1,0 +1,156 @@
+{
+  "courses": [
+    {
+      "title": "Strategic Leadership and Management",
+      "lessons": [
+        {
+          "lessonId": 1,
+          "isTestAvailable": true,
+          "timeLimit": "30 minutes",
+          "questions": [
+            {
+              "question": "What is the primary goal of strategic planning?",
+              "options": [
+                "A. To manage daily operations",
+                "B. To set long-term goals",
+                "C. To ensure customer satisfaction",
+                "D. To handle financial transactions"
+              ],
+              "correctAnswer": "B"
+            },
+            {
+              "question": "Why is organizational vision important?",
+              "options": [
+                "A. It increases daily tasks",
+                "B. It aligns efforts toward a common goal",
+                "C. It reduces customer satisfaction",
+                "D. It limits creativity"
+              ],
+              "correctAnswer": "B"
+            }
+          ]
+        },
+        {
+          "lessonId": 2,
+          "isTestAvailable": true,
+          "timeLimit": "40 minutes",
+          "questions": [
+            {
+              "question": "What are the key elements of effective communication?",
+              "options": [
+                "A. Ambiguity and misunderstanding",
+                "B. Clarity and feedback",
+                "C. Confusion and silence",
+                "D. Complexity and distraction"
+              ],
+              "correctAnswer": "B"
+            },
+            {
+              "question": "How does leadership influence organizational culture?",
+              "options": [
+                "A. It has no impact on culture",
+                "B. It shapes values and behaviors",
+                "C. It limits growth opportunities",
+                "D. It promotes isolation"
+              ],
+              "correctAnswer": "B"
+            }
+          ]
+        },
+        {
+          "lessonId": 3,
+          "isTestAvailable": true,
+          "timeLimit": "45 minutes",
+          "questions": [
+            {
+              "question": "What strategies can leaders use to foster innovation?",
+              "options": [
+                "A. Avoiding risks",
+                "B. Promoting conformity",
+                "C. Encouraging creativity",
+                "D. Restricting ideas"
+              ],
+              "correctAnswer": "C. Encouraging creativity"
+            },
+            {
+              "question": "Why is ethical leadership crucial in decision-making?",
+              "options": [
+                "A. It ignores consequences",
+                "B. It prioritizes profits",
+                "C. It builds trust and integrity",
+                "D. It discourages transparency"
+              ],
+              "correctAnswer": "C. It builds trust and integrity"
+            }
+          ]
+        },
+        {
+          "lessonId": 4,
+          "isTestAvailable": true,
+          "timeLimit": "50 minutes",
+          "questions": [
+            {
+              "question": "What are the benefits of strategic decision-making?",
+              "options": [
+                "A. Increased uncertainty",
+                "B. Improved outcomes",
+                "C. Reduced adaptability",
+                "D. Limited perspectives"
+              ],
+              "correctAnswer": "B"
+            },
+            {
+              "question": "How does effective team leadership impact performance?",
+              "options": [
+                "A. It decreases motivation",
+                "B. It fosters collaboration",
+                "C. It avoids conflict",
+                "D. It promotes isolation"
+              ],
+              "correctAnswer": "B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Course B",
+      "lessons": [
+        {
+          "lessonId": 1,
+          "isTestAvailable": true,
+          "timeLimit": "45 minutes",
+          "questions": [
+            {
+              "question": "What is a key factor in leading organizational change?",
+              "options": [
+                "A. Maintaining the status quo",
+                "B. Effective communication",
+                "C. Limiting feedback",
+                "D. Centralized decision-making"
+              ],
+              "correctAnswer": "B"
+            }
+          ]
+        },
+        {
+          "lessonId": 2,
+          "isTestAvailable": true,
+          "timeLimit": "60 minutes",
+          "questions": [
+            {
+              "question": "How should leaders handle crises?",
+              "options": [
+                "A. Ignore them",
+                "B. Delegate all responsibilities",
+                "C. Take decisive actions",
+                "D. Wait for things to settle"
+              ],
+              "correctAnswer": "C"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

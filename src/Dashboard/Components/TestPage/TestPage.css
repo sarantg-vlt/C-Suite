@@ -1,0 +1,665 @@
+.testPage {
+  display: flex;
+  min-height: 100vh;
+  /* height: 100vh; */
+  padding: 20px;
+  cursor: default;
+  /* align-items: center; */
+  flex-direction: column;
+  /* bgc */
+  /* background-color: var(--primary-bg); */
+  background-color: rgb(239, 238, 238);
+}
+
+/* submitted user */
+
+.testPageUserOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.testPageUserModal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 80%;
+  max-height: 80%;
+  overflow: auto;
+}
+
+.testPageUserHeader {
+  background-color: #e0bcff;
+  color: white;
+  padding: 10px 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.testPageUserHeader h4 {
+  margin: 0;
+  padding: 10px;
+  font-size: 1.5em;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+}
+
+.testPageUserResultsContainer {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.testPageUserResultsContainer h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.testPageUserFinalScore {
+  color: black;
+  font-weight: 400;
+  font-size: 1em;
+  padding: 10px 15px;
+  text-align: center;
+  width: max-content;
+  border-radius: 6px;
+  border: 1px solid rgba(206, 204, 204, 0.522);
+  background-color: rgba(235, 235, 235, 0.701);
+  box-shadow: 4px 8px 20px -3px #00000033;
+}
+
+.testPageUserFinalScore .scoreDetails,
+.testPageUserFinalScore .percentageDetails {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.testPageUserFinalScore span {
+  font-weight: 500;
+}
+
+/*  */
+
+.countdown {
+  font-size: 1em;
+  /* color: white; */
+}
+
+.testPageResultsContainer {
+  padding: 25px;
+  margin: 0 auto;
+  text-align: left;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  /* background-color: red; */
+  background-color: #e0bcff;
+  box-shadow: 4px 8px 20px -3px rgba(0, 0, 0, 0.2);
+}
+
+.testPageResultsContainer h3 {
+  display: flex;
+  /* color: #ffffff; */
+  font-size: 1.7em;
+  text-align: center;
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+
+.finalScore {
+  color: white;
+  font-weight: 400;
+  font-size: 0.55em;
+  padding: 8px 12px;
+  text-align: left;
+  width: max-content;
+  border-radius: 6px;
+  border: 1.5px solid green;
+  color: black;
+  /* background-color: rgb(58, 214, 58); */
+  background-color: white;
+}
+
+.finalScore div {
+  display: flex;
+  gap: 6px;
+  justify-content: space-between;
+}
+
+.finalScore div:first-child {
+  margin-bottom: 3px;
+}
+
+.testPageResult {
+  padding: 15px 20px;
+  overflow-y: scroll;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  /* background-color: var(--primary-bg); */
+  /* background-color: var(--primary-bg); */
+  /* background-color: rgb(196, 46, 46); */
+  /* background-color: rgb(218, 217, 217); */
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.testPageResult p.question {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.testPageResult .answerResult {
+  padding: 0px;
+  margin-top: 10px;
+}
+
+.test-correct {
+  color: white;
+  padding: 2px 9px;
+  border-radius: 8px;
+  border: 1px solid green;
+  background-color: lightgreen;
+}
+
+.test-incorrect {
+  color: white;
+  padding: 2px 9px;
+  border-radius: 8px;
+  border: 1px solid red;
+  background-color: rgb(240, 128, 128);
+}
+
+.answerRow {
+  display: flex;
+  padding: 6px 8px;
+  font-size: 0.9em;
+  margin-bottom: 8px;
+  align-items: center;
+  border-radius: 7px;
+  background-color: white;
+  justify-content: space-between;
+  border: 1px solid var(--primary-light);
+}
+
+.answerRow:last-child {
+  margin-bottom: 0px;
+}
+
+.values {
+  text-align: right;
+}
+
+.testPageHeaderBox {
+  display: grid;
+  padding: 10px 20px;
+  color: #fff;
+  padding-right: 0px;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: white;
+  grid-template-columns: repeat(3, 1fr);
+  box-shadow: 4px 8px 10px -3px rgba(0, 0, 0, 0.1);
+}
+
+.testPageHeaderBox .testPageHeader {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  border-radius: 13px;
+  margin: auto auto auto 0;
+  padding: 10px 0px 10px 20px;
+  background-color: #e0bcff;
+}
+
+.testPageHeaderBox .testPageHeader h4 {
+  margin-left: 30px;
+  padding: 9px 12px;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background-color: var(--primary-color);
+}
+
+.testPageHeaderBox .testPageHeaderTimerBox {
+  width: max-content;
+  padding: 10px 15px;
+  margin: auto 0 auto auto;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background-color: var(--primary-light);
+}
+
+.testPageHeaderBox .testPageHeaderTimerBox p {
+  font-size: 0.9em;
+  margin: 0px auto;
+  font-weight: 500;
+  color: var(--primary-bg);
+}
+
+.testLimit {
+  margin: auto;
+  /* bgc */
+  /* background-color: red; */
+}
+
+.timer-countdown {
+  color: black;
+  font-size: 20px;
+}
+
+.testPageMainContainer {
+  display: flex;
+  padding: 5px;
+}
+
+.testPageSidebar {
+  width: 5%;
+  display: flex;
+  padding-top: 35px;
+  overflow-y: scroll;
+  margin-right: -15px;
+  justify-content: center;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  /* bgc */
+  background-color: white;
+  border-right: 1px solid var(--primary-light);
+  box-shadow: 0px 4px 6px 1px rgba(0, 0, 0, 0.1);
+}
+
+.testPageSidebar ul {
+  padding: 8px 5px;
+  list-style-type: none;
+}
+
+.testPageSidebar ul li {
+  width: 35px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  /* bgc */
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  box-shadow: 1px 4px 6px 1px rgba(0, 0, 0, 0.1);
+}
+
+.testPageSidebarItem {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 5px 10px;
+  text-align: center;
+  transition: all 0.2s;
+  border-bottom: 1px solid rgb(159, 159, 159);
+}
+
+.testPageSidebarItem:hover {
+  opacity: 0.8;
+  transform: translateY(-2.5px);
+}
+
+.testPageSidebarItem.selected {
+  color: white;
+  background-color: var(--primary-color);
+}
+
+.testPageSidebarItem.testPageCodeRed {
+  color: white;
+  border: 1px solid red;
+  background-color: rgb(255, 0, 0);
+}
+
+.testPageSidebarItem.testPageCodeGreen {
+  color: white;
+  border: 1px solid #00cc07;
+  background-color: #00cc07;
+}
+
+.testPageContent {
+  display: flex;
+  gap: 15px;
+  width: 95%;
+}
+
+.testPageQuestionBox {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  /* bgc */
+  background-color: white;
+  box-shadow: 0px 4px 6px 1px rgba(0, 0, 0, 0.1);
+}
+
+.testPageQuestionBox .testPageSpan h4 {
+  font-size: 1.4em;
+}
+
+.testPageQuestionBox .testPageSpan {
+  margin: 20px;
+}
+
+.testPageTotalQuestion {
+  font-weight: 500;
+  padding: 5px 10px;
+  border-top-right-radius: 5px;
+  /* bgc */
+  background-color: #e0bcff;
+  border-bottom: 1px solid var(--primary-light);
+}
+
+.testPageInfoBox {
+  padding: 0px 8px;
+  display: flex;
+  gap: 20px;
+  margin-top: auto;
+  align-items: center;
+  background-color: #e0bcff;
+  justify-content: space-between;
+  border-bottom-right-radius: 5px;
+}
+
+.testPageCodeBox {
+  display: flex;
+  gap: 15px;
+}
+
+/* .testPageNegativeBox {
+  background-color: #00cc07;
+} */
+
+.testPageNegative {
+  font-weight: 500;
+  padding: 5px 10px;
+  font-size: 0.75em;
+  border-radius: 5px;
+  color: rgb(101, 101, 101);
+  border: 1px solid rgb(101, 101, 101);
+  /* color: white; */
+  /* background-color: #9364bb; */
+}
+
+.testPageCodeGreenBox,
+.testPageCodeRedBox {
+  display: flex;
+  padding: 3px 8px;
+  font-weight: 500;
+  text-align: center;
+  /* border-radius: 10px; */
+  transition: all 0.2s;
+  flex-direction: column;
+  background-color: lightgreen;
+  border-bottom: 2px solid #00cc07;
+  /* background-color: rgb(255, 255, 255); */
+  background: linear-gradient(to bottom, white, rgba(144, 238, 144, 0.686));
+  box-shadow: 1px 4px 6px 1px rgba(0, 0, 0, 0.1);
+}
+
+.testPageInfoBox label {
+  font-size: 0.65em;
+  margin-bottom: 1px;
+  /* background-color: #00cc07; */
+}
+
+.testPageInfoBox span {
+  font-size: 0.75em;
+  /* background-color: #00cc07; */
+}
+
+.testPageCodeRedBox {
+  border-bottom: 2px solid red;
+  /* background-color: rgb(240, 128, 128); */
+  background: linear-gradient(to bottom, white, rgba(240, 128, 128, 0.625));
+}
+
+.testAnswerHere {
+  border-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.testPageRHS {
+  width: 55%;
+  border-radius: 5px;
+  box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.1);
+}
+
+.testPageQuestionContainer {
+  padding-bottom: 5px;
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.testPageOptionLabel {
+  display: block;
+  margin: 20px;
+  display: flex;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: all 250ms;
+  background-color: var(--primary-bg);
+}
+
+.testPageOptionLabel:hover {
+  color: white;
+  transform: translateY(-2px);
+  background-color: var(--primary-light);
+}
+
+.testPageOptionLabel input[type="radio"] {
+  border: none;
+  outline: none;
+  margin-right: 8px;
+  position: relative;
+  transform: scale(1.3);
+}
+
+.testPageOptionLabel.testPageChecked {
+  color: white;
+  background-color: var(--primary-light);
+}
+
+.testPageNavigationButtons {
+  padding: 8px;
+  display: flex;
+  justify-content: end;
+  background-color: #e0bcff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.testPageNextButton,
+.testPageSubmitButton {
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 6px 20px;
+  border-radius: 5px;
+  background-color: #00ff08;
+}
+
+.testPageNextButton:hover,
+.testPageSubmitButton:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 835px) {
+  .timer-countdown {
+    font-size: 15px;
+  }
+
+  .countdown {
+    font-size: 0.8em;
+  }
+
+  .testPage {
+    height: 100vh;
+  }
+
+  .testPageHeaderBox {
+    padding: 6px 8px;
+    margin-bottom: 10px;
+    flex-direction: column;
+  }
+
+  .testPageHeaderBox .testPageHeader {
+    padding: 5px 0px 5px 3px;
+    border-radius: 8px;
+  }
+
+  .testPageHeaderBox .testPageHeader h4 {
+    padding: 5px;
+    font-size: 0.6em;
+    margin-left: 15px;
+  }
+
+  .testPageHeaderBox .testPageHeaderTimerBox {
+    padding: 4px 7px;
+    border-radius: 7px;
+  }
+
+  .testPageHeaderBox .testPageHeaderTimerBox p {
+    line-height: 1.3em;
+    font-size: 0.55em;
+  }
+
+  .testPageMainContainer {
+    flex-direction: column;
+  }
+
+  .testPageSidebar {
+    padding: 0%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  .testPageSidebar,
+  .testPageContent {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .testPageSidebar ul {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 0px;
+    overflow-x: scroll;
+  }
+
+  .testPageRHS,
+  .testPageQuestionBox {
+    width: 100%;
+  }
+
+  .testPageSidebar ul li {
+    width: 25px;
+    font-size: 0.75em;
+    margin-bottom: 0px;
+  }
+
+  .testPageSidebarItem {
+    padding: 3px 6px;
+  }
+
+  .testPageTotalQuestion {
+    font-size: 0.7em;
+  }
+
+  .testPageTotalQuestion {
+    border-radius: 5px;
+  }
+
+  .testPageQuestionBox .testPageSpan {
+    margin: 5px;
+  }
+
+  .testPageQuestionBox .testPageSpan h4 {
+    font-size: 0.75em;
+    margin-bottom: 0px;
+  }
+
+  .testPageQuestionBox .testPageSpan p {
+    font-size: 0.65em;
+    line-height: 1em;
+    margin-top: 5px;
+  }
+
+  .testPageInfoBox span,
+  .testPageInfoBox label,
+  .testPageNegative {
+    font-size: 0.5em;
+  }
+
+  .testPageOptionLabel {
+    margin: 10px;
+    font-size: 0.7em;
+  }
+
+  .testPageNavigationButtons,
+  .testPageInfoBox {
+    padding: 5px;
+  }
+
+  .testPageNextButton,
+  .testPageSubmitButton {
+    font-size: small;
+    padding: 5px 12px;
+  }
+
+  .testPageResultsContainer {
+    padding: 15px;
+  }
+
+  .testPageResultsContainer h3 {
+    font-size: 1em;
+  }
+
+  .testPageResult {
+    padding: 12px;
+  }
+
+  .testPageResult .question {
+    font-size: 0.7em;
+    line-height: 1.2em;
+  }
+
+  .testPageResult .answerResult {
+    font-size: 0.7em;
+    line-height: 1.2em;
+  }
+
+  .testPageUserResultsContainer h3 {
+    font-size: 0.9em;
+  }
+
+  .testPageUserHeader h4 {
+    padding: 8px;
+    font-size: 1em;
+  }
+
+  .testPageUserModal {
+    padding: 15px;
+    max-width: 70%;
+    max-height: 70%;
+  }
+
+  .testPageUserFinalScore {
+    font-size: 0.75em;
+  }
+}

@@ -1,0 +1,882 @@
+.courseDetailsBox {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  min-height: 100vh;
+  padding: 25px;
+  cursor: default;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  background-color: var(--primary-bg);
+  box-shadow: 0px 4px 6px var(--shadow-color);
+}
+
+.CDHeader {
+  width: 100%;
+  height: 45vh;
+  font-weight: bold;
+  border-radius: 20px;
+  background-color: var(--primary-color);
+}
+
+.CDHeaderIntroVideo {
+  width: 100%;
+}
+
+.CDHeaderIntroVideo iframe {
+  width: 100%;
+  height: 45vh;
+  border-radius: 15px;
+  box-shadow: 0px 4px 6px var(--shadow-color);
+}
+
+.CDBody {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.CDLHS,
+.CDMHS,
+.CDRHS {
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+}
+
+.CDLHS {
+  flex: 1;
+}
+
+.CDMHS {
+  flex: 3;
+  margin: 0px 10px;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid var(--primary-light);
+}
+
+.CDRHS {
+  flex: 1;
+}
+
+.CDvideoBox iframe {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0px 4px 6px var(--shadow-color);
+}
+
+.CDWhoIsThisFor,
+.CDWhatYouGet {
+  border-radius: 10px;
+}
+
+.CDWhoIsThisFor h5,
+.CDWhatYouGet h5,
+.CDtabBoxOverV h5 {
+  margin-bottom: 15px;
+  color: var(--primary-dark);
+}
+
+.CDLightningBox {
+  display: grid;
+  gap: 17.5px;
+  width: fit-content;
+  border-radius: 10px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.CDLightningTxt {
+  padding: 5px 8px;
+  font-size: 0.75em;
+  padding-top: 18px;
+  border-radius: 5px;
+  position: relative;
+  box-sizing: border-box;
+  background-color: white;
+  border: 1px solid var(--primary-light);
+  box-shadow: 0px 2px 4px var(--shadow-light);
+}
+
+.CDLightningSVG {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  width: 25px;
+}
+
+.CDWhatYouGet .CDWhatBoxContent {
+  display: flex;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-items: center;
+  background-color: white;
+  border: 1px solid var(--primary-light);
+  box-shadow: 0px 2px 4px var(--shadow-light);
+}
+
+.CDWhatYouGet .CDWhatBoxContent:last-child {
+  margin-bottom: 0px;
+}
+
+.CDWhatYouGet .CDWhatBoxContent div {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+
+.CDWhatYouGet .CDWhatBoxContent div .CDItemTitle {
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.CDWhatYouGet .CDWhatBoxContent div span {
+  font-size: 0.75em;
+  line-height: 1.2em;
+}
+
+/* RHS */
+.CDPriceBox,
+.CDCourseDetails {
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--primary-light);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 2px 4px var(--shadow-light);
+}
+
+.CDOffer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.CDStrike {
+  margin: auto 0;
+  font-size: 0.9em;
+  text-decoration: line-through;
+}
+
+.CDOffer span {
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.7em;
+  margin-left: 10px;
+  border-radius: 9999px;
+  background-color: black;
+}
+
+.CDCartBtn,
+.CDBuyBtn {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  background-color: var(--primary-color);
+}
+
+.CDBuyBtn {
+  color: var(--primary-dark);
+  background-color: white;
+  border: 1px solid var(--primary-dark);
+}
+
+.CDCartBtn:hover,
+.CDBuyBtn:hover {
+  background-color: var(--primary-dark);
+}
+
+.CDBuyBtn:hover {
+  color: white;
+  background-color: var(--primary-dark);
+}
+
+.CDCourseDetailRow {
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+.CDCourseDetailRow:last-child {
+  margin-bottom: 0px;
+}
+
+.CDCourseDetails .detailIcon {
+  margin-right: 7.5px;
+}
+
+/* MHS */
+
+.CDtabBoxOverV h5 {
+  padding: 5px 10px;
+  width: max-content;
+  border-radius: 15px;
+  background-color: var(--primary-bg);
+}
+
+.CDtabBoxOverV {
+  padding: 5px 10px;
+}
+
+.CDtabBoxOverV div h5 {
+  margin-bottom: 0px;
+}
+
+.CDtabBoxOverV div p {
+  margin-left: 25px;
+  margin-bottom: 20px;
+}
+
+.CDtabBoxDesc {
+  margin: 0px 17px;
+  line-height: 2em;
+}
+
+.CDtabBoxDesc h4 {
+  margin: 7px 0px;
+}
+
+.CDtabBoxDesc p {
+  margin-bottom: 30px;
+}
+
+.CDOverviewPills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  flex-direction: row;
+}
+
+.CDOverviewPills span {
+  padding: 0 12px;
+  border-radius: 20px;
+  background-color: var(--primary-bg);
+}
+
+.CDtabBox .nav-tabs {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.CDtabBox .nav-item {
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.CDtabBox .nav-item:first-child {
+  margin-left: 10px;
+}
+
+.CDtabBox .nav-link {
+  border: none;
+  outline: none;
+  color: rgba(128, 128, 128, 0.916);
+}
+
+.CDtabBox .nav-link.active {
+  font-weight: 500;
+  position: relative;
+  border: transparent;
+  outline: transparent;
+  color: var(--primary-dark);
+  background-color: transparent;
+}
+
+.CDtabBox .nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  bottom: -9px;
+  background-color: var(--primary-dark);
+}
+
+.CDAccordianBox {
+  border-radius: 10px;
+  background-color: white;
+  padding: 0px 10px 10px 10px;
+}
+
+.CDAccordianBox .accordion-item {
+  border: none;
+  margin: 8px 0;
+  border-radius: 16px;
+}
+
+.CDAccordianBox .accordion-button {
+  border: none;
+  width: 100%;
+  display: flex;
+  text-align: left;
+  border-radius: 16px !important;
+  background-color: var(--primary-bg);
+  transition: border-radius 0.3s ease, background-color 0.3s;
+}
+
+.CDAccordianBox .accordion-button:not(.collapsed) {
+  color: white;
+  background-color: var(--primary-light);
+  border-bottom-left-radius: 16px !important;
+  border-bottom-right-radius: 16px !important;
+}
+
+.CDAccordianBox .accordion-collapse {
+  border-top-left-radius: 16px !important;
+  border-top-right-radius: 16px !important;
+}
+
+.CDAccordianBox .accordion-header:focus,
+.CDAccordianBox .accordion-header:active,
+.CDAccordianBox .accordion-header:focus-visible,
+.CDAccordianBox .accordion-button:focus,
+.CDAccordianBox .accordion-button:active,
+.CDAccordianBox .accordion-button:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.CDAccordianBox .accordion-header .accordion-button {
+  padding: 15px;
+}
+
+.CDAccordianBox .accordion-body {
+  font-size: 0.9em;
+  padding: 8px 10px;
+  padding-left: 50px;
+  border-radius: 16px;
+}
+
+.CDAccordianBox
+  .accordion-body
+  .CDAccodrionBody
+  .list-group
+  .list-group-item:first-child {
+  margin-top: 0px;
+}
+
+.CDAccordianBox .accordion-body .CDAccodrionBody .list-group .list-group-item {
+  border: none;
+  outline: none;
+  display: flex;
+  margin-top: 7px;
+  flex-direction: column;
+  border-radius: 10px !important;
+  background-color: var(--primary-bg);
+}
+
+.CDlesson-meta {
+  padding-left: 15px;
+}
+
+.CDlesson-title {
+  font-size: 1.1em;
+  font-weight: 450;
+  margin-bottom: 5px;
+}
+
+.CDlesson-meta .CDlesson-duration,
+.CDAccodrionBody .list-group .list-group-item .CDlesson-duration {
+  padding: 0 0 0 20px;
+  font-size: 0.8em;
+  width: max-content;
+}
+
+.CDlesson-meta span {
+  font-size: 0.8em;
+}
+
+.CDAccodrionBody .list-group .list-group-item {
+  padding: 8px 10px;
+}
+
+.CDAccodrionBody .list-group .list-group-item a {
+  font-weight: 400;
+  padding-left: 5px;
+  text-decoration: none;
+  color: var(--primary-dark);
+}
+
+@media (max-width: 1125px) {
+  .courseDetailsBox {
+    padding: 15px;
+    gap: 35px;
+  }
+
+  .CDHeader {
+    height: 30vh;
+  }
+
+  .CDLHS,
+  .CDMHS,
+  .CDRHS {
+    margin: 0%;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .CDLHS,
+  .CDRHS {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .CDMHS {
+    margin: 15px 0px;
+  }
+
+  .CDBody {
+    gap: 25px;
+    flex-direction: column;
+  }
+
+  .CDPriceBox,
+  .CDCourseDetails {
+    width: 35%;
+    padding: 10px 10px;
+  }
+
+  .CDCourseDetails {
+    width: 25%;
+  }
+
+  .CDPriceBox {
+    display: flex;
+    align-items: center;
+  }
+
+  .CDHeaderIntroVideo iframe {
+    height: 30vh;
+  }
+
+  .CDvideoBox {
+    /* height: 220px; */
+    width: 280px;
+  }
+
+  .CDWhoIsThisFor h5,
+  .CDWhatYouGet h5,
+  .CDtabBoxOverV h5,
+  .CDtabBoxOverV div h5 {
+    font-size: 1em;
+    margin-bottom: 12px;
+  }
+
+  .CDWhatYouGet h5 {
+    margin-bottom: 4px;
+  }
+
+  .CDLightningTxt {
+    font-size: 0.75em;
+    padding-top: 15px;
+  }
+
+  .CDWhatYouGet .CDWhatBoxContent {
+    gap: 10px;
+    padding: 8px 10px;
+    margin-bottom: 9px;
+  }
+
+  .CDWhatBoxContent img {
+    width: 23px;
+  }
+
+  .CDLightningSVG {
+    width: 23px;
+  }
+
+  .CDtabBox .nav-tabs {
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+
+  .CDtabBox .nav-item {
+    margin-top: 10px;
+    margin-left: 8px;
+  }
+
+  .CDtabBox .nav-link {
+    font-size: 1em;
+    padding: 5px 10px;
+  }
+
+  .CDtabBox .nav-link.active::after {
+    bottom: -5px;
+  }
+
+  .CDtabBoxOverV div p {
+    margin-top: 3px;
+    font-size: 0.9em;
+  }
+
+  .CDtabBoxOverV div h5 {
+    margin-bottom: 0px;
+    font-size: 0.9em;
+  }
+
+  .CDtabBoxOverV div p {
+    font-size: 0.85em;
+    margin-left: 15px;
+    margin-bottom: 10px;
+  }
+
+  .CDtabBoxDesc {
+    margin: 15px;
+    font-size: 1em;
+  }
+
+  .CDtabBoxDesc h4 {
+    font-size: 1.2em;
+  }
+
+  .CDtabBoxDesc p {
+    font-size: 1em;
+    line-height: 1em;
+    margin-bottom: 20px;
+  }
+
+  .CDOverviewPills span {
+    padding: 0 10px;
+    font-size: 1em;
+    line-height: 1.5em;
+  }
+
+  .CDOverviewPills {
+    margin-bottom: 15px;
+  }
+
+  .CDlesson-title {
+    font-size: 0.85em;
+    margin-bottom: 0px;
+  }
+
+  .CDAccordianBox .accordion-header .accordion-button {
+    padding: 9px;
+  }
+
+  .CDlesson-meta .CDlesson-duration,
+  .CDAccodrionBody .list-group .list-group-item .CDlesson-duration {
+    font-size: 0.75em;
+    padding: 0 0 0 5px;
+  }
+
+  .CDlesson-meta span {
+    font-size: 0.75em;
+  }
+
+  .CDAccodrionBody .list-group .list-group-item {
+    padding: 5px 8px;
+  }
+
+  .CDAccodrionBody .list-group .list-group-item a {
+    font-size: 0.85em;
+    padding-left: 3px;
+  }
+
+  .CDAccordianBox {
+    padding: 1px 10px 10px 10px;
+  }
+
+  .CDStrike {
+    font-size: 0.9em;
+  }
+
+  .CDBuyBtn {
+    margin-top: 0px;
+    padding: 5px 15px;
+    font-size: 1em;
+    margin-left: auto;
+    width: max-content;
+    border-radius: 10px;
+  }
+
+  .CDOffer {
+    padding: 5px;
+    margin-left: 5px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+  }
+
+  .CDOffer span {
+    padding: 3px 6px;
+    font-size: 0.7em;
+    margin-left: 5px;
+  }
+
+  .CDPriceBox h3 {
+    margin: 0;
+    display: inline;
+    font-size: 1.2em;
+  }
+
+  .CDCartBtn {
+    display: none;
+  }
+
+  .CDCourseDetails h4 {
+    font-size: 1.2em;
+  }
+
+  .CDCourseDetailRow {
+    font-size: 0.9em;
+  }
+
+  .CDWhatYouGet .CDWhatBoxContent div .CDItemTitle {
+    font-size: 0.85em;
+  }
+
+  .CDWhatYouGet .CDWhatBoxContent div span {
+    font-size: 0.8em;
+    line-height: 1em;
+  }
+}
+
+@media (max-width: 835px) {
+  .courseDetailsBox {
+    padding: 15px;
+    gap: 25px;
+  }
+
+  .CDHeader {
+    height: 30vh;
+  }
+
+  .CDLHS,
+  .CDMHS,
+  .CDRHS {
+    margin: 0%;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .CDLHS,
+  .CDRHS {
+    flex-direction: column;
+    justify-content: baseline;
+  }
+
+  .CDMHS {
+    margin: 15px 0px;
+  }
+
+  .CDBody {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .CDPriceBox,
+  .CDCourseDetails {
+    padding: 5px 10px;
+  }
+
+  .CDHeaderIntroVideo iframe {
+    height: 30vh;
+  }
+
+  .CDvideoBox {
+    display: none;
+  }
+
+  .CDWhoIsThisFor h5,
+  .CDWhatYouGet h5,
+  .CDtabBoxOverV h5,
+  .CDtabBoxOverV div h5 {
+    font-size: 0.75em;
+    margin-bottom: 9px;
+  }
+
+  .CDWhatYouGet h5 {
+    margin-bottom: 2px;
+  }
+
+  .CDLightningTxt {
+    font-size: 0.6em;
+    padding-top: 10px;
+  }
+
+  .CDWhatYouGet .CDWhatBoxContent {
+    gap: 5px;
+    margin-bottom: 7px;
+    padding: 5px 8px;
+  }
+
+  .CDWhatBoxContent img {
+    width: 20px;
+  }
+
+  .CDLightningSVG {
+    width: 20px;
+  }
+
+  .CDtabBox .nav-tabs {
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+
+  .CDtabBox .nav-item {
+    margin-top: 5px;
+    margin-left: 8px;
+  }
+
+  .CDtabBox .nav-link {
+    font-size: 0.65em;
+    padding: 5px 10px;
+  }
+
+  .CDtabBox .nav-link.active::after {
+    bottom: -5px;
+  }
+
+  .CDtabBoxOverV div p {
+    margin-top: 3px;
+    font-size: 0.7em;
+  }
+
+  .CDtabBoxOverV div h5 {
+    margin-bottom: 0px;
+    font-size: 0.7em;
+  }
+
+  .CDtabBoxOverV div p {
+    font-size: 0.65em;
+    margin-left: 15px;
+    margin-bottom: 10px;
+  }
+
+  .CDtabBoxDesc {
+    margin: 5px 13px;
+    font-size: 0.7em;
+  }
+
+  .CDtabBoxDesc h4 {
+    font-size: 1em;
+  }
+
+  .CDtabBoxDesc p {
+    font-size: 0.85em;
+    line-height: 1em;
+    margin-bottom: 10px;
+  }
+
+  .CDOverviewPills span {
+    padding: 0 10px;
+    font-size: 0.85em;
+    line-height: 1.5em;
+  }
+
+  .CDOverviewPills {
+    margin-bottom: 15px;
+  }
+
+  .CDlesson-title {
+    font-size: 0.65em;
+    margin-bottom: 0px;
+  }
+
+  .CDAccordianBox .accordion-header .accordion-button {
+    padding: 9px;
+  }
+
+  .CDlesson-meta .CDlesson-duration,
+  .CDAccodrionBody .list-group .list-group-item .CDlesson-duration {
+    font-size: 0.55em;
+    padding: 0 0 0 5px;
+  }
+
+  .CDlesson-meta span {
+    font-size: 0.55em;
+  }
+
+  .CDAccodrionBody .list-group .list-group-item {
+    padding: 5px 8px;
+  }
+
+  .CDAccodrionBody .list-group .list-group-item a {
+    font-size: 0.65em;
+    padding-left: 3px;
+  }
+
+  .CDAccordianBox {
+    padding: 1px 10px 10px 10px;
+  }
+
+  .CDPriceBox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .CDStrike {
+    font-size: 0.75em;
+  }
+
+  .CDBuyBtn {
+    margin-top: 0px;
+    padding: 5px 15px;
+    font-size: 0.7em;
+    margin-left: auto;
+    width: max-content;
+    border-radius: 10px;
+  }
+
+  .CDOffer {
+    padding: 5px;
+    margin-left: 5px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+  }
+
+  .CDOffer span {
+    padding: 3px 6px;
+    font-size: 0.5em;
+    margin-left: 5px;
+  }
+
+  .CDPriceBox h3 {
+    margin: 0;
+    display: inline;
+    font-size: 0.8em;
+  }
+
+  .CDCartBtn {
+    display: none;
+  }
+
+  .CDCourseDetails h4 {
+    font-size: 0.8em;
+  }
+
+  .CDCourseDetails {
+    width: auto;
+  }
+
+  .CDCourseDetailRow {
+    font-size: 0.7em;
+  }
+
+  .CDWhatYouGet .CDWhatBoxContent div .CDItemTitle {
+    font-size: 0.65em;
+  }
+
+  .CDWhatYouGet .CDWhatBoxContent div span {
+    font-size: 0.6em;
+    line-height: 1em;
+  }
+}
+
+/*  */
+
+
+.punch-viewer-navbar-logo{
+  display: none;
+}

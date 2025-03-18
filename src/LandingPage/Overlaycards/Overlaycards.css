@@ -1,0 +1,118 @@
+
+  
+  /* new css for cards */
+
+  .Overlaycards{
+    height: 60vh;
+  }
+  .Overlaycards .container {
+    position:relative;
+    height: 80%;
+    width: 50%;
+    top: 60px;
+    display: flex;
+  }
+  
+  .Overlaycards .card {
+    display: flex;
+    height: 72%;
+    width: 90%;
+    background-image: linear-gradient(to  right, white, rgb(183, 191, 252));
+    border-radius: 10px;
+    
+    border: 1px solid black;
+  /*   margin-left: -50px; */
+    transition: 0.4s ease-out;
+    position: relative;
+    left: 0px;
+  }
+
+  .Overlaycards .card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
+  
+  .Overlaycards .card:not(:first-child) {
+      margin-left: -24% ;
+  }
+  
+  .Overlaycards .card-2{
+    transform: rotate(9deg) 
+  }
+  .Overlaycards .card-3{
+      transform: rotate(15deg) ;
+    margin-top: 60px;
+        
+  }
+
+  
+  .Overlaycards .card-img{
+    height: 55%;
+    width: 48%;
+    border: 1px solid black;
+    display: flex;
+    border-radius: 20px;
+  }
+  .Overlaycards .card-3-img{
+    height: 40%;
+    width: 50%;
+    border: 1px solid black;
+    display: flex;
+    border-radius: 20px;
+  
+  }
+  .Overlaycards .p-2{
+    padding: 25px;
+  }
+  .Overlaycards .card-head-txt{
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+  }
+  .Overlaycards .card-subhead-txt{
+    color: black;
+    margin: 0px;
+    font-size: 15px;
+    text-align: left;
+  }
+  .Overlaycards .card-text{
+    color: black;
+    font-size: 15px;
+    text-align: left;
+  
+  }
+  .Overlaycards .ms-1{
+    margin-left:12px ;
+  }
+  .Overlaycards .card-country-txt{
+    background-color: white;
+    margin: 0px;
+    height: fit-content;
+    color: black;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .Overlaycards .card-txt-course{
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+    margin-left: -80%;
+    margin-bottom:0px;
+  }
+  .Overlaycards .card-txt-instructor{
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+    margin-left: -30%;
+    margin-top:0px
+  }
+
+
+
+ 
