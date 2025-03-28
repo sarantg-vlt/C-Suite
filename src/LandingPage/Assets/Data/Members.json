@@ -1,21 +1,32 @@
 {
   "expertPanel": [
     {
-      
-  "id": 1,
-  "name": "Srinivas Mahankali",
-  "panel": "Experts Panel",
-  "previousRole": "Web3 Cybersecurity, Digital Transformation professional ",
-  "education": "IIT Madras/ IIM Bangalore",
-  "biography": "Srinivas Mahankali is an experienced Digital Transformation Professional with expertise in Blockchain, Web3 , Cybersecurity, Cloud & AI technologies. An IIT Madras and IIM Bangalore alumni with over 34 years experience, he is Director of Cybersecurity focused BSE Listed company, SecureKloud Technologies Ltd. He has authored Blockchain for eGovernance, Securechains- Cybersecurity and Blockchain-Powered automation, AI & ML- Powering the agents of Automaiton, Blockchain for Non-IT Professionals, Blockchain the Untold Story, Blockchain Consortiums- the Business model of the future etc. and many more books on emerging Technologies like Cloud, Cybersecurity, AI, Data analytics and Blockchain. .He is NISM certified Alternative Investment Management Professional & IIT Madras/ IIM Bangalore alumnus and served as an MD of a BSE listed Fintech company for four years and headed the IT function of a large Indian Logistics and Supply chain conglomerate.",
-  "expertise": "Digital Transformation, Blockchain, Web3, Cybersecurity, Cloud, AI, Data Analytics, Alternative Investment Management, Innovation, Marketing, Disruption, Networking & Collaboration, Mentoring, Start-Ups",
-  "professionalExperience": "Innovation, Marketing, Disruption, Networking & Collaboration, Mentoring and Start-Ups are the areas that excite him. He is experienced in architecting and implementing Business transformation activities involving cutting edge technologies like Blockchain, AI & IOT. Srinivas is passionate about Smart cities and convergence of the disruptive technologies in furthering Sustainable environment and Healthy & Happy living for global citizens. A continuous learner and an avid reader, he loves to keep abreast of the latest developments in Technology & Management. He also authored Management books like Successful Organisations in Action, Corona wars, Think 3, Act Now, Write Now, Blockchain for Non IT Professionals etc. An example driven approach. His books have received over 160 - 5 star ratings on Amazon.",
-  "achievements": "He worked as a lead Consultant for Blockchain and emerging technologies at the Government of India and NASSCOM promoted company, NISG (National Institute for Smart Government).  As the inaugural Program Director of India' first University certified part time Post Graduate Program in Blockchain Technology by Amity University , he has mentored a number of Blockchain students across the world.",
-  "img": "./Asset/Exp1.jpeg"
-  
-},
+      "id": 1,
+      "name": "Srinivas Mahankali",
+      "panel": "Experts Panel",
+      "previousRole": "Web3 Cybersecurity, Digital Transformation professional ",
+      "education": "IIT Madras/ IIM Bangalore",
+      "biography": "Srinivas Mahankali is an experienced Digital Transformation Professional with expertise in Blockchain, Web3 , Cybersecurity, Cloud & AI technologies. An IIT Madras and IIM Bangalore alumni with over 34 years experience, he is Director of Cybersecurity focused BSE Listed company, SecureKloud Technologies Ltd. He has authored Blockchain for eGovernance, Securechains- Cybersecurity and Blockchain-Powered automation, AI & ML- Powering the agents of Automaiton, Blockchain for Non-IT Professionals, Blockchain the Untold Story, Blockchain Consortiums- the Business model of the future etc. and many more books on emerging Technologies like Cloud, Cybersecurity, AI, Data analytics and Blockchain. .He is NISM certified Alternative Investment Management Professional & IIT Madras/ IIM Bangalore alumnus and served as an MD of a BSE listed Fintech company for four years and headed the IT function of a large Indian Logistics and Supply chain conglomerate.",
+      "expertise": "Digital Transformation, Blockchain, Web3, Cybersecurity, Cloud, AI, Data Analytics, Alternative Investment Management, Innovation, Marketing, Disruption, Networking & Collaboration, Mentoring, Start-Ups",
+      "professionalExperience": "Innovation, Marketing, Disruption, Networking & Collaboration, Mentoring and Start-Ups are the areas that excite him. He is experienced in architecting and implementing Business transformation activities involving cutting edge technologies like Blockchain, AI & IOT. Srinivas is passionate about Smart cities and convergence of the disruptive technologies in furthering Sustainable environment and Healthy & Happy living for global citizens. A continuous learner and an avid reader, he loves to keep abreast of the latest developments in Technology & Management. He also authored Management books like Successful Organisations in Action, Corona wars, Think 3, Act Now, Write Now, Blockchain for Non IT Professionals etc. An example driven approach. His books have received over 160 - 5 star ratings on Amazon.",
+      "achievements": "He worked as a lead Consultant for Blockchain and emerging technologies at the Government of India and NASSCOM promoted company, NISG (National Institute for Smart Government).  As the inaugural Program Director of India' first University certified part time Post Graduate Program in Blockchain Technology by Amity University , he has mentored a number of Blockchain students across the world.",
+      "img": "./Asset/Exp1.jpeg"
+    },
 
   
+    {
+      "id": 3,
+      "name": "M R Muthuswamy (MRM)",
+      "role": "CTO",
+      "panel": "Team | Facility",
+      "currentRole": "Director - Technology, CTO. Digital Architect",
+      "expertise": "Digital Transformation, Cloud Computing, Emerging Technologies, Supply Chain, Logistics, Shipping, AR/VR, IoT, AI/ML, RPA",
+      "previousRole": "Enterprise Architect for Tech Mahindra",
+      "achievements": "As a Business Technology Advisor, executed consulting assignments for customers in Shipping, Retail and IT domains.As a Cloud Platforms Specialist covering AWS, Azure, private clouds, executed assignments for major implementations done on architecture, solution design, integration, migration and security across global clients in Banking, Financial Services, Telecom and SaaS domainsAn Emerging Technology Solutions Leader spanning AR, VR, RPA, IOT, AI/ML has developed products and provided GTM strategies in EdTech, FinTech, Retail sectors.Has delivered & traveled extensively for projects, consulting and business development across America, Europe, Middle East, Asia Pacific and Australia.Recipient of the International Aegis Graham Bell Award (2014) for innovations in Cloud ComputingAs Entrepreneur, providing Though Leadership and Consulting services to clients, under the brand Procrama.",
+      "biography": "Special focus on Marine Solutions. Designing and Consulting on Digitial Twin for Battery Management System for Electric Vehicles.  Digital Transformation through Composable Applications with Low Code Application Platform .A seasoned Disruptive Technology leader turned into an entrepreneur, with more than 3 decades of IT experience spanning across Entrepreneurship, Thought Leadership, Advisory, Consulting, Innovation, Practice, Solution, Architecture, Software Product Management and Product Transition. ",
+      "img": "./Asset/mrm.jpg"
+    },
+
     {
       "id": 2,
       "name": "Venkat Rajendran",
@@ -27,8 +38,21 @@
       "professionalExperience": "He has contributed significantly to Information Systems, Cyber Crimes, and Banking Laws by delivering guest lectures at institutions such as the Tamil Nadu Police Academy, Pondicherry and Madras Universities, and staff colleges of various banks, including IOB, UCO Bank, Axis Bank, CBI, Canara Bank, TNSC Bank, and RBI, as well as industry bodies like FICCI and CII.",
       "achievements": "Authored 'IT Security,' a complete courseware for IIBF, and contributed articles on cyber crimes, hacking ethics, and victims of cyber crimes in publications like CSI Communications, Bank Quest, Crusader, and The Indian Banker.",
       "img": "./Asset/Exp2.jpeg"
-    }
+    },
+    {
+      "id": 1,
 
+      "name": "Panchi Subramanian",
+      "role": "Founder & Managing Director",
+      "panel": "Experts Panel",
+      "currentRole": "Founder - YesPanchi | Ex-PSU Banker | Board Governance | Independent Director | FinTech Cyber Security Entrepreneur | LinkedIn Top Voice",
+      "email": "Linkedin  https://www.linkedin.com/in/panchisubramanian",
+      "expertise": "FinTech, Cybersecurity, Banking Technology, Board Governance, Digital Payments",
+      "previousRole": "Head of Internet Banking, Mobile Banking, and Payment Gateway Operations at a PSU Bank",
+      "achievements": "Certified Independent Director at the Ministry of Corporate Affairs, India. Recognized as a LinkedIn Top Voice. IT Columnist and keynote speaker at various industry forums. Email:panchi@yespanchi.tech",
+      "biography": "Founder and Managing Director – YesPanchi Tech Services Private Limited - IT Columnist in magazines and Key Note speaker - Certified Independent Director at Ministry of Corporate Affairs, India. - More than 2 decades of experience in Technology and Financial services- Accelerated and headed a PSU bank’s Internet banking, Mobile banking and Payment Gateway Operations successfully",
+      "img": "./Asset/panchimam.jpeg"
+    }
   ],
   "teamMembers": [
     {
@@ -38,7 +62,7 @@
       "role": "Founder & Managing Director",
       "panel": "Experts Panel",
       "currentRole": "Founder - YesPanchi | Ex-PSU Banker | Board Governance | Independent Director | FinTech Cyber Security Entrepreneur | LinkedIn Top Voice",
-      "email": "Linkedin :https://www.linkedin.com/in/panchisubramanian",
+      "email": "Linkedin  https://www.linkedin.com/in/panchisubramanian",
       "expertise": "FinTech, Cybersecurity, Banking Technology, Board Governance, Digital Payments",
       "previousRole": "Head of Internet Banking, Mobile Banking, and Payment Gateway Operations at a PSU Bank",
       "achievements": "Certified Independent Director at the Ministry of Corporate Affairs, India. Recognized as a LinkedIn Top Voice. IT Columnist and keynote speaker at various industry forums. Email:panchi@yespanchi.tech",
@@ -60,49 +84,9 @@
       "achievements": "Implementation of Industry 4.0 and create Digital Twin of Manufacturing unit along with Business Process improvement through TOC - Six Sigma concepts and Implementation of ERP - HR Digital Tools - OKR implementation and enhance Revenue and bottom line of business houses.ESG practitioner .Conduct Training Programs for Corporate - Podcast Corporate Corridor . ",
       "biography": "Master Black Belt in Six Sigma |ESG practitioner |Business Consultant I Corporate Coach - IOD I Having trained 2000 plus professionals across corporate pan India and In-House program of LIC - VOC - Tata Steel - CII . Domain Expertise in ITES - KPO - Steel Detailing. SIX SIGMA -BPR -SAP- ITES - FINTECH- BUSINESS VALUATION -FUNDING M&A-BLOCKCHAIN -IOT- AI - Industry 4.0 -ZLD - Net Zero - VAPT - Zero Trust",
       "img": "./Asset/EKA FACE.jpg"
-    },
-
-
-
-    {
-      "id": 2,
-      "name": "Selvaraj Veerachamy",
-      "role": "Co-Founder",
-      "panel": "Team | Facility",
-      "currentRole": "Co-Founder/Director, iSheild Technology Pvt Ltd",
-      "expertise": "Technology, Cost savings in infrastructure, Architect & Developer",
-      "achievements": "Known for executing projects that lead to considerable cost savings (up to 50%), Executed projects with only 5% of allocated development effort, Sourced a considerable customer base for iSheild products",
-      "biography": "An entrepreneur with a strong technology background known throughout tech circles for executing projects that lead to considerable cost savings (often infrastructure savings of 50%). He has executed projects and met USP criteria with just 5% of the allocated development effort. At iSheild, beyond his usual role as an Architect & Developer, Selvaraj has dabbled in marketing for their various products and sourced a considerable customer base for them.",
-      "img":"./Asset/selvaraj.jpg"
-    },
-
-    {
-      
-  "id": 3,
-  "name": "M R Muthuswamy (MRM)",
-  "role": "CTO",
-  "panel": "Team | Facility",
-  "currentRole": "Director - Technology, CTO. Digital Architect",
-  "expertise": "Digital Transformation, Cloud Computing, Emerging Technologies, Supply Chain, Logistics, Shipping, AR/VR, IoT, AI/ML, RPA",
-  "previousRole": "Enterprise Architect for Tech Mahindra",
-  "achievements": "As a Business Technology Advisor, executed consulting assignments for customers in Shipping, Retail and IT domains.As a Cloud Platforms Specialist covering AWS, Azure, private clouds, executed assignments for major implementations done on architecture, solution design, integration, migration and security across global clients in Banking, Financial Services, Telecom and SaaS domainsAn Emerging Technology Solutions Leader spanning AR, VR, RPA, IOT, AI/ML has developed products and provided GTM strategies in EdTech, FinTech, Retail sectors.Has delivered & traveled extensively for projects, consulting and business development across America, Europe, Middle East, Asia Pacific and Australia.Recipient of the International Aegis Graham Bell Award (2014) for innovations in Cloud ComputingAs Entrepreneur, providing Though Leadership and Consulting services to clients, under the brand Procrama.",
-  "biography": "Special focus on Marine Solutions. Designing and Consulting on Digitial Twin for Battery Management System for Electric Vehicles.  Digital Transformation through Composable Applications with Low Code Application Platform .A seasoned Disruptive Technology leader turned into an entrepreneur, with more than 3 decades of IT experience spanning across Entrepreneurship, Thought Leadership, Advisory, Consulting, Innovation, Practice, Solution, Architecture, Software Product Management and Product Transition. ",
-  "img": "./Asset/mrm.jpg"
-
-
-    },
-    {
-      "id": 4,
-      "name": "Col (Dr.) Inderjeet Singh",
-      "role": "CISO",
-      "panel": "Team | Facility",
-      "currentRole": "Chief Cyber Officer, CyberSleuths",
-      "education": "Alumnus of IIT Kharagpur",
-      "expertise": "Cybersecurity, Information Handling, Communication Systems",
-      "previousRoles": "Indian Army, spanning 3 decades, Chief Telecom Officer for the UN, Formulated and implemented India’s Information Security Policy",
-      "achievements": "Built and managed communication systems under threat of disruption, Helped establish industry-wide cybersecurity protocols, Felicitated by multiple industry bodies as one of the best CSIOs",
-      "biography": "Col (Dr.) Inderjeet Singh is one of IIT Khargpur’s celebrated Alumni. He is an authority on best practices in Cybersecurity and Information Handling. He has had a long career in the Indian Army spanning over 3 decades. During which he built and managed communication and information systems that were constantly under threat of disruption and sabotage. He also served as the Chief Telecom Officer for the UN and headed comms where Indian troops were deployed. In the final years of his military career, he formulated and implemented India’s Information Security Policy. Post his military career, he started his second innings as a Cybersecurity expert for India’s corporate space. With the explosion of internet usage cyberattacks were also on the rise. He played a vital role in not just setting up safety systems and processes but also helped to establish industry-wide cybersecurity protocols. Multiple Industry Bodies have felicitated him as one of the best CSIOs.",
-      "img":"./Asset/col.jpg"
     }
+
+
+
   ]
 }
