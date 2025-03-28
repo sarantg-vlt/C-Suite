@@ -55,9 +55,9 @@ function Footer() {
     <>
       <div className="footer" id="footer">
         <section data-aos="fade-up" className="section1">
-          <img src={footerlogo} alt="Brand logo" width="120px" />
+          <img src={footerlogo} className='img' alt="Brand logo" width="120px" />
           {/* <p>Practical-based learning platform to enhance skills</p> */}
-          <h6>Follow Us on</h6>
+          <h6 className='follow'>Follow Us on</h6>
           <div className="sociallinks">
             <a
               href="https://www.linkedin.com/in/panchisubramanian"

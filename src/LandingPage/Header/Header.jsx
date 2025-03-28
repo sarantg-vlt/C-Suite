@@ -16,14 +16,14 @@ function Header() {
 
   return (
     <header>
-      <nav className="navbar navbar-expand-lg navbar-light sticky-top">
+      <nav className="navbar navbar-expand-lg navbar-light">
         <a data-aos="fade-right" className="navbar-brand ml-5 text-light" href="#">
           <img src={logo} alt="" height={"40px"} />
         </a>
         <button
           className="navbar-toggler"
           type="button"
-          data-toggle="collapse"
+          // data-toggle="collapse"
           data-target="#navbarNav"
           aria-controls="navbarNav"
           aria-expanded="false"

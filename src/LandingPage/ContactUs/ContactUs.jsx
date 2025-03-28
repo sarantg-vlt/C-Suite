@@ -115,12 +115,12 @@ function ContactUs() {
           </a>
           <a
             className="location"
-            href="https://www.google.com/maps/place/102+Street+4657+Road"
+            href="https://www.google.com/maps/place/Thiruvanmiyur+Chennai+India"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={faLocationDot} />
-            <div className="c1">Thiruvanmiyur <br /> Chennai <br />India</div>
+            <div className="c1">Thiruvanmiyur <br /> Chennai,India</div>
           </a>
         </div>
         <div className="leftRow">

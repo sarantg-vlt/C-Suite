@@ -3,6 +3,7 @@ import "./managements.css";
 import Header from '../Header/Header';
 import p1 from "./Asset/panchimam.jpeg"
 import { useLocation } from 'react-router-dom';
+import { FaLinkedin } from "react-icons/fa";
 
 
 const MoreDetails = () => {
@@ -35,10 +36,28 @@ const MoreDetails = () => {
                 <h6 data-aos="fade-left">• {data?.additionalRoles}</h6>
               )}
               <br />
-              <p data-aos="fade-left" style={{ textAlign: "justify" }}>
-                {" "}
-                             {data?.email}
+              {/* <p
+                data-aos="fade-left"
+                style={{ textAlign: "justify", color: "white" }}
+              >
+               
+                <a href={`${data.email}`}>{data.email}</a>
+              </p> */}
+
+              <p
+                data-aos="fade-left"
+                style={{ textAlign: "justify", color: "white" }}
+              >
+                <FaLinkedin style={{padding: "2px" , width:"30px", height: "30px"}}/>
+
+                <a
+                  href={`${data.email}`}
+                  style={{ color: "white", textDecoration: "none" }}
+                >
+                  {data.email}
+                </a>
               </p>
+
               <br />
 
               <p data-aos="fade-left" style={{ textAlign: "justify" }}>
