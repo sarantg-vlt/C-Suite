@@ -98,20 +98,20 @@ function ContactUs() {
       <section className="leftcontainer">
         <div className="leftRow">
           <h1>Contact Us</h1>
-          <p>
+          {/* <p>
             Feel free to get in touch with us. We are always open to discussing
             new projects, creative ideas, or opportunities to be part of your
             vision.
-          </p>
+          </p> */}
         </div>
         <div className="leftRow">
-          <a className="phone" href="tel:+919865149951">
+          <a className="phone" href="tel:+917305062079">
             <FontAwesomeIcon icon={faPhone} />
-            <div className="c1">+91-9865149951</div>
+            <div className="c1">+91-73050 62079</div>
           </a>
-          <a className="mail" href="mailto:info@lmsportal.co.in">
+          <a className="mail" href="mailto:hello@csuite.academy">
             <FontAwesomeIcon icon={faEnvelope} />
-            <div className="c1">info@lmsportal.co.in</div>
+            <div className="c1">hello@csuite.academy</div>
           </a>
           <a
             className="location"
@@ -120,7 +120,7 @@ function ContactUs() {
             rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={faLocationDot} />
-            <div className="c1">102 Street 4657 Road</div>
+            <div className="c1">Thiruvanmiyur <br /> Chennai <br />India</div>
           </a>
         </div>
         <div className="leftRow">

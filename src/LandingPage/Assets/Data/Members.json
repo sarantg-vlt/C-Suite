@@ -38,6 +38,7 @@
       "role": "Founder & Managing Director",
       "panel": "Experts Panel",
       "currentRole": "Founder - YesPanchi | Ex-PSU Banker | Board Governance | Independent Director | FinTech Cyber Security Entrepreneur | LinkedIn Top Voice",
+      "email": "Linkedin :https://www.linkedin.com/in/panchisubramanian",
       "expertise": "FinTech, Cybersecurity, Banking Technology, Board Governance, Digital Payments",
       "previousRole": "Head of Internet Banking, Mobile Banking, and Payment Gateway Operations at a PSU Bank",
       "achievements": "Certified Independent Director at the Ministry of Corporate Affairs, India. Recognized as a LinkedIn Top Voice. IT Columnist and keynote speaker at various industry forums. Email:panchi@yespanchi.tech",
@@ -46,17 +47,20 @@
     },
 
     {
-  "id": 5,
-  "name": "Eka Pillai",
-  "role": "Co-Founder",
-  "panel": "Experts Panel",
-  "currentRole": "Co-Founder Yespanchi Group | Founder Brainmanifesto & Kriscon Global | Master Black Belt in Six Sigma | Director Indes Group | Ex Faculty IOD",
-  "expertise": "Six Sigma, ESG, Business Process Improvement, FinTech, Blockchain, IoT, AI, Industry 4.0, Digital Twin, SAP, Business Valuation, M&A, Cybersecurity, Zero Trust",
-  "previousRole": "Faculty at Institute of Directors (IOD)",
-  "achievements": "Implementation of Industry 4.0 and create Digital Twin of Manufacturing unit along with Business Process improvement through TOC - Six Sigma concepts and Implementation of ERP - HR Digital Tools - OKR implementation and enhance Revenue and bottom line of business houses.ESG practitioner .Conduct Training Programs for Corporate - Podcast Corporate Corridor . Email: eka@kriscon.in Web : www.kriscon.in ",
-  "biography": "Master Black Belt in Six Sigma |ESG practitioner |Business Consultant I Corporate Coach - IOD I Having trained 2000 plus professionals across corporate pan India and In-House program of LIC - VOC - Tata Steel - CII . Domain Expertise in ITES - KPO - Steel Detailing. SIX SIGMA -BPR -SAP- ITES - FINTECH- BUSINESS VALUATION -FUNDING M&A-BLOCKCHAIN -IOT- AI - Industry 4.0 -ZLD - Net Zero - VAPT - Zero Trust",
-  "img": "./Asset/EKA FACE.jpg"
-},
+      "id": 5,
+
+      "name": "Eka Pillai",
+      "role": "Director",
+      "panel": "Experts Panel",
+      "currentRole": "Co-Founder Yespanchi Group | Founder Brainmanifesto & Kriscon Global | Master Black Belt in Six Sigma | Director Indes Group | Ex Faculty IOD",
+      "email": "Email :eka@kriscon.in",
+      "expertise": "Six Sigma, ESG, Business Process Improvement, FinTech, Blockchain, IoT, AI, Industry 4.0, Digital Twin, SAP, Business Valuation, M&A, Cybersecurity, Zero Trust",
+      "previousRole": "Faculty at Institute of Directors (IOD)",
+
+      "achievements": "Implementation of Industry 4.0 and create Digital Twin of Manufacturing unit along with Business Process improvement through TOC - Six Sigma concepts and Implementation of ERP - HR Digital Tools - OKR implementation and enhance Revenue and bottom line of business houses.ESG practitioner .Conduct Training Programs for Corporate - Podcast Corporate Corridor . ",
+      "biography": "Master Black Belt in Six Sigma |ESG practitioner |Business Consultant I Corporate Coach - IOD I Having trained 2000 plus professionals across corporate pan India and In-House program of LIC - VOC - Tata Steel - CII . Domain Expertise in ITES - KPO - Steel Detailing. SIX SIGMA -BPR -SAP- ITES - FINTECH- BUSINESS VALUATION -FUNDING M&A-BLOCKCHAIN -IOT- AI - Industry 4.0 -ZLD - Net Zero - VAPT - Zero Trust",
+      "img": "./Asset/EKA FACE.jpg"
+    },
 
 
 

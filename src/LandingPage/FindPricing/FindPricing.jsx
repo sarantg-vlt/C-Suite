@@ -16,7 +16,7 @@ function FindPricing() {
       <div className="container">
         <div className="leftcontainer" data-aos="fade-right">
           <h1>Choose a course that's right for you</h1>
-          <p>Find your perfect balance of collaboration, security, and support by collabrating with C-suite Academy subscription.</p>
+          <p>Find your perfect balance of collaboration, security, and support by collabrating with C-suite Academy.</p>
         </div>
         <div className="rightcontainer" data-aos="fade-left">
           <Link to="/authentication"><button>Click here</button></Link>
