@@ -12,21 +12,16 @@
   background-position-y: calc(100% + 150px);
 }
 
-
-
 .contactUs .leftcontainer {
   width: 45%;
   height: 100%;
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   gap: 5px;
-  padding: 0% 2.5%;
+  padding: 5% 2.5%;
 }
-
-
-
 
 .contactUs .leftcontainer h1 {
   font-size: 40px;
@@ -49,17 +44,14 @@
   width: max-content;
   padding: 10px 15px;
   border-radius: 8px;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
   text-decoration: none;
   transition-duration: 250ms;
   border: 1.5px solid transparent;
+  gap: 1em;
   /* display: none !important; */
 }
-
-
-
-
-
 .contactUs .leftcontainer .leftRow .phone:hover,
 .contactUs .leftcontainer .leftRow .mail:hover,
 .contactUs .leftcontainer .leftRow .location:hover {

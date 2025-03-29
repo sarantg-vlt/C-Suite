@@ -26,8 +26,6 @@
 // import Assessmentsstart from './Assessments/Assessmentsstart/Assessmentsstart'
 // import Authentication from './Authentication/Authentication';
 
-
-
 // import Dashboard from './Dashboard/Dashboard';
 // import Home from './Dashboard/Components/Home/Home';
 // import Courses from './Dashboard/Components/Courses/Courses';
@@ -47,8 +45,6 @@
 // import ELApage from "./Admin/components/ELA/ELApage";
 // import Notification from "./Admin/components/Notification/Notification";
 
-
-
 // import { ToastContainer } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 // import Auth from './Auth/components/auth/Auth';
@@ -58,7 +54,6 @@
 // import AuthContainer from './Auth';
 // import MoreDetails from './LandingPage/Managements/MoreDetails';
 // import CoursePreview from './LandingPage/Courses/CoursePreview';
-
 
 // //footer start
 
@@ -78,7 +73,6 @@
 // import ReviewManagement from './Admin/components/Review/ReviewManagement';
 // // Supports end
 
-
 // //bottom footer start
 // import RefoundPolicy from './LandingPage/Footer/BottomFooter/RefoundPolicy/RefoundPolicy';
 // import PrivacyPolicy from './LandingPage/Footer/BottomFooter/PrivacyPolicy/PrivacyPolicy';
@@ -88,9 +82,6 @@
 // // import EditEvent from './Admin/components/Events/EditEvent';
 // //bottom footer end
 // //footer end
-
-
-
 
 // function App() {
 //   // useEffect(() => {
@@ -230,10 +221,6 @@
 
 // export default App;
 
-
-
-
-
 import "./App.css";
 
 //Bootstrap imported
@@ -324,7 +311,7 @@ import Request from "./Dashboard/Components/Request/Request";
 
 import Appointments from "./Admin/components/Appointments/Appointments";
 import TestCourseContent from "./Dashboard/Components/CourseContent/TestCourseContent/TestCourseContent";
-
+import Header from "./LandingPage/Header/Header";
 
 function App() {
   // useEffect(() => {
@@ -371,6 +358,7 @@ function App() {
           <Route
             path="/"
             element={[
+              <Header />,
               <Landingpage />,
               <Management />,
               <Brands />,

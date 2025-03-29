@@ -2,13 +2,18 @@
 
 header {
   background-color: transparent; /* Semi-transparent */
-  position: fixed; 
+  position: fixed;
   top: 0; /* Ensure it sticks to the top */
-  width: 100%; 
-  /* z-index: 1000;  */
+  width: 100%;
+  backdrop-filter: blur(0px);
+  z-index: 1000;
+  transition: backdrop-filter 0.3s ease;
   height: 100px; /* Fixed height */
 }
-
+header.scrolled {
+  backdrop-filter: blur(5px); /* Add blur on scroll */
+  background-color: #60606058;
+}
 .tag-size {
   display: none; /* Hides the <hr> element completely */
 }
@@ -33,7 +38,6 @@ header {
   font-weight: 500;
   transition: color 0.3s;
 }
-
 .nav-link:hover {
   color: #f8f9fa; /* Light color on hover */
 }
