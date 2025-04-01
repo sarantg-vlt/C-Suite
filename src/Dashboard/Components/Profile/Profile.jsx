@@ -480,22 +480,17 @@ const Profile = () => {
               disabled={!isEditing}
             />
           </div>
-          <div
-            className={`${inputClassName(profileData.gender)} profileDetails`}
-          >
-            <label>Gender</label>
-            <input
-              type="text"
-              name="gender"
-              pattern="[A-Za-z\s]+" // Ensures validation on form submission
-              value={profileData?.gender || ""}
-              onChange={(e) => {
-                const value = e.target.value.replace(/[^A-Za-z\s]/g, ""); // Removes numbers and special characters
-                handleChange({ target: { name: "gender", value } });
-              }}
-              disabled={!isEditing}
-            />
-          </div>
+         <div className={`${inputClassName(profileData.gender)} profileDetails`}>
+              <label>Gender</label>
+              <select name="gender" value={profileData?.gender || ""} onChange={handleChange} disabled={!isEditing} required
+              >
+                <option value="" disabled>Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="prefernottosay">Prefer Not To Say</option>
+
+              </select>
+         </div>
           {/* <div
             className={`${inputClassName(profileData.idCard)} profileDetails`}
           >
@@ -688,27 +683,23 @@ const Profile = () => {
               disabled={!isEditing}
             />
           </div>
-          <div
-            className={`${inputClassName(
-              profileData.emergencyContact?.relationship
-            )} profileDetails`}
-          >
-            <label>Relationship</label>
-            <input
-              type="text"
-              pattern="[A-Za-z\s]+" // Ensures only alphabets and spaces on form submission
-              required
-              name="emergencyContact.relationship"
-              value={profileData.emergencyContact?.relationship || ""}
-              onChange={(e) => {
-                const value = e.target.value.replace(/[^A-Za-z\s]/g, ""); // Removes numbers and special characters
-                handleChange({
-                  target: { name: "emergencyContact.relationship", value },
-                });
-              }}
-              disabled={!isEditing}
-            />
-          </div>
+         <div className={`${inputClassName(profileData.emergencyContact?.relationship)} profileDetails`}>
+              <label>Relationship</label>
+              <select
+                name="emergencyContact.relationship"
+                value={profileData.emergencyContact?.relationship || ""}
+                onChange={handleChange}
+                disabled={!isEditing}
+                required
+              >
+                <option value="" disabled>Select Relationship</option>
+                <option value="Parent">Parent</option>
+                <option value="Sibling">Sibling</option>
+                <option value="Spouse">Spouse</option>
+                <option value="Friend">Friend</option>
+                <option value="Other">Other</option>
+              </select>
+    </div>
           <div
             className={`${inputClassName(
               profileData.emergencyContact?.phone

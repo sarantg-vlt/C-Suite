@@ -27,13 +27,46 @@ function ContactUs() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [responseMessage, setResponseMessage] = useState("");
   const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+
+  const handleInvalid = (e) => {
+    e.preventDefault(); // Prevent the default invalid behavior (e.g., showing the browser's default message)
+    // Show toast error if the field is invalid
+    toast.error(`Please fill out the ${e.target.name} field correctly.`, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "light",
+    });
+    return;
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    // Form validation check (e.g., checking if all required fields are filled)
+    if (!formData.firstname || !formData.lastname || !formData.email || !formData.companyname || !formData.message) {
+      toast.error("All fields are required. Please fill them out correctly.", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+
   
     try {
       const response = await fetch(`${apiBaseUrl}/contact`, {
@@ -87,6 +120,8 @@ function ContactUs() {
       setIsSubmitting(false);
     }
   };
+
+
   
 
   // const handleSubmit = () => {
@@ -105,9 +140,9 @@ function ContactUs() {
           </p> */}
         </div>
         <div className="leftRow">
-          <a className="phone" href="tel:+917305062079">
+          <a className="phone" href="tel:‪+917305062079‬">
             <FontAwesomeIcon icon={faPhone} />
-            <div className="c1">+91-73050 62079</div>
+            <div className="c1">‪+91-73050 62079‬</div>
           </a>
           <a className="mail" href="mailto:hello@csuite.academy">
             <FontAwesomeIcon icon={faEnvelope} />
@@ -151,7 +186,7 @@ function ContactUs() {
           >
             <FontAwesomeIcon icon={faInstagram} />
           </a>
-        </div>
+</div>
       </section>
       <section className="rightcontainer">
         <div className="rightContainerBox">
@@ -164,11 +199,12 @@ function ContactUs() {
                   name="firstname"
                   placeholder=" "
                   pattern="[A-Za-z\s]+"
-                  title="Accept only text format "
+                  title="Accept only text format"
                   id="firstname"
                   value={formData.firstname}
                   onChange={handleChange}
                   required
+                  onInvalid={handleInvalid}
                 />
                 <label htmlFor="firstname">First Name</label>
               </div>
@@ -178,11 +214,12 @@ function ContactUs() {
                   name="lastname"
                   placeholder=" "
                   pattern="[A-Za-z\s]+"
-                  title="Accept only text format "
+                  title="Accept only text format"
                   id="lastname"
                   value={formData.lastname}
                   onChange={handleChange}
                   required
+                  onInvalid={handleInvalid}
                 />
                 <label htmlFor="lastname">Last Name</label>
               </div>
@@ -197,6 +234,7 @@ function ContactUs() {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  onInvalid={handleInvalid}
                 />
                 <label htmlFor="email">Email</label>
               </div>
@@ -209,6 +247,7 @@ function ContactUs() {
                   value={formData.companyname}
                   onChange={handleChange}
                   required
+                  onInvalid={handleInvalid}
                 />
                 <label htmlFor="companyname">Company Name</label>
               </div>
@@ -221,11 +260,12 @@ function ContactUs() {
                 value={formData.message}
                 onChange={handleChange}
                 required
+                onInvalid={handleInvalid}
               ></textarea>
               <label htmlFor="message">Have any message / Queries?</label>
             </div>
             <div className="submit">
-              <input 
+              <input
                 type="submit"
                 value={isSubmitting ? "Sending..." : "Submit"}
                 disabled={isSubmitting}
@@ -241,4 +281,4 @@ function ContactUs() {
   );
 }
 
-export default ContactUs;
+export default ContactUs;

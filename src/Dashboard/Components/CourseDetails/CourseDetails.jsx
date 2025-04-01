@@ -119,7 +119,19 @@ const CourseDetails = () => {
 
 
   const makepayment = async (courseName, courseId, userId) => {
+
+
     if (localStorage.getItem("isloggedin") === "true") {
+
+      const isCoursePurchased = userData?.coursePurchased?.some(
+        (item) => item.courseId === courseId
+      );
+  
+      if (isCoursePurchased) {
+        toast.info("You have already purchased this course.");
+        return;
+      }
+      
       try {
         const response = await axios.put(
           `${apiBaseUrl}/user/updatecourse/${userId}`,
@@ -187,24 +199,30 @@ const CourseDetails = () => {
 
 
   const addToCart = (course) => {
+    console.log("Add to Cart button clicked!");
+  
     if (!isLoggedIn) {
       toast.error("You need to be logged in to add a course to the cart.");
       return;
     }
-
+  
+    // Check if the course is already in the cart
     const isCourseInCart = cart.some((item) => item.courseId === course.courseId);
-    
+  
     if (isCourseInCart) {
       toast.info("This course is already in your cart.");
       return;
     }
-
+  
+    // Add the course to the cart and update localStorage
     const updatedCart = [...cart, course];
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
-
+  
+    // Show success toast
     toast.success(`${course.title} has been added to your cart!`);
   };
+  
   const toggleDescription = () => {
     setIsExpanded(!isExpanded);
   };
@@ -223,6 +241,7 @@ const CourseDetails = () => {
 
   return (
     <>
+      <ToastContainer />
       {paymentSuccess && (
         <>
           <PaymentSuccess
@@ -388,7 +407,7 @@ const CourseDetails = () => {
                                             {video?.title}
                                           </div>
                                           {/* <a href={video?.link}>
-                                            {`${index + 1}.${vidIndex + 1}`}{" "}
+                                            {${index + 1}.${vidIndex + 1}}{" "}
                                             {video?.title}
                                           </a> */}
                                         </span>
@@ -447,7 +466,19 @@ const CourseDetails = () => {
                 </div>
                 <span>50%</span>
               </div>
-            
+              {/* <button
+            onClick={() =>
+              addToCart({
+                courseId,
+                title: courseContentDetailsData?.title,
+                price: courseContentDetailsData?.price,
+                image: courseContentDetailsData?.image,
+              })
+            }
+            className="CDCartBtn"
+          >
+            Add to Cart
+          </button>               */}
               <button
                 onClick={() =>
                   makepayment(
@@ -485,4 +516,4 @@ const CourseDetails = () => {
   );
 };
 
-export default CourseDetails;
+export default CourseDetails;

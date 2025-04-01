@@ -10,6 +10,8 @@ import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import Dropdown from "react-bootstrap/Dropdown";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 //react-router
 import { useLocation, useNavigate } from "react-router-dom";
@@ -321,7 +323,7 @@ const TestCourseContent = () => {
       correctAnswer: question.correctAnswer,
       // type: "MCQ",
       // marks:
-      //   selectedOptions[`${currentSectionIndex}-${index}`] ===
+      //   selectedOptions[${currentSectionIndex}-${index}] ===
       //   question.correctAnswer
       //     ? 1
       //     : 0,
@@ -329,7 +331,7 @@ const TestCourseContent = () => {
 
     const sAns = [
       {
-        subLessonId: questionData._id, // Assuming `questionData._id` holds the subLessonId
+        subLessonId: questionData._id, // Assuming questionData._id holds the subLessonId
         testAnswers: testAnswers,
       },
     ];
@@ -355,15 +357,15 @@ const TestCourseContent = () => {
         payload
       );
       toast.success(res.data.message);
-      console.log(res.data);
+      console.log("X",res.data);
 
-      navigate(-1);
+      // navigate(-1);
       // const Id = localStorage.getItem("userid");
       // console.log(Id);
-      // const res = await Elacompleted(Id, { testScore: sum, elaComplete: true });
+      // var res = await Elacompleted(Id, { testScore: sum, elaComplete: true });
       // console.log(res);
       // if (res) {
-      //   setFinalScore(sum);
+      //   setFinalScore(sum)
       //   localStorage.setItem("finalScore", sum);
       // }
     } catch (error) {
@@ -372,6 +374,8 @@ const TestCourseContent = () => {
   }
 
   return (
+    <>       <ToastContainer />
+
     <div className="assessment-head">
       <div className="assessment-inside">
         <div className="nav-content">
@@ -498,7 +502,7 @@ const TestCourseContent = () => {
                     className="button-bookmark"
                     onClick={handleBookmark}>{`${
                     bookmarkedQuestions[
-                      `${currentSectionIndex}-${currentQuestionIndex}`
+                      ${currentSectionIndex}-${currentQuestionIndex}
                     ] === "true"
                       ? "Bookmarked"
                       : "Bookmark"
@@ -552,7 +556,7 @@ const TestCourseContent = () => {
                           `}
                           onClick={() => setCurrentQuestionIndex(quesIndex)}
                         >
-                          {/* {`${(quesIndex + 1).toString().padStart(2, '0')}`} <FontAwesomeIcon icon={faCheckCircle} style={{color:`${!selectedOptions[`${currentSectionIndex}-${quesIndex}`] && bookmarkedQuestions[`${currentSectionIndex}-${quesIndex}`]=="true"? 'orange' : ''}`}}  size='1rem'className='icon-check pl-4' /> */}
+                          {/* {${(quesIndex + 1).toString().padStart(2, '0')}} <FontAwesomeIcon icon={faCheckCircle} style={{color:${!selectedOptions[${currentSectionIndex}-${quesIndex}] && bookmarkedQuestions[${currentSectionIndex}-${quesIndex}]=="true"? 'orange' : ''}}}  size='1rem'className='icon-check pl-4' /> */}
                           {`${(quesIndex + 1).toString().padStart(2, "0")}`}
                           <FontAwesomeIcon
                             icon={faCheckCircle}
@@ -594,6 +598,7 @@ const TestCourseContent = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

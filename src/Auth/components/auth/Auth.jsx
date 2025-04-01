@@ -163,6 +163,10 @@
 // };
 
 // export default Auth;
+
+
+
+
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import "./auth.css";
@@ -173,8 +177,11 @@ import ForgotPassword from "./ForgotPassword";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import ResetPage from "./ResetPage";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Auth = () => {
+  
   const [searchParams] = useSearchParams();
   const initialForm = searchParams.get("form") === "signup" ? "signup" : "login";
   
@@ -320,6 +327,7 @@ const Auth = () => {
   const renderRightSlide = () => {
     if (currentRightSlide === "login")
       return <Login toggleSlide={(slide) => handleSlideChange(slide)} />;
+
     if (currentRightSlide === "email-response")
       return (
         <EmailSuccessResponse
@@ -330,6 +338,8 @@ const Auth = () => {
   };
 
   return (
+    <>
+       <ToastContainer />
     <div className="screen-container">
       <div className="main-container">
         {/* Left sliding panel */}
@@ -369,7 +379,8 @@ const Auth = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
-export default Auth;
+export default Auth;

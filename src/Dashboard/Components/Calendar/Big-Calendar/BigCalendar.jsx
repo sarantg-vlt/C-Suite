@@ -622,7 +622,6 @@
 // export default BigCalendar;
 
 
-
 import React, { useState, useEffect } from "react";
 import "./BigCalendar.css";
 import { Calendar, momentLocalizer } from "react-big-calendar";
@@ -831,7 +830,7 @@ const BigCalendar = () => {
           show={showDeleteConfirmation}
           onHide={() => setShowDeleteConfirmation(false)}
         >
-          <Modal.Header closeButton>
+          <Modal.Header >
             <Modal.Title>Delete Remainder</Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -854,4 +853,4 @@ const BigCalendar = () => {
   );
 };
 
-export default BigCalendar;
+export default BigCalendar;
