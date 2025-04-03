@@ -65,11 +65,15 @@ function SidebarItem({
         expanded ? "expanded" : "collapsed"
       }`}
       end={true}
-      onClick={() => {
+      onClick={(e) => {
         if (loggedOut) {
-          localStorage.clear();
-          navigate("/");
-          toast.success("Logout Successful");
+          toast.success("Logout Successfully", {
+            autoClose: 3000,
+          });
+          setTimeout(() => {
+            localStorage.clear();
+            navigate("/"); // Navigate after 2 seconds
+          }, 3000);
         }
       }}
     >
@@ -213,7 +217,7 @@ const Sidebar = () => {
             /> */}
             <SidebarItem
               icon={faSignOutAlt}
-              path={"/"}
+              // path={"/"}
               text={"Logout"}
               expanded={expanded}
               loggedOut={true}

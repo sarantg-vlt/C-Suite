@@ -293,10 +293,310 @@
 // export default UserRequests;
 
 
+// import { useState, useEffect } from "react";
+// import "./request.css";
+
+// const UserRequests = () => {
+//   const [requests, setRequests] = useState([]);
+//   const [formData, setFormData] = useState({ username: "", date: "", reason: "" });
+//   const [formVisible, setFormVisible] = useState(false);
+
+//   useEffect(() => {
+//     const storedRequests = JSON.parse(localStorage.getItem("requests")) || [];
+//     setRequests(storedRequests);
+//   }, []);
+
+//   useEffect(() => {
+//     const handleStorageChange = () => {
+//       const updatedRequests = JSON.parse(localStorage.getItem("requests")) || [];
+//       setRequests(updatedRequests);
+//     };
+//     window.addEventListener("storage", handleStorageChange);
+//     return () => window.removeEventListener("storage", handleStorageChange);
+//   }, []);
+
+//   const requestSlot = () => {
+//     setFormVisible(true);
+//   };
+
+//   const handleSubmit = () => {
+//     if (!formData.username || !formData.date || !formData.reason) {
+//       alert("Username, date, and reason are required!");
+//       return;
+//     }
+
+//     const newRequest = {
+//       id: Date.now(),
+//       username: formData.username,
+//       status: "Pending",
+//       date: formData.date,
+//       reason: formData.reason,
+//       scheduledDate: "-",
+//       time: "-",
+//       meetingLink: "",
+//       remarks: "Wait for schedule"
+//     };
+
+//     const updatedRequests = [...requests, newRequest];
+//     setRequests(updatedRequests);
+//     localStorage.setItem("requests", JSON.stringify(updatedRequests));
+//     window.dispatchEvent(new Event("storage"));
+//     setFormVisible(false);
+//     setFormData({ username: "", date: "", reason: "" });
+//   };
+
+//   return (
+//     <div className="container">
+//       <h2 className="title">User Requests</h2>
+//       <button onClick={requestSlot} className="request-button">Request a Slot</button>
+
+//       {formVisible && (
+//         <div className="form-container">
+//           <h3 className="form-title">Request a Slot</h3>
+//           <label className="label">Enter Your Name:</label>
+//           <input
+//             type="text"
+//             className="input"
+//             value={formData.username}
+//             onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+//           />
+//           <label className="label">Select Date:</label>
+//           <input
+//             type="date"
+//             className="input"
+//             value={formData.date}
+//             onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+//           />
+//           <label className="label">Enter Reason:</label>
+//           <textarea
+//             className="input"
+//             value={formData.reason}
+//             onChange={(e) => setFormData({ ...formData, reason: e.target.value })}
+//           ></textarea>
+//           <div className="form-actions">
+//             <button onClick={() => setFormVisible(false)} className="cancel-button">Cancel</button>
+//             <button onClick={handleSubmit} className="submit-button">Submit</button>
+//           </div>
+//         </div>
+//       )}
+
+//       <div className="table-container">
+//         <table className="table">
+//           <thead>
+//             <tr>
+//               <th>Request ID</th>
+//               <th>Status</th>
+//               <th>Requested Date</th>
+//               <th>Scheduled Date</th>
+//               <th>Time</th>
+//               <th>Meeting Link</th>
+//               <th>Remarks</th>
+//             </tr>
+//           </thead>
+//           <tbody>
+//             {requests.length === 0 ? (
+//               <tr>
+//                 <td colSpan="7" className="no-requests">No Requests</td>
+//               </tr>
+//             ) : (
+//               requests.map((req) => (
+//                 <tr key={req.id}>
+//                   <td>{req.id}</td>
+//                   <td className={status ${req.status.toLowerCase()}}>{req.status}</td>
+//                   <td>{req.date !== "-" ? req.date : "Not Set"}</td>
+//                   <td>{req.scheduledDate !== "-" ? req.scheduledDate : "Not Scheduled"}</td>
+//                   <td>{req.time !== "-" ? req.time : "Not Set"}</td>
+//                   <td>
+//                     {req.meetingLink ? (
+//                       <a href={req.meetingLink} target="_blank" rel="noopener noreferrer" className="meeting-link">Open Link</a>
+//                     ) : (
+//                       "No Link"
+//                     )}
+//                   </td>
+//                   <td>
+//                     {req.status === "Pending" ? "Wait for schedule" : req.scheduledDate === req.date
+//                       ? "Your meeting is scheduled according to your requirements."
+//                       : "Mentor not available that day."}
+//                   </td>
+//                 </tr>
+//               ))
+//             )}
+//           </tbody>
+//         </table>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default UserRequests;
+
+
+
+// import { useState, useEffect } from "react";
+// import axios from "axios";  // Import Axios
+// import "./request.css";
+
+// const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+
+// const UserRequests = () => {
+//   const [requests, setRequests] = useState([]);
+//   const [formData, setFormData] = useState({ date: "", reason: "" });
+//   const [formVisible, setFormVisible] = useState(false);
+
+//   useEffect(() => {
+//     const storedRequests = JSON.parse(localStorage.getItem("requests")) || [];
+//     setRequests(storedRequests);
+//   }, []);
+
+//   useEffect(() => {
+//     const handleStorageChange = () => {
+//       const updatedRequests = JSON.parse(localStorage.getItem("requests")) || [];
+//       setRequests(updatedRequests);
+//     };
+//     window.addEventListener("storage", handleStorageChange);
+//     return () => window.removeEventListener("storage", handleStorageChange);
+//   }, []);
+
+//   const requestSlot = () => {
+//     setFormVisible(true);
+//   };
+
+//   const handleSubmit = async () => {
+//     const userId = localStorage.getItem("userid"); 
+//     const username = localStorage.getItem("name"); 
+
+//     if (!userId || !username) {
+//       alert("User ID or Username is missing from localStorage!");
+//       return;
+//     }
+
+//     if (!formData.date || !formData.reason) {
+//       alert("Date and reason are required!");
+//       return;
+//     }
+
+//     try {
+//       const response = await axios.post(${apiBaseUrl}/request, {
+//         userId,
+//         username,
+//         requestMessage: formData.reason,
+//         requestedDate: formData.date
+//       });
+
+//       const newRequest = {
+//         id: Date.now(),
+//         username,
+//         status: "Pending",
+//         date: formData.date,
+//         reason: formData.reason,
+//         scheduledDate: "-",
+//         time: "-",
+//         meetingLink: "",
+//         remarks: "Wait for schedule"
+//       };
+
+//       setRequests([...requests, newRequest]);
+//       localStorage.setItem("requests", JSON.stringify([...requests, newRequest]));
+//       window.dispatchEvent(new Event("storage"));
+
+//       alert("Request Sent Successfully!");
+//       setFormVisible(false);
+//       setFormData({ date: "", reason: "" });
+
+//     } catch (error) {
+//       console.error("Error sending request:", error);
+//       alert("Failed to send request!");
+//     }
+//   };
+
+//   return (
+//     <div className="container">
+//       <h2 className="title">User Requests</h2>
+//       <button onClick={requestSlot} className="request-button">Request a Slot</button>
+
+//       {formVisible && (
+//         <div className="form-container">
+//           <h3 className="form-title">Request a Slot</h3>
+//           <label className="label">Select Date:</label>
+//           <input
+//             type="date"
+//             className="input"
+//             value={formData.date}
+//             onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+//           />
+//           <label className="label">Enter Reason:</label>
+//           <textarea
+//             className="input"
+//             value={formData.reason}
+//             onChange={(e) => setFormData({ ...formData, reason: e.target.value })}
+//           ></textarea>
+//           <div className="form-actions">
+//             <button onClick={() => setFormVisible(false)} className="cancel-button">Cancel</button>
+//             <button onClick={handleSubmit} className="submit-button">Submit</button>
+//           </div>
+//         </div>
+//       )}
+
+//       <div className="table-container">
+//         <table className="table">
+//           <thead>
+//             <tr>
+//               <th>Request ID</th>
+//               <th>Status</th>
+//               <th>Requested Date</th>
+//               <th>Scheduled Date</th>
+//               <th>Time</th>
+//               <th>Meeting Link</th>
+//               <th>Remarks</th>
+//             </tr>
+//           </thead>
+//           <tbody>
+//             {requests.length === 0 ? (
+//               <tr>
+//                 <td colSpan="7" className="no-requests">No Requests</td>
+//               </tr>
+//             ) : (
+//               requests.map((req) => (
+//                 <tr key={req.id}>
+//                   <td>{req.id}</td>
+//                   <td className={status ${req.status.toLowerCase()}}>{req.status}</td>
+//                   <td>{req.date !== "-" ? req.date : "Not Set"}</td>
+//                   <td>{req.scheduledDate !== "-" ? req.scheduledDate : "Not Scheduled"}</td>
+//                   <td>{req.time !== "-" ? req.time : "Not Set"}</td>
+//                   <td>
+//                     {req.meetingLink ? (
+//                       <a href={req.meetingLink} target="_blank" rel="noopener noreferrer" className="meeting-link">Open Link</a>
+//                     ) : (
+//                       "No Link"
+//                     )}
+//                   </td>
+//                   <td>
+//                     {req.status === "Pending" ? "Wait for schedule" : req.scheduledDate === req.date
+//                       ? "Your meeting is scheduled according to your requirements."
+//                       : "Mentor not available that day."}
+//                   </td>
+//                 </tr>
+//               ))
+//             )}
+//           </tbody>
+//         </table>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default UserRequests;
+
+
 
 import { useState, useEffect } from "react";
 import axios from "axios"; 
 import "./request.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { IoMdArrowRoundBack } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
+
 
 const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
@@ -304,6 +604,8 @@ const userId = localStorage.getItem("userid");
 const username = localStorage.getItem("name");
 
 const UserRequests = () => {
+    const navigate = useNavigate();
+  
   const [requests, setRequests] = useState([]);
   const [formData, setFormData] = useState({ date: "", reason: "" });
   const [formVisible, setFormVisible] = useState(false);
@@ -362,7 +664,7 @@ const UserRequests = () => {
     };
 
     try {
-      const response = await axios.post(`${apiBaseUrl}/appointments/request`, requestData);
+      const response = await axios.post(`${apiBaseUrl}/appointments/request, requestData`);
       alert(response.data.message);
       console.log(response.data);
       
@@ -391,10 +693,21 @@ const UserRequests = () => {
     }
     window.location.reload();
   };
+ 
+  const handleBackClick = () => {
+    navigate("/home");
+  };
+
 
 
 
   return (
+    <>
+        <ToastContainer />
+       <div className="profile-back-arrow-container" onClick={handleBackClick}>
+              <IoMdArrowRoundBack className="profile-back-arrow" />
+            </div>
+       
     <div className="container">
       <h2 className="title">User Requests</h2>
       <button onClick={requestSlot} className="request-button">Request a Slot</button>
@@ -482,7 +795,8 @@ const UserRequests = () => {
       </table>
       </div>
     </div>
+    </>
   );
 };
 
-export default UserRequests;
+export default UserRequests;

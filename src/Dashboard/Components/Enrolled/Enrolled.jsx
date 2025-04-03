@@ -7,6 +7,8 @@ import LoadingPage from "../LoadingPage/LoadingPage";
 import ErrorDataFetchOverlay from "../Error/ErrorDataFetchOverlay";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { MoveUpRight } from "lucide-react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Enrolled = () => {
   const navigate = useNavigate();
@@ -163,14 +165,19 @@ const Enrolled = () => {
   if (fetchError) {
     return <ErrorDataFetchOverlay />;
   }
+  const handleBackClick = () => {
+    navigate("/home");
+  };
 
   return (
     <>
+      <ToastContainer />
+
+      <div className="profile-back-arrow-container" onClick={handleBackClick}>
+        <IoMdArrowRoundBack className="profile-back-arrow" />
+      </div>
       <div className="main-content">
         <div className="cardContainer3">
-          <button className="back-btn" onClick={() => navigate(-1)}>
-            <IoMdArrowRoundBack className="profile-back-arrow" />
-          </button>
           <h2>Enrolled Courses</h2>
           {!hasPurchasedCourses && (
             <h3>No courses have been purchased. Please purchase a course.</h3>
@@ -251,7 +258,8 @@ const Enrolled = () => {
                     className="courseCardBtn"
                     onClick={() =>
                       navigate(`/home/courseContent/${course._id}`)
-                    }>
+                    }
+                  >
                     View course
                     <MoveUpRight height={15} />
                   </button>

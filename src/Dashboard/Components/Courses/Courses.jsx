@@ -7,6 +7,9 @@ import LoadingPage from "../LoadingPage/LoadingPage";
 import ErrorDataFetchOverlay from "../Error/ErrorDataFetchOverlay";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { MoveUpRight } from "lucide-react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Courses = () => {
   const navigate = useNavigate();
@@ -61,7 +64,7 @@ const Courses = () => {
     //   return imgd;
     // } else {
     //   try {
-    //     return require(`../Assets/Images/${imagePath}`);
+    //     return require(../Assets/Images/${imagePath});
     //   } catch (error) {
     //     return imgd;
     //   }
@@ -73,7 +76,7 @@ const Courses = () => {
 
     // Check for proper base64-encoded images
     if (imagePath.startsWith("data:image/")) {
-      const base64Content = imagePath.split(",")[1]; // Get the content after `data:image/...;base64,`
+      const base64Content = imagePath.split(",")[1]; // Get the content after data:image/...;base64,
       if (base64Content && base64Content.length > 0) {
         return imagePath; // Valid base64 string
       } else {
@@ -190,20 +193,26 @@ const Courses = () => {
   if (fetchError) {
     return <ErrorDataFetchOverlay />;
   }
+  const handleBackClick = () => {
+    navigate("/home");
+  };
 
   return (
     <>
+    <ToastContainer />
+
+    <div className="profile-back-arrow-container" onClick={handleBackClick}>
+      <IoMdArrowRoundBack className="profile-back-arrow" />
+    </div>
       <div className="main-content">
         <div className="cardContainer3">
           <h2>Courses</h2>
-          <button className="back-btn" onClick={() => navigate(-1)}>
-            <IoMdArrowRoundBack className="profile-back-arrow" />
-          </button>
+          
           {/* <div className="filterChips">
             {allLessons.map((lesson, index) => (
               <div
                 key={index}
-                className={`filterChip ${selectedFilters.includes(lesson) ? "active" : ""}`}
+                className={filterChip ${selectedFilters.includes(lesson) ? "active" : ""}}
                 onClick={() => handleFilterClick(lesson)}
               >
                 {lesson}
@@ -249,7 +258,7 @@ const Courses = () => {
               //     </ul>
               //     <button
               //       onClick={() =>
-              //         navigate(`/home/courseDetails/${course._id}`)
+              //         navigate(/home/courseDetails/${course._id})
               //       }
               //       className="lessonDetailBtn3"
               //     >
@@ -286,10 +295,11 @@ const Courses = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div>  ``
       </div>
     </>
   );
 };
 
-export default Courses;
+export default Courses;
+

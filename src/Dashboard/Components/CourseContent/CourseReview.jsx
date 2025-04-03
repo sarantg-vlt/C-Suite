@@ -178,7 +178,7 @@ const CourseReview = ({ courseData, currentCourseData, renderContent }) => {
       )}
 
       <Modal show={showReviewModal} onHide={handleCloseModal}>
-        <Modal.Header closeButton>
+        <Modal.Header>
           <Modal.Title>Submit Your Review</Modal.Title>
         </Modal.Header>
         <Modal.Body>

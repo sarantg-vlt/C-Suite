@@ -163,10 +163,6 @@
 // };
 
 // export default Auth;
-
-
-
-
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import "./auth.css";
@@ -177,14 +173,14 @@ import ForgotPassword from "./ForgotPassword";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import ResetPage from "./ResetPage";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Auth = () => {
-  
   const [searchParams] = useSearchParams();
-  const initialForm = searchParams.get("form") === "signup" ? "signup" : "login";
-  
+  const initialForm =
+    searchParams.get("form") === "signup" ? "signup" : "login";
+
   const [currentRightSlide, setCurrentRightSlide] = useState(
     initialForm === "login" ? "login" : null
   );
@@ -208,10 +204,10 @@ const Auth = () => {
   useEffect(() => {
     const t2 = gsap.timeline();
     const t4 = gsap.timeline();
-    
+
     // Set initial state
     gsap.set(".auth-bg-svg", { autoAlpha: 1 });
-    
+
     // Animation for background SVGs
     t2.to(
       ".auth-bg-svg",
@@ -228,7 +224,7 @@ const Auth = () => {
       },
       1
     );
-    
+
     t2.to(
       ".auth-bg-svg",
       {
@@ -241,7 +237,7 @@ const Auth = () => {
       },
       1
     );
-    
+
     // Animation for circles
     t4.to(
       ".circle-1",
@@ -253,7 +249,7 @@ const Auth = () => {
       },
       1
     );
-    
+
     t4.to(
       ".circle-1",
       {
@@ -292,36 +288,35 @@ const Auth = () => {
   };
 
   // Handle slide changes between forms
- const handleSlideChange = (slide) => {
-   if (slide === "login" || slide === "email-response") {
-     toggleAnimationBack();
-     setCurrentRightSlide(slide);
-   }
-   if (
-     slide === "signup" ||
-     slide === "forgot-password" ||
-     slide === "reset-password"
-   ) {
-     toggleAnimation();
-     setCurrentLeftSlide(slide);
-   }
- };
+  const handleSlideChange = (slide) => {
+    if (slide === "login" || slide === "email-response") {
+      toggleAnimationBack();
+      setCurrentRightSlide(slide);
+    }
+    if (
+      slide === "signup" ||
+      slide === "forgot-password" ||
+      slide === "reset-password"
+    ) {
+      toggleAnimation();
+      setCurrentLeftSlide(slide);
+    }
+  };
 
   // Render left panel content (Signup or Forgot Password)
- const renderLeftSlide = () => {
-   if (currentLeftSlide === "forgot-password")
-     return (
-       <ForgotPassword
-         toggleSlide={(slide) => handleSlideChange(slide)}
-         updateEmail={(email) => setForgotPasswordEmail(email)}
-       />
-     );
-   if (currentLeftSlide === "signup")
-     return <SignUp toggleSlide={(slide) => handleSlideChange(slide)} />;
-   if (currentLeftSlide === "reset-password")
-     return <ResetPage toggleSlide={(slide) => handleSlideChange(slide)} />;
- };
-
+  const renderLeftSlide = () => {
+    if (currentLeftSlide === "forgot-password")
+      return (
+        <ForgotPassword
+          toggleSlide={(slide) => handleSlideChange(slide)}
+          updateEmail={(email) => setForgotPasswordEmail(email)}
+        />
+      );
+    if (currentLeftSlide === "signup")
+      return <SignUp toggleSlide={(slide) => handleSlideChange(slide)} />;
+    if (currentLeftSlide === "reset-password")
+      return <ResetPage toggleSlide={(slide) => handleSlideChange(slide)} />;
+  };
 
   // Render right panel content (Login or Email Response)
   const renderRightSlide = () => {
@@ -339,48 +334,48 @@ const Auth = () => {
 
   return (
     <>
-       <ToastContainer />
-    <div className="screen-container">
-      <div className="main-container">
-        {/* Left sliding panel */}
-        <div id="animation-fromLeft" className="left-panel">
-          {renderLeftSlide()}
-        </div>
-        
-        {/* Center content with animations */}
-        <div className="auth-content-left">
-          <div className="image-container">
-            <img
-              src={assets.Images.Auth_Marquee_1}
-              alt="login-svg"
-              className="auth-bg-svg"
-            />
-            <img
-              src={assets.Images.Auth_Marquee_3}
-              alt="login-svg"
-              className="auth-bg-svg"
-            />
-            <img
-              src={assets.Images.Auth_Marquee_2}
-              alt="login-svg"
-              className="auth-bg-svg"
-            />
+      <ToastContainer />
+      <div className="screen-container">
+        <div className="main-container">
+          {/* Left sliding panel */}
+          <div id="animation-fromLeft" className="left-panel">
+            {renderLeftSlide()}
           </div>
-          <div className="circle-container">
-            <div className="circle"></div>
-            <div className="circle circle-2"></div>
-            <div className="circle circle-3"></div>
+
+          {/* Center content with animations */}
+          <div className="auth-content-left">
+            <div className="image-container">
+              <img
+                src={assets.Images.Auth_Marquee_1}
+                alt="login-svg"
+                className="auth-bg-svg"
+              />
+              <img
+                src={assets.Images.Auth_Marquee_3}
+                alt="login-svg"
+                className="auth-bg-svg"
+              />
+              <img
+                src={assets.Images.Auth_Marquee_2}
+                alt="login-svg"
+                className="auth-bg-svg"
+              />
+            </div>
+            <div className="circle-container">
+              <div className="circle"></div>
+              <div className="circle circle-2"></div>
+              <div className="circle circle-3"></div>
+            </div>
           </div>
-        </div>
-        
-        {/* Right sliding panel */}
-        <div id="animation-fromRight" className="right-panel">
-          {renderRightSlide()}
+
+          {/* Right sliding panel */}
+          <div id="animation-fromRight" className="right-panel">
+            {renderRightSlide()}
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
 };
 
-export default Auth;
+export default Auth;

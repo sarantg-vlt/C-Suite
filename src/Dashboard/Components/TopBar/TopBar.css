@@ -62,7 +62,7 @@
 }
 
 .notification-icon {
-  padding: .5em .8em;
+  padding: 0.5em 0.8em;
   color: #333;
   position: relative;
   cursor: pointer;
@@ -82,11 +82,11 @@
   font-size: 14px;
 }
 
-.notification-active{
+.notification-active {
   background-color: #636e7243;
   border-radius: 100%;
 }
-.notification-deactive{
+.notification-deactive {
   background-color: transparent;
 }
 
@@ -94,7 +94,9 @@
   list-style: none; /* Removes the default marker */
 }
 
-.notification-container{
+.notification-container {
+  overflow: auto !important;
+  max-height: 500px;
   width: 300px;
   z-index: 99;
   position: absolute;
@@ -102,36 +104,56 @@
   top: 50px;
   right: 0;
   padding: 1em;
-  /* height: 100px; */
-  /* border: .5px solid black; */
   border-radius: 20px;
-  overflow: hidden;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
-  p{
-    font-size: 12px;
-  }
+  min-height: 200px; /* Add min-height to force the scroll */
+}
+.notification-icon {
+  pointer-events: all;
 }
 
-.notification-show{
+/* Style the scrollbar track (background of the scrollbar) */
+.notification-container::-webkit-scrollbar {
+  width: 8px; /* Set the width of the scrollbar */
+}
+
+/* Style the thumb (the draggable part of the scrollbar) */
+.notification-container::-webkit-scrollbar-thumb {
+  background-color: #8949ff; /* Set color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+  border: 2px solid transparent; /* Optional: adds space around the thumb */
+  background-clip: content-box; /* Optional: makes the thumb more visible */
+}
+
+/* Hover effect for the scrollbar thumb */
+.notification-container::-webkit-scrollbar-thumb:hover {
+  background-color: #6b29cc; /* Darker color on hover */
+}
+
+/* Style the scrollbar track (where the thumb moves) */
+.notification-container::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light color for the track */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+.notification-show {
   display: block;
   height: 100px;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
-.notification-hidden{
+.notification-hidden {
   display: none;
   height: 0px;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
-
 
 @media (max-width: 1125px) {
   .user-info {
     font-size: 13px;
   }
-  .notification-container{
+  .notification-container {
     top: 50px;
-    p{
+    p {
       font-size: 10px;
     }
   }
@@ -174,9 +196,9 @@
   .user-text {
     margin-right: 4px;
   }
-  .notification-container{
+  .notification-container {
     top: 40px;
-    p{
+    p {
       font-size: 8px;
     }
   }
@@ -185,12 +207,12 @@
   font-size: 8px;
   font-weight: bold;
   white-space: nowrap;
-  padding:5px;
+  padding: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #fff;
-  color:#000;
+  color: #000;
   border: 1px solid #ccc;
   border-radius: 10px;
   cursor: pointer;
@@ -207,16 +229,15 @@
   transform: scale(0.9);
 }
 
-
-.d-f{
+.d-f {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.d-flex{
+.d-flex {
   display: flex;
-align-items: center;
+  align-items: center;
 }
 
 .read-more-btn {
@@ -238,32 +259,30 @@ align-items: center;
   box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.3);
 }
 
-.text-center{
+.text-center {
   text-align: center;
 }
 
 /* THis is title */
-.notification-item  h6 {   
+.notification-item h6 {
   font-weight: bold;
-color: #000;
+  color: #000;
 }
 
-.notification-item svg{
+.notification-item svg {
   margin-right: 15px;
 }
 
 /* THis is Description */
 .notification-item span {
-
-
-color: #000;
+  color: #000;
 }
 
 .read.mark-as-read-btn {
   font-size: 8px;
   font-weight: bold;
   white-space: nowrap;
-  padding:5px;
+  padding: 5px;
   display: flex;
   align-items: center;
   justify-content: center;

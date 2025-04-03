@@ -465,7 +465,7 @@ const Assessmentsstart = () => {
                           `}
                           onClick={() => setCurrentQuestionIndex(quesIndex)}
                         >
-                          {/* {`${(quesIndex + 1).toString().padStart(2, '0')}`} <FontAwesomeIcon icon={faCheckCircle} style={{color:`${!selectedOptions[`${currentSectionIndex}-${quesIndex}`] && bookmarkedQuestions[`${currentSectionIndex}-${quesIndex}`]=="true"? 'orange' : ''}`}}  size='1rem'className='icon-check pl-4' /> */}
+                          {/* {${(quesIndex + 1).toString().padStart(2, '0')}} <FontAwesomeIcon icon={faCheckCircle} style={{color:${!selectedOptions[${currentSectionIndex}-${quesIndex}] && bookmarkedQuestions[${currentSectionIndex}-${quesIndex}]=="true"? 'orange' : ''}}}  size='1rem'className='icon-check pl-4' /> */}
                           {`${(quesIndex + 1).toString().padStart(2, "0")}`}
                           <FontAwesomeIcon
                             icon={faCheckCircle}
