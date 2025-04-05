@@ -208,7 +208,6 @@ const Login = ({ toggleSlide }) => {
               className="input"
             />
 
-            {error.email && <p className="input-error">Enter valid Email</p>}
             <img
               src={assets.Images.mail_icon}
               alt="mail-icon"
@@ -229,9 +228,7 @@ const Login = ({ toggleSlide }) => {
               }
               className="input"
             />
-            {error.password && (
-              <p className="input-error">Enter valid password</p>
-            )}
+
             <img
               src={assets.Images.Lock_Vector}
               alt="mail-icon"

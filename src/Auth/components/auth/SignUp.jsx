@@ -106,7 +106,7 @@ const SignUp = ({ toggleSlide }) => {
     if (!isStrongPassword(form.password)) {
       newErrorArray.push("password");
       toast.error(
-        "Password must be at least 8 characters long and include uppercase, lowercase, numbers, and special characters.",
+        "Please enter a valid Password",
         {
           autoClose: 3000,
           theme: "dark",

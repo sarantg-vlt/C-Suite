@@ -67,7 +67,6 @@ function Home() {
     const handleClickOutside = (event) => {
       if (
         openNotification &&
-
         !event.target.closest(".notification-container") &&
         !event.target.closest(".notification-icon")
       ) {
@@ -77,10 +76,7 @@ function Home() {
 
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
-
   }, [openNotification]);
-
-  
 
   return (
     <>
