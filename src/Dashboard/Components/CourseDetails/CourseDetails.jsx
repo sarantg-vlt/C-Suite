@@ -466,19 +466,7 @@ const CourseDetails = () => {
                 </div>
                 <span>50%</span>
               </div>
-              {/* <button
-            onClick={() =>
-              addToCart({
-                courseId,
-                title: courseContentDetailsData?.title,
-                price: courseContentDetailsData?.price,
-                image: courseContentDetailsData?.image,
-              })
-            }
-            className="CDCartBtn"
-          >
-            Add to Cart
-          </button>               */}
+                        
               <button
                 onClick={() =>
                   makepayment(

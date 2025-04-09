@@ -199,15 +199,15 @@ const Courses = () => {
 
   return (
     <>
-    <ToastContainer />
+      <ToastContainer />
 
-    <div className="profile-back-arrow-container" onClick={handleBackClick}>
-      <IoMdArrowRoundBack className="profile-back-arrow" />
-    </div>
+      <div className="profile-back-arrow-container" onClick={handleBackClick}>
+        <IoMdArrowRoundBack className="profile-back-arrow" />
+      </div>
       <div className="main-content">
         <div className="cardContainer3">
           <h2>Courses</h2>
-          
+
           {/* <div className="filterChips">
             {allLessons.map((lesson, index) => (
               <div
@@ -283,11 +283,25 @@ const Courses = () => {
                   <p className="courseCardDescription">
                     {truncateDescription(course.description)}...
                   </p>
-                  <button
+                  {/* <button
                     className="courseCardBtn"
                     onClick={() =>
                       navigate(`/home/courseDetails/${course._id}`)
                     }>
+                    {course.isPurchased ? "Purchased" : "Enroll course"}
+                    <MoveUpRight height={15} />
+                  </button> */}
+
+                  <button
+                    className="courseCardBtn"
+                    onClick={() =>
+                      navigate(
+                        course.isPurchased
+                          ? `/home/courseContent/${course._id}` // Replace with your purchased courses page URL
+                          : `/home/courseDetails/${course._id}`
+                      )
+                    }
+                  >
                     {course.isPurchased ? "Purchased" : "Enroll course"}
                     <MoveUpRight height={15} />
                   </button>
@@ -295,7 +309,8 @@ const Courses = () => {
               </div>
             ))}
           </div>
-        </div>  ``
+        </div>{" "}
+        ``
       </div>
     </>
   );

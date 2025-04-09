@@ -183,22 +183,22 @@ function Header() {
         >
           <ul className="navbar-nav ml-auto">
             <li className="nav-item active ml-4">
-              <a className="nav-link text-light" href="#what">
+              <a className="nav-link text-light" href="/#what">
                 Why C-Suite?
               </a>
             </li>
             <li className="nav-item active ml-4">
-              <a className="nav-link text-light" href="#courses">
+              <a className="nav-link text-light" href="/#courses">
                 Courses
               </a>
             </li>
             <li className="nav-item active ml-4">
-              <a className="nav-link text-light" href="#why">
+              <a className="nav-link text-light" href="/#why">
                 Customers
               </a>
             </li>
             <li className="nav-item active ml-4">
-              <a className="nav-link text-light" href="#contact">
+              <a className="nav-link text-light" href="/#contact">
                 Contact Us
               </a>
             </li>
